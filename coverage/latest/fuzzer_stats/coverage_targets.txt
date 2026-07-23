@@ -1,0 +1,15 @@
+equihash_fuzz
+v6_transaction_fuzz
+p2p_deep_fuzz
+block_deserialize
+note_commitment_tree_fuzz
+jsonrpsee_envelope_fuzz
+block_deep_fuzz
+p2p_message_parse
+script_flag_matrix_fuzz
+v6_transaction_semantic_fuzz
+address_fuzz
+rpc_handler_fuzz
+script_verify_fuzz
+ironwood_value_balance_codec_fuzz
+addr_message_fuzz

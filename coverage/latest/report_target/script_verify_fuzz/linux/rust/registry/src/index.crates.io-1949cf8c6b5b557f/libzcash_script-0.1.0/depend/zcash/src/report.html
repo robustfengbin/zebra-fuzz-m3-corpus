@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../../../../../../../../../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='../../../../../../../../directory_view_index.html'>Directories</a>
+              | <a href='../../../../../../../../file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='compat/report.html'>compat/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/53)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crypto/report.html'>crypto/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 58.38% (554/949)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.81% (53/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.53% (92/152)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='script/report.html'>script/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 61.20% (765/1250)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 53.19% (50/94)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 61.35% (735/1198)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='secp256k1/report.html'>secp256k1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.87% (157/4052)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  3.97% (10/252)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.90% (477/2822)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='util/report.html'>util/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.68% (3/438)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  2.78% (1/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.27% (1/377)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='amount.h.html'>amount.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hash.h.html'>hash.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 31.58% (18/57)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 26.67% (4/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 26.67% (4/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='prevector.h.html'>prevector.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 57.23% (91/159)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 79.07% (34/43)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 70.00% (70/100)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='pubkey.cpp.html'>pubkey.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (3/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (1/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  5.26% (1/19)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='pubkey.h.html'>pubkey.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 41.07% (23/56)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 30.00% (6/20)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 62.50% (25/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serialize.h.html'>serialize.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  5.45% (3/55)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.55% (1/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.00% (4/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tinyformat.h.html'>tinyformat.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/314)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/176)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='uint256.cpp.html'>uint256.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 57.58% (19/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (14/28)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='uint256.h.html'>uint256.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 23.68% (9/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 23.08% (3/13)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 21.96% (1645/7492)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 26.58% (164/617)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 28.57% (1426/4991)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>

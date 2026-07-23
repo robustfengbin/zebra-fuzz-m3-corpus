@@ -1,0 +1,2792 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../../../../../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='../../../../directory_view_index.html'>Directories</a>
+              | <a href='../../../../file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='addr2line-0.25.1/report.html'>addr2line-0.25.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1289)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/116)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1797)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='adler2-2.0.1/report.html'>adler2-2.0.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/99)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/133)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='aes-0.8.4/report.html'>aes-0.8.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1677)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/143)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3028)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='aho-corasick-1.1.4/report.html'>aho-corasick-1.1.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5254)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/698)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7898)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='allocator-api2-0.2.21/report.html'>allocator-api2-0.2.21/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='arbitrary-1.4.2/report.html'>arbitrary-1.4.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 13.48% (120/890)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (24/216)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.01% (154/1399)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='arrayref-0.3.9/report.html'>arrayref-0.3.9/</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 86.36% (19/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (3/4)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 84.00% (21/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='arrayvec-0.7.8/report.html'>arrayvec-0.7.8/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/727)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/164)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1200)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='backtrace-0.3.76/report.html'>backtrace-0.3.76/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1309)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/189)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2174)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bech32-0.11.1/report.html'>bech32-0.11.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1183)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/250)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2096)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bellman-0.14.0/report.html'>bellman-0.14.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3503)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/426)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5518)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bip32-0.6.0-pre.1/report.html'>bip32-0.6.0-pre.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/460)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/780)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bit-set-0.8.0/report.html'>bit-set-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/69)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bit-vec-0.8.0/report.html'>bit-vec-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/667)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/117)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1078)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bitflags-2.13.0/report.html'>bitflags-2.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/566)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/133)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/790)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bitvec-1.1.1/report.html'>bitvec-1.1.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 69.02% (989/1433)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 71.06% (167/235)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 65.06% (1326/2038)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='blake2b_simd-1.0.4/report.html'>blake2b_simd-1.0.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 29.28% (575/1964)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 24.38% (39/160)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 30.51% (1140/3736)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='blake2s_simd-1.0.4/report.html'>blake2s_simd-1.0.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2075)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/159)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4067)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='block-buffer-0.10.4/report.html'>block-buffer-0.10.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/101)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/146)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='block-buffer-0.11.0-rc.3/report.html'>block-buffer-0.11.0-rc.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/136)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/241)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bls12_381-0.8.0/report.html'>bls12_381-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  9.06% (287/3168)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  6.88% (30/436)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 13.48% (706/5238)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bounded-vec-0.9.0/report.html'>bounded-vec-0.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/186)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/199)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bs58-0.5.1/report.html'>bs58-0.5.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/445)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/577)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='byteorder-1.5.0/report.html'>byteorder-1.5.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.70% (3/81)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.76% (1/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  3.40% (5/147)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bytes-1.12.1/report.html'>bytes-1.12.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2747)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/578)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4195)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='cbc-0.1.2/report.html'>cbc-0.1.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='chacha20-0.9.1/report.html'>chacha20-0.9.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/343)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/593)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='chacha20poly1305-0.10.1/report.html'>chacha20poly1305-0.10.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/56)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/85)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='chrono-0.4.45/report.html'>chrono-0.4.45/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6206)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1034)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10248)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='cipher-0.4.4/report.html'>cipher-0.4.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/477)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/758)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='color-eyre-0.6.5/report.html'>color-eyre-0.6.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/857)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/125)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1240)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='console-0.16.4/report.html'>console-0.16.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1096)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/219)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1754)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='constant_time_eq-0.4.2/report.html'>constant_time_eq-0.4.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/238)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/336)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='cpufeatures-0.2.17/report.html'>cpufeatures-0.2.17/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 78.57% (22/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 71.43% (5/7)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.05% (32/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crossbeam-channel-0.5.16/report.html'>crossbeam-channel-0.5.16/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2528)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/359)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3858)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crossbeam-deque-0.8.7/report.html'>crossbeam-deque-0.8.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/358)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/602)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crossbeam-epoch-0.9.20/report.html'>crossbeam-epoch-0.9.20/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1066)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/197)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1502)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crossbeam-utils-0.8.22/report.html'>crossbeam-utils-0.8.22/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/941)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/139)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1342)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crypto-common-0.2.0-rc.1/report.html'>crypto-common-0.2.0-rc.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='curve25519-dalek-4.1.3/report.html'>curve25519-dalek-4.1.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3721)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/494)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6885)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='digest-0.10.7/report.html'>digest-0.10.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/60)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/89)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='digest-0.11.0-pre.9/report.html'>digest-0.11.0-pre.9/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/96)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='dirs-6.0.0/report.html'>dirs-6.0.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/49)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/156)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='dirs-sys-0.5.0/report.html'>dirs-sys-0.5.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/133)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/266)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='dyn-clone-1.0.20/report.html'>dyn-clone-1.0.20/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ed25519-2.2.3/report.html'>ed25519-2.2.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/129)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/216)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ed25519-zebra-4.2.0/report.html'>ed25519-zebra-4.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/246)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/396)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='equihash-0.3.0/report.html'>equihash-0.3.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/189)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/345)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='equivalent-1.0.2/report.html'>equivalent-1.0.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='errno-0.3.14/report.html'>errno-0.3.14/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/88)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='eyre-0.6.12/report.html'>eyre-0.6.12/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/773)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/127)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/880)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='f4jumble-0.1.1/report.html'>f4jumble-0.1.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/69)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/116)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='fastrand-2.4.1/report.html'>fastrand-2.4.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/344)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/77)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/537)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ff-0.13.1/report.html'>ff-0.13.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  2.54% (3/118)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.50% (1/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  2.18% (5/229)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='fixed-hash-0.8.0/report.html'>fixed-hash-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/232)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/352)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='foldhash-0.2.0/report.html'>foldhash-0.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/339)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/502)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='fpe-0.6.1/report.html'>fpe-0.6.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/377)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/689)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='funty-2.0.0/report.html'>funty-2.0.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='generic-array-0.14.7/report.html'>generic-array-0.14.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  1.28% (7/545)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  2.06% (2/97)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.45% (11/761)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='getrandom-0.2.17/report.html'>getrandom-0.2.17/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/248)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/376)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='getrandom-0.3.4/report.html'>getrandom-0.3.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/270)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/441)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='getrandom-0.4.3/report.html'>getrandom-0.4.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/264)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/423)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='gimli-0.32.3/report.html'>gimli-0.32.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7785)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/919)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11135)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='group-0.13.0/report.html'>group-0.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/207)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/281)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='halo2_gadgets-0.5.0/report.html'>halo2_gadgets-0.5.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4684)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/562)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7483)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='halo2_legacy_pdqsort-0.1.0/report.html'>halo2_legacy_pdqsort-0.1.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/364)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/604)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='halo2_poseidon-0.1.0/report.html'>halo2_poseidon-0.1.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/382)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/49)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/529)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='halo2_proofs-0.3.2/report.html'>halo2_proofs-0.3.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8727)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1133)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11785)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hashbrown-0.12.3/report.html'>hashbrown-0.12.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2925)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/529)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3839)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hashbrown-0.16.1/report.html'>hashbrown-0.16.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3880)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/706)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4816)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hashbrown-0.17.1/report.html'>hashbrown-0.17.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3767)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/677)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4580)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hex-0.4.3/report.html'>hex-0.4.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/148)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/212)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hmac-0.13.0-pre.4/report.html'>hmac-0.13.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='humantime-2.4.0/report.html'>humantime-2.4.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/500)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/927)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hybrid-array-0.2.3/report.html'>hybrid-array-0.2.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/100)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/130)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='iana-time-zone-0.1.65/report.html'>iana-time-zone-0.1.65/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/111)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/196)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='incrementalmerkletree-0.8.2/report.html'>incrementalmerkletree-0.8.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 31.11% (242/778)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (46/138)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 29.09% (302/1038)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='indenter-0.3.4/report.html'>indenter-0.3.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/66)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='indexmap-1.9.3/report.html'>indexmap-1.9.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1564)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/343)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2228)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='indexmap-2.14.0/report.html'>indexmap-2.14.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/93)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='inout-0.1.4/report.html'>inout-0.1.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/127)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/157)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='insta-1.48.0/report.html'>insta-1.48.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4576)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/432)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7210)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='itertools-0.14.0/report.html'>itertools-0.14.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5022)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/818)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6551)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='itoa-1.0.18/report.html'>itoa-1.0.18/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/183)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/293)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='jubjub-0.10.0/report.html'>jubjub-0.10.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 18.54% (198/1068)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.93% (32/189)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.65% (392/1898)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='lazy_static-1.5.0/report.html'>lazy_static-1.5.0/</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 80.00% (12/15)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 80.00% (4/5)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 81.25% (13/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='libc-0.2.186/report.html'>libc-0.2.186/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/324)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/103)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/416)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='libfuzzer-sys-0.4.13/report.html'>libfuzzer-sys-0.4.13/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 67.19% (43/64)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (10/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.55% (66/109)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='libm-0.2.16/report.html'>libm-0.2.16/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5906)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/351)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8535)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='linux-raw-sys-0.12.1/report.html'>linux-raw-sys-0.12.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/275)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/488)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='lock_api-0.4.14/report.html'>lock_api-0.4.14/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1237)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/200)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1250)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='log-0.4.33/report.html'>log-0.4.33/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/376)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/93)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/461)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='matchers-0.2.0/report.html'>matchers-0.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/88)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/147)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='memchr-2.8.3/report.html'>memchr-2.8.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3258)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/449)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5043)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='memuse-0.2.2/report.html'>memuse-0.2.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/32)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/60)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='miniz_oxide-0.8.9/report.html'>miniz_oxide-0.8.9/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1238)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/84)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1661)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='mio-1.2.1/report.html'>mio-1.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1578)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/382)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2128)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='nonempty-0.11.0/report.html'>nonempty-0.11.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='nu-ansi-term-0.50.3/report.html'>nu-ansi-term-0.50.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/797)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/111)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1148)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='num-bigint-0.4.8/report.html'>num-bigint-0.4.8/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4280)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/650)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6990)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='num-integer-0.1.46/report.html'>num-integer-0.1.46/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/475)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/76)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/706)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='num-traits-0.2.19/report.html'>num-traits-0.2.19/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/925)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/222)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1326)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='object-0.37.3/report.html'>object-0.37.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11118)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1887)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16330)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='once_cell-1.21.4/report.html'>once_cell-1.21.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/574)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/128)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/848)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='opaque-debug-0.3.1/report.html'>opaque-debug-0.3.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='option-ext-0.2.0/report.html'>option-ext-0.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='orchard-0.15.0/report.html'>orchard-0.15.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6474)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/784)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9389)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='owo-colors-4.3.0/report.html'>owo-colors-4.3.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/849)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/156)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1231)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='parking_lot-0.12.5/report.html'>parking_lot-0.12.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1281)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/148)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1644)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='parking_lot_core-0.9.12/report.html'>parking_lot_core-0.9.12/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/751)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/61)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1042)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='pasta_curves-0.5.1/report.html'>pasta_curves-0.5.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 46.14% (675/1463)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 39.29% (88/224)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 48.27% (1438/2979)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='pin-project-lite-0.2.17/report.html'>pin-project-lite-0.2.17/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/53)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='poly1305-0.8.0/report.html'>poly1305-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1029)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2000)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ppv-lite86-0.2.21/report.html'>ppv-lite86-0.2.21/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/388)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/79)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/562)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='primitive-types-0.12.2/report.html'>primitive-types-0.12.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/102)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='proptest-1.11.0/report.html'>proptest-1.11.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4890)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/722)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6358)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='quick-error-1.2.3/report.html'>quick-error-1.2.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='radium-0.7.0/report.html'>radium-0.7.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.51% (6/171)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.00% (2/50)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  5.24% (12/229)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand-0.8.6/report.html'>rand-0.8.6/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1370)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/205)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1995)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand-0.9.4/report.html'>rand-0.9.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1667)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/224)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2374)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand_chacha-0.3.1/report.html'>rand_chacha-0.3.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/293)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/608)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand_chacha-0.9.0/report.html'>rand_chacha-0.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/264)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/551)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand_core-0.6.4/report.html'>rand_core-0.6.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/372)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/68)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/595)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand_core-0.9.5/report.html'>rand_core-0.9.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/355)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/68)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/577)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rand_xorshift-0.4.0/report.html'>rand_xorshift-0.4.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/58)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/94)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rayon-1.12.0/report.html'>rayon-1.12.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8643)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1512)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10523)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rayon-core-1.13.0/report.html'>rayon-core-1.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1794)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/318)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2476)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='reddsa-0.5.2/report.html'>reddsa-0.5.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/492)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/753)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='redjubjub-0.8.0/report.html'>redjubjub-0.8.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/95)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/130)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='regex-1.13.0/report.html'>regex-1.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1485)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/352)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2255)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='regex-automata-0.4.15/report.html'>regex-automata-0.4.15/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17675)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2290)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26912)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='regex-syntax-0.8.11/report.html'>regex-syntax-0.8.11/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6335)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/725)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9951)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ripemd-0.1.3/report.html'>ripemd-0.1.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/324)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1667)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ripemd-0.2.0-pre.4/report.html'>ripemd-0.2.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/347)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1706)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rustc-demangle-0.1.28/report.html'>rustc-demangle-0.1.28/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1004)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/88)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1802)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rustc-hex-2.1.0/report.html'>rustc-hex-2.1.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/95)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/131)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rustix-1.1.4/report.html'>rustix-1.1.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3305)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/647)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4235)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rusty-fork-0.3.1/report.html'>rusty-fork-0.3.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/267)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/407)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sapling-crypto-0.7.0/report.html'>sapling-crypto-0.7.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.37% (152/4507)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  2.15% (14/650)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  3.62% (235/6485)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='schemars-1.2.1/report.html'>schemars-1.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1955)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/270)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2779)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='scopeguard-1.2.0/report.html'>scopeguard-1.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='secp256k1-0.29.1/report.html'>secp256k1-0.29.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1357)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/269)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2129)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='secp256k1-sys-0.10.1/report.html'>secp256k1-sys-0.10.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5252)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/359)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3799)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde-1.0.228/report.html'>serde-1.0.228/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2729)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/390)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3288)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde_core-1.0.228/report.html'>serde_core-1.0.228/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2948)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/498)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3294)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde_json-1.0.150/report.html'>serde_json-1.0.150/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5662)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/848)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7036)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde_with-3.21.0/report.html'>serde_with-3.21.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5701)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/915)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6508)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha1-0.10.7/report.html'>sha1-0.10.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/266)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/679)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha2-0.10.9/report.html'>sha2-0.10.9/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.86% (67/565)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  7.55% (4/53)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 15.16% (221/1458)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha2-0.11.0-pre.4/report.html'>sha2-0.11.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/616)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1522)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sharded-slab-0.1.7/report.html'>sharded-slab-0.1.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1561)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/267)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2234)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='signal-hook-registry-1.4.8/report.html'>signal-hook-registry-1.4.8/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/283)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/447)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='signature-2.2.0/report.html'>signature-2.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/89)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='similar-2.7.0/report.html'>similar-2.7.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2385)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/246)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3132)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sinsemilla-0.1.0/report.html'>sinsemilla-0.1.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (87/116)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.61% (19/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 78.05% (128/164)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='smallvec-1.15.2/report.html'>smallvec-1.15.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/788)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/125)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1281)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='socket2-0.6.4/report.html'>socket2-0.6.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1863)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/410)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2534)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='spin-0.9.8/report.html'>spin-0.9.8/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 36.16% (64/177)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 29.41% (10/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 34.86% (76/218)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='subtle-2.6.1/report.html'>subtle-2.6.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 59.49% (94/158)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.61% (20/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 45.41% (99/218)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tap-1.0.1/report.html'>tap-1.0.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (12/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 63.64% (7/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tempfile-3.27.0/report.html'>tempfile-3.27.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/808)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/174)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1115)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='thiserror-2.0.18/report.html'>thiserror-2.0.18/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='thread_local-1.1.10/report.html'>thread_local-1.1.10/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/347)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/72)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/474)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tokio-1.52.3/report.html'>tokio-1.52.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20715)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3620)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27576)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-0.1.44/report.html'>tracing-0.1.44/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/574)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/97)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/799)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-core-0.1.36/report.html'>tracing-core-0.1.36/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1497)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/329)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2094)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-error-0.2.1/report.html'>tracing-error-0.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/195)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/292)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-log-0.2.0/report.html'>tracing-log-0.2.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/255)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/360)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-subscriber-0.3.23/report.html'>tracing-subscriber-0.3.23/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5679)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/991)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8239)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='typenum-1.20.1/report.html'>typenum-1.20.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1460)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/398)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1634)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='uint-0.10.0/report.html'>uint-0.10.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/830)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/132)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1295)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='uint-0.9.5/report.html'>uint-0.9.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/836)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/135)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1305)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='unarray-0.1.4/report.html'>unarray-0.1.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='universal-hash-0.5.1/report.html'>universal-hash-0.5.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/43)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/72)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='wait-timeout-0.2.1/report.html'>wait-timeout-0.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/131)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/223)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='wyz-0.5.1/report.html'>wyz-0.5.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 41.03% (32/78)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (8/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 39.33% (35/89)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='x25519-dalek-2.0.1/report.html'>x25519-dalek-2.0.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/50)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_address-0.13.0/report.html'>zcash_address-0.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/732)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/108)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1069)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_encoding-0.4.0/report.html'>zcash_encoding-0.4.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 15.43% (29/188)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.83% (5/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 15.08% (38/252)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_history-0.5.0/report.html'>zcash_history-0.5.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/514)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/78)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/904)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_note_encryption-0.4.1/report.html'>zcash_note_encryption-0.4.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/328)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/480)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_primitives-0.29.0/report.html'>zcash_primitives-0.29.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.48% (17/3560)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  1.32% (6/456)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.66% (33/5016)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_protocol-0.10.0/report.html'>zcash_protocol-0.10.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/784)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/186)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1110)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_script-0.4.5/report.html'>zcash_script-0.4.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2361)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/349)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3208)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_spec-0.2.1/report.html'>zcash_spec-0.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_transparent-0.9.0/report.html'>zcash_transparent-0.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1949)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/276)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2578)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zerocopy-0.8.54/report.html'>zerocopy-0.8.54/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zeroize-1.9.0/report.html'>zeroize-1.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/155)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/199)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zip32-0.2.1/report.html'>zip32-0.2.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/341)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/65)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/484)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zmij-1.0.21/report.html'>zmij-1.0.21/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/503)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/842)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  1.34% (3755/279946)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  1.30% (542/41812)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  1.60% (6495/405376)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>

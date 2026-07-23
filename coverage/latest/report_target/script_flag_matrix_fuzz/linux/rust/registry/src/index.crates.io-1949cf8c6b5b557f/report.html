@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../../../../../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='../../../../directory_view_index.html'>Directories</a>
+              | <a href='../../../../file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='arbitrary-1.4.2/report.html'>arbitrary-1.4.2/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/890)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/216)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1399)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bip32-0.6.0-pre.1/report.html'>bip32-0.6.0-pre.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/460)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/780)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bitflags-2.13.0/report.html'>bitflags-2.13.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  7.07% (40/566)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 10.53% (14/133)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  6.20% (49/790)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='block-buffer-0.10.4/report.html'>block-buffer-0.10.4/</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 91.84% (90/98)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (10/10)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 87.86% (123/140)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='block-buffer-0.11.0-rc.3/report.html'>block-buffer-0.11.0-rc.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/136)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/241)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bounded-vec-0.9.0/report.html'>bounded-vec-0.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 17.20% (32/186)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.95% (7/39)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.09% (34/199)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='bs58-0.5.1/report.html'>bs58-0.5.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/445)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/577)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='cpufeatures-0.2.17/report.html'>cpufeatures-0.2.17/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 78.57% (22/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 71.43% (5/7)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.05% (32/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='crypto-common-0.2.0-rc.1/report.html'>crypto-common-0.2.0-rc.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='digest-0.10.7/report.html'>digest-0.10.7/</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 90.74% (49/54)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 91.67% (11/12)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 89.16% (74/83)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='digest-0.11.0-pre.9/report.html'>digest-0.11.0-pre.9/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/96)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='generic-array-0.14.7/report.html'>generic-array-0.14.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  8.44% (46/545)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.37% (12/97)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  7.49% (57/761)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hex-0.4.3/report.html'>hex-0.4.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/148)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/212)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hmac-0.13.0-pre.4/report.html'>hmac-0.13.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='hybrid-array-0.2.3/report.html'>hybrid-array-0.2.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/100)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/130)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='libfuzzer-sys-0.4.13/report.html'>libfuzzer-sys-0.4.13/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 68.52% (37/54)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (10/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.23% (53/88)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='libzcash_script-0.1.0/report.html'>libzcash_script-0.1.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 23.27% (1803/7748)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 27.07% (173/639)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 30.28% (1586/5238)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='once_cell-1.21.4/report.html'>once_cell-1.21.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/574)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/128)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/848)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ripemd-0.1.3/report.html'>ripemd-0.1.3/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 58.33% (189/324)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (5/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.65% (1011/1667)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='ripemd-0.2.0-pre.4/report.html'>ripemd-0.2.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/347)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1706)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='secp256k1-0.29.1/report.html'>secp256k1-0.29.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1357)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/269)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2129)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='secp256k1-sys-0.10.1/report.html'>secp256k1-sys-0.10.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5218)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/356)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3786)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde-1.0.228/report.html'>serde-1.0.228/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2729)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/390)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3288)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='serde_core-1.0.228/report.html'>serde_core-1.0.228/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2948)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/498)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3294)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha1-0.10.7/report.html'>sha1-0.10.7/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 34.21% (91/266)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 31.82% (7/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 30.78% (209/679)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha2-0.10.9/report.html'>sha2-0.10.9/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 15.22% (86/565)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 15.09% (8/53)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.63% (257/1458)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='sha2-0.11.0-pre.4/report.html'>sha2-0.11.0-pre.4/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/616)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1522)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='thiserror-2.0.18/report.html'>thiserror-2.0.18/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-0.1.44/report.html'>tracing-0.1.44/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='tracing-core-0.1.36/report.html'>tracing-core-0.1.36/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1497)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/329)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2094)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='typenum-1.20.1/report.html'>typenum-1.20.1/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1460)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/398)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1634)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zcash_script-0.4.5/report.html'>zcash_script-0.4.5/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 42.14% (995/2361)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 45.27% (158/349)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 44.30% (1421/3208)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='zeroize-1.9.0/report.html'>zeroize-1.9.0/</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/155)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/199)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 10.86% (3480/32039)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre>  9.75% (420/4307)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 12.76% (4906/38444)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>
