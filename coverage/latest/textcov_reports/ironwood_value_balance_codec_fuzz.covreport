@@ -1,11 +1,11 @@
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder9write_u64Cs2qdhHbQ3r3c_11zebra_chain:
- 2174|     60|    fn write_u64(buf: &mut [u8], n: u64) {
- 2175|     60|        buf[..8].copy_from_slice(&n.to_le_bytes());
- 2176|     60|    }
+ 2174|     36|    fn write_u64(buf: &mut [u8], n: u64) {
+ 2175|     36|        buf[..8].copy_from_slice(&n.to_le_bytes());
+ 2176|     36|    }
 _RNvYNtCsdWzrbYMq6AL_9byteorder12LittleEndianNtB4_9ByteOrder9write_i64Cs2qdhHbQ3r3c_11zebra_chain:
-  858|     60|    fn write_i64(buf: &mut [u8], n: i64) {
-  859|     60|        Self::write_u64(buf, n as u64)
-  860|     60|    }
+  858|     36|    fn write_i64(buf: &mut [u8], n: i64) {
+  859|     36|        Self::write_u64(buf, n as u64)
+  860|     36|    }
 
 LLVMFuzzerInitialize:
   252|      2|            pub extern "C" fn LLVMFuzzerInitialize(_argc: *const isize, _argv: *const *const *const u8) -> isize {
@@ -16,49 +16,49 @@ LLVMFuzzerInitialize:
   257|      2|                0
   258|      2|            }
 _RNvNvCsdG2RH8asDzC_33ironwood_value_balance_codec_fuzz1__19___libfuzzer_sys_run:
-  293|     19|            fn __libfuzzer_sys_run($bytes: &[u8]) -> $rty {
+  293|     17|            fn __libfuzzer_sys_run($bytes: &[u8]) -> $rty {
   294|       |                $body
-  295|     19|            }
+  295|     17|            }
 rust_fuzzer_test_input:
-  261|     19|            pub extern "C" fn rust_fuzzer_test_input(bytes: &[u8]) -> i32 {
+  261|     17|            pub extern "C" fn rust_fuzzer_test_input(bytes: &[u8]) -> i32 {
   262|       |                // When `RUST_LIBFUZZER_DEBUG_PATH` is set, write the debug
   263|       |                // formatting of the input to that file. This is only intended for
   264|       |                // `cargo fuzz`'s use!
   265|       |
   266|       |                // `RUST_LIBFUZZER_DEBUG_PATH` is set in initialization.
-  267|     19|                if let Some(path) = $crate::rust_libfuzzer_debug_path() {
+  267|     17|                if let Some(path) = $crate::rust_libfuzzer_debug_path() {
   268|       |                    use std::io::Write;
   269|      0|                    let mut file = std::fs::File::create(path)
   270|      0|                        .expect("failed to create `RUST_LIBFUZZER_DEBUG_PATH` file");
   271|      0|                    writeln!(&mut file, "{:?}", bytes)
   272|      0|                        .expect("failed to write to `RUST_LIBFUZZER_DEBUG_PATH` file");
   273|      0|                    return 0;
-  274|     19|                }
+  274|     17|                }
   275|       |
-  276|     19|                let result = ::libfuzzer_sys::Corpus::from(__libfuzzer_sys_run(bytes));
-  277|     19|                result.to_libfuzzer_code()
-  278|     19|            }
+  276|     17|                let result = ::libfuzzer_sys::Corpus::from(__libfuzzer_sys_run(bytes));
+  277|     17|                result.to_libfuzzer_code()
+  278|     17|            }
 LLVMFuzzerTestOneInput:
-   59|     19|pub unsafe fn test_input_wrap(data: *const u8, size: usize) -> i32 {
-   60|     19|    let test_input = ::std::panic::catch_unwind(|| {
+   59|     17|pub unsafe fn test_input_wrap(data: *const u8, size: usize) -> i32 {
+   60|     17|    let test_input = ::std::panic::catch_unwind(|| {
    61|       |        let data_slice = ::std::slice::from_raw_parts(data, size);
    62|       |        rust_fuzzer_test_input(data_slice)
    63|       |    });
    64|       |
-   65|     19|    match test_input {
-   66|     19|        Ok(i) => i,
+   65|     17|    match test_input {
+   66|     17|        Ok(i) => i,
    67|       |        Err(_) => {
    68|       |            // hopefully the custom panic hook will be called before and abort the
    69|       |            // process before the stack frames are unwinded.
    70|      0|            ::std::process::abort();
    71|       |        }
    72|       |    }
-   73|     19|}
+   73|     17|}
 _RNCNvCsc2b0UvljkQD_13libfuzzer_sys15test_input_wrap0B3_:
-   60|     19|    let test_input = ::std::panic::catch_unwind(|| {
-   61|     19|        let data_slice = ::std::slice::from_raw_parts(data, size);
-   62|     19|        rust_fuzzer_test_input(data_slice)
-   63|     19|    });
+   60|     17|    let test_input = ::std::panic::catch_unwind(|| {
+   61|     17|        let data_slice = ::std::slice::from_raw_parts(data, size);
+   62|     17|        rust_fuzzer_test_input(data_slice)
+   63|     17|    });
 _RNCNvCsc2b0UvljkQD_13libfuzzer_sys25rust_libfuzzer_debug_path0B3_:
    78|      1|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
 _RNvCsc2b0UvljkQD_13libfuzzer_sys10initialize:
@@ -79,156 +79,156 @@ _RNvCsc2b0UvljkQD_13libfuzzer_sys10initialize:
    96|      2|    0
    97|      2|}
 _RNvCsc2b0UvljkQD_13libfuzzer_sys25rust_libfuzzer_debug_path:
-   76|     19|pub fn rust_libfuzzer_debug_path() -> &'static Option<String> {
+   76|     17|pub fn rust_libfuzzer_debug_path() -> &'static Option<String> {
    77|       |    static RUST_LIBFUZZER_DEBUG_PATH: OnceLock<Option<String>> = OnceLock::new();
-   78|     19|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
-   79|     19|}
+   78|     17|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
+   79|     17|}
 _RNvMs_Csc2b0UvljkQD_13libfuzzer_sysNtB4_6Corpus17to_libfuzzer_code:
-   40|     19|    pub fn to_libfuzzer_code(self) -> i32 {
-   41|     19|        match self {
-   42|     19|            Corpus::Keep => 0,
+   40|     17|    pub fn to_libfuzzer_code(self) -> i32 {
+   41|     17|        match self {
+   42|     17|            Corpus::Keep => 0,
    43|      0|            Corpus::Reject => -1,
    44|       |        }
-   45|     19|    }
+   45|     17|    }
 _RNvXCsc2b0UvljkQD_13libfuzzer_sysNtB2_6CorpusINtNtCs6SNw0SRvItZ_4core7convert4FromuE4from:
-   30|     19|    fn from(_: ()) -> Self {
-   31|     19|        Self::Keep
-   32|     19|    }
+   30|     17|    fn from(_: ()) -> Self {
+   31|     17|        Self::Keep
+   32|     17|    }
 
 _RNCNvXse_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromlE8try_from0B9_:
-  289|      7|        C::validate(value.into()).map(|v| Self(v, PhantomData))
+  289|      3|        C::validate(value.into()).map(|v| Self(v, PhantomData))
 _RNCNvXsf_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromxE8try_from0B9_:
-  300|     83|        C::validate(value).map(|v| Self(v, PhantomData))
+  300|     63|        C::validate(value).map(|v| Self(v, PhantomData))
 _RNvMs1_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeE10from_bytesB7_:
-  116|     96|    pub fn from_bytes(bytes: [u8; 8]) -> Result<Amount<C>>
-  117|     96|    where
-  118|     96|        C: Constraint,
+  116|     76|    pub fn from_bytes(bytes: [u8; 8]) -> Result<Amount<C>>
+  117|     76|    where
+  118|     76|        C: Constraint,
   119|       |    {
-  120|     96|        let amount = i64::from_le_bytes(bytes);
-  121|     96|        amount.try_into()
-  122|     96|    }
+  120|     76|        let amount = i64::from_le_bytes(bytes);
+  121|     76|        amount.try_into()
+  122|     76|    }
 _RNvMs1_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeE4zeroB7_:
-  125|      7|    pub fn zero() -> Amount<C>
-  126|      7|    where
-  127|      7|        C: Constraint,
+  125|      3|    pub fn zero() -> Amount<C>
+  126|      3|    where
+  127|      3|        C: Constraint,
   128|       |    {
-  129|      7|        0.try_into().expect("an amount of 0 is always valid")
-  130|      7|    }
+  129|      3|        0.try_into().expect("an amount of 0 is always valid")
+  130|      3|    }
 _RNvMs1_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeE8to_bytesB7_:
-  109|     60|    pub fn to_bytes(&self) -> [u8; 8] {
-  110|     60|        let mut buf: [u8; 8] = [0; 8];
-  111|     60|        LittleEndian::write_i64(&mut buf, self.0);
-  112|     60|        buf
-  113|     60|    }
+  109|     36|    pub fn to_bytes(&self) -> [u8; 8] {
+  110|     36|        let mut buf: [u8; 8] = [0; 8];
+  111|     36|        LittleEndian::write_i64(&mut buf, self.0);
+  112|     36|        buf
+  113|     36|    }
 _RNvXse_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromlE8try_fromB7_:
-  288|      7|    fn try_from(value: i32) -> Result<Self, Self::Error> {
-  289|      7|        C::validate(value.into()).map(|v| Self(v, PhantomData))
-  290|      7|    }
+  288|      3|    fn try_from(value: i32) -> Result<Self, Self::Error> {
+  289|      3|        C::validate(value.into()).map(|v| Self(v, PhantomData))
+  290|      3|    }
 _RNvXsf_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromxE8try_fromB7_:
-  299|     96|    fn try_from(value: i64) -> Result<Self, Self::Error> {
-  300|     96|        C::validate(value).map(|v| Self(v, PhantomData))
-  301|     96|    }
+  299|     76|    fn try_from(value: i64) -> Result<Self, Self::Error> {
+  300|     76|        C::validate(value).map(|v| Self(v, PhantomData))
+  301|     76|    }
 _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain6amount11NonNegativeNtB4_10Constraint8validateB6_:
-  618|    103|    fn validate(value: i64) -> Result<i64, Error> {
-  619|    103|        let range = Self::valid_range();
+  618|     79|    fn validate(value: i64) -> Result<i64, Error> {
+  619|     79|        let range = Self::valid_range();
   620|       |
-  621|    103|        if !range.contains(&value) {
+  621|     79|        if !range.contains(&value) {
   622|     13|            Err(Error::Constraint { value, range })
   623|       |        } else {
-  624|     90|            Ok(value)
+  624|     66|            Ok(value)
   625|       |        }
-  626|    103|    }
+  626|     79|    }
 _RNvXsy_NtCs2qdhHbQ3r3c_11zebra_chain6amountNtB5_11NonNegativeNtB5_10Constraint11valid_range:
-  581|    103|    fn valid_range() -> RangeInclusive<i64> {
-  582|    103|        0..=MAX_MONEY
-  583|    103|    }
+  581|     79|    fn valid_range() -> RangeInclusive<i64> {
+  582|     79|        0..=MAX_MONEY
+  583|     79|    }
 
 _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain13value_balanceINtB5_12ValueBalanceNtNtB7_6amount11NonNegativeE10from_bytes:
-  380|     24|    pub fn from_bytes(bytes: &[u8]) -> Result<ValueBalance<NonNegative>, ValueBalanceError> {
-  381|     24|        let bytes_length = bytes.len();
+  380|     20|    pub fn from_bytes(bytes: &[u8]) -> Result<ValueBalance<NonNegative>, ValueBalanceError> {
+  381|     20|        let bytes_length = bytes.len();
   382|       |
   383|       |        // Return an error early if bytes don't have the right length instead of panicking later.
-  384|     24|        match bytes_length {
-  385|     23|            32 | 40 | 48 => {}
+  384|     20|        match bytes_length {
+  385|     19|            32 | 40 | 48 => {}
   386|      1|            _ => return Err(Unparsable),
   387|       |        };
   388|       |
-  389|     23|        let transparent = Amount::from_bytes(
-  390|     23|            bytes[0..8]
-  391|     23|                .try_into()
-  392|     23|                .expect("transparent amount should be parsable"),
+  389|     19|        let transparent = Amount::from_bytes(
+  390|     19|            bytes[0..8]
+  391|     19|                .try_into()
+  392|     19|                .expect("transparent amount should be parsable"),
   393|       |        )
-  394|     23|        .map_err(Transparent)?;
+  394|     19|        .map_err(Transparent)?;
   395|       |
-  396|     20|        let sprout = Amount::from_bytes(
-  397|     20|            bytes[8..16]
-  398|     20|                .try_into()
-  399|     20|                .expect("sprout amount should be parsable"),
+  396|     16|        let sprout = Amount::from_bytes(
+  397|     16|            bytes[8..16]
+  398|     16|                .try_into()
+  399|     16|                .expect("sprout amount should be parsable"),
   400|       |        )
-  401|     20|        .map_err(Sprout)?;
+  401|     16|        .map_err(Sprout)?;
   402|       |
-  403|     18|        let sapling = Amount::from_bytes(
-  404|     18|            bytes[16..24]
-  405|     18|                .try_into()
-  406|     18|                .expect("sapling amount should be parsable"),
+  403|     14|        let sapling = Amount::from_bytes(
+  404|     14|            bytes[16..24]
+  405|     14|                .try_into()
+  406|     14|                .expect("sapling amount should be parsable"),
   407|       |        )
-  408|     18|        .map_err(Sapling)?;
+  408|     14|        .map_err(Sapling)?;
   409|       |
-  410|     16|        let orchard = Amount::from_bytes(
-  411|     16|            bytes[24..32]
-  412|     16|                .try_into()
-  413|     16|                .expect("orchard amount should be parsable"),
+  410|     12|        let orchard = Amount::from_bytes(
+  411|     12|            bytes[24..32]
+  412|     12|                .try_into()
+  413|     12|                .expect("orchard amount should be parsable"),
   414|       |        )
-  415|     16|        .map_err(Orchard)?;
+  415|     12|        .map_err(Orchard)?;
   416|       |
-  417|     14|        let deferred = match bytes_length {
-  418|      3|            32 => Amount::zero(),
-  419|     11|            40 | 48 => Amount::from_bytes(
-  420|     11|                bytes[32..40]
-  421|     11|                    .try_into()
-  422|     11|                    .expect("deferred amount should be parsable"),
+  417|     10|        let deferred = match bytes_length {
+  418|      1|            32 => Amount::zero(),
+  419|      9|            40 | 48 => Amount::from_bytes(
+  420|      9|                bytes[32..40]
+  421|      9|                    .try_into()
+  422|      9|                    .expect("deferred amount should be parsable"),
   423|       |            )
-  424|     11|            .map_err(Deferred)?,
+  424|      9|            .map_err(Deferred)?,
   425|      0|            _ => return Err(Unparsable),
   426|       |        };
   427|       |
-  428|     12|        let ironwood = match bytes_length {
-  429|      4|            32 | 40 => Amount::zero(),
-  430|      8|            48 => Amount::from_bytes(
-  431|      8|                bytes[40..48]
-  432|      8|                    .try_into()
-  433|      8|                    .expect("ironwood amount should be parsable"),
+  428|      8|        let ironwood = match bytes_length {
+  429|      2|            32 | 40 => Amount::zero(),
+  430|      6|            48 => Amount::from_bytes(
+  431|      6|                bytes[40..48]
+  432|      6|                    .try_into()
+  433|      6|                    .expect("ironwood amount should be parsable"),
   434|       |            )
-  435|      8|            .map_err(Ironwood)?,
+  435|      6|            .map_err(Ironwood)?,
   436|      0|            _ => return Err(Unparsable),
   437|       |        };
   438|       |
-  439|     10|        Ok(ValueBalance {
-  440|     10|            transparent,
-  441|     10|            sprout,
-  442|     10|            sapling,
-  443|     10|            orchard,
-  444|     10|            deferred,
-  445|     10|            ironwood,
-  446|     10|        })
-  447|     24|    }
+  439|      6|        Ok(ValueBalance {
+  440|      6|            transparent,
+  441|      6|            sprout,
+  442|      6|            sapling,
+  443|      6|            orchard,
+  444|      6|            deferred,
+  445|      6|            ironwood,
+  446|      6|        })
+  447|     20|    }
 _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain13value_balanceINtB5_12ValueBalanceNtNtB7_6amount11NonNegativeE8to_bytes:
-  356|     10|    pub fn to_bytes(self) -> [u8; 48] {
-  357|     10|        match [
-  358|     10|            self.transparent.to_bytes(),
-  359|     10|            self.sprout.to_bytes(),
-  360|     10|            self.sapling.to_bytes(),
-  361|     10|            self.orchard.to_bytes(),
-  362|     10|            self.deferred.to_bytes(),
-  363|     10|            self.ironwood.to_bytes(),
-  364|     10|        ]
-  365|     10|        .concat()
-  366|     10|        .try_into()
+  356|      6|    pub fn to_bytes(self) -> [u8; 48] {
+  357|      6|        match [
+  358|      6|            self.transparent.to_bytes(),
+  359|      6|            self.sprout.to_bytes(),
+  360|      6|            self.sapling.to_bytes(),
+  361|      6|            self.orchard.to_bytes(),
+  362|      6|            self.deferred.to_bytes(),
+  363|      6|            self.ironwood.to_bytes(),
+  364|      6|        ]
+  365|      6|        .concat()
+  366|      6|        .try_into()
   367|       |        {
-  368|     10|            Ok(bytes) => bytes,
+  368|      6|            Ok(bytes) => bytes,
   369|      0|            _ => unreachable!(
   370|       |                "six [u8; 8] should always concat with no error into a single [u8; 48]"
   371|       |            ),
   372|       |        }
-  373|     10|    }
+  373|      6|    }
 
