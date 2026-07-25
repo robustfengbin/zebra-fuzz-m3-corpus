@@ -16,49 +16,49 @@ LLVMFuzzerInitialize:
   257|      2|                0
   258|      2|            }
 _RNvNvCsdG2RH8asDzC_33ironwood_value_balance_codec_fuzz1__19___libfuzzer_sys_run:
-  293|     17|            fn __libfuzzer_sys_run($bytes: &[u8]) -> $rty {
+  293|     16|            fn __libfuzzer_sys_run($bytes: &[u8]) -> $rty {
   294|       |                $body
-  295|     17|            }
+  295|     16|            }
 rust_fuzzer_test_input:
-  261|     17|            pub extern "C" fn rust_fuzzer_test_input(bytes: &[u8]) -> i32 {
+  261|     16|            pub extern "C" fn rust_fuzzer_test_input(bytes: &[u8]) -> i32 {
   262|       |                // When `RUST_LIBFUZZER_DEBUG_PATH` is set, write the debug
   263|       |                // formatting of the input to that file. This is only intended for
   264|       |                // `cargo fuzz`'s use!
   265|       |
   266|       |                // `RUST_LIBFUZZER_DEBUG_PATH` is set in initialization.
-  267|     17|                if let Some(path) = $crate::rust_libfuzzer_debug_path() {
+  267|     16|                if let Some(path) = $crate::rust_libfuzzer_debug_path() {
   268|       |                    use std::io::Write;
   269|      0|                    let mut file = std::fs::File::create(path)
   270|      0|                        .expect("failed to create `RUST_LIBFUZZER_DEBUG_PATH` file");
   271|      0|                    writeln!(&mut file, "{:?}", bytes)
   272|      0|                        .expect("failed to write to `RUST_LIBFUZZER_DEBUG_PATH` file");
   273|      0|                    return 0;
-  274|     17|                }
+  274|     16|                }
   275|       |
-  276|     17|                let result = ::libfuzzer_sys::Corpus::from(__libfuzzer_sys_run(bytes));
-  277|     17|                result.to_libfuzzer_code()
-  278|     17|            }
+  276|     16|                let result = ::libfuzzer_sys::Corpus::from(__libfuzzer_sys_run(bytes));
+  277|     16|                result.to_libfuzzer_code()
+  278|     16|            }
 LLVMFuzzerTestOneInput:
-   59|     17|pub unsafe fn test_input_wrap(data: *const u8, size: usize) -> i32 {
-   60|     17|    let test_input = ::std::panic::catch_unwind(|| {
+   59|     16|pub unsafe fn test_input_wrap(data: *const u8, size: usize) -> i32 {
+   60|     16|    let test_input = ::std::panic::catch_unwind(|| {
    61|       |        let data_slice = ::std::slice::from_raw_parts(data, size);
    62|       |        rust_fuzzer_test_input(data_slice)
    63|       |    });
    64|       |
-   65|     17|    match test_input {
-   66|     17|        Ok(i) => i,
+   65|     16|    match test_input {
+   66|     16|        Ok(i) => i,
    67|       |        Err(_) => {
    68|       |            // hopefully the custom panic hook will be called before and abort the
    69|       |            // process before the stack frames are unwinded.
    70|      0|            ::std::process::abort();
    71|       |        }
    72|       |    }
-   73|     17|}
+   73|     16|}
 _RNCNvCsc2b0UvljkQD_13libfuzzer_sys15test_input_wrap0B3_:
-   60|     17|    let test_input = ::std::panic::catch_unwind(|| {
-   61|     17|        let data_slice = ::std::slice::from_raw_parts(data, size);
-   62|     17|        rust_fuzzer_test_input(data_slice)
-   63|     17|    });
+   60|     16|    let test_input = ::std::panic::catch_unwind(|| {
+   61|     16|        let data_slice = ::std::slice::from_raw_parts(data, size);
+   62|     16|        rust_fuzzer_test_input(data_slice)
+   63|     16|    });
 _RNCNvCsc2b0UvljkQD_13libfuzzer_sys25rust_libfuzzer_debug_path0B3_:
    78|      1|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
 _RNvCsc2b0UvljkQD_13libfuzzer_sys10initialize:
@@ -79,34 +79,34 @@ _RNvCsc2b0UvljkQD_13libfuzzer_sys10initialize:
    96|      2|    0
    97|      2|}
 _RNvCsc2b0UvljkQD_13libfuzzer_sys25rust_libfuzzer_debug_path:
-   76|     17|pub fn rust_libfuzzer_debug_path() -> &'static Option<String> {
+   76|     16|pub fn rust_libfuzzer_debug_path() -> &'static Option<String> {
    77|       |    static RUST_LIBFUZZER_DEBUG_PATH: OnceLock<Option<String>> = OnceLock::new();
-   78|     17|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
-   79|     17|}
+   78|     16|    RUST_LIBFUZZER_DEBUG_PATH.get_or_init(|| std::env::var("RUST_LIBFUZZER_DEBUG_PATH").ok())
+   79|     16|}
 _RNvMs_Csc2b0UvljkQD_13libfuzzer_sysNtB4_6Corpus17to_libfuzzer_code:
-   40|     17|    pub fn to_libfuzzer_code(self) -> i32 {
-   41|     17|        match self {
-   42|     17|            Corpus::Keep => 0,
+   40|     16|    pub fn to_libfuzzer_code(self) -> i32 {
+   41|     16|        match self {
+   42|     16|            Corpus::Keep => 0,
    43|      0|            Corpus::Reject => -1,
    44|       |        }
-   45|     17|    }
+   45|     16|    }
 _RNvXCsc2b0UvljkQD_13libfuzzer_sysNtB2_6CorpusINtNtCs6SNw0SRvItZ_4core7convert4FromuE4from:
-   30|     17|    fn from(_: ()) -> Self {
-   31|     17|        Self::Keep
-   32|     17|    }
+   30|     16|    fn from(_: ()) -> Self {
+   31|     16|        Self::Keep
+   32|     16|    }
 
 _RNCNvXse_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromlE8try_from0B9_:
   289|      3|        C::validate(value.into()).map(|v| Self(v, PhantomData))
 _RNCNvXsf_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromxE8try_from0B9_:
   300|     63|        C::validate(value).map(|v| Self(v, PhantomData))
 _RNvMs1_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeE10from_bytesB7_:
-  116|     76|    pub fn from_bytes(bytes: [u8; 8]) -> Result<Amount<C>>
-  117|     76|    where
-  118|     76|        C: Constraint,
+  116|     75|    pub fn from_bytes(bytes: [u8; 8]) -> Result<Amount<C>>
+  117|     75|    where
+  118|     75|        C: Constraint,
   119|       |    {
-  120|     76|        let amount = i64::from_le_bytes(bytes);
-  121|     76|        amount.try_into()
-  122|     76|    }
+  120|     75|        let amount = i64::from_le_bytes(bytes);
+  121|     75|        amount.try_into()
+  122|     75|    }
 _RNvMs1_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeE4zeroB7_:
   125|      3|    pub fn zero() -> Amount<C>
   126|      3|    where
@@ -125,40 +125,40 @@ _RNvXse_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeEINtN
   289|      3|        C::validate(value.into()).map(|v| Self(v, PhantomData))
   290|      3|    }
 _RNvXsf_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB5_6AmountNtB5_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromxE8try_fromB7_:
-  299|     76|    fn try_from(value: i64) -> Result<Self, Self::Error> {
-  300|     76|        C::validate(value).map(|v| Self(v, PhantomData))
-  301|     76|    }
+  299|     75|    fn try_from(value: i64) -> Result<Self, Self::Error> {
+  300|     75|        C::validate(value).map(|v| Self(v, PhantomData))
+  301|     75|    }
 _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain6amount11NonNegativeNtB4_10Constraint8validateB6_:
-  618|     79|    fn validate(value: i64) -> Result<i64, Error> {
-  619|     79|        let range = Self::valid_range();
+  618|     78|    fn validate(value: i64) -> Result<i64, Error> {
+  619|     78|        let range = Self::valid_range();
   620|       |
-  621|     79|        if !range.contains(&value) {
-  622|     13|            Err(Error::Constraint { value, range })
+  621|     78|        if !range.contains(&value) {
+  622|     12|            Err(Error::Constraint { value, range })
   623|       |        } else {
   624|     66|            Ok(value)
   625|       |        }
-  626|     79|    }
+  626|     78|    }
 _RNvXsy_NtCs2qdhHbQ3r3c_11zebra_chain6amountNtB5_11NonNegativeNtB5_10Constraint11valid_range:
-  581|     79|    fn valid_range() -> RangeInclusive<i64> {
-  582|     79|        0..=MAX_MONEY
-  583|     79|    }
+  581|     78|    fn valid_range() -> RangeInclusive<i64> {
+  582|     78|        0..=MAX_MONEY
+  583|     78|    }
 
 _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain13value_balanceINtB5_12ValueBalanceNtNtB7_6amount11NonNegativeE10from_bytes:
-  380|     20|    pub fn from_bytes(bytes: &[u8]) -> Result<ValueBalance<NonNegative>, ValueBalanceError> {
-  381|     20|        let bytes_length = bytes.len();
+  380|     19|    pub fn from_bytes(bytes: &[u8]) -> Result<ValueBalance<NonNegative>, ValueBalanceError> {
+  381|     19|        let bytes_length = bytes.len();
   382|       |
   383|       |        // Return an error early if bytes don't have the right length instead of panicking later.
-  384|     20|        match bytes_length {
-  385|     19|            32 | 40 | 48 => {}
+  384|     19|        match bytes_length {
+  385|     18|            32 | 40 | 48 => {}
   386|      1|            _ => return Err(Unparsable),
   387|       |        };
   388|       |
-  389|     19|        let transparent = Amount::from_bytes(
-  390|     19|            bytes[0..8]
-  391|     19|                .try_into()
-  392|     19|                .expect("transparent amount should be parsable"),
+  389|     18|        let transparent = Amount::from_bytes(
+  390|     18|            bytes[0..8]
+  391|     18|                .try_into()
+  392|     18|                .expect("transparent amount should be parsable"),
   393|       |        )
-  394|     19|        .map_err(Transparent)?;
+  394|     18|        .map_err(Transparent)?;
   395|       |
   396|     16|        let sprout = Amount::from_bytes(
   397|     16|            bytes[8..16]
@@ -211,7 +211,7 @@ _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain13value_balanceINtB5_12ValueBalanceNtNtB7_6
   444|      6|            deferred,
   445|      6|            ironwood,
   446|      6|        })
-  447|     20|    }
+  447|     19|    }
 _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain13value_balanceINtB5_12ValueBalanceNtNtB7_6amount11NonNegativeE8to_bytes:
   356|      6|    pub fn to_bytes(self) -> [u8; 48] {
   357|      6|        match [
