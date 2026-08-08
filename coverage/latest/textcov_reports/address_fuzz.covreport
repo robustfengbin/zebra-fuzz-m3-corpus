@@ -234,10 +234,10 @@ _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_7Bech32mE
 _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_7Bech32mE8input_feCsaeA7J15AkBY_5zip32:
   116|  8.18k|    pub fn input_fe(&mut self, e: Fe32) {
   117|  8.18k|        let xn = self.residue.mul_by_x_then_add(Ck::CHECKSUM_LENGTH, e.into());
-  118|  49.1k|        for i in 0..5 {
+  118|  49.0k|        for i in 0..5 {
   119|  40.9k|            if xn & (1 << i) != 0 {
-  120|  19.2k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
-  121|  21.6k|            }
+  120|  19.4k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
+  121|  21.4k|            }
   122|       |        }
   123|  8.18k|    }
 _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_7Bech32mE9input_hrpCsaeA7J15AkBY_5zip32:
@@ -302,9 +302,9 @@ _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_6Bech32E8
   116|  14.5k|    pub fn input_fe(&mut self, e: Fe32) {
   117|  14.5k|        let xn = self.residue.mul_by_x_then_add(Ck::CHECKSUM_LENGTH, e.into());
   118|  87.3k|        for i in 0..5 {
-  119|  72.8k|            if xn & (1 << i) != 0 {
-  120|  34.0k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
-  121|  38.8k|            }
+  119|  72.7k|            if xn & (1 << i) != 0 {
+  120|  34.3k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
+  121|  38.4k|            }
   122|       |        }
   123|  14.5k|    }
 _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_6Bech32E9input_hrpCsamPsIXkiZaT_13zcash_address:
@@ -322,8 +322,8 @@ _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_7Bech32mE
   117|  7.86k|        let xn = self.residue.mul_by_x_then_add(Ck::CHECKSUM_LENGTH, e.into());
   118|  47.1k|        for i in 0..5 {
   119|  39.3k|            if xn & (1 << i) != 0 {
-  120|  18.2k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
-  121|  21.1k|            }
+  120|  18.3k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
+  121|  20.9k|            }
   122|       |        }
   123|  7.86k|    }
 _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtB6_7Bech32mE9input_hrpCsamPsIXkiZaT_13zcash_address:
@@ -347,8 +347,8 @@ _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtNtNtCsamPsIX
   117|  20.2k|        let xn = self.residue.mul_by_x_then_add(Ck::CHECKSUM_LENGTH, e.into());
   118|   121k|        for i in 0..5 {
   119|   101k|            if xn & (1 << i) != 0 {
-  120|  48.1k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
-  121|  52.9k|            }
+  120|  48.2k|                self.residue = self.residue ^ Ck::GENERATOR_SH[i];
+  121|  52.7k|            }
   122|       |        }
   123|  20.2k|    }
 _RNvMs_NtNtCsaQLrihHycad_6bech3210primitives8checksumINtB4_6EngineNtNtNtCsamPsIXkiZaT_13zcash_address4kind7unified13Bech32mZip316E9input_hrpB17_:
@@ -687,12 +687,12 @@ _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
   679|  3.24k|    let mut has_lower = false;
   680|  3.24k|    let mut req_bech32 = true;
   681|  3.24k|    let mut sep_pos = None;
-  682|   267k|    for (n, ch) in s.char_indices().rev() {
-  683|   267k|        if ch == SEP && sep_pos.is_none() {
+  682|   266k|    for (n, ch) in s.char_indices().rev() {
+  683|   266k|        if ch == SEP && sep_pos.is_none() {
   684|  1.59k|            req_bech32 = false;
   685|  1.59k|            sep_pos = Some(n);
   686|   265k|        }
-  687|   267k|        if req_bech32 {
+  687|   266k|        if req_bech32 {
   688|  79.2k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
   689|   187k|        }
   690|   265k|        if ch.is_ascii_uppercase() {
