@@ -642,10 +642,10 @@ _RNvMNtNtCsaQLrihHycad_6bech3210primitives6decodeNtB2_18UncheckedHrpstring3hrpCs
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives6decodeNtB2_18UncheckedHrpstring3newCsamPsIXkiZaT_13zcash_address:
   131|  2.63k|    pub fn new(s: &'s str) -> Result<Self, UncheckedHrpstringError> {
   132|  2.63k|        let sep_pos = check_characters(s)?;
-  133|  1.06k|        let (hrp, rest) = s.split_at(sep_pos);
+  133|  1.07k|        let (hrp, rest) = s.split_at(sep_pos);
   134|       |
   135|    686|        let ret = UncheckedHrpstring {
-  136|  1.06k|            hrp: Hrp::parse(hrp)?,
+  136|  1.07k|            hrp: Hrp::parse(hrp)?,
   137|    686|            data_part_ascii: &rest.as_bytes()[1..], // Skip the separator.
   138|    686|            hrpstring_length: s.len(),
   139|       |        };
@@ -674,9 +674,9 @@ _RNvXsd_NtNtCsaQLrihHycad_6bech3210primitives6decodeNtB5_21CheckedHrpstringError
 _RNvXse_NtNtCsaQLrihHycad_6bech3210primitives6decodeNtB5_21CheckedHrpstringErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_13ChecksumErrorE4fromCsamPsIXkiZaT_13zcash_address:
   877|    642|    fn from(e: ChecksumError) -> Self { Self::Checksum(e) }
 _RNvXsh_NtNtCsaQLrihHycad_6bech3210primitives6decodeNtB5_23UncheckedHrpstringErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_9CharErrorE4fromCsamPsIXkiZaT_13zcash_address:
-  915|  1.57k|    fn from(e: CharError) -> Self { Self::Char(e) }
+  915|  1.56k|    fn from(e: CharError) -> Self { Self::Char(e) }
 _RNvXsi_NtNtCsaQLrihHycad_6bech3210primitives6decodeNtB5_23UncheckedHrpstringErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtNtB7_3hrp5ErrorE4fromCsamPsIXkiZaT_13zcash_address:
-  920|    378|    fn from(e: hrp::Error) -> Self { Self::Hrp(e) }
+  920|    387|    fn from(e: hrp::Error) -> Self { Self::Hrp(e) }
 _RNCNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters0B7_:
   688|  1.01k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
 _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
@@ -687,24 +687,24 @@ _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
   679|  3.21k|    let mut has_lower = false;
   680|  3.21k|    let mut req_bech32 = true;
   681|  3.21k|    let mut sep_pos = None;
-  682|   265k|    for (n, ch) in s.char_indices().rev() {
-  683|   265k|        if ch == SEP && sep_pos.is_none() {
+  682|   264k|    for (n, ch) in s.char_indices().rev() {
+  683|   264k|        if ch == SEP && sep_pos.is_none() {
   684|  1.58k|            req_bech32 = false;
   685|  1.58k|            sep_pos = Some(n);
   686|   263k|        }
-  687|   265k|        if req_bech32 {
-  688|  74.4k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
+  687|   264k|        if req_bech32 {
+  688|  74.3k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
   689|   190k|        }
-  690|   264k|        if ch.is_ascii_uppercase() {
-  691|  17.5k|            has_upper = true;
+  690|   263k|        if ch.is_ascii_uppercase() {
+  691|  17.4k|            has_upper = true;
   692|   246k|        } else if ch.is_ascii_lowercase() {
   693|   200k|            has_lower = true;
   694|   200k|        }
   695|       |    }
   696|  2.20k|    if has_upper && has_lower {
-  697|    394|        Err(MixedCase)
-  698|  1.81k|    } else if let Some(pos) = sep_pos {
-  699|  1.27k|        Ok(pos)
+  697|    385|        Err(MixedCase)
+  698|  1.82k|    } else if let Some(pos) = sep_pos {
+  699|  1.28k|        Ok(pos)
   700|       |    } else {
   701|    537|        Err(MissingSeparator)
   702|       |    }
@@ -793,18 +793,18 @@ _RNCNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB4_4Fe329from_chars_0B8_:
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB2_4Fe3219from_char_unchecked:
   205|  48.3k|    pub fn from_char_unchecked(c: u8) -> Fe32 { Fe32(CHARS_INV[usize::from(c)] as u8) }
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB2_4Fe329from_charB6_:
-  187|  74.4k|    pub fn from_char(c: char) -> Result<Fe32, FromCharError> {
+  187|  74.3k|    pub fn from_char(c: char) -> Result<Fe32, FromCharError> {
   188|       |        use FromCharError::*;
   189|       |
   190|       |        // i8::try_from gets a value in the range 0..=127 since char is unsigned.
-  191|  74.4k|        let byte = i8::try_from(u32::from(c)).map_err(|_| NotAscii(c))?;
+  191|  74.3k|        let byte = i8::try_from(u32::from(c)).map_err(|_| NotAscii(c))?;
   192|       |        // Now we have a valid ASCII value cast is safe.
   193|  74.1k|        let ascii = byte as usize;
   194|       |        // We use -1 for any array element that is an invalid char to trigger error from u8::try_from
   195|  74.1k|        let u5 = u8::try_from(CHARS_INV[ascii]).map_err(|_| Invalid(c))?;
   196|       |
-  197|  73.4k|        Ok(Fe32(u5))
-  198|  74.4k|    }
+  197|  73.3k|        Ok(Fe32(u5))
+  198|  74.3k|    }
 
 _RNCNvXsd_NtNtCsaQLrihHycad_6bech3210primitives3hrpNtB7_17LowercaseByteIterNtNtNtNtCs6SNw0SRvItZ_4core4iter6traits8iterator8Iterator4next0CsaeA7J15AkBY_5zip32:
   326|  1.04k|        self.iter.next().map(|b| if is_ascii_uppercase(b) { b | 32 } else { b })
@@ -869,16 +869,16 @@ _RNvMNtNtCsaQLrihHycad_6bech3210primitives3hrpNtB2_3Hrp15parse_unchecked:
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives3hrpNtB2_3Hrp3lenB6_:
   192|      3|    pub fn len(&self) -> usize { self.size }
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives3hrpNtB2_3Hrp5parse:
-   78|  1.27k|    pub fn parse(hrp: &str) -> Result<Self, Error> {
+   78|  1.28k|    pub fn parse(hrp: &str) -> Result<Self, Error> {
    79|       |        use Error::*;
    80|       |
-   81|  1.27k|        let mut new = Hrp { buf: [0_u8; MAX_HRP_LEN], size: 0 };
+   81|  1.28k|        let mut new = Hrp { buf: [0_u8; MAX_HRP_LEN], size: 0 };
    82|       |
-   83|  1.27k|        if hrp.is_empty() {
+   83|  1.28k|        if hrp.is_empty() {
    84|     94|            return Err(Empty);
    85|  1.18k|        }
    86|  1.18k|        if hrp.len() > MAX_HRP_LEN {
-   87|     89|            return Err(TooLong(hrp.len()));
+   87|     98|            return Err(TooLong(hrp.len()));
    88|  1.09k|        }
    89|       |
    90|  1.09k|        let mut has_lower: bool = false;
@@ -911,7 +911,7 @@ _RNvMNtNtCsaQLrihHycad_6bech3210primitives3hrpNtB2_3Hrp5parse:
   117|       |        }
   118|       |
   119|    810|        Ok(new)
-  120|  1.27k|    }
+  120|  1.28k|    }
 _RNvNtNtCsaQLrihHycad_6bech3210primitives3hrp18is_ascii_uppercase:
   371|  6.75k|fn is_ascii_uppercase(b: u8) -> bool { (65..=90).contains(&b) }
 
