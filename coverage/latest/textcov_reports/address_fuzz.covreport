@@ -693,10 +693,10 @@ _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
   685|  1.57k|            sep_pos = Some(n);
   686|   263k|        }
   687|   264k|        if req_bech32 {
-  688|  74.5k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
+  688|  74.4k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
   689|   190k|        }
   690|   263k|        if ch.is_ascii_uppercase() {
-  691|  17.2k|            has_upper = true;
+  691|  17.0k|            has_upper = true;
   692|   246k|        } else if ch.is_ascii_lowercase() {
   693|   200k|            has_lower = true;
   694|   200k|        }
@@ -793,18 +793,18 @@ _RNCNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB4_4Fe329from_chars_0B8_:
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB2_4Fe3219from_char_unchecked:
   205|  48.3k|    pub fn from_char_unchecked(c: u8) -> Fe32 { Fe32(CHARS_INV[usize::from(c)] as u8) }
 _RNvMNtNtCsaQLrihHycad_6bech3210primitives4gf32NtB2_4Fe329from_charB6_:
-  187|  74.5k|    pub fn from_char(c: char) -> Result<Fe32, FromCharError> {
+  187|  74.4k|    pub fn from_char(c: char) -> Result<Fe32, FromCharError> {
   188|       |        use FromCharError::*;
   189|       |
   190|       |        // i8::try_from gets a value in the range 0..=127 since char is unsigned.
-  191|  74.5k|        let byte = i8::try_from(u32::from(c)).map_err(|_| NotAscii(c))?;
+  191|  74.4k|        let byte = i8::try_from(u32::from(c)).map_err(|_| NotAscii(c))?;
   192|       |        // Now we have a valid ASCII value cast is safe.
   193|  74.2k|        let ascii = byte as usize;
   194|       |        // We use -1 for any array element that is an invalid char to trigger error from u8::try_from
   195|  74.2k|        let u5 = u8::try_from(CHARS_INV[ascii]).map_err(|_| Invalid(c))?;
   196|       |
   197|  73.4k|        Ok(Fe32(u5))
-  198|  74.5k|    }
+  198|  74.4k|    }
 
 _RNCNvXsd_NtNtCsaQLrihHycad_6bech3210primitives3hrpNtB7_17LowercaseByteIterNtNtNtNtCs6SNw0SRvItZ_4core4iter6traits8iterator8Iterator4next0CsaeA7J15AkBY_5zip32:
   326|  1.04k|        self.iter.next().map(|b| if is_ascii_uppercase(b) { b | 32 } else { b })
@@ -3099,7 +3099,7 @@ _RNvMs2_NtCsjyycqNoLf64_4bs586decodeINtB5_13DecodeBuilderReE8into_vecCsamPsIXkiZ
   298|     44|        Ok(output)
   299|  1.45k|    }
 _RNCNvNtCsjyycqNoLf64_4bs586decode11decode_into0B5_:
-  442|  5.91k|    for _ in input.iter().take_while(|c| **c == zero) {
+  442|  5.99k|    for _ in input.iter().take_while(|c| **c == zero) {
 _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   411|  1.45k|fn decode_into(input: &[u8], output: &mut [u8], alpha: &Alphabet) -> Result<usize> {
   412|  1.45k|    let mut index = 0;
@@ -3124,18 +3124,18 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   431|  48.4M|            val >>= 8;
   432|  48.4M|        }
   433|       |
-  434|   141k|        while val > 0 {
-  435|  57.0k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
-  436|  57.0k|            *byte = (val & 0xFF) as u8;
-  437|  57.0k|            index += 1;
-  438|  57.0k|            val >>= 8
+  434|   140k|        while val > 0 {
+  435|  56.8k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
+  436|  56.8k|            *byte = (val & 0xFF) as u8;
+  437|  56.8k|            index += 1;
+  438|  56.8k|            val >>= 8
   439|       |        }
   440|       |    }
   441|       |
   442|    673|    for _ in input.iter().take_while(|c| **c == zero) {
-  443|  5.41k|        let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
-  444|  5.41k|        *byte = 0;
-  445|  5.41k|        index += 1;
+  443|  5.49k|        let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
+  444|  5.49k|        *byte = 0;
+  445|  5.49k|        index += 1;
   446|       |    }
   447|       |
   448|    673|    output[..index].reverse();
