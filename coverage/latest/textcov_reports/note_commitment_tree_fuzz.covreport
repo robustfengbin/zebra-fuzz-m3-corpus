@@ -41,11 +41,11 @@ _RNvXNtNtNtCs3WJmn2GDYCj_9arbitrary7foreign4core4boolbNtB8_9Arbitrary9arbitrary:
     7|  10.8k|    }
 
 _RNvXs1_NtNtNtCs3WJmn2GDYCj_9arbitrary7foreign4core3numhNtBb_9Arbitrary9arbitrary:
-   16|   150k|                fn arbitrary(u: &mut Unstructured<'a>) -> Result<Self> {
-   17|   150k|                    let mut buf = [0; mem::size_of::<$ty>()];
-   18|   150k|                    u.fill_buffer(&mut buf)?;
-   19|   150k|                    Ok(Self::from_le_bytes(buf))
-   20|   150k|                }
+   16|   149k|                fn arbitrary(u: &mut Unstructured<'a>) -> Result<Self> {
+   17|   149k|                    let mut buf = [0; mem::size_of::<$ty>()];
+   18|   149k|                    u.fill_buffer(&mut buf)?;
+   19|   149k|                    Ok(Self::from_le_bytes(buf))
+   20|   149k|                }
 _RNvXs3_NtNtNtCs3WJmn2GDYCj_9arbitrary7foreign4core3nummNtBb_9Arbitrary9arbitrary:
    16|  10.5k|                fn arbitrary(u: &mut Unstructured<'a>) -> Result<Self> {
    17|  10.5k|                    let mut buf = [0; mem::size_of::<$ty>()];
@@ -186,8 +186,8 @@ _RNvMNtCs3WJmn2GDYCj_9arbitrary12unstructuredNtB2_12Unstructured11fill_buffer:
   578|   160k|        let n = std::cmp::min(buffer.len(), self.data.len());
   579|   160k|        buffer[..n].copy_from_slice(&self.data[..n]);
   580|   160k|        for byte in buffer[n..].iter_mut() {
-  581|  5.54k|            *byte = 0;
-  582|  5.54k|        }
+  581|  5.52k|            *byte = 0;
+  582|  5.52k|        }
   583|   160k|        self.data = &self.data[n..];
   584|   160k|        Ok(())
   585|   160k|    }
@@ -205,32 +205,32 @@ _RNvMNtCs3WJmn2GDYCj_9arbitrary12unstructuredNtB2_12Unstructured8is_emptyB4_:
   135|  10.8k|    }
 
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_block9as_arraysyEB6_:
-  241|   758k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
-  242|   758k|                let mut p = a.as_mut_ptr();
-  243|   758k|                ( $( {
-  244|   758k|                    let aref = &mut *(p as *mut [T; $len]);
-  245|   758k|                    p = p.add($len);
-  246|   758k|                    aref
-  247|   758k|                }, )* )
-  248|   758k|            }
+  241|   757k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
+  242|   757k|                let mut p = a.as_mut_ptr();
+  243|   757k|                ( $( {
+  244|   757k|                    let aref = &mut *(p as *mut [T; $len]);
+  245|   757k|                    p = p.add($len);
+  246|   757k|                    aref
+  247|   757k|                }, )* )
+  248|   757k|            }
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_blocks0_9as_arrayshEB6_:
-  144|   758k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
-  145|   758k|                let mut p = a.as_ptr();
-  146|   758k|                ( $( {
-  147|   758k|                    let aref = &*(p as *const [T; $len]);
-  148|   758k|                    p = p.offset($len as isize);
-  149|   758k|                    aref
-  150|   758k|                }, )* )
-  151|   758k|            }
+  144|   757k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
+  145|   757k|                let mut p = a.as_ptr();
+  146|   757k|                ( $( {
+  147|   757k|                    let aref = &*(p as *const [T; $len]);
+  148|   757k|                    p = p.offset($len as isize);
+  149|   757k|                    aref
+  150|   757k|                }, )* )
+  151|   757k|            }
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_blocks_9as_arraysyEB6_:
-  144|   758k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
-  145|   758k|                let mut p = a.as_ptr();
-  146|   758k|                ( $( {
-  147|   758k|                    let aref = &*(p as *const [T; $len]);
-  148|   758k|                    p = p.offset($len as isize);
-  149|   758k|                    aref
-  150|   758k|                }, )* )
-  151|   758k|            }
+  144|   757k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
+  145|   757k|                let mut p = a.as_ptr();
+  146|   757k|                ( $( {
+  147|   757k|                    let aref = &*(p as *const [T; $len]);
+  148|   757k|                    p = p.offset($len as isize);
+  149|   757k|                    aref
+  150|   757k|                }, )* )
+  151|   757k|            }
 _RINvNvCsgZX4mSu3YR4_12blake2b_simd20state_words_to_bytes9as_arrayshEB4_:
   241|   568k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
   242|   568k|                let mut p = a.as_mut_ptr();
@@ -289,31 +289,31 @@ _RNvMNtCsdqiqltlfdiW_6bitvec5arrayINtB2_8BitArrayAhj2_E3newCs2qdhHbQ3r3c_11zebra
    60|   189k|		Self { data, ..Self::ZERO }
    61|   189k|	}
 _RNvMNtCsdqiqltlfdiW_6bitvec5arrayINtB2_8BitArrayAhj20_E11as_bitsliceCsckoVJ3NjISC_14sapling_crypto:
-   80|   379k|	pub fn as_bitslice(&self) -> &BitSlice<A::Store, O> {
-   81|   379k|		self.data.view_bits::<O>()
-   82|   379k|	}
+   80|   378k|	pub fn as_bitslice(&self) -> &BitSlice<A::Store, O> {
+   81|   378k|		self.data.view_bits::<O>()
+   82|   378k|	}
 _RNvMNtCsdqiqltlfdiW_6bitvec5arrayINtB2_8BitArrayAhj20_E3newCsckoVJ3NjISC_14sapling_crypto:
-   59|   379k|	pub fn new(data: A) -> Self {
-   60|   379k|		Self { data, ..Self::ZERO }
-   61|   379k|	}
+   59|   378k|	pub fn new(data: A) -> Self {
+   60|   378k|		Self { data, ..Self::ZERO }
+   61|   378k|	}
 
 _RNvXsc_NtNtCsdqiqltlfdiW_6bitvec5array3opsINtB7_8BitArrayAhj0_EINtNtNtCs6SNw0SRvItZ_4core3ops5index5IndexINtNtB14_5range7RangeTojEE5indexCs2qdhHbQ3r3c_11zebra_chain:
   211|   189k|	fn index(&self, index: Idx) -> &Self::Output {
   212|   189k|		&self.as_bitslice()[index]
   213|   189k|	}
 _RNvXsc_NtNtCsdqiqltlfdiW_6bitvec5array3opsINtB7_8BitArrayAhj20_EINtNtNtCs6SNw0SRvItZ_4core3ops5index5IndexINtNtB15_5range5RangejEE5indexCs2qdhHbQ3r3c_11zebra_chain:
-  211|   379k|	fn index(&self, index: Idx) -> &Self::Output {
-  212|   379k|		&self.as_bitslice()[index]
-  213|   379k|	}
+  211|   378k|	fn index(&self, index: Idx) -> &Self::Output {
+  212|   378k|		&self.as_bitslice()[index]
+  213|   378k|	}
 _RNvXsc_NtNtCsdqiqltlfdiW_6bitvec5array3opsINtB7_8BitArrayAhj2_EINtNtNtCs6SNw0SRvItZ_4core3ops5index5IndexINtNtB14_5range5RangejEE5indexCs2qdhHbQ3r3c_11zebra_chain:
   211|   189k|	fn index(&self, index: Idx) -> &Self::Output {
   212|   189k|		&self.as_bitslice()[index]
   213|   189k|	}
 
 _RNvXs9_NtNtCsdqiqltlfdiW_6bitvec5array6traitsINtB7_8BitArrayAhj20_EINtNtCs6SNw0SRvItZ_4core7convert4FromBW_E4fromCs2qdhHbQ3r3c_11zebra_chain:
-  181|   379k|	fn from(data: A) -> Self {
-  182|   379k|		Self::new(data)
-  183|   379k|	}
+  181|   378k|	fn from(data: A) -> Self {
+  182|   378k|		Self::new(data)
+  183|   378k|	}
 _RNvXs9_NtNtCsdqiqltlfdiW_6bitvec5array6traitsINtB7_8BitArrayAhj2_EINtNtCs6SNw0SRvItZ_4core7convert4FromBW_E4fromCs2qdhHbQ3r3c_11zebra_chain:
   181|   189k|	fn from(data: A) -> Self {
   182|   189k|		Self::new(data)
@@ -459,46 +459,46 @@ _RINvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB6_14PartialElementNtNtCs4rm1P7A9CH1_3
   747|  2.08M|		}
   748|  2.08M|	}
 _RINvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB6_14PartialElementNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthNtNtB8_5order4Lsb0E3newINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtB8_5index6BitIdxhEEINtB2w_6BitEndhEECs2qdhHbQ3r3c_11zebra_chain:
-  731|   758k|	fn new(
-  732|   758k|		elem: Address<M, T>,
-  733|   758k|		head: impl Into<Option<BitIdx<T::Mem>>>,
-  734|   758k|		tail: impl Into<Option<BitEnd<T::Mem>>>,
-  735|   758k|	) -> Self {
-  736|   758k|		let (head, tail) = (
-  737|   758k|			head.into().unwrap_or(BitIdx::MIN),
-  738|   758k|			tail.into().unwrap_or(BitEnd::MAX),
-  739|   758k|		);
-  740|   758k|		Self {
-  741|   758k|			elem,
-  742|   758k|			mask: O::mask(head, tail),
-  743|   758k|			head,
-  744|   758k|			tail,
-  745|   758k|			_ord: PhantomData,
-  746|   758k|			_ref: PhantomData,
-  747|   758k|		}
-  748|   758k|	}
+  731|   757k|	fn new(
+  732|   757k|		elem: Address<M, T>,
+  733|   757k|		head: impl Into<Option<BitIdx<T::Mem>>>,
+  734|   757k|		tail: impl Into<Option<BitEnd<T::Mem>>>,
+  735|   757k|	) -> Self {
+  736|   757k|		let (head, tail) = (
+  737|   757k|			head.into().unwrap_or(BitIdx::MIN),
+  738|   757k|			tail.into().unwrap_or(BitEnd::MAX),
+  739|   757k|		);
+  740|   757k|		Self {
+  741|   757k|			elem,
+  742|   757k|			mask: O::mask(head, tail),
+  743|   757k|			head,
+  744|   757k|			tail,
+  745|   757k|			_ord: PhantomData,
+  746|   757k|			_ref: PhantomData,
+  747|   757k|		}
+  748|   757k|	}
 _RNCNvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB7_14PartialElementNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthNtNtB9_5order4Lsb0E10load_value0Cs2qdhHbQ3r3c_11zebra_chain:
-  759|   758k|			.pipe(|addr| unsafe { &*addr.to_const() })
+  759|   757k|			.pipe(|addr| unsafe { &*addr.to_const() })
 _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE12partial_headCs2qdhHbQ3r3c_11zebra_chain:
-  446|   379k|	fn partial_head(
-  447|   379k|		addr: Address<M, T>,
-  448|   379k|		elts: usize,
-  449|   379k|		head: BitIdx<T::Mem>,
-  450|   379k|		_: BitEnd<T::Mem>,
-  451|   379k|	) -> Self {
-  452|   379k|		let elem = addr;
-  453|   379k|		let body = unsafe {
-  454|   379k|			Address::<M, [T::Unalias]>::from_raw_parts(
-  455|   379k|				addr.add(1).cast::<T::Unalias>(),
-  456|   379k|				elts - 1,
+  446|   378k|	fn partial_head(
+  447|   378k|		addr: Address<M, T>,
+  448|   378k|		elts: usize,
+  449|   378k|		head: BitIdx<T::Mem>,
+  450|   378k|		_: BitEnd<T::Mem>,
+  451|   378k|	) -> Self {
+  452|   378k|		let elem = addr;
+  453|   378k|		let body = unsafe {
+  454|   378k|			Address::<M, [T::Unalias]>::from_raw_parts(
+  455|   378k|				addr.add(1).cast::<T::Unalias>(),
+  456|   378k|				elts - 1,
   457|       |			)
   458|       |		};
-  459|   379k|		Self::Region {
-  460|   379k|			head: Some(PartialElement::new(elem, head, None)),
-  461|   379k|			body,
-  462|   379k|			tail: None,
-  463|   379k|		}
-  464|   379k|	}
+  459|   378k|		Self::Region {
+  460|   378k|			head: Some(PartialElement::new(elem, head, None)),
+  461|   378k|			body,
+  462|   378k|			tail: None,
+  463|   378k|		}
+  464|   378k|	}
 _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE12partial_tailCs2qdhHbQ3r3c_11zebra_chain:
   469|   568k|	fn partial_tail(
   470|   568k|		addr: Address<M, T>,
@@ -559,25 +559,25 @@ _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu3M
   428|  1.51M|		}
   429|  1.51M|	}
 _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE12partial_tailCs2qdhHbQ3r3c_11zebra_chain:
-  469|   758k|	fn partial_tail(
-  470|   758k|		addr: Address<M, T>,
-  471|   758k|		elts: usize,
-  472|   758k|		_: BitIdx<T::Mem>,
-  473|   758k|		tail: BitEnd<T::Mem>,
-  474|   758k|	) -> Self {
-  475|   758k|		let elem = unsafe { addr.add(elts - 1) };
-  476|   758k|		let body = unsafe {
-  477|   758k|			Address::<M, [T::Unalias]>::from_raw_parts(
-  478|   758k|				addr.cast::<T::Unalias>(),
-  479|   758k|				elts - 1,
+  469|   757k|	fn partial_tail(
+  470|   757k|		addr: Address<M, T>,
+  471|   757k|		elts: usize,
+  472|   757k|		_: BitIdx<T::Mem>,
+  473|   757k|		tail: BitEnd<T::Mem>,
+  474|   757k|	) -> Self {
+  475|   757k|		let elem = unsafe { addr.add(elts - 1) };
+  476|   757k|		let body = unsafe {
+  477|   757k|			Address::<M, [T::Unalias]>::from_raw_parts(
+  478|   757k|				addr.cast::<T::Unalias>(),
+  479|   757k|				elts - 1,
   480|       |			)
   481|       |		};
-  482|   758k|		Self::Region {
-  483|   758k|			head: None,
-  484|   758k|			body,
-  485|   758k|			tail: Some(PartialElement::new(elem, None, tail)),
-  486|   758k|		}
-  487|   758k|	}
+  482|   757k|		Self::Region {
+  483|   757k|			head: None,
+  484|   757k|			body,
+  485|   757k|			tail: Some(PartialElement::new(elem, None, tail)),
+  486|   757k|		}
+  487|   757k|	}
 _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE3newCs2qdhHbQ3r3c_11zebra_chain:
   378|  2.08M|	pub(crate) fn new(bits: Reference<'a, M, BitSlice<T, O>>) -> Self
   379|  2.08M|	where BitSpan<M, T, O>: From<Reference<'a, M, BitSlice<T, O>>> {
@@ -589,8 +589,8 @@ _RNvMs4_NtCsdqiqltlfdiW_6bitvec6domainINtB5_6DomainNtNtCs4rm1P7A9CH1_3wyz4comu5C
   385|  2.08M|		let ctor = match (head, elts, tail) {
   386|   189k|			(_, 0, _) => Self::empty,
   387|  1.89M|			(h, _, t) if h == min && t == max => Self::spanning,
-  388|   758k|			(_, _, t) if t == max => Self::partial_head,
-  389|   758k|			(h, ..) if h == min => Self::partial_tail,
+  388|   757k|			(_, _, t) if t == max => Self::partial_head,
+  389|   757k|			(h, ..) if h == min => Self::partial_tail,
   390|      0|			(_, 1, _) => Self::minor,
   391|      0|			_ => Self::major,
   392|       |		};
@@ -628,12 +628,12 @@ _RNvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB5_14PartialElementNtNtCs4rm1P7A9CH1_3w
   768|  1.51M|		self.head
   769|  1.51M|	}
 _RNvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB5_14PartialElementNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthNtNtB7_5order4Lsb0E10load_valueCs2qdhHbQ3r3c_11zebra_chain:
-  757|   758k|	pub fn load_value(&self) -> T::Mem {
-  758|   758k|		self.elem
-  759|   758k|			.pipe(|addr| unsafe { &*addr.to_const() })
-  760|   758k|			.load_value()
-  761|   758k|			& self.mask.into_inner()
-  762|   758k|	}
+  757|   757k|	pub fn load_value(&self) -> T::Mem {
+  758|   757k|		self.elem
+  759|   757k|			.pipe(|addr| unsafe { &*addr.to_const() })
+  760|   757k|			.load_value()
+  761|   757k|			& self.mask.into_inner()
+  762|   757k|	}
 _RNvMse_NtCsdqiqltlfdiW_6bitvec6domainINtB5_14PartialElementNtNtCs4rm1P7A9CH1_3wyz4comu3MuthNtNtB7_5order4Lsb0E11store_valueCs2qdhHbQ3r3c_11zebra_chain:
   828|  3.97M|	pub fn store_value(&mut self, value: T::Mem) -> T::Mem {
   829|  3.97M|		let this = self.access();
@@ -1269,12 +1269,12 @@ _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4c
   258|  1.70M|		Address::new(unsafe { NonNull::new_unchecked(ptr) })
   259|  1.70M|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE11set_addressCs2qdhHbQ3r3c_11zebra_chain:
-  275|   758k|	pub(crate) unsafe fn set_address(&mut self, addr: Address<M, T>) {
-  276|   758k|		let mut addr_value = addr.to_const() as usize;
-  277|   758k|		addr_value &= Self::PTR_ADDR_MASK;
-  278|   758k|		addr_value |= self.ptr.as_ptr() as usize & Self::PTR_HEAD_MASK;
-  279|   758k|		self.ptr = NonNull::new_unchecked(addr_value as *mut ())
-  280|   758k|	}
+  275|   757k|	pub(crate) unsafe fn set_address(&mut self, addr: Address<M, T>) {
+  276|   757k|		let mut addr_value = addr.to_const() as usize;
+  277|   757k|		addr_value &= Self::PTR_ADDR_MASK;
+  278|   757k|		addr_value |= self.ptr.as_ptr() as usize & Self::PTR_HEAD_MASK;
+  279|   757k|		self.ptr = NonNull::new_unchecked(addr_value as *mut ())
+  280|   757k|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE3lenCs2qdhHbQ3r3c_11zebra_chain:
   335|  9.47M|	pub(crate) fn len(&self) -> usize {
   336|  9.47M|		self.len >> Self::LEN_HEAD_BITS
@@ -1307,9 +1307,9 @@ _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4c
   359|   568k|		}
   360|   568k|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE9raw_partsCs2qdhHbQ3r3c_11zebra_chain:
-  377|   379k|	pub(crate) fn raw_parts(&self) -> (Address<M, T>, BitIdx<T::Mem>, usize) {
-  378|   379k|		(self.address(), self.head(), self.len())
-  379|   379k|	}
+  377|   378k|	pub(crate) fn raw_parts(&self) -> (Address<M, T>, BitIdx<T::Mem>, usize) {
+  378|   378k|		(self.address(), self.head(), self.len())
+  379|   378k|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConstNtNtB9_6access9BitSafeU8E3lenCs2qdhHbQ3r3c_11zebra_chain:
   335|  3.97M|	pub(crate) fn len(&self) -> usize {
   336|  3.97M|		self.len >> Self::LEN_HEAD_BITS
@@ -1331,9 +1331,9 @@ _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4c
   422|  2.46M|		tail
   423|  2.46M|	}
 _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu3MuthE8elementsCs2qdhHbQ3r3c_11zebra_chain:
-  402|  3.79M|	pub(crate) fn elements(&self) -> usize {
-  403|  3.79M|		crate::mem::elts::<T>(self.len() + self.head().into_inner() as usize)
-  404|  3.79M|	}
+  402|  3.78M|	pub(crate) fn elements(&self) -> usize {
+  403|  3.78M|		crate::mem::elts::<T>(self.len() + self.head().into_inner() as usize)
+  404|  3.78M|	}
 _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE4tailCs2qdhHbQ3r3c_11zebra_chain:
   419|  2.08M|	pub(crate) fn tail(&self) -> BitEnd<T::Mem> {
   420|  2.08M|		let (head, len) = (self.head(), self.len());
@@ -1738,7 +1738,7 @@ _RNvMs_NtCsdqiqltlfdiW_6bitvec5sliceINtB4_8BitSlicehE18copy_from_bitsliceCs2qdhH
   635|       |					 will always have equal domains"
   636|       |				),
   637|       |			}
-  638|   379k|		}
+  638|   378k|		}
   639|   568k|		if let (Some(this), Some(that)) =
   640|   568k|			(self.coerce_mut::<T, Lsb0>(), src.coerce::<T, Lsb0>())
   641|       |		{
@@ -1898,14 +1898,14 @@ _RNvMNtNtCsdqiqltlfdiW_6bitvec5slice3apiINtB4_8BitSlicehE4fillCs2qdhHbQ3r3c_11ze
  2134|      0|			},
  2135|   568k|			Domain::Region { head, body, tail } => {
  2136|   568k|				if let Some(mut elem) = head {
- 2137|   379k|					elem.store_value(fill);
- 2138|   379k|				}
+ 2137|   378k|					elem.store_value(fill);
+ 2138|   378k|				}
  2139|  12.5M|				for elem in body {
  2140|  11.9M|					elem.store_value(fill);
  2141|  11.9M|				}
  2142|   568k|				if let Some(mut elem) = tail {
- 2143|   379k|					elem.store_value(fill);
- 2144|   379k|				}
+ 2143|   378k|					elem.store_value(fill);
+ 2144|   378k|				}
  2145|       |			},
  2146|       |		}
  2147|   568k|	}
@@ -2170,17 +2170,17 @@ _RNvMs_NtCsdqiqltlfdiW_6bitvec3vecINtB4_6BitVechE15as_mut_bitsliceCs2qdhHbQ3r3c_
   322|  1.13M|		unsafe { self.bitspan.into_bitslice_mut() }
   323|  1.13M|	}
 _RNvMs_NtCsdqiqltlfdiW_6bitvec3vecINtB4_6BitVechE8into_vecCs2qdhHbQ3r3c_11zebra_chain:
-  422|   758k|	pub fn into_vec(self) -> Vec<T> {
-  423|   758k|		let (bitspan, capacity) = (self.bitspan, self.capacity);
-  424|   758k|		mem::forget(self);
+  422|   757k|	pub fn into_vec(self) -> Vec<T> {
+  423|   757k|		let (bitspan, capacity) = (self.bitspan, self.capacity);
+  424|   757k|		mem::forget(self);
   425|       |		unsafe {
-  426|   758k|			Vec::from_raw_parts(
-  427|   758k|				bitspan.address().to_mut(),
-  428|   758k|				bitspan.elements(),
-  429|   758k|				capacity,
+  426|   757k|			Vec::from_raw_parts(
+  427|   757k|				bitspan.address().to_mut(),
+  428|   757k|				bitspan.elements(),
+  429|   757k|				capacity,
   430|       |			)
   431|       |		}
-  432|   758k|	}
+  432|   757k|	}
 
 _RNvMNtNtCsdqiqltlfdiW_6bitvec3vec3apiINtB4_6BitVechE3lenCs2qdhHbQ3r3c_11zebra_chain:
   774|  2.27M|	pub fn len(&self) -> usize {
@@ -2252,10 +2252,10 @@ _RINvXs0_NtCsdqiqltlfdiW_6bitvec4viewAhj2_NtB6_7BitView9view_bitsNtNtB8_5order4L
   116|   189k|		BitSlice::from_slice(self)
   117|   189k|	}
 _RINvXs0_NtCsdqiqltlfdiW_6bitvec4viewAhj20_NtB6_7BitView9view_bitsNtNtB8_5order4Lsb0ECsckoVJ3NjISC_14sapling_crypto:
-  114|   379k|	fn view_bits<O>(&self) -> &BitSlice<T, O>
-  115|   379k|	where O: BitOrder {
-  116|   379k|		BitSlice::from_slice(self)
-  117|   379k|	}
+  114|   378k|	fn view_bits<O>(&self) -> &BitSlice<T, O>
+  115|   378k|	where O: BitOrder {
+  116|   378k|		BitSlice::from_slice(self)
+  117|   378k|	}
 _RINvXs3_NtCsdqiqltlfdiW_6bitvec4viewAhj20_INtB6_6AsBitshE7as_bitsNtNtB8_5order4Lsb0ECs3VjbIwwZMBL_6jubjub:
   232|   386k|	fn as_bits<O>(&self) -> &BitSlice<T, O>
   233|   386k|	where O: BitOrder {
@@ -2284,38 +2284,38 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx213undiagonalize:
   150|  9.09M|    }
   151|  9.09M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress1_loop:
-  437|   758k|pub unsafe fn compress1_loop(
-  438|   758k|    input: &[u8],
-  439|   758k|    words: &mut [Word; 8],
-  440|   758k|    mut count: Count,
-  441|   758k|    last_node: LastNode,
-  442|   758k|    finalize: Finalize,
-  443|   758k|    stride: Stride,
-  444|   758k|) {
+  437|   757k|pub unsafe fn compress1_loop(
+  438|   757k|    input: &[u8],
+  439|   757k|    words: &mut [Word; 8],
+  440|   757k|    mut count: Count,
+  441|   757k|    last_node: LastNode,
+  442|   757k|    finalize: Finalize,
+  443|   757k|    stride: Stride,
+  444|   757k|) {
   445|       |    unsafe {
-  446|   758k|        input_debug_asserts(input, finalize);
+  446|   757k|        input_debug_asserts(input, finalize);
   447|       |
-  448|   758k|        let mut local_words = *words;
+  448|   757k|        let mut local_words = *words;
   449|       |
-  450|   758k|        let mut fin_offset = input.len().saturating_sub(1);
-  451|   758k|        fin_offset -= fin_offset % stride.padded_blockbytes();
-  452|   758k|        let mut buf = [0; BLOCKBYTES];
-  453|   758k|        let (fin_block, fin_len, _) = final_block(input, fin_offset, &mut buf, stride);
-  454|   758k|        let fin_last_block = flag_word(finalize.yes());
-  455|   758k|        let fin_last_node = flag_word(finalize.yes() && last_node.yes());
+  450|   757k|        let mut fin_offset = input.len().saturating_sub(1);
+  451|   757k|        fin_offset -= fin_offset % stride.padded_blockbytes();
+  452|   757k|        let mut buf = [0; BLOCKBYTES];
+  453|   757k|        let (fin_block, fin_len, _) = final_block(input, fin_offset, &mut buf, stride);
+  454|   757k|        let fin_last_block = flag_word(finalize.yes());
+  455|   757k|        let fin_last_node = flag_word(finalize.yes() && last_node.yes());
   456|       |
-  457|   758k|        let mut offset = 0;
+  457|   757k|        let mut offset = 0;
   458|       |        loop {
   459|       |            let block;
   460|       |            let count_delta;
   461|       |            let last_block;
   462|       |            let last_node;
-  463|   758k|            if offset == fin_offset {
-  464|   758k|                block = fin_block;
-  465|   758k|                count_delta = fin_len;
-  466|   758k|                last_block = fin_last_block;
-  467|   758k|                last_node = fin_last_node;
-  468|   758k|            } else {
+  463|   757k|            if offset == fin_offset {
+  464|   757k|                block = fin_block;
+  465|   757k|                count_delta = fin_len;
+  466|   757k|                last_block = fin_last_block;
+  467|   757k|                last_node = fin_last_node;
+  468|   757k|            } else {
   469|      0|                // This unsafe cast avoids bounds checks. There's guaranteed to be
   470|      0|                // enough input because `offset < fin_offset`.
   471|      0|                block = &*(input.as_ptr().add(offset) as *const [u8; BLOCKBYTES]);
@@ -2324,302 +2324,302 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress1_loop:
   474|      0|                last_node = flag_word(false);
   475|      0|            };
   476|       |
-  477|   758k|            count = count.wrapping_add(count_delta as Count);
-  478|   758k|            compress_block(block, &mut local_words, count, last_block, last_node);
+  477|   757k|            count = count.wrapping_add(count_delta as Count);
+  478|   757k|            compress_block(block, &mut local_words, count, last_block, last_node);
   479|       |
   480|       |            // Check for termination before bumping the offset, to avoid overflow.
-  481|   758k|            if offset == fin_offset {
-  482|   758k|                break;
+  481|   757k|            if offset == fin_offset {
+  482|   757k|                break;
   483|      0|            }
   484|       |
   485|      0|            offset += stride.padded_blockbytes();
   486|       |        }
   487|       |
-  488|   758k|        *words = local_words;
+  488|   757k|        *words = local_words;
   489|       |    }
-  490|   758k|}
+  490|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_block:
-  154|   758k|unsafe fn compress_block(
-  155|   758k|    block: &[u8; BLOCKBYTES],
-  156|   758k|    words: &mut [Word; 8],
-  157|   758k|    count: Count,
-  158|   758k|    last_block: Word,
-  159|   758k|    last_node: Word,
-  160|   758k|) {
-  161|   758k|    unsafe {
-  162|   758k|        let (words_low, words_high) = mut_array_refs!(words, DEGREE, DEGREE);
-  163|   758k|        let (iv_low, iv_high) = array_refs!(&IV, DEGREE, DEGREE);
-  164|   758k|        let mut a = loadu(words_low);
-  165|   758k|        let mut b = loadu(words_high);
-  166|   758k|        let mut c = loadu(iv_low);
-  167|   758k|        let flags = set4(count_low(count), count_high(count), last_block, last_node);
-  168|   758k|        let mut d = xor(loadu(iv_high), flags);
-  169|   758k|
-  170|   758k|        let msg_chunks = array_refs!(block, 16, 16, 16, 16, 16, 16, 16, 16);
-  171|   758k|        let m0 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.0));
-  172|   758k|        let m1 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.1));
-  173|   758k|        let m2 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.2));
-  174|   758k|        let m3 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.3));
-  175|   758k|        let m4 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.4));
-  176|   758k|        let m5 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.5));
-  177|   758k|        let m6 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.6));
-  178|   758k|        let m7 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.7));
-  179|   758k|
-  180|   758k|        let iv0 = a;
-  181|   758k|        let iv1 = b;
-  182|   758k|        let mut t0;
-  183|   758k|        let mut t1;
-  184|   758k|        let mut b0;
-  185|   758k|
-  186|   758k|        // round 1
-  187|   758k|        t0 = _mm256_unpacklo_epi64(m0, m1);
-  188|   758k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  189|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  190|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  191|   758k|        t0 = _mm256_unpackhi_epi64(m0, m1);
-  192|   758k|        t1 = _mm256_unpackhi_epi64(m2, m3);
-  193|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  194|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  195|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  196|   758k|        t0 = _mm256_unpacklo_epi64(m7, m4);
-  197|   758k|        t1 = _mm256_unpacklo_epi64(m5, m6);
-  198|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  199|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  200|   758k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  201|   758k|        t1 = _mm256_unpackhi_epi64(m5, m6);
-  202|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  203|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  204|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  205|   758k|
-  206|   758k|        // round 2
-  207|   758k|        t0 = _mm256_unpacklo_epi64(m7, m2);
-  208|   758k|        t1 = _mm256_unpackhi_epi64(m4, m6);
-  209|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  210|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  211|   758k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  212|   758k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
-  213|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  214|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  215|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  216|   758k|        t0 = _mm256_unpackhi_epi64(m2, m0);
-  217|   758k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
-  218|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  219|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  220|   758k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
-  221|   758k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
-  222|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  223|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  224|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  225|   758k|
-  226|   758k|        // round 3
-  227|   758k|        t0 = _mm256_alignr_epi8(m6, m5, 8);
-  228|   758k|        t1 = _mm256_unpackhi_epi64(m2, m7);
-  229|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  230|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  231|   758k|        t0 = _mm256_unpacklo_epi64(m4, m0);
-  232|   758k|        t1 = _mm256_blend_epi32(m6, m1, 0x33);
-  233|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  234|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  235|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  236|   758k|        t0 = _mm256_alignr_epi8(m5, m4, 8);
-  237|   758k|        t1 = _mm256_unpackhi_epi64(m1, m3);
-  238|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  239|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  240|   758k|        t0 = _mm256_unpacklo_epi64(m2, m7);
-  241|   758k|        t1 = _mm256_blend_epi32(m0, m3, 0x33);
-  242|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  243|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  244|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  245|   758k|
-  246|   758k|        // round 4
-  247|   758k|        t0 = _mm256_unpackhi_epi64(m3, m1);
-  248|   758k|        t1 = _mm256_unpackhi_epi64(m6, m5);
-  249|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  250|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  251|   758k|        t0 = _mm256_unpackhi_epi64(m4, m0);
-  252|   758k|        t1 = _mm256_unpacklo_epi64(m6, m7);
-  253|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  254|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  255|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  256|   758k|        t0 = _mm256_alignr_epi8(m1, m7, 8);
-  257|   758k|        t1 = _mm256_shuffle_epi32(m2, _MM_SHUFFLE!(1, 0, 3, 2));
-  258|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  259|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  260|   758k|        t0 = _mm256_unpacklo_epi64(m4, m3);
-  261|   758k|        t1 = _mm256_unpacklo_epi64(m5, m0);
-  262|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  263|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  264|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  265|   758k|
-  266|   758k|        // round 5
-  267|   758k|        t0 = _mm256_unpackhi_epi64(m4, m2);
-  268|   758k|        t1 = _mm256_unpacklo_epi64(m1, m5);
-  269|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  270|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  271|   758k|        t0 = _mm256_blend_epi32(m3, m0, 0x33);
-  272|   758k|        t1 = _mm256_blend_epi32(m7, m2, 0x33);
-  273|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  274|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  275|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  276|   758k|        t0 = _mm256_alignr_epi8(m7, m1, 8);
-  277|   758k|        t1 = _mm256_alignr_epi8(m3, m5, 8);
-  278|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  279|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  280|   758k|        t0 = _mm256_unpackhi_epi64(m6, m0);
-  281|   758k|        t1 = _mm256_unpacklo_epi64(m6, m4);
-  282|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  283|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  284|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  285|   758k|
-  286|   758k|        // round 6
-  287|   758k|        t0 = _mm256_unpacklo_epi64(m1, m3);
-  288|   758k|        t1 = _mm256_unpacklo_epi64(m0, m4);
-  289|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  290|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  291|   758k|        t0 = _mm256_unpacklo_epi64(m6, m5);
-  292|   758k|        t1 = _mm256_unpackhi_epi64(m5, m1);
-  293|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  294|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  295|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  296|   758k|        t0 = _mm256_alignr_epi8(m2, m0, 8);
-  297|   758k|        t1 = _mm256_unpackhi_epi64(m3, m7);
-  298|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  299|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  300|   758k|        t0 = _mm256_unpackhi_epi64(m4, m6);
-  301|   758k|        t1 = _mm256_alignr_epi8(m7, m2, 8);
-  302|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  303|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  304|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  305|   758k|
-  306|   758k|        // round 7
-  307|   758k|        t0 = _mm256_blend_epi32(m0, m6, 0x33);
-  308|   758k|        t1 = _mm256_unpacklo_epi64(m7, m2);
-  309|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  310|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  311|   758k|        t0 = _mm256_unpackhi_epi64(m2, m7);
-  312|   758k|        t1 = _mm256_alignr_epi8(m5, m6, 8);
-  313|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  314|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  315|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  316|   758k|        t0 = _mm256_unpacklo_epi64(m4, m0);
-  317|   758k|        t1 = _mm256_blend_epi32(m4, m3, 0x33);
-  318|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  319|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  320|   758k|        t0 = _mm256_unpackhi_epi64(m5, m3);
-  321|   758k|        t1 = _mm256_shuffle_epi32(m1, _MM_SHUFFLE!(1, 0, 3, 2));
-  322|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  323|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  324|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  325|   758k|
-  326|   758k|        // round 8
-  327|   758k|        t0 = _mm256_unpackhi_epi64(m6, m3);
-  328|   758k|        t1 = _mm256_blend_epi32(m1, m6, 0x33);
-  329|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  330|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  331|   758k|        t0 = _mm256_alignr_epi8(m7, m5, 8);
-  332|   758k|        t1 = _mm256_unpackhi_epi64(m0, m4);
-  333|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  334|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  335|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  336|   758k|        t0 = _mm256_blend_epi32(m2, m1, 0x33);
-  337|   758k|        t1 = _mm256_alignr_epi8(m4, m7, 8);
-  338|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  339|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  340|   758k|        t0 = _mm256_unpacklo_epi64(m5, m0);
-  341|   758k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  342|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  343|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  344|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  345|   758k|
-  346|   758k|        // round 9
-  347|   758k|        t0 = _mm256_unpacklo_epi64(m3, m7);
-  348|   758k|        t1 = _mm256_alignr_epi8(m0, m5, 8);
-  349|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  350|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  351|   758k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  352|   758k|        t1 = _mm256_alignr_epi8(m4, m1, 8);
-  353|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  354|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  355|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  356|   758k|        t0 = _mm256_unpacklo_epi64(m5, m6);
-  357|   758k|        t1 = _mm256_unpackhi_epi64(m6, m0);
-  358|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  359|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  360|   758k|        t0 = _mm256_alignr_epi8(m1, m2, 8);
-  361|   758k|        t1 = _mm256_alignr_epi8(m2, m3, 8);
-  362|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  363|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  364|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  365|   758k|
-  366|   758k|        // round 10
-  367|   758k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  368|   758k|        t1 = _mm256_unpackhi_epi64(m3, m0);
-  369|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  370|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  371|   758k|        t0 = _mm256_unpacklo_epi64(m1, m2);
-  372|   758k|        t1 = _mm256_blend_epi32(m2, m3, 0x33);
-  373|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  374|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  375|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  376|   758k|        t0 = _mm256_unpackhi_epi64(m6, m7);
-  377|   758k|        t1 = _mm256_unpackhi_epi64(m4, m1);
-  378|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  379|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  380|   758k|        t0 = _mm256_blend_epi32(m5, m0, 0x33);
-  381|   758k|        t1 = _mm256_unpacklo_epi64(m7, m6);
-  382|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  383|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  384|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  385|   758k|
-  386|   758k|        // round 11
-  387|   758k|        t0 = _mm256_unpacklo_epi64(m0, m1);
-  388|   758k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  389|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  390|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  391|   758k|        t0 = _mm256_unpackhi_epi64(m0, m1);
-  392|   758k|        t1 = _mm256_unpackhi_epi64(m2, m3);
-  393|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  394|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  395|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  396|   758k|        t0 = _mm256_unpacklo_epi64(m7, m4);
-  397|   758k|        t1 = _mm256_unpacklo_epi64(m5, m6);
-  398|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  399|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  400|   758k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  401|   758k|        t1 = _mm256_unpackhi_epi64(m5, m6);
-  402|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  403|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  404|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  405|   758k|
-  406|   758k|        // round 12
-  407|   758k|        t0 = _mm256_unpacklo_epi64(m7, m2);
-  408|   758k|        t1 = _mm256_unpackhi_epi64(m4, m6);
-  409|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  410|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  411|   758k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  412|   758k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
-  413|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  414|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  415|   758k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  416|   758k|        t0 = _mm256_unpackhi_epi64(m2, m0);
-  417|   758k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
-  418|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  419|   758k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  420|   758k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
-  421|   758k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
-  422|   758k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  423|   758k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  424|   758k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  425|   758k|
-  426|   758k|        a = xor(a, c);
-  427|   758k|        b = xor(b, d);
-  428|   758k|        a = xor(a, iv0);
-  429|   758k|        b = xor(b, iv1);
-  430|   758k|
-  431|   758k|        storeu(a, words_low);
-  432|   758k|        storeu(b, words_high);
-  433|   758k|    }
-  434|   758k|}
+  154|   757k|unsafe fn compress_block(
+  155|   757k|    block: &[u8; BLOCKBYTES],
+  156|   757k|    words: &mut [Word; 8],
+  157|   757k|    count: Count,
+  158|   757k|    last_block: Word,
+  159|   757k|    last_node: Word,
+  160|   757k|) {
+  161|   757k|    unsafe {
+  162|   757k|        let (words_low, words_high) = mut_array_refs!(words, DEGREE, DEGREE);
+  163|   757k|        let (iv_low, iv_high) = array_refs!(&IV, DEGREE, DEGREE);
+  164|   757k|        let mut a = loadu(words_low);
+  165|   757k|        let mut b = loadu(words_high);
+  166|   757k|        let mut c = loadu(iv_low);
+  167|   757k|        let flags = set4(count_low(count), count_high(count), last_block, last_node);
+  168|   757k|        let mut d = xor(loadu(iv_high), flags);
+  169|   757k|
+  170|   757k|        let msg_chunks = array_refs!(block, 16, 16, 16, 16, 16, 16, 16, 16);
+  171|   757k|        let m0 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.0));
+  172|   757k|        let m1 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.1));
+  173|   757k|        let m2 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.2));
+  174|   757k|        let m3 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.3));
+  175|   757k|        let m4 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.4));
+  176|   757k|        let m5 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.5));
+  177|   757k|        let m6 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.6));
+  178|   757k|        let m7 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.7));
+  179|   757k|
+  180|   757k|        let iv0 = a;
+  181|   757k|        let iv1 = b;
+  182|   757k|        let mut t0;
+  183|   757k|        let mut t1;
+  184|   757k|        let mut b0;
+  185|   757k|
+  186|   757k|        // round 1
+  187|   757k|        t0 = _mm256_unpacklo_epi64(m0, m1);
+  188|   757k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  189|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  190|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  191|   757k|        t0 = _mm256_unpackhi_epi64(m0, m1);
+  192|   757k|        t1 = _mm256_unpackhi_epi64(m2, m3);
+  193|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  194|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  195|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  196|   757k|        t0 = _mm256_unpacklo_epi64(m7, m4);
+  197|   757k|        t1 = _mm256_unpacklo_epi64(m5, m6);
+  198|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  199|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  200|   757k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  201|   757k|        t1 = _mm256_unpackhi_epi64(m5, m6);
+  202|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  203|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  204|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  205|   757k|
+  206|   757k|        // round 2
+  207|   757k|        t0 = _mm256_unpacklo_epi64(m7, m2);
+  208|   757k|        t1 = _mm256_unpackhi_epi64(m4, m6);
+  209|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  210|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  211|   757k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  212|   757k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
+  213|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  214|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  215|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  216|   757k|        t0 = _mm256_unpackhi_epi64(m2, m0);
+  217|   757k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
+  218|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  219|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  220|   757k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
+  221|   757k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
+  222|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  223|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  224|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  225|   757k|
+  226|   757k|        // round 3
+  227|   757k|        t0 = _mm256_alignr_epi8(m6, m5, 8);
+  228|   757k|        t1 = _mm256_unpackhi_epi64(m2, m7);
+  229|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  230|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  231|   757k|        t0 = _mm256_unpacklo_epi64(m4, m0);
+  232|   757k|        t1 = _mm256_blend_epi32(m6, m1, 0x33);
+  233|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  234|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  235|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  236|   757k|        t0 = _mm256_alignr_epi8(m5, m4, 8);
+  237|   757k|        t1 = _mm256_unpackhi_epi64(m1, m3);
+  238|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  239|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  240|   757k|        t0 = _mm256_unpacklo_epi64(m2, m7);
+  241|   757k|        t1 = _mm256_blend_epi32(m0, m3, 0x33);
+  242|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  243|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  244|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  245|   757k|
+  246|   757k|        // round 4
+  247|   757k|        t0 = _mm256_unpackhi_epi64(m3, m1);
+  248|   757k|        t1 = _mm256_unpackhi_epi64(m6, m5);
+  249|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  250|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  251|   757k|        t0 = _mm256_unpackhi_epi64(m4, m0);
+  252|   757k|        t1 = _mm256_unpacklo_epi64(m6, m7);
+  253|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  254|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  255|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  256|   757k|        t0 = _mm256_alignr_epi8(m1, m7, 8);
+  257|   757k|        t1 = _mm256_shuffle_epi32(m2, _MM_SHUFFLE!(1, 0, 3, 2));
+  258|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  259|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  260|   757k|        t0 = _mm256_unpacklo_epi64(m4, m3);
+  261|   757k|        t1 = _mm256_unpacklo_epi64(m5, m0);
+  262|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  263|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  264|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  265|   757k|
+  266|   757k|        // round 5
+  267|   757k|        t0 = _mm256_unpackhi_epi64(m4, m2);
+  268|   757k|        t1 = _mm256_unpacklo_epi64(m1, m5);
+  269|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  270|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  271|   757k|        t0 = _mm256_blend_epi32(m3, m0, 0x33);
+  272|   757k|        t1 = _mm256_blend_epi32(m7, m2, 0x33);
+  273|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  274|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  275|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  276|   757k|        t0 = _mm256_alignr_epi8(m7, m1, 8);
+  277|   757k|        t1 = _mm256_alignr_epi8(m3, m5, 8);
+  278|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  279|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  280|   757k|        t0 = _mm256_unpackhi_epi64(m6, m0);
+  281|   757k|        t1 = _mm256_unpacklo_epi64(m6, m4);
+  282|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  283|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  284|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  285|   757k|
+  286|   757k|        // round 6
+  287|   757k|        t0 = _mm256_unpacklo_epi64(m1, m3);
+  288|   757k|        t1 = _mm256_unpacklo_epi64(m0, m4);
+  289|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  290|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  291|   757k|        t0 = _mm256_unpacklo_epi64(m6, m5);
+  292|   757k|        t1 = _mm256_unpackhi_epi64(m5, m1);
+  293|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  294|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  295|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  296|   757k|        t0 = _mm256_alignr_epi8(m2, m0, 8);
+  297|   757k|        t1 = _mm256_unpackhi_epi64(m3, m7);
+  298|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  299|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  300|   757k|        t0 = _mm256_unpackhi_epi64(m4, m6);
+  301|   757k|        t1 = _mm256_alignr_epi8(m7, m2, 8);
+  302|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  303|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  304|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  305|   757k|
+  306|   757k|        // round 7
+  307|   757k|        t0 = _mm256_blend_epi32(m0, m6, 0x33);
+  308|   757k|        t1 = _mm256_unpacklo_epi64(m7, m2);
+  309|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  310|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  311|   757k|        t0 = _mm256_unpackhi_epi64(m2, m7);
+  312|   757k|        t1 = _mm256_alignr_epi8(m5, m6, 8);
+  313|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  314|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  315|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  316|   757k|        t0 = _mm256_unpacklo_epi64(m4, m0);
+  317|   757k|        t1 = _mm256_blend_epi32(m4, m3, 0x33);
+  318|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  319|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  320|   757k|        t0 = _mm256_unpackhi_epi64(m5, m3);
+  321|   757k|        t1 = _mm256_shuffle_epi32(m1, _MM_SHUFFLE!(1, 0, 3, 2));
+  322|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  323|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  324|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  325|   757k|
+  326|   757k|        // round 8
+  327|   757k|        t0 = _mm256_unpackhi_epi64(m6, m3);
+  328|   757k|        t1 = _mm256_blend_epi32(m1, m6, 0x33);
+  329|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  330|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  331|   757k|        t0 = _mm256_alignr_epi8(m7, m5, 8);
+  332|   757k|        t1 = _mm256_unpackhi_epi64(m0, m4);
+  333|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  334|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  335|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  336|   757k|        t0 = _mm256_blend_epi32(m2, m1, 0x33);
+  337|   757k|        t1 = _mm256_alignr_epi8(m4, m7, 8);
+  338|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  339|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  340|   757k|        t0 = _mm256_unpacklo_epi64(m5, m0);
+  341|   757k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  342|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  343|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  344|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  345|   757k|
+  346|   757k|        // round 9
+  347|   757k|        t0 = _mm256_unpacklo_epi64(m3, m7);
+  348|   757k|        t1 = _mm256_alignr_epi8(m0, m5, 8);
+  349|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  350|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  351|   757k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  352|   757k|        t1 = _mm256_alignr_epi8(m4, m1, 8);
+  353|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  354|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  355|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  356|   757k|        t0 = _mm256_unpacklo_epi64(m5, m6);
+  357|   757k|        t1 = _mm256_unpackhi_epi64(m6, m0);
+  358|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  359|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  360|   757k|        t0 = _mm256_alignr_epi8(m1, m2, 8);
+  361|   757k|        t1 = _mm256_alignr_epi8(m2, m3, 8);
+  362|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  363|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  364|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  365|   757k|
+  366|   757k|        // round 10
+  367|   757k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  368|   757k|        t1 = _mm256_unpackhi_epi64(m3, m0);
+  369|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  370|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  371|   757k|        t0 = _mm256_unpacklo_epi64(m1, m2);
+  372|   757k|        t1 = _mm256_blend_epi32(m2, m3, 0x33);
+  373|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  374|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  375|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  376|   757k|        t0 = _mm256_unpackhi_epi64(m6, m7);
+  377|   757k|        t1 = _mm256_unpackhi_epi64(m4, m1);
+  378|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  379|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  380|   757k|        t0 = _mm256_blend_epi32(m5, m0, 0x33);
+  381|   757k|        t1 = _mm256_unpacklo_epi64(m7, m6);
+  382|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  383|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  384|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  385|   757k|
+  386|   757k|        // round 11
+  387|   757k|        t0 = _mm256_unpacklo_epi64(m0, m1);
+  388|   757k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  389|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  390|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  391|   757k|        t0 = _mm256_unpackhi_epi64(m0, m1);
+  392|   757k|        t1 = _mm256_unpackhi_epi64(m2, m3);
+  393|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  394|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  395|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  396|   757k|        t0 = _mm256_unpacklo_epi64(m7, m4);
+  397|   757k|        t1 = _mm256_unpacklo_epi64(m5, m6);
+  398|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  399|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  400|   757k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  401|   757k|        t1 = _mm256_unpackhi_epi64(m5, m6);
+  402|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  403|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  404|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  405|   757k|
+  406|   757k|        // round 12
+  407|   757k|        t0 = _mm256_unpacklo_epi64(m7, m2);
+  408|   757k|        t1 = _mm256_unpackhi_epi64(m4, m6);
+  409|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  410|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  411|   757k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  412|   757k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
+  413|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  414|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  415|   757k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  416|   757k|        t0 = _mm256_unpackhi_epi64(m2, m0);
+  417|   757k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
+  418|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  419|   757k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  420|   757k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
+  421|   757k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
+  422|   757k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  423|   757k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  424|   757k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  425|   757k|
+  426|   757k|        a = xor(a, c);
+  427|   757k|        b = xor(b, d);
+  428|   757k|        a = xor(a, iv0);
+  429|   757k|        b = xor(b, iv1);
+  430|   757k|
+  431|   757k|        storeu(a, words_low);
+  432|   757k|        storeu(b, words_high);
+  433|   757k|    }
+  434|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx22g1:
   107|  18.1M|unsafe fn g1(a: &mut __m256i, b: &mut __m256i, c: &mut __m256i, d: &mut __m256i, m: &mut __m256i) {
   108|  18.1M|    unsafe {
@@ -2653,9 +2653,9 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx23xor:
    57|  76.5M|    unsafe { _mm256_xor_si256(a, b) }
    58|  76.5M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx24set4:
-   66|   758k|unsafe fn set4(a: u64, b: u64, c: u64, d: u64) -> __m256i {
-   67|   758k|    unsafe { _mm256_setr_epi64x(a as i64, b as i64, c as i64, d as i64) }
-   68|   758k|}
+   66|   757k|unsafe fn set4(a: u64, b: u64, c: u64, d: u64) -> __m256i {
+   67|   757k|    unsafe { _mm256_setr_epi64x(a as i64, b as i64, c as i64, d as i64) }
+   68|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25loadu:
    18|  3.03M|unsafe fn loadu(src: *const [Word; DEGREE]) -> __m256i {
    19|       |    // This is an unaligned load, so the pointer cast is allowed.
@@ -2688,27 +2688,27 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx29loadu_128:
    32|  6.06M|}
 
 _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation14compress1_loop:
-   96|   758k|    pub fn compress1_loop(
-   97|   758k|        &self,
-   98|   758k|        input: &[u8],
-   99|   758k|        words: &mut [Word; 8],
-  100|   758k|        count: Count,
-  101|   758k|        last_node: LastNode,
-  102|   758k|        finalize: Finalize,
-  103|   758k|        stride: Stride,
-  104|   758k|    ) {
-  105|   758k|        match self.0 {
+   96|   757k|    pub fn compress1_loop(
+   97|   757k|        &self,
+   98|   757k|        input: &[u8],
+   99|   757k|        words: &mut [Word; 8],
+  100|   757k|        count: Count,
+  101|   757k|        last_node: LastNode,
+  102|   757k|        finalize: Finalize,
+  103|   757k|        stride: Stride,
+  104|   757k|    ) {
+  105|   757k|        match self.0 {
   106|       |            #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-  107|   758k|            Platform::AVX2 => unsafe {
-  108|   758k|                avx2::compress1_loop(input, words, count, last_node, finalize, stride);
-  109|   758k|            },
+  107|   757k|            Platform::AVX2 => unsafe {
+  108|   757k|                avx2::compress1_loop(input, words, count, last_node, finalize, stride);
+  109|   757k|            },
   110|       |            // Note that there's an SSE version of compress1 in the official C
   111|       |            // implementation, but I haven't ported it yet.
   112|      0|            _ => {
   113|      0|                portable::compress1_loop(input, words, count, last_node, finalize, stride);
   114|      0|            }
   115|       |        }
-  116|   758k|    }
+  116|   757k|    }
 _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation17avx2_if_supported:
    70|   189k|    pub fn avx2_if_supported() -> Option<Self> {
    71|       |        // Check whether AVX2 support is assumed by the build.
@@ -2765,19 +2765,19 @@ _RNvMs2_NtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB5_6Stride17padded_blockbytes:
   200|       |        }
   201|   947k|    }
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts10count_high:
-  208|   758k|pub(crate) fn count_high(count: Count) -> Word {
-  209|   758k|    (count >> 8 * size_of::<Word>()) as Word
-  210|   758k|}
+  208|   757k|pub(crate) fn count_high(count: Count) -> Word {
+  209|   757k|    (count >> 8 * size_of::<Word>()) as Word
+  210|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts11final_block:
-  232|   758k|pub fn final_block<'a>(
-  233|   758k|    input: &'a [u8],
-  234|   758k|    offset: usize,
-  235|   758k|    buffer: &'a mut [u8; BLOCKBYTES],
-  236|   758k|    stride: Stride,
-  237|   758k|) -> (&'a [u8; BLOCKBYTES], usize, bool) {
-  238|   758k|    let capped_offset = cmp::min(offset, input.len());
-  239|   758k|    let offset_slice = &input[capped_offset..];
-  240|   758k|    if offset_slice.len() >= BLOCKBYTES {
+  232|   757k|pub fn final_block<'a>(
+  233|   757k|    input: &'a [u8],
+  234|   757k|    offset: usize,
+  235|   757k|    buffer: &'a mut [u8; BLOCKBYTES],
+  236|   757k|    stride: Stride,
+  237|   757k|) -> (&'a [u8; BLOCKBYTES], usize, bool) {
+  238|   757k|    let capped_offset = cmp::min(offset, input.len());
+  239|   757k|    let offset_slice = &input[capped_offset..];
+  240|   757k|    if offset_slice.len() >= BLOCKBYTES {
   241|   189k|        let block = array_ref!(offset_slice, 0, BLOCKBYTES);
   242|   189k|        let should_finalize = offset_slice.len() <= stride.padded_blockbytes();
   243|   189k|        (block, BLOCKBYTES, should_finalize)
@@ -2787,20 +2787,20 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts11final_block:
   247|   568k|        buffer[..offset_slice.len()].copy_from_slice(offset_slice);
   248|   568k|        (buffer, offset_slice.len(), true)
   249|       |    }
-  250|   758k|}
+  250|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts19input_debug_asserts:
-  252|   758k|pub fn input_debug_asserts(input: &[u8], finalize: Finalize) {
+  252|   757k|pub fn input_debug_asserts(input: &[u8], finalize: Finalize) {
   253|       |    // If we're not finalizing, the input must not be empty, and it must be an
   254|       |    // even multiple of the block size.
-  255|   758k|    if !finalize.yes() {
+  255|   757k|    if !finalize.yes() {
   256|   189k|        debug_assert!(!input.is_empty());
   257|   189k|        debug_assert_eq!(0, input.len() % BLOCKBYTES);
   258|   568k|    }
-  259|   758k|}
+  259|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts9count_low:
-  204|   758k|pub(crate) fn count_low(count: Count) -> Word {
-  205|   758k|    count as Word
-  206|   758k|}
+  204|   757k|pub(crate) fn count_low(count: Count) -> Word {
+  205|   757k|    count as Word
+  206|   757k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts9flag_word:
   217|  1.51M|pub(crate) fn flag_word(flag: bool) -> Word {
   218|  1.51M|    if flag {
@@ -3108,10 +3108,10 @@ _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar4zeroCs3VjbIwwZMBL_6jubjub:
   238|  2.32M|        Scalar([0, 0, 0, 0])
   239|  2.32M|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar6doubleCs3VjbIwwZMBL_6jubjub:
-  249|  19.2M|    pub const fn double(&self) -> Scalar {
+  249|  19.1M|    pub const fn double(&self) -> Scalar {
   250|       |        // TODO: This can be achieved more efficiently with a bitshift.
-  251|  19.2M|        self.add(self)
-  252|  19.2M|    }
+  251|  19.1M|        self.add(self)
+  252|  19.1M|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar6squareCs3VjbIwwZMBL_6jubjub:
   341|  6.14k|    pub const fn square(&self) -> Scalar {
   342|  6.14k|        let (r1, carry) = mac(0, self.0[0], self.0[1], 0);
@@ -3434,9 +3434,9 @@ _RNvXsv_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3o
   163|   193k|                *self = &*self * &rhs;
   164|   193k|            }
 _RNvXsw_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarINtNtNtCs6SNw0SRvItZ_4core3ops5arith9MulAssignRBC_E10mul_assignB7_:
-  169|  6.78M|            fn mul_assign(&mut self, rhs: &'b $rhs) {
-  170|  6.78M|                *self = &*self * rhs;
-  171|  6.78M|            }
+  169|  6.77M|            fn mul_assign(&mut self, rhs: &'b $rhs) {
+  170|  6.77M|                *self = &*self * rhs;
+  171|  6.77M|            }
 _RNvXsx_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarINtNtNtCs6SNw0SRvItZ_4core3ops5arith3MulRBC_E3mulB7_:
    97|   193k|            fn mul(self, rhs: &'b $rhs) -> $output {
    98|   193k|                &self * rhs
@@ -3532,9 +3532,9 @@ _RNCNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB7_8FrontierNtNtCsc
   356|  5.94k|                frontier.root(Some(DEPTH.into()))
   357|  5.94k|            })
 _RNCNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB7_8FrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeKh1d_E4root0B1e_:
-  355|  6.39k|            .map_or(H::empty_root(DEPTH.into()), |frontier| {
-  356|  6.39k|                frontier.root(Some(DEPTH.into()))
-  357|  6.39k|            })
+  355|  6.38k|            .map_or(H::empty_root(DEPTH.into()), |frontier| {
+  356|  6.38k|                frontier.root(Some(DEPTH.into()))
+  357|  6.38k|            })
 _RNCNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB7_8FrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4tree4NodeKh20_E4root0B1e_:
   355|  5.82k|            .map_or(H::empty_root(DEPTH.into()), |frontier| {
   356|  5.82k|                frontier.root(Some(DEPTH.into()))
@@ -3935,10 +3935,10 @@ _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierN
   100|  1.77k|        } else {
   101|       |            // if the new position is even, then the current leaf will be hashed
   102|       |            // with the first ommer, and so forth up the tree.
-  103|  1.66k|            let new_root_level = self.position.root_level();
+  103|  1.65k|            let new_root_level = self.position.root_level();
   104|       |
-  105|  1.66k|            let mut carry = Some((prior_leaf, 0.into()));
-  106|  1.66k|            let mut new_ommers = Vec::with_capacity(self.position.past_ommer_count().into());
+  105|  1.65k|            let mut carry = Some((prior_leaf, 0.into()));
+  106|  1.65k|            let mut new_ommers = Vec::with_capacity(self.position.past_ommer_count().into());
   107|  7.78k|            for (addr, source) in prior_position.witness_addrs(new_root_level) {
   108|  7.78k|                if let Source::Past(i) = source {
   109|  4.99k|                    if let Some((carry_ommer, carry_lvl)) = carry.as_ref() {
@@ -3962,20 +3962,20 @@ _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierN
   127|       |            }
   128|       |
   129|       |            // we carried value out, so we need to push on one more ommer.
-  130|  1.66k|            if let Some((carry_ommer, _)) = carry {
-  131|    469|                new_ommers.push(carry_ommer);
+  130|  1.65k|            if let Some((carry_ommer, _)) = carry {
+  131|    468|                new_ommers.push(carry_ommer);
   132|  1.19k|            }
   133|       |
-  134|  1.66k|            self.ommers = new_ommers;
+  134|  1.65k|            self.ommers = new_ommers;
   135|       |        }
   136|  3.43k|    }
 _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeE4rootB1k_:
-  139|  6.39k|    pub fn root(&self, root_level: Option<Level>) -> H {
-  140|  6.39k|        let max_level = root_level.unwrap_or_else(|| self.position.root_level());
-  141|  6.39k|        self.position
-  142|  6.39k|            .witness_addrs(max_level)
-  143|  6.39k|            .fold(
-  144|  6.39k|                (self.leaf.clone(), Level::from(0)),
+  139|  6.38k|    pub fn root(&self, root_level: Option<Level>) -> H {
+  140|  6.38k|        let max_level = root_level.unwrap_or_else(|| self.position.root_level());
+  141|  6.38k|        self.position
+  142|  6.38k|            .witness_addrs(max_level)
+  143|  6.38k|            .fold(
+  144|  6.38k|                (self.leaf.clone(), Level::from(0)),
   145|       |                |(digest, complete_lvl), (addr, source)| {
   146|       |                    // fold up from complete_lvl to addr.level() pairing with empty roots; if
   147|       |                    // complete_lvl == addr.level() this is just the complete digest to this point
@@ -3996,7 +3996,7 @@ _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierN
   162|       |                },
   163|       |            )
   164|       |            .0
-  165|  6.39k|    }
+  165|  6.38k|    }
 _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeE6appendB1k_:
    91|  3.83k|    pub fn append(&mut self, leaf: H) {
    92|  3.83k|        let prior_position = self.position;
@@ -4038,7 +4038,7 @@ _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierN
   128|       |
   129|       |            // we carried value out, so we need to push on one more ommer.
   130|  1.86k|            if let Some((carry_ommer, _)) = carry {
-  131|    522|                new_ommers.push(carry_ommer);
+  131|    521|                new_ommers.push(carry_ommer);
   132|  1.34k|            }
   133|       |
   134|  1.86k|            self.ommers = new_ommers;
@@ -4536,15 +4536,15 @@ _RNvMsj_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPoint8to_niels:
   734|  19.1M|        }
   735|  19.1M|    }
 _RNvMst_Cs3VjbIwwZMBL_6jubjubNtB5_14CompletedPoint13into_extendedB5_:
- 1052|  19.2M|    fn into_extended(self) -> ExtendedPoint {
- 1053|  19.2M|        ExtendedPoint {
- 1054|  19.2M|            u: self.u * self.t,
- 1055|  19.2M|            v: self.v * self.z,
- 1056|  19.2M|            z: self.z * self.t,
- 1057|  19.2M|            t1: self.u,
- 1058|  19.2M|            t2: self.v,
- 1059|  19.2M|        }
- 1060|  19.2M|    }
+ 1052|  19.1M|    fn into_extended(self) -> ExtendedPoint {
+ 1053|  19.1M|        ExtendedPoint {
+ 1054|  19.1M|            u: self.u * self.t,
+ 1055|  19.1M|            v: self.v * self.z,
+ 1056|  19.1M|            z: self.z * self.t,
+ 1057|  19.1M|            t1: self.u,
+ 1058|  19.1M|            t2: self.v,
+ 1059|  19.1M|        }
+ 1060|  19.1M|    }
 _RNvXsL_Cs3VjbIwwZMBL_6jubjubNtB5_13SubgroupPointNtCslMvCsKGnfC0_5group5Group6double:
  1313|  1.53k|    fn double(&self) -> Self {
  1314|  1.53k|        SubgroupPoint(self.0.double())
@@ -4625,10 +4625,10 @@ _RNvNtCs3VjbIwwZMBL_6jubjub4util3adc:
     5|  1.58G|    (ret as u64, (ret >> 64) as u64)
     6|  1.58G|}
 _RNvNtCs3VjbIwwZMBL_6jubjub4util3sbb:
-   10|   860M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
-   11|   860M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
-   12|   860M|    (ret as u64, (ret >> 64) as u64)
-   13|   860M|}
+   10|   859M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
+   11|   859M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
+   12|   859M|    (ret as u64, (ret >> 64) as u64)
+   13|   859M|}
 _RNvXso_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2FrINtNtNtCs6SNw0SRvItZ_4core3ops5arith9AddAssignRBv_E10add_assignCsckoVJ3NjISC_14sapling_crypto:
   149|  65.8M|            fn add_assign(&mut self, rhs: &'b $rhs) {
   150|  65.8M|                *self = &*self + rhs;
@@ -4675,12 +4675,12 @@ _RINvMNtCsgGvOW4efc1E_11lazy_static4lazyINtB3_4LazyNtNtCsjpkeS12E7YP_9bls12_3816
    22|      1|        self.0.call_once(builder)
    23|      1|    }
 _RINvMNtCsgGvOW4efc1E_11lazy_static4lazyINtB3_4LazyINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBT_6fields2fp2FpEE3getNvNvXsF_B1S_NtB1S_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeEBT_:
-   18|   379k|    pub fn get<F>(&'static self, builder: F) -> &T
-   19|   379k|    where
-   20|   379k|        F: FnOnce() -> T,
+   18|   378k|    pub fn get<F>(&'static self, builder: F) -> &T
+   19|   378k|    where
+   20|   378k|        F: FnOnce() -> T,
    21|       |    {
-   22|   379k|        self.0.call_once(builder)
-   23|   379k|    }
+   22|   378k|        self.0.call_once(builder)
+   23|   378k|    }
 
 _RNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB7_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref11___stability:
   133|   176k|                fn __stability() -> &'static $T {
@@ -4778,12 +4778,12 @@ _RNvXs7_NtCsckoVJ3NjISC_14sapling_crypto4treeNtB5_11EMPTY_ROOTSNtNtNtCs6SNw0SRvI
   137|   183k|                __stability()
   138|   183k|            }
 _RNvNvXsF_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB7_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref11___stability:
-  133|   379k|                fn __stability() -> &'static $T {
+  133|   378k|                fn __stability() -> &'static $T {
   134|       |                    __lazy_static_create!(LAZY, $T);
-  135|   379k|                    LAZY.get(__static_ref_initialize)
-  136|   379k|                }
+  135|   378k|                    LAZY.get(__static_ref_initialize)
+  136|   378k|                }
 _RNvXsF_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref:
-  128|   379k|            fn deref(&self) -> &$T {
+  128|   378k|            fn deref(&self) -> &$T {
   129|       |                #[inline(always)]
   130|       |                fn __static_ref_initialize() -> $T { $e }
   131|       |
@@ -4792,8 +4792,8 @@ _RNvXsF_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_9FP_TABLESNtNtNtCs6SNw0SR
   134|       |                    __lazy_static_create!(LAZY, $T);
   135|       |                    LAZY.get(__static_ref_initialize)
   136|       |                }
-  137|   379k|                __stability()
-  138|   379k|            }
+  137|   378k|                __stability()
+  138|   378k|            }
 _RNvNvXsF_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB7_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initialize:
   130|      1|                fn __static_ref_initialize() -> $T { $e }
 
@@ -4975,7 +4975,7 @@ _RNvMNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB2_10SqrtHasherNtNtNt
    49|  1.51M|        ((x.get_lower_32() ^ self.hash_xor) as usize) % self.hash_mod
    50|  1.51M|    }
 _RNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB4_10SqrtTablesNtNtNtB8_6fields2fp2FpE10sqrt_ratioB8_:
-  127|   379k|    pub fn sqrt_ratio(&self, num: &F, div: &F) -> (Choice, F) {
+  127|   378k|    pub fn sqrt_ratio(&self, num: &F, div: &F) -> (Choice, F) {
   128|       |        // Based on:
   129|       |        // * [Sarkar2020](https://eprint.iacr.org/2020/1407)
   130|       |        // * [BDLSY2012](https://cr.yp.to/papers.html#ed25519)
@@ -5003,72 +5003,72 @@ _RNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB4_10SqrtTablesNtNt
   152|       |        // The overall cost of this part is similar to a single full-width exponentiation,
   153|       |        // regardless of S.
   154|       |
-  155|   379k|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
+  155|   378k|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
   156|       |
   157|       |        // s = div^(2^S - 1)
-  158|   379k|        let s = (0..5).fold(*div, |d: F, i| sqr(d, 1 << i) * d);
+  158|   378k|        let s = (0..5).fold(*div, |d: F, i| sqr(d, 1 << i) * d);
   159|       |
   160|       |        // t == div^(2^(S+1) - 1)
-  161|   379k|        let t = s.square() * div;
+  161|   378k|        let t = s.square() * div;
   162|       |
   163|       |        // w = (num * t)^((T-1)/2) * s
-  164|   379k|        let w = (t * num).pow_by_t_minus1_over2() * s;
+  164|   378k|        let w = (t * num).pow_by_t_minus1_over2() * s;
   165|       |
   166|       |        // v == u^((T-1)/2)
-  167|   379k|        let v = w * div;
+  167|   378k|        let v = w * div;
   168|       |
   169|       |        // uv = u * v
-  170|   379k|        let uv = w * num;
+  170|   378k|        let uv = w * num;
   171|       |
-  172|   379k|        let res = self.sqrt_common(&uv, &v);
+  172|   378k|        let res = self.sqrt_common(&uv, &v);
   173|       |
-  174|   379k|        let sqdiv = res.square() * div;
-  175|   379k|        let is_square = (sqdiv - num).is_zero();
-  176|   379k|        let is_nonsquare = (sqdiv - F::ROOT_OF_UNITY * num).is_zero();
-  177|   379k|        assert!(bool::from(
-  178|   379k|            num.is_zero() | div.is_zero() | (is_square ^ is_nonsquare)
-  179|   379k|        ));
+  174|   378k|        let sqdiv = res.square() * div;
+  175|   378k|        let is_square = (sqdiv - num).is_zero();
+  176|   378k|        let is_nonsquare = (sqdiv - F::ROOT_OF_UNITY * num).is_zero();
+  177|   378k|        assert!(bool::from(
+  178|   378k|            num.is_zero() | div.is_zero() | (is_square ^ is_nonsquare)
+  179|   378k|        ));
   180|       |
-  181|   379k|        (is_square, res)
-  182|   379k|    }
+  181|   378k|        (is_square, res)
+  182|   378k|    }
 _RNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB4_10SqrtTablesNtNtNtB8_6fields2fp2FpE11sqrt_commonB8_:
-  200|   379k|    fn sqrt_common(&self, uv: &F, v: &F) -> F {
-  201|   379k|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
-  202|   379k|        let inv = |x: F| self.inv[self.hasher.hash(&x)] as usize;
+  200|   378k|    fn sqrt_common(&self, uv: &F, v: &F) -> F {
+  201|   378k|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
+  202|   378k|        let inv = |x: F| self.inv[self.hasher.hash(&x)] as usize;
   203|       |
-  204|   379k|        let x3 = *uv * v;
-  205|   379k|        let x2 = sqr(x3, 8);
-  206|   379k|        let x1 = sqr(x2, 8);
-  207|   379k|        let x0 = sqr(x1, 8);
+  204|   378k|        let x3 = *uv * v;
+  205|   378k|        let x2 = sqr(x3, 8);
+  206|   378k|        let x1 = sqr(x2, 8);
+  207|   378k|        let x0 = sqr(x1, 8);
   208|       |
   209|       |        // i = 0, 1
-  210|   379k|        let mut t_ = inv(x0); // = t >> 16
+  210|   378k|        let mut t_ = inv(x0); // = t >> 16
   211|       |                              // 1 == x0 * ROOT_OF_UNITY^(t_ << 24)
-  212|   379k|        assert!(t_ < 0x100);
-  213|   379k|        let alpha = x1 * self.g2[t_];
+  212|   378k|        assert!(t_ < 0x100);
+  213|   378k|        let alpha = x1 * self.g2[t_];
   214|       |
   215|       |        // i = 2
-  216|   379k|        t_ += inv(alpha) << 8; // = t >> 8
+  216|   378k|        t_ += inv(alpha) << 8; // = t >> 8
   217|       |                               // 1 == x1 * ROOT_OF_UNITY^(t_ << 16)
-  218|   379k|        assert!(t_ < 0x10000);
-  219|   379k|        let alpha = x2 * self.g1[t_ & 0xFF] * self.g2[t_ >> 8];
+  218|   378k|        assert!(t_ < 0x10000);
+  219|   378k|        let alpha = x2 * self.g1[t_ & 0xFF] * self.g2[t_ >> 8];
   220|       |
   221|       |        // i = 3
-  222|   379k|        t_ += inv(alpha) << 16; // = t
+  222|   378k|        t_ += inv(alpha) << 16; // = t
   223|       |                                // 1 == x2 * ROOT_OF_UNITY^(t_ << 8)
-  224|   379k|        assert!(t_ < 0x1000000);
-  225|   379k|        let alpha = x3 * self.g0[t_ & 0xFF] * self.g1[(t_ >> 8) & 0xFF] * self.g2[t_ >> 16];
+  224|   378k|        assert!(t_ < 0x1000000);
+  225|   378k|        let alpha = x3 * self.g0[t_ & 0xFF] * self.g1[(t_ >> 8) & 0xFF] * self.g2[t_ >> 16];
   226|       |
-  227|   379k|        t_ += inv(alpha) << 24; // = t << 1
+  227|   378k|        t_ += inv(alpha) << 24; // = t << 1
   228|       |                                // 1 == x3 * ROOT_OF_UNITY^t_
-  229|   379k|        t_ = (((t_ as u64) + 1) >> 1) as usize;
-  230|   379k|        assert!(t_ <= 0x80000000);
+  229|   378k|        t_ = (((t_ as u64) + 1) >> 1) as usize;
+  230|   378k|        assert!(t_ <= 0x80000000);
   231|       |
-  232|   379k|        *uv * self.g0[t_ & 0xFF]
-  233|   379k|            * self.g1[(t_ >> 8) & 0xFF]
-  234|   379k|            * self.g2[(t_ >> 16) & 0xFF]
-  235|   379k|            * self.g3[t_ >> 24]
-  236|   379k|    }
+  232|   378k|        *uv * self.g0[t_ & 0xFF]
+  233|   378k|            * self.g1[(t_ >> 8) & 0xFF]
+  234|   378k|            * self.g2[(t_ >> 16) & 0xFF]
+  235|   378k|            * self.g3[t_ >> 24]
+  236|   378k|    }
 _RNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB4_10SqrtTablesNtNtNtB8_6fields2fp2FpE3newB8_:
    69|      1|    pub fn new(hash_xor: u32, hash_mod: usize) -> Self {
    70|       |        use alloc::vec;
@@ -5145,42 +5145,42 @@ _RNvMs0_NtCs41Au54XfBWR_12pasta_curves6curvesNtB5_2Ep16curve_constant_b:
    47|  10.0M|                $base::from_raw($b_raw)
    48|  10.0M|            }
 _RNvMs2S_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEp16curve_constant_a:
-   42|   758k|            const fn curve_constant_a() -> $base {
-   43|   758k|                $base::from_raw($a_raw)
-   44|   758k|            }
+   42|   757k|            const fn curve_constant_a() -> $base {
+   43|   757k|                $base::from_raw($a_raw)
+   44|   757k|            }
 _RNvMs2S_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEp16curve_constant_b:
-   46|   758k|            const fn curve_constant_b() -> $base {
-   47|   758k|                $base::from_raw($b_raw)
-   48|   758k|            }
+   46|   757k|            const fn curve_constant_b() -> $base {
+   47|   757k|                $base::from_raw($b_raw)
+   48|   757k|            }
 _RNvXs2U_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtCslMvCsKGnfC0_5group5Group11is_identity:
-  103|   379k|            fn is_identity(&self) -> Choice {
-  104|   379k|                self.z.is_zero()
-  105|   379k|            }
+  103|   378k|            fn is_identity(&self) -> Choice {
+  104|   378k|                self.z.is_zero()
+  105|   378k|            }
 _RNvXs2W_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtNtNtB8_10arithmetic6curves8CurveExt11is_on_curve:
-  157|   379k|            fn is_on_curve(&self) -> Choice {
+  157|   378k|            fn is_on_curve(&self) -> Choice {
   158|       |                // Y^2 = X^3 + AX(Z^4) + b(Z^6)
   159|       |                // Y^2 - (X^2 + A(Z^4))X = b(Z^6)
   160|       |
-  161|   379k|                let z2 = self.z.square();
-  162|   379k|                let z4 = z2.square();
-  163|   379k|                let z6 = z4 * z2;
-  164|   379k|                (self.y.square() - (self.x.square() + $name::curve_constant_a() * z4) * self.x)
-  165|   379k|                    .ct_eq(&(z6 * $name::curve_constant_b()))
-  166|   379k|                    | self.z.is_zero()
-  167|   379k|            }
+  161|   378k|                let z2 = self.z.square();
+  162|   378k|                let z4 = z2.square();
+  163|   378k|                let z6 = z4 * z2;
+  164|   378k|                (self.y.square() - (self.x.square() + $name::curve_constant_a() * z4) * self.x)
+  165|   378k|                    .ct_eq(&(z6 * $name::curve_constant_b()))
+  166|   378k|                    | self.z.is_zero()
+  167|   378k|            }
 _RNvXs2W_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtNtNtB8_10arithmetic6curves8CurveExt12new_jacobian:
-  148|   379k|            fn new_jacobian(x: Self::Base, y: Self::Base, z: Self::Base) -> CtOption<Self> {
-  149|   379k|                let p = $name { x, y, z };
-  150|   379k|                CtOption::new(p, p.is_on_curve())
-  151|   379k|            }
+  148|   378k|            fn new_jacobian(x: Self::Base, y: Self::Base, z: Self::Base) -> CtOption<Self> {
+  149|   378k|                let p = $name { x, y, z };
+  150|   378k|                CtOption::new(p, p.is_on_curve())
+  151|   378k|            }
 _RNvXs2W_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtNtNtB8_10arithmetic6curves8CurveExt1a:
-  140|   379k|            fn a() -> Self::Base {
-  141|   379k|                $name::curve_constant_a()
-  142|   379k|            }
+  140|   378k|            fn a() -> Self::Base {
+  141|   378k|                $name::curve_constant_a()
+  142|   378k|            }
 _RNvXs2W_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtNtNtB8_10arithmetic6curves8CurveExt1b:
-  144|   379k|            fn b() -> Self::Base {
-  145|   379k|                $name::curve_constant_b()
-  146|   379k|            }
+  144|   378k|            fn b() -> Self::Base {
+  145|   378k|                $name::curve_constant_b()
+  146|   378k|            }
 _RNvXs2W_NtCs41Au54XfBWR_12pasta_curves6curvesNtB6_5IsoEpNtNtNtB8_10arithmetic6curves8CurveExt20jacobian_coordinates:
   153|   189k|            fn jacobian_coordinates(&self) -> ($base, $base, $base) {
   154|   189k|               (self.x, self.y, self.z)
@@ -5556,14 +5556,14 @@ _RNvMse_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2Fp4zeroCs29eqbdMXVik_10s
   266|   568k|        Fp([0, 0, 0, 0])
   267|   568k|    }
 _RNvXsd_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtNtCs6SNw0SRvItZ_4core7default7Default7defaultCs29eqbdMXVik_10sinsemilla:
-  257|   379k|    fn default() -> Self {
-  258|   379k|        Self::zero()
-  259|   379k|    }
+  257|   378k|    fn default() -> Self {
+  258|   378k|        Self::zero()
+  259|   378k|    }
 _RINvXsh_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB6_2FpNtCs6LIqQLutccH_2ff5Field11pow_vartimeRAyj4_EBa_:
   544|   189k|    fn pow_vartime<S: AsRef<[u64]>>(&self, exp: S) -> Self {
   545|   189k|        let mut res = Self::one();
   546|   189k|        let mut found_one = false;
-  547|   758k|        for e in exp.as_ref().iter().rev() {
+  547|   757k|        for e in exp.as_ref().iter().rev() {
   548|  48.5M|            for i in (0..64).rev() {
   549|  48.5M|                if found_one {
   550|  48.1M|                    res = res.square();
@@ -5693,7 +5693,7 @@ _RNvMse_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2Fp8from_raw:
   305|  21.6M|        (&Fp(val)).mul(&R2)
   306|  21.6M|    }
 _RNvMse_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2Fp9from_u512:
-  282|   379k|    fn from_u512(limbs: [u64; 8]) -> Fp {
+  282|   378k|    fn from_u512(limbs: [u64; 8]) -> Fp {
   283|       |        // We reduce an arbitrary 512-bit number by decomposing it into two 256-bit digits
   284|       |        // with the higher bits multiplied by 2^256. Thus, we perform two reductions
   285|       |        //
@@ -5707,11 +5707,11 @@ _RNvMse_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2Fp9from_u512:
   293|       |        // that (2^256 - 1)*c is an acceptable product for the reduction. Therefore, the
   294|       |        // reduction always works so long as `c` is in the field; in this case it is either the
   295|       |        // constant `R2` or `R3`.
-  296|   379k|        let d0 = Fp([limbs[0], limbs[1], limbs[2], limbs[3]]);
-  297|   379k|        let d1 = Fp([limbs[4], limbs[5], limbs[6], limbs[7]]);
+  296|   378k|        let d0 = Fp([limbs[0], limbs[1], limbs[2], limbs[3]]);
+  297|   378k|        let d1 = Fp([limbs[4], limbs[5], limbs[6], limbs[7]]);
   298|       |        // Convert to Montgomery form
-  299|   379k|        d0 * R2 + d1 * R3
-  300|   379k|    }
+  299|   378k|        d0 * R2 + d1 * R3
+  300|   378k|    }
 _RNvXs1_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCsfWYj8LFlglm_6subtle14ConstantTimeEq5ct_eq:
    59|   319M|    fn ct_eq(&self, other: &Self) -> Choice {
    60|   319M|        self.0[0].ct_eq(&other.0[0])
@@ -5757,15 +5757,15 @@ _RNvXsf_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpAhj20_INtNtCs6SNw0SRvItZ_4core
   468|    287|        value.to_repr()
   469|    287|    }
 _RNvXsh_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCs6LIqQLutccH_2ff5Field10sqrt_ratio:
-  504|   379k|    fn sqrt_ratio(num: &Self, div: &Self) -> (Choice, Self) {
+  504|   378k|    fn sqrt_ratio(num: &Self, div: &Self) -> (Choice, Self) {
   505|       |        #[cfg(feature = "sqrt-table")]
   506|       |        {
-  507|   379k|            FP_TABLES.sqrt_ratio(num, div)
+  507|   378k|            FP_TABLES.sqrt_ratio(num, div)
   508|       |        }
   509|       |
   510|       |        #[cfg(not(feature = "sqrt-table"))]
   511|       |        ff::helpers::sqrt_ratio_generic(num, div)
-  512|   379k|    }
+  512|   378k|    }
 _RNvXsh_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCs6LIqQLutccH_2ff5Field6invert:
   533|   189k|    fn invert(&self) -> CtOption<Self> {
   534|   189k|        let tmp = self.pow_vartime(&[
@@ -5778,9 +5778,9 @@ _RNvXsh_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCs6LIqQLutccH_2ff5Fi
   541|   189k|        CtOption::new(tmp, !self.ct_eq(&Self::zero()))
   542|   189k|    }
 _RNvXsi_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCs6LIqQLutccH_2ff10PrimeField6is_odd:
-  631|   758k|    fn is_odd(&self) -> Choice {
-  632|   758k|        Choice::from(self.to_repr()[0] & 1)
-  633|   758k|    }
+  631|   757k|    fn is_odd(&self) -> Choice {
+  632|   757k|        Choice::from(self.to_repr()[0] & 1)
+  633|   757k|    }
 _RNvXsi_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtCs6LIqQLutccH_2ff10PrimeField7to_repr:
   617|  1.14M|    fn to_repr(&self) -> Self::Repr {
   618|       |        // Turn into canonical form by computing
@@ -5829,49 +5829,49 @@ _RNvXsk_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtNtNtB9_10arithmetic6
   727|  1.51M|        tmp.0[0] as u32
   728|  1.51M|    }
 _RNvXsk_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtNtNtB9_10arithmetic6fields16SqrtTableHelpers21pow_by_t_minus1_over2:
-  692|   379k|    fn pow_by_t_minus1_over2(&self) -> Self {
-  693|   379k|        let sqr = |x: Fp, i: u32| (0..i).fold(x, |x, _| x.square());
+  692|   378k|    fn pow_by_t_minus1_over2(&self) -> Self {
+  693|   378k|        let sqr = |x: Fp, i: u32| (0..i).fold(x, |x, _| x.square());
   694|       |
-  695|   379k|        let r10 = self.square();
-  696|   379k|        let r11 = r10 * self;
-  697|   379k|        let r110 = r11.square();
-  698|   379k|        let r111 = r110 * self;
-  699|   379k|        let r1001 = r111 * r10;
-  700|   379k|        let r1101 = r111 * r110;
-  701|   379k|        let ra = sqr(*self, 129) * self;
-  702|   379k|        let rb = sqr(ra, 7) * r1001;
-  703|   379k|        let rc = sqr(rb, 7) * r1101;
-  704|   379k|        let rd = sqr(rc, 4) * r11;
-  705|   379k|        let re = sqr(rd, 6) * r111;
-  706|   379k|        let rf = sqr(re, 3) * r111;
-  707|   379k|        let rg = sqr(rf, 10) * r1001;
-  708|   379k|        let rh = sqr(rg, 5) * r1001;
-  709|   379k|        let ri = sqr(rh, 4) * r1001;
-  710|   379k|        let rj = sqr(ri, 3) * r111;
-  711|   379k|        let rk = sqr(rj, 4) * r1001;
-  712|   379k|        let rl = sqr(rk, 5) * r11;
-  713|   379k|        let rm = sqr(rl, 4) * r111;
-  714|   379k|        let rn = sqr(rm, 4) * r11;
-  715|   379k|        let ro = sqr(rn, 6) * r1001;
-  716|   379k|        let rp = sqr(ro, 5) * r1101;
-  717|   379k|        let rq = sqr(rp, 4) * r11;
-  718|   379k|        let rr = sqr(rq, 7) * r111;
-  719|   379k|        let rs = sqr(rr, 3) * r11;
-  720|   379k|        rs.square() // rt
-  721|   379k|    }
+  695|   378k|        let r10 = self.square();
+  696|   378k|        let r11 = r10 * self;
+  697|   378k|        let r110 = r11.square();
+  698|   378k|        let r111 = r110 * self;
+  699|   378k|        let r1001 = r111 * r10;
+  700|   378k|        let r1101 = r111 * r110;
+  701|   378k|        let ra = sqr(*self, 129) * self;
+  702|   378k|        let rb = sqr(ra, 7) * r1001;
+  703|   378k|        let rc = sqr(rb, 7) * r1101;
+  704|   378k|        let rd = sqr(rc, 4) * r11;
+  705|   378k|        let re = sqr(rd, 6) * r111;
+  706|   378k|        let rf = sqr(re, 3) * r111;
+  707|   378k|        let rg = sqr(rf, 10) * r1001;
+  708|   378k|        let rh = sqr(rg, 5) * r1001;
+  709|   378k|        let ri = sqr(rh, 4) * r1001;
+  710|   378k|        let rj = sqr(ri, 3) * r111;
+  711|   378k|        let rk = sqr(rj, 4) * r1001;
+  712|   378k|        let rl = sqr(rk, 5) * r11;
+  713|   378k|        let rm = sqr(rl, 4) * r111;
+  714|   378k|        let rn = sqr(rm, 4) * r11;
+  715|   378k|        let ro = sqr(rn, 6) * r1001;
+  716|   378k|        let rp = sqr(ro, 5) * r1101;
+  717|   378k|        let rq = sqr(rp, 4) * r11;
+  718|   378k|        let rr = sqr(rq, 7) * r111;
+  719|   378k|        let rs = sqr(rr, 3) * r11;
+  720|   378k|        rs.square() // rt
+  721|   378k|    }
 _RNvXsm_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpINtCs6LIqQLutccH_2ff16FromUniformBytesKj40_E18from_uniform_bytes:
-  743|   379k|    fn from_uniform_bytes(bytes: &[u8; 64]) -> Fp {
-  744|   379k|        Fp::from_u512([
-  745|   379k|            u64::from_le_bytes(bytes[0..8].try_into().unwrap()),
-  746|   379k|            u64::from_le_bytes(bytes[8..16].try_into().unwrap()),
-  747|   379k|            u64::from_le_bytes(bytes[16..24].try_into().unwrap()),
-  748|   379k|            u64::from_le_bytes(bytes[24..32].try_into().unwrap()),
-  749|   379k|            u64::from_le_bytes(bytes[32..40].try_into().unwrap()),
-  750|   379k|            u64::from_le_bytes(bytes[40..48].try_into().unwrap()),
-  751|   379k|            u64::from_le_bytes(bytes[48..56].try_into().unwrap()),
-  752|   379k|            u64::from_le_bytes(bytes[56..64].try_into().unwrap()),
-  753|   379k|        ])
-  754|   379k|    }
+  743|   378k|    fn from_uniform_bytes(bytes: &[u8; 64]) -> Fp {
+  744|   378k|        Fp::from_u512([
+  745|   378k|            u64::from_le_bytes(bytes[0..8].try_into().unwrap()),
+  746|   378k|            u64::from_le_bytes(bytes[8..16].try_into().unwrap()),
+  747|   378k|            u64::from_le_bytes(bytes[16..24].try_into().unwrap()),
+  748|   378k|            u64::from_le_bytes(bytes[24..32].try_into().unwrap()),
+  749|   378k|            u64::from_le_bytes(bytes[32..40].try_into().unwrap()),
+  750|   378k|            u64::from_le_bytes(bytes[40..48].try_into().unwrap()),
+  751|   378k|            u64::from_le_bytes(bytes[48..56].try_into().unwrap()),
+  752|   378k|            u64::from_le_bytes(bytes[56..64].try_into().unwrap()),
+  753|   378k|        ])
+  754|   378k|    }
 
 _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve13hash_to_fieldNtNtNtB4_6fields2fp2FpEB4_:
    11|   189k|pub fn hash_to_field<F: FromUniformBytes<64>>(
@@ -5935,19 +5935,19 @@ _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve13hash_to_fieldNtNtNtB4_6fields2
    69|   189k|            .finalize()
    70|       |    };
    71|       |
-   72|   379k|    for (big, buf) in [b_1, b_2].iter().zip(buf.iter_mut()) {
-   73|   379k|        let mut little = [0u8; CHUNKLEN];
-   74|   379k|        little.copy_from_slice(big.as_array());
-   75|   379k|        little.reverse();
-   76|   379k|        *buf = F::from_uniform_bytes(&little);
-   77|   379k|    }
+   72|   378k|    for (big, buf) in [b_1, b_2].iter().zip(buf.iter_mut()) {
+   73|   378k|        let mut little = [0u8; CHUNKLEN];
+   74|   378k|        little.copy_from_slice(big.as_array());
+   75|   378k|        little.reverse();
+   76|   378k|        *buf = F::from_uniform_bytes(&little);
+   77|   378k|    }
    78|   189k|}
 _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve23map_to_curve_simple_swuNtNtNtB4_6fields2fp2FpNtNtB4_6curves2EpNtB1w_5IsoEpEB4_:
-  109|   379k|pub fn map_to_curve_simple_swu<F: PrimeField, C: CurveExt<Base = F>, I: CurveExt<Base = F>>(
-  110|   379k|    u: &F,
-  111|   379k|    theta: F,
-  112|   379k|    z: F,
-  113|   379k|) -> I {
+  109|   378k|pub fn map_to_curve_simple_swu<F: PrimeField, C: CurveExt<Base = F>, I: CurveExt<Base = F>>(
+  110|   378k|    u: &F,
+  111|   378k|    theta: F,
+  112|   378k|    z: F,
+  113|   378k|) -> I {
   114|       |    // 1. tv1 = inv0(Z^2 * u^4 + Z * u^2)
   115|       |    // 2. x1 = (-B / A) * (1 + tv1)
   116|       |    // 3. If tv1 == 0, set x1 = B / (Z * A)
@@ -5970,24 +5970,24 @@ _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve23map_to_curve_simple_swuNtNtNtB
   133|       |    //    x1 = num_x1/div      = [B*(Z^2 * u^4 + Z * u^2 + 1)] / [-A*(Z^2 * u^4 + Z * u^2]
   134|       |    //   gx1 = num_gx1/div_gx1 = [num_x1^3 + A * num_x1 * div^2 + B * div^3] / div^3
   135|       |
-  136|   379k|    let a = I::a();
-  137|   379k|    let b = I::b();
-  138|   379k|    let z_u2 = z * u.square();
-  139|   379k|    let ta = z_u2.square() + z_u2;
-  140|   379k|    let num_x1 = b * (ta + F::ONE);
-  141|   379k|    let div = a * F::conditional_select(&-ta, &z, ta.is_zero());
-  142|   379k|    let num2_x1 = num_x1.square();
-  143|   379k|    let div2 = div.square();
-  144|   379k|    let div3 = div2 * div;
-  145|   379k|    let num_gx1 = (num2_x1 + a * div2) * num_x1 + b * div3;
+  136|   378k|    let a = I::a();
+  137|   378k|    let b = I::b();
+  138|   378k|    let z_u2 = z * u.square();
+  139|   378k|    let ta = z_u2.square() + z_u2;
+  140|   378k|    let num_x1 = b * (ta + F::ONE);
+  141|   378k|    let div = a * F::conditional_select(&-ta, &z, ta.is_zero());
+  142|   378k|    let num2_x1 = num_x1.square();
+  143|   378k|    let div2 = div.square();
+  144|   378k|    let div3 = div2 * div;
+  145|   378k|    let num_gx1 = (num2_x1 + a * div2) * num_x1 + b * div3;
   146|       |
   147|       |    // 5. x2 = Z * u^2 * x1
-  148|   379k|    let num_x2 = z_u2 * num_x1; // same div
+  148|   378k|    let num_x2 = z_u2 * num_x1; // same div
   149|       |
   150|       |    // 6. gx2 = x2^3 + A * x2 + B  [optimized out; see below]
   151|       |    // 7. If is_square(gx1), set x = x1 and y = sqrt(gx1)
   152|       |    // 8. Else set x = x2 and y = sqrt(gx2)
-  153|   379k|    let (gx1_square, y1) = F::sqrt_ratio(&num_gx1, &div3);
+  153|   378k|    let (gx1_square, y1) = F::sqrt_ratio(&num_gx1, &div3);
   154|       |
   155|       |    // This magic also comes from a generalization of [WB2019, section 4.2].
   156|       |    //
@@ -6004,15 +6004,15 @@ _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve23map_to_curve_simple_swuNtNtNtB
   167|       |    // When gx1 is not square, y1 is a square root of h * gx1, and so Z * theta * u^3 * y1
   168|       |    // is a square root of gx2. Note that we don't actually need to compute gx2.
   169|       |
-  170|   379k|    let y2 = theta * z_u2 * u * y1;
-  171|   379k|    let num_x = F::conditional_select(&num_x2, &num_x1, gx1_square);
-  172|   379k|    let y = F::conditional_select(&y2, &y1, gx1_square);
+  170|   378k|    let y2 = theta * z_u2 * u * y1;
+  171|   378k|    let num_x = F::conditional_select(&num_x2, &num_x1, gx1_square);
+  172|   378k|    let y = F::conditional_select(&y2, &y1, gx1_square);
   173|       |
   174|       |    // 9. If sgn0(u) != sgn0(y), set y = -y
-  175|   379k|    let y = F::conditional_select(&(-y), &y, u.is_odd().ct_eq(&y.is_odd()));
+  175|   378k|    let y = F::conditional_select(&(-y), &y, u.is_odd().ct_eq(&y.is_odd()));
   176|       |
-  177|   379k|    I::new_jacobian(num_x * div, y * div3, div).unwrap()
-  178|   379k|}
+  177|   378k|    I::new_jacobian(num_x * div, y * div3, div).unwrap()
+  178|   378k|}
 _RINvNtCs41Au54XfBWR_12pasta_curves11hashtocurve7iso_mapNtNtNtB4_6fields2fp2FpNtNtB4_6curves2EpNtB1f_5IsoEpEB4_:
    81|   189k|pub fn iso_map<F: Field, C: CurveExt<Base = F>, I: CurveExt<Base = F>>(
    82|   189k|    p: &I,
@@ -6078,9 +6078,9 @@ _RNvXsw_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtNtNtCs6SNw0SRvItZ_4c
    26|  93.9M|                &self + &rhs
    27|  93.9M|            }
 _RNvXsx_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpINtNtNtCs6SNw0SRvItZ_4core3ops5arith3SubRBL_E3subB9_:
-   38|   379k|            fn sub(self, rhs: &'b $rhs) -> $output {
-   39|   379k|                &self - rhs
-   40|   379k|            }
+   38|   378k|            fn sub(self, rhs: &'b $rhs) -> $output {
+   39|   378k|                &self - rhs
+   40|   378k|            }
 _RNvXsz_NtNtCs41Au54XfBWR_12pasta_curves6fields2fpNtB5_2FpNtNtNtCs6SNw0SRvItZ_4core3ops5arith3Sub3subB9_:
    56|   189M|            fn sub(self, rhs: $rhs) -> $output {
    57|   189M|                &self - &rhs
@@ -7208,13 +7208,13 @@ _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceNtNtCsjpkeS12E7YP_9bls12_3816scalar
   379|      1|        &*(*self.data.get()).as_ptr()
   380|      1|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBO_6fields2fp2FpEE13try_call_onceNCINvB2_9call_onceNvNvXsF_B1N_NtB1N_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0NtNtB3e_7convert10InfallibleEBO_:
-  208|   379k|    pub fn try_call_once<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
-  209|   379k|        if let Some(value) = self.get() {
-  210|   379k|            Ok(value)
+  208|   378k|    pub fn try_call_once<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
+  209|   378k|        if let Some(value) = self.get() {
+  210|   378k|            Ok(value)
   211|       |        } else {
   212|      1|            self.try_call_once_slow(f)
   213|       |        }
-  214|   379k|    }
+  214|   378k|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBO_6fields2fp2FpEE18try_call_once_slowNCINvB2_9call_onceNvNvXsF_B1N_NtB1N_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0NtNtB3j_7convert10InfallibleEBO_:
   217|      1|    fn try_call_once_slow<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
   218|       |        loop {
@@ -7296,30 +7296,30 @@ _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtNtCs41Au54XfBWR_12pasta_curve
   294|       |        }
   295|      1|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBO_6fields2fp2FpEE9call_onceNvNvXsF_B1N_NtB1N_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeEBO_:
-  168|   379k|    pub fn call_once<F: FnOnce() -> T>(&self, f: F) -> &T {
-  169|   379k|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
-  170|   379k|            Ok(x) => x,
+  168|   378k|    pub fn call_once<F: FnOnce() -> T>(&self, f: F) -> &T {
+  169|   378k|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
+  170|   378k|            Ok(x) => x,
   171|       |            Err(void) => match void {},
   172|       |        }
-  173|   379k|    }
+  173|   378k|    }
 _RNCINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB8_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBQ_6fields2fp2FpEE9call_onceNvNvXsF_B1P_NtB1P_9FP_TABLESNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0BQ_:
   169|      1|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
 _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBN_6fields2fp2FpEE3getBN_:
-  399|   379k|    pub fn get(&self) -> Option<&T> {
+  399|   378k|    pub fn get(&self) -> Option<&T> {
   400|       |        // SAFETY: Just as with `poll`, Acquire is safe here because we want to be able to see the
   401|       |        // nonatomic stores done when initializing, once we have loaded and checked the status.
-  402|   379k|        match self.status.load(Ordering::Acquire) {
-  403|   379k|            Status::Complete => Some(unsafe { self.force_get() }),
+  402|   378k|        match self.status.load(Ordering::Acquire) {
+  403|   378k|            Status::Complete => Some(unsafe { self.force_get() }),
   404|      1|            _ => None,
   405|       |        }
-  406|   379k|    }
+  406|   378k|    }
 _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceINtNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields10SqrtTablesNtNtNtBN_6fields2fp2FpEE9force_getBN_:
-  375|   379k|    unsafe fn force_get(&self) -> &T {
+  375|   378k|    unsafe fn force_get(&self) -> &T {
   376|       |        // SAFETY:
   377|       |        // * `UnsafeCell`/inner deref: data never changes again
   378|       |        // * `MaybeUninit`/outer deref: data was initialized
-  379|   379k|        &*(*self.data.get()).as_ptr()
-  380|   379k|    }
+  379|   378k|        &*(*self.data.get()).as_ptr()
+  380|   378k|    }
 _RNvMNtNtCsjMa4SmpYabJ_4spin4once6statusNtB2_6Status13new_unchecked:
    81|  1.11M|        unsafe fn new_unchecked(inner: u8) -> Self {
    82|  1.11M|            core::mem::transmute(inner)
@@ -7602,18 +7602,18 @@ _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCs41Au54XfBWR_12pasta_curves6cur
   703|   189k|        self.value
   704|   189k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCs41Au54XfBWR_12pasta_curves6curves5IsoEpE3newBJ_:
-  678|   379k|    pub fn new(value: T, is_some: Choice) -> CtOption<T> {
-  679|   379k|        CtOption {
-  680|   379k|            value: value,
-  681|   379k|            is_some: is_some,
-  682|   379k|        }
-  683|   379k|    }
+  678|   378k|    pub fn new(value: T, is_some: Choice) -> CtOption<T> {
+  679|   378k|        CtOption {
+  680|   378k|            value: value,
+  681|   378k|            is_some: is_some,
+  682|   378k|        }
+  683|   378k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCs41Au54XfBWR_12pasta_curves6curves5IsoEpE6unwrapBJ_:
-  700|   379k|    pub fn unwrap(self) -> T {
-  701|   379k|        assert_eq!(self.is_some.unwrap_u8(), 1);
+  700|   378k|    pub fn unwrap(self) -> T {
+  701|   378k|        assert_eq!(self.is_some.unwrap_u8(), 1);
   702|       |
-  703|   379k|        self.value
-  704|   379k|    }
+  703|   378k|        self.value
+  704|   378k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCs41Au54XfBWR_12pasta_curves6curves8EpAffineE3newBJ_:
   678|  9.85M|    pub fn new(value: T, is_some: Choice) -> CtOption<T> {
   679|  9.85M|        CtOption {
@@ -7650,9 +7650,9 @@ _RNvXs2_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit5BitOr
   178|  50.5M|        (self.0 | rhs.0).into()
   179|  50.5M|    }
 _RNvXs4_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit6BitXor6bitxorCs41Au54XfBWR_12pasta_curves:
-  192|   758k|    fn bitxor(self, rhs: Choice) -> Choice {
-  193|   758k|        (self.0 ^ rhs.0).into()
-  194|   758k|    }
+  192|   757k|    fn bitxor(self, rhs: Choice) -> Choice {
+  193|   757k|        (self.0 ^ rhs.0).into()
+  194|   757k|    }
 _RNvXs6_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit3Not3notCs41Au54XfBWR_12pasta_curves:
   207|  79.5M|    fn not(self) -> Choice {
   208|  79.5M|        (1u8 & (!self.0)).into()
@@ -7666,9 +7666,9 @@ _RNvXs7_CsfWYj8LFlglm_6subtleNtB5_6ChoiceINtNtCs6SNw0SRvItZ_4core7convert4FromhE
   243|  2.66G|        Choice(black_box(input))
   244|  2.66G|    }
 _RNvXs9_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtB5_14ConstantTimeEq5ct_eqCs41Au54XfBWR_12pasta_curves:
-  336|   379k|    fn ct_eq(&self, rhs: &Choice) -> Choice {
-  337|   379k|        !(*self ^ *rhs)
-  338|   379k|    }
+  336|   378k|    fn ct_eq(&self, rhs: &Choice) -> Choice {
+  337|   378k|        !(*self ^ *rhs)
+  338|   378k|    }
 _RNvXsL_CsfWYj8LFlglm_6subtleyNtB5_23ConditionallySelectable18conditional_selectCs41Au54XfBWR_12pasta_curves:
   513|   407M|            fn conditional_select(a: &Self, b: &Self, choice: Choice) -> Self {
   514|       |                // if choice = 0, mask = (-0) = 0000...0000
@@ -7728,13 +7728,13 @@ _RINvYjNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeINtNtCshDtJu3Ru83O_5alloc3vec3VechEN
    78|   189k|		func(self)
    79|   189k|	}
 _RINvYINtNtCs4rm1P7A9CH1_3wyz4comu7AddressNtB6_5ConsthENtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeRhNCNvMsd_NtCsdqiqltlfdiW_6bitvec6domainINtB1B_14PartialElementBD_hNtNtB1D_5order4Lsb0E10load_value0ECs2qdhHbQ3r3c_11zebra_chain:
-   73|   758k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
-   74|   758k|	where
-   75|   758k|		Self: Sized,
-   76|   758k|		R: Sized,
+   73|   757k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
+   74|   757k|	where
+   75|   757k|		Self: Sized,
+   76|   757k|		R: Sized,
    77|       |	{
-   78|   758k|		func(self)
-   79|   758k|	}
+   78|   757k|		func(self)
+   79|   757k|	}
 _RINvYjNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipejNCINvXNtCsdqiqltlfdiW_6bitvec5fieldINtNtBO_5slice8BitSlicehENtBM_8BitField7load_lejE0ECs2qdhHbQ3r3c_11zebra_chain:
    73|  1.70M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
    74|  1.70M|	where
@@ -7752,21 +7752,21 @@ _RINvYINtNtNtCs6SNw0SRvItZ_4core3ptr8non_null7NonNullNtNtCsdqiqltlfdiW_6bitvec6a
    78|  1.70M|		func(self)
    79|  1.70M|	}
 _RINvYINtNtNtCs6SNw0SRvItZ_4core3ptr8non_null7NonNullhENtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeINtNtCs4rm1P7A9CH1_3wyz4comu7AddressNtB1u_3MuthENvMs5_B1u_B1r_3newECs2qdhHbQ3r3c_11zebra_chain:
-   73|  7.58M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
-   74|  7.58M|	where
-   75|  7.58M|		Self: Sized,
-   76|  7.58M|		R: Sized,
+   73|  7.57M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
+   74|  7.57M|	where
+   75|  7.57M|		Self: Sized,
+   76|  7.57M|		R: Sized,
    77|       |	{
-   78|  7.58M|		func(self)
-   79|  7.58M|	}
+   78|  7.57M|		func(self)
+   79|  7.57M|	}
 _RINvYINtNtNtCs6SNw0SRvItZ_4core3ptr8non_null7NonNullhENtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeINtNtCs4rm1P7A9CH1_3wyz4comu7AddressNtB1u_5ConsthENvMs5_B1u_B1r_3newECs2qdhHbQ3r3c_11zebra_chain:
-   73|   758k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
-   74|   758k|	where
-   75|   758k|		Self: Sized,
-   76|   758k|		R: Sized,
+   73|   757k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
+   74|   757k|	where
+   75|   757k|		Self: Sized,
+   76|   757k|		R: Sized,
    77|       |	{
-   78|   758k|		func(self)
-   79|   758k|	}
+   78|   757k|		func(self)
+   79|   757k|	}
 _RINvYONtNtCsdqiqltlfdiW_6bitvec6access9BitSafeU8NtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeB3_NCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB1w_7AddressNtB1w_3MutB4_E6offset0ECs2qdhHbQ3r3c_11zebra_chain:
    73|  1.70M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
    74|  1.70M|	where
@@ -7808,13 +7808,13 @@ _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeB3_NCNvMs8_NtCs4rm1P7A9CH1_3wyz4com
    78|  1.13M|		func(self)
    79|  1.13M|	}
 _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeB3_NCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtBR_7AddressNtBR_5ConsthE3add0ECs2qdhHbQ3r3c_11zebra_chain:
-   73|   758k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
-   74|   758k|	where
-   75|   758k|		Self: Sized,
-   76|   758k|		R: Sized,
+   73|   757k|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
+   74|   757k|	where
+   75|   757k|		Self: Sized,
+   76|   757k|		R: Sized,
    77|       |	{
-   78|   758k|		func(self)
-   79|   758k|	}
+   78|   757k|		func(self)
+   79|   757k|	}
 _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtNtBL_3ptr8non_null7NonNullhEENvMs1_B1l_B1i_3newECs2qdhHbQ3r3c_11zebra_chain:
    73|  8.33M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
    74|  8.33M|	where
@@ -7891,12 +7891,12 @@ _RNvMs5_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_3MuthE8to_constCs2qdhHbQ3r3c
   209|  6.44M|		self.inner.as_ptr() as *const T
   210|  6.44M|	}
 _RNvMs5_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE3newCs2qdhHbQ3r3c_11zebra_chain:
-  155|   758k|	pub fn new(addr: NonNull<T>) -> Self {
-  156|   758k|		Self {
-  157|   758k|			inner: addr,
-  158|   758k|			comu: M::SELF,
-  159|   758k|		}
-  160|   758k|	}
+  155|   757k|	pub fn new(addr: NonNull<T>) -> Self {
+  156|   757k|		Self {
+  157|   757k|			inner: addr,
+  158|   757k|			comu: M::SELF,
+  159|   757k|		}
+  160|   757k|	}
 _RNvMs5_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE8to_constCs2qdhHbQ3r3c_11zebra_chain:
   208|  2.65M|	pub fn to_const(self) -> *const T {
   209|  2.65M|		self.inner.as_ptr() as *const T
@@ -7944,14 +7944,14 @@ _RINvMs9_NtCs4rm1P7A9CH1_3wyz4comuINtB6_7AddressNtB6_3MuthE8with_ptrhNCNvMs8_B6_
   334|  1.13M|			.pipe(Address::new)
   335|  1.13M|	}
 _RINvMs9_NtCs4rm1P7A9CH1_3wyz4comuINtB6_7AddressNtB6_5ConsthE8with_ptrhNCNvMs8_B6_Bv_3add0ECs2qdhHbQ3r3c_11zebra_chain:
-  328|   758k|	fn with_ptr<U>(self, func: impl FnOnce(*mut T) -> *mut U) -> Address<M, U> {
-  329|   758k|		self.inner
-  330|   758k|			.as_ptr()
-  331|   758k|			.pipe(func)
-  332|   758k|			.pipe(NonNull::new)
-  333|   758k|			.unwrap()
-  334|   758k|			.pipe(Address::new)
-  335|   758k|	}
+  328|   757k|	fn with_ptr<U>(self, func: impl FnOnce(*mut T) -> *mut U) -> Address<M, U> {
+  329|   757k|		self.inner
+  330|   757k|			.as_ptr()
+  331|   757k|			.pipe(func)
+  332|   757k|			.pipe(NonNull::new)
+  333|   757k|			.unwrap()
+  334|   757k|			.pipe(Address::new)
+  335|   757k|	}
 _RNCINvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB8_7AddressNtB8_3MuthE4casthE0Cs2qdhHbQ3r3c_11zebra_chain:
   259|  2.46M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_3MutNtNtCsdqiqltlfdiW_6bitvec6access9BitSafeU8E6offset0Cs2qdhHbQ3r3c_11zebra_chain:
@@ -7961,7 +7961,7 @@ _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_3MuthE3add0Cs2qdhHbQ3r3c_1
 _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_3MuthE6offset0Cs2qdhHbQ3r3c_11zebra_chain:
   259|  1.13M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_5ConsthE3add0Cs2qdhHbQ3r3c_11zebra_chain:
-  259|   758k|			self.with_ptr(|ptr| ptr.$name($($arg),*))
+  259|   757k|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_3MutNtNtCsdqiqltlfdiW_6bitvec6access9BitSafeU8E6offsetCs2qdhHbQ3r3c_11zebra_chain:
   256|  1.70M|		pub $($unsafe)? fn $name$(<
   257|  1.70M|			$($lt,)* $($typaram$(: $($bound),+)?,)*
@@ -7981,11 +7981,11 @@ _RNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_3MuthE6offsetCs2qdhHbQ3r3c_1
   259|  1.13M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
   260|  1.13M|		}
 _RNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE3addCs2qdhHbQ3r3c_11zebra_chain:
-  256|   758k|		pub $($unsafe)? fn $name$(<
-  257|   758k|			$($lt,)* $($typaram$(: $($bound),+)?,)*
-  258|   758k|		>)?(self$(, $arg: $ty)*) $(-> $ret)? {
-  259|   758k|			self.with_ptr(|ptr| ptr.$name($($arg),*))
-  260|   758k|		}
+  256|   757k|		pub $($unsafe)? fn $name$(<
+  257|   757k|			$($lt,)* $($typaram$(: $($bound),+)?,)*
+  258|   757k|		>)?(self$(, $arg: $ty)*) $(-> $ret)? {
+  259|   757k|			self.with_ptr(|ptr| ptr.$name($($arg),*))
+  260|   757k|		}
 _RNvXst_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConstShENtB5_16SliceReferential14from_raw_partsCs2qdhHbQ3r3c_11zebra_chain:
   588|  1.89M|	unsafe fn from_raw_parts(ptr: Self::ElementAddr, len: usize) -> Self::Ref {
   589|  1.89M|		slice::from_raw_parts(ptr.to_const(), len)
@@ -8265,7 +8265,7 @@ _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts2_0B3_:
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts3_0B3_:
   320|    151|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts4_0B3_:
-  323|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  323|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts5_0B3_:
   326|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts6_0B3_:
@@ -8299,9 +8299,9 @@ _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards5_0B3_:
   243|    151|                    orchard_tree::Node::try_from(&bytes[..])
   244|    151|                }));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards6_0B3_:
-  247|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
+  247|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards7_0B3_:
-  248|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  248|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards8_0B3_:
   251|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards9_0B3_:
@@ -8339,9 +8339,9 @@ _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings3_0B3_:
   161|    151|                    sapling_tree::Root::zcash_deserialize(&bytes[..])
   162|    151|                }));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings4_0B3_:
-  165|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
+  165|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings5_0B3_:
-  166|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  166|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings6_0B3_:
   169|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings7_0B3_:
@@ -8407,7 +8407,7 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprout:
   320|    151|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
   321|       |            }
   322|       |            TreeOp::MarkAtPosition => {
-  323|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  323|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
   324|       |            }
   325|       |            TreeOp::RemoveMark(_) => {
   326|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
@@ -8479,8 +8479,8 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchard:
   244|       |                }));
   245|       |            }
   246|       |            TreeOp::MarkAtPosition => {
-  247|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
-  248|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  247|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
+  248|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
   249|       |            }
   250|       |            TreeOp::RemoveMark(_) => {
   251|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
@@ -8555,8 +8555,8 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_sapling:
   162|       |                }));
   163|       |            }
   164|       |            TreeOp::MarkAtPosition => {
-  165|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
-  166|    635|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
+  165|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.position()));
+  166|    634|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.count()));
   167|       |            }
   168|       |            TreeOp::RemoveMark(_) => {
   169|    287|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
@@ -8612,7 +8612,7 @@ _RINvXse_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB6_4NodeNtNtCsblBBgngKd3Y
   277|  1.79k|        writer.write_all(&self.0.to_repr())
   278|  1.79k|    }
 _RNCNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB7_18NoteCommitmentTree5count0Bb_:
-  622|    307|            .map_or(0, |x| u64::from(x.position()) + 1)
+  622|    306|            .map_or(0, |x| u64::from(x.position()) + 1)
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree11cached_root:
   589|  8.02k|    pub fn cached_root(&self) -> Option<Root> {
   590|  8.02k|        *self
@@ -8740,11 +8740,11 @@ _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree4ro
   584|       |        }
   585|  7.74k|    }
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree5count:
-  619|    635|    pub fn count(&self) -> u64 {
-  620|    635|        self.inner
-  621|    635|            .value()
-  622|    635|            .map_or(0, |x| u64::from(x.position()) + 1)
-  623|    635|    }
+  619|    634|    pub fn count(&self) -> u64 {
+  620|    634|        self.inner
+  621|    634|            .value()
+  622|    634|            .map_or(0, |x| u64::from(x.position()) + 1)
+  623|    634|    }
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree6append:
   388|  3.58k|    pub fn append(&mut self, cm_x: NoteCommitmentUpdate) -> Result<(), NoteCommitmentTreeError> {
   389|  3.58k|        if self.inner.append(cm_x.into()) {
@@ -8766,14 +8766,14 @@ _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree8fr
   406|  11.1k|        self.inner.value()
   407|  11.1k|    }
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree8position:
-  412|    635|    pub fn position(&self) -> Option<u64> {
-  413|    635|        let Some(tree) = self.frontier() else {
+  412|    634|    pub fn position(&self) -> Option<u64> {
+  413|    634|        let Some(tree) = self.frontier() else {
   414|       |            // An empty tree doesn't have a previous leaf.
   415|    328|            return None;
   416|       |        };
   417|       |
-  418|    307|        Some(tree.position().into())
-  419|    635|    }
+  418|    306|        Some(tree.position().into())
+  419|    634|    }
 _RNvNtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4tree18merkle_crh_orchard:
    61|   189k|fn merkle_crh_orchard(layer: u8, left: pallas::Base, right: pallas::Base) -> pallas::Base {
    62|   189k|    let mut s = bitvec![u8, Lsb0;];
@@ -8949,8 +8949,8 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4ha
   422|    287|        self.root().into()
   423|    287|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4root:
-  381|  7.96k|    pub fn root(&self) -> Root {
-  382|  7.96k|        if let Some(root) = self.cached_root() {
+  381|  7.95k|    pub fn root(&self) -> Root {
+  382|  7.95k|        if let Some(root) = self.cached_root() {
   383|       |            // Return cached root.
   384|  4.22k|            return root;
   385|  3.73k|        }
@@ -8971,13 +8971,13 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4ro
   400|  3.73k|                root
   401|       |            }
   402|       |        }
-  403|  7.96k|    }
+  403|  7.95k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree5count:
-  437|    635|    pub fn count(&self) -> u64 {
-  438|    635|        self.inner
-  439|    635|            .value()
-  440|    635|            .map_or(0, |x| u64::from(x.position()) + 1)
-  441|    635|    }
+  437|    634|    pub fn count(&self) -> u64 {
+  438|    634|        self.inner
+  439|    634|            .value()
+  440|    634|            .map_or(0, |x| u64::from(x.position()) + 1)
+  441|    634|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree6append:
   204|  3.69k|    pub fn append(&mut self, cm_u: NoteCommitmentUpdate) -> Result<(), NoteCommitmentTreeError> {
   205|  3.69k|        if self.inner.append(sapling_crypto::Node::from_cmu(&cm_u)) {
@@ -8999,14 +8999,14 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree8fr
   222|  11.1k|        self.inner.value()
   223|  11.1k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree8position:
-  228|    635|    pub fn position(&self) -> Option<u64> {
-  229|    635|        let Some(tree) = self.frontier() else {
+  228|    634|    pub fn position(&self) -> Option<u64> {
+  229|    634|        let Some(tree) = self.frontier() else {
   230|       |            // An empty tree doesn't have a previous leaf.
   231|    313|            return None;
   232|       |        };
   233|       |
-  234|    322|        Some(tree.position().into())
-  235|    635|    }
+  234|    321|        Some(tree.position().into())
+  235|    634|    }
 _RNvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeAhj20_INtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_4RootE4from:
    70|    287|    fn from(root: Root) -> Self {
    71|    287|        root.0.to_bytes()
@@ -9035,7 +9035,7 @@ _RNvXsb_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTreeNtN
   497|    312|        }
   498|    312|    }
 _RNCNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB7_18NoteCommitmentTree5count0Bb_:
-  440|    322|            .map_or(0, |x| u64::from(x.position()) + 1)
+  440|    321|            .map_or(0, |x| u64::from(x.position()) + 1)
 
 _RNvYRShNtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_32_bytesBb_:
    25|    302|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
@@ -9054,12 +9054,12 @@ _RNvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout10commitmentAhj20_INtNtCs6SNw0SRvI
    68|  4.10k|    }
 
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_18NoteCommitmentTree11cached_root:
-  306|  9.22k|    pub fn cached_root(&self) -> Option<Root> {
-  307|  9.22k|        *self
-  308|  9.22k|            .cached_root
-  309|  9.22k|            .read()
-  310|  9.22k|            .expect("a thread that previously held exclusive lock access panicked")
-  311|  9.22k|    }
+  306|  9.21k|    pub fn cached_root(&self) -> Option<Root> {
+  307|  9.21k|        *self
+  308|  9.21k|            .cached_root
+  309|  9.21k|            .read()
+  310|  9.21k|            .expect("a thread that previously held exclusive lock access panicked")
+  311|  9.21k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_18NoteCommitmentTree11uncommitted:
   328|      1|    pub fn uncommitted() -> [u8; 32] {
   329|      1|        [0; 32]

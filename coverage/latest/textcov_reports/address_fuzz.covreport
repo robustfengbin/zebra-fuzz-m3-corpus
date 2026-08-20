@@ -687,16 +687,16 @@ _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
   679|  3.21k|    let mut has_lower = false;
   680|  3.21k|    let mut req_bech32 = true;
   681|  3.21k|    let mut sep_pos = None;
-  682|   264k|    for (n, ch) in s.char_indices().rev() {
-  683|   264k|        if ch == SEP && sep_pos.is_none() {
+  682|   263k|    for (n, ch) in s.char_indices().rev() {
+  683|   263k|        if ch == SEP && sep_pos.is_none() {
   684|  1.57k|            req_bech32 = false;
   685|  1.57k|            sep_pos = Some(n);
-  686|   263k|        }
-  687|   264k|        if req_bech32 {
+  686|   262k|        }
+  687|   263k|        if req_bech32 {
   688|  74.4k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
-  689|   190k|        }
-  690|   263k|        if ch.is_ascii_uppercase() {
-  691|  17.0k|            has_upper = true;
+  689|   189k|        }
+  690|   262k|        if ch.is_ascii_uppercase() {
+  691|  16.6k|            has_upper = true;
   692|   246k|        } else if ch.is_ascii_lowercase() {
   693|   200k|            has_lower = true;
   694|   200k|        }
@@ -2449,25 +2449,25 @@ _RINvMs3_CsG2CKexGv9Q_12block_bufferINtB6_11BlockBufferINtNtCs6K91jTNoEt_7typenu
   154|       |        // we convince compiler that `BlockSize - pos` never underflows.
   155|    950|        if Kind::invariant(n, rem) {
   156|       |            // double slicing allows to remove panic branches
-  157|    817|            self.buffer[pos..][..n].copy_from_slice(input);
-  158|    817|            self.set_pos_unchecked(pos + n);
-  159|    817|            return;
-  160|    133|        }
-  161|    133|        if pos != 0 {
+  157|    822|            self.buffer[pos..][..n].copy_from_slice(input);
+  158|    822|            self.set_pos_unchecked(pos + n);
+  159|    822|            return;
+  160|    128|        }
+  161|    128|        if pos != 0 {
   162|      0|            let (left, right) = input.split_at(rem);
   163|      0|            input = right;
   164|      0|            self.buffer[pos..].copy_from_slice(left);
   165|      0|            compress(slice::from_ref(&self.buffer));
-  166|    133|        }
+  166|    128|        }
   167|       |
-  168|    133|        let (blocks, leftover) = Kind::split_blocks(input);
-  169|    133|        if !blocks.is_empty() {
-  170|    133|            compress(blocks);
-  171|    133|        }
+  168|    128|        let (blocks, leftover) = Kind::split_blocks(input);
+  169|    128|        if !blocks.is_empty() {
+  170|    128|            compress(blocks);
+  171|    128|        }
   172|       |
-  173|    133|        let n = leftover.len();
-  174|    133|        self.buffer[..n].copy_from_slice(leftover);
-  175|    133|        self.set_pos_unchecked(n);
+  173|    128|        let n = leftover.len();
+  174|    128|        self.buffer[..n].copy_from_slice(leftover);
+  175|    128|        self.set_pos_unchecked(n);
   176|    950|    }
 _RINvMs4_CsG2CKexGv9Q_12block_bufferINtB6_11BlockBufferINtNtCs6K91jTNoEt_7typenum4uint4UIntIBR_IBR_IBR_IBR_IBR_IBR_NtBT_5UTermNtNtBV_3bit2B1ENtB21_2B0EB2e_EB2e_EB2e_EB2e_EB2e_ENtB6_5EagerE10digest_padNCNvXs3_NtCsTIDoG4KXfJ_4sha28core_apiNtB3j_13Sha256VarCoreNtNtCslYFrylcTFUJ_6digest8core_api18VariableOutputCore22finalize_variable_core0ECsjyycqNoLf64_4bs58:
   290|    950|    pub fn digest_pad(
@@ -2539,21 +2539,21 @@ _RNvXNtCsG2CKexGv9Q_12block_buffer6sealedNtB4_5EagerNtB2_6Sealed9invariant:
    17|  3.80k|        pos < block_size
    18|  3.80k|    }
 _RINvXNtCsG2CKexGv9Q_12block_buffer6sealedNtB5_5EagerNtB3_6Sealed12split_blocksINtNtCs6K91jTNoEt_7typenum4uint4UIntIB1f_IB1f_IB1f_IB1f_IB1f_IB1f_NtB1h_5UTermNtNtB1j_3bit2B1ENtB2w_2B0EB2K_EB2K_EB2K_EB2K_EB2K_EECsjyycqNoLf64_4bs58:
-   21|    133|    fn split_blocks<N: ArrayLength<u8>>(data: &[u8]) -> (&[Block<N>], &[u8]) {
-   22|    133|        let nb = data.len() / N::USIZE;
-   23|    133|        let blocks_len = nb * N::USIZE;
-   24|    133|        let tail_len = data.len() - blocks_len;
+   21|    128|    fn split_blocks<N: ArrayLength<u8>>(data: &[u8]) -> (&[Block<N>], &[u8]) {
+   22|    128|        let nb = data.len() / N::USIZE;
+   23|    128|        let blocks_len = nb * N::USIZE;
+   24|    128|        let tail_len = data.len() - blocks_len;
    25|       |        // SAFETY: we guarantee that created slices do not point
    26|       |        // outside of `data`
    27|       |        unsafe {
-   28|    133|            let blocks_ptr = data.as_ptr() as *const Block<N>;
-   29|    133|            let tail_ptr = data.as_ptr().add(blocks_len);
-   30|    133|            (
-   31|    133|                slice::from_raw_parts(blocks_ptr, nb),
-   32|    133|                slice::from_raw_parts(tail_ptr, tail_len),
-   33|    133|            )
+   28|    128|            let blocks_ptr = data.as_ptr() as *const Block<N>;
+   29|    128|            let tail_ptr = data.as_ptr().add(blocks_len);
+   30|    128|            (
+   31|    128|                slice::from_raw_parts(blocks_ptr, nb),
+   32|    128|                slice::from_raw_parts(tail_ptr, tail_len),
+   33|    128|            )
    34|       |        }
-   35|    133|    }
+   35|    128|    }
 
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar17montgomery_reduce:
   506|  44.7k|    const fn montgomery_reduce(
@@ -3105,18 +3105,18 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   412|  1.45k|    let mut index = 0;
   413|  1.45k|    let zero = alpha.encode[0];
   414|       |
-  415|  84.8k|    for (i, c) in input.iter().enumerate() {
-  416|  84.8k|        if *c > 127 {
+  415|  84.3k|    for (i, c) in input.iter().enumerate() {
+  416|  84.3k|        if *c > 127 {
   417|    180|            return Err(Error::NonAsciiCharacter { index: i });
-  418|  84.6k|        }
+  418|  84.1k|        }
   419|       |
-  420|  84.6k|        let mut val = alpha.decode[*c as usize] as usize;
-  421|  84.6k|        if val == 0xFF {
+  420|  84.1k|        let mut val = alpha.decode[*c as usize] as usize;
+  421|  84.1k|        if val == 0xFF {
   422|    601|            return Err(Error::InvalidCharacter {
   423|    601|                character: *c as char,
   424|    601|                index: i,
   425|    601|            });
-  426|  84.0k|        }
+  426|  83.5k|        }
   427|       |
   428|  48.4M|        for byte in &mut output[..index] {
   429|  48.4M|            val += (*byte as usize) * 58;
@@ -3125,10 +3125,10 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   432|  48.4M|        }
   433|       |
   434|   140k|        while val > 0 {
-  435|  56.8k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
-  436|  56.8k|            *byte = (val & 0xFF) as u8;
-  437|  56.8k|            index += 1;
-  438|  56.8k|            val >>= 8
+  435|  56.5k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
+  436|  56.5k|            *byte = (val & 0xFF) as u8;
+  437|  56.5k|            index += 1;
+  438|  56.5k|            val >>= 8
   439|       |        }
   440|       |    }
   441|       |
@@ -3425,12 +3425,12 @@ _RINvCsjyycqNoLf64_4bs586encodeINtNtCshDtJu3Ru83O_5alloc3vec3VechEECsamPsIXkiZaT
   221|      8|}
 
 _RNvNtNtNtCsTIDoG4KXfJ_4sha26sha2563x8611shani_cpuid3getB7_:
-  215|  1.10k|            pub fn get() -> bool {
-  216|  1.10k|                init_get().1
-  217|  1.10k|            }
+  215|  1.09k|            pub fn get() -> bool {
+  216|  1.09k|                init_get().1
+  217|  1.09k|            }
 _RNvNtNtNtCsTIDoG4KXfJ_4sha26sha2563x8611shani_cpuid8init_getB7_:
-  183|  1.10k|            pub fn init_get() -> (InitToken, bool) {
-  184|  1.10k|                let res = $crate::__unless_target_features! {
+  183|  1.09k|            pub fn init_get() -> (InitToken, bool) {
+  184|  1.09k|                let res = $crate::__unless_target_features! {
   185|       |                    $($tf),+ => {
   186|       |                        #[cold]
   187|       |                        fn init_inner() -> bool {
@@ -3440,18 +3440,18 @@ _RNvNtNtNtCsTIDoG4KXfJ_4sha26sha2563x8611shani_cpuid8init_getB7_:
   191|       |                        }
   192|       |
   193|       |                        // Relaxed ordering is fine, as we only have a single atomic variable.
-  194|  1.10k|                        let val = STORAGE.load(Relaxed);
+  194|  1.09k|                        let val = STORAGE.load(Relaxed);
   195|       |
-  196|  1.10k|                        if val == UNINIT {
+  196|  1.09k|                        if val == UNINIT {
   197|      1|                            init_inner()
   198|       |                        } else {
-  199|  1.10k|                            val == 1
+  199|  1.09k|                            val == 1
   200|       |                        }
   201|       |                    }
   202|       |                };
   203|       |
-  204|  1.10k|                (InitToken(()), res)
-  205|  1.10k|            }
+  204|  1.09k|                (InitToken(()), res)
+  205|  1.09k|            }
 _RNvNvNtNtNtCsTIDoG4KXfJ_4sha26sha2563x8611shani_cpuid8init_get10init_inner:
   187|      1|                        fn init_inner() -> bool {
   188|      1|                            let res = $crate::__detect_target_features!($($tf),+);
@@ -3469,9 +3469,9 @@ _RNvNvNvNtNtNtCsTIDoG4KXfJ_4sha26sha2563x8611shani_cpuid8init_get10init_inner5cp
    49|      1|        }
 
 _RNvXs0_NtNtCslYFrylcTFUJ_6digest8core_api11ct_variableINtB5_21CtVariableCoreWrapperNtNtCsTIDoG4KXfJ_4sha28core_api13Sha256VarCoreINtNtCs6K91jTNoEt_7typenum4uint4UIntIB24_IB24_IB24_IB24_IB24_NtB26_5UTermNtNtB28_3bit2B1ENtB3g_2B0EB3u_EB3u_EB3u_EB3u_ENtB1n_9OidSha256ENtB7_10UpdateCore13update_blocksCsjyycqNoLf64_4bs58:
-   78|    133|    fn update_blocks(&mut self, blocks: &[Block<Self>]) {
-   79|    133|        self.inner.update_blocks(blocks);
-   80|    133|    }
+   78|    128|    fn update_blocks(&mut self, blocks: &[Block<Self>]) {
+   79|    128|        self.inner.update_blocks(blocks);
+   80|    128|    }
 _RNvXs3_NtNtCslYFrylcTFUJ_6digest8core_api11ct_variableINtB5_21CtVariableCoreWrapperNtNtCsTIDoG4KXfJ_4sha28core_api13Sha256VarCoreINtNtCs6K91jTNoEt_7typenum4uint4UIntIB24_IB24_IB24_IB24_IB24_NtB26_5UTermNtNtB28_3bit2B1ENtB3g_2B0EB3u_EB3u_EB3u_EB3u_ENtB1n_9OidSha256ENtB7_15FixedOutputCore19finalize_fixed_coreCsjyycqNoLf64_4bs58:
   114|    950|    fn finalize_fixed_core(
   115|    950|        &mut self,
@@ -3496,7 +3496,7 @@ _RNvXs4_NtNtCslYFrylcTFUJ_6digest8core_api11ct_variableINtB5_21CtVariableCoreWra
   144|    950|    }
 
 _RNCNvXs5_NtNtCslYFrylcTFUJ_6digest8core_api7wrapperINtB7_11CoreWrapperINtNtB9_11ct_variable21CtVariableCoreWrapperNtNtCsTIDoG4KXfJ_4sha28core_api13Sha256VarCoreINtNtCs6K91jTNoEt_7typenum4uint4UIntIB2z_IB2z_IB2z_IB2z_IB2z_NtB2B_5UTermNtNtB2D_3bit2B1ENtB3L_2B0EB3Z_EB3Z_EB3Z_EB3Z_ENtB1S_9OidSha256EENtBb_6Update6update0CsjyycqNoLf64_4bs58:
-  150|    133|        buffer.digest_blocks(input, |blocks| core.update_blocks(blocks));
+  150|    128|        buffer.digest_blocks(input, |blocks| core.update_blocks(blocks));
 _RNvXs5_NtNtCslYFrylcTFUJ_6digest8core_api7wrapperINtB5_11CoreWrapperINtNtB7_11ct_variable21CtVariableCoreWrapperNtNtCsTIDoG4KXfJ_4sha28core_api13Sha256VarCoreINtNtCs6K91jTNoEt_7typenum4uint4UIntIB2x_IB2x_IB2x_IB2x_IB2x_NtB2z_5UTermNtNtB2B_3bit2B1ENtB3J_2B0EB3X_EB3X_EB3X_EB3X_ENtB1Q_9OidSha256EENtB9_6Update6updateCsjyycqNoLf64_4bs58:
   148|    950|    fn update(&mut self, input: &[u8]) {
   149|    950|        let Self { core, buffer } = self;
@@ -5085,10 +5085,10 @@ _RNvNtCsckoVJ3NjISC_14sapling_crypto4spec14diversify_hash:
 _RNCNvXs3_NtCsTIDoG4KXfJ_4sha28core_apiNtB7_13Sha256VarCoreNtNtCslYFrylcTFUJ_6digest8core_api18VariableOutputCore22finalize_variable_core0CsjyycqNoLf64_4bs58:
    63|    969|        buffer.len64_padding_be(bit_len, |b| compress256(&mut self.state, from_ref(b)));
 _RNvXs1_NtCsTIDoG4KXfJ_4sha28core_apiNtB5_13Sha256VarCoreNtNtCslYFrylcTFUJ_6digest8core_api10UpdateCore13update_blocksCsjyycqNoLf64_4bs58:
-   35|    133|    fn update_blocks(&mut self, blocks: &[Block<Self>]) {
-   36|    133|        self.block_len += blocks.len() as u64;
-   37|    133|        compress256(&mut self.state, blocks);
-   38|    133|    }
+   35|    128|    fn update_blocks(&mut self, blocks: &[Block<Self>]) {
+   36|    128|        self.block_len += blocks.len() as u64;
+   37|    128|        compress256(&mut self.state, blocks);
+   38|    128|    }
 _RNvXs3_NtCsTIDoG4KXfJ_4sha28core_apiNtB5_13Sha256VarCoreNtNtCslYFrylcTFUJ_6digest8core_api18VariableOutputCore22finalize_variable_coreCsjyycqNoLf64_4bs58:
    60|    950|    fn finalize_variable_core(&mut self, buffer: &mut Buffer<Self>, out: &mut Output<Self>) {
    61|    950|        let bs = Self::BlockSize::U64;
@@ -5111,84 +5111,84 @@ _RNvXs3_NtCsTIDoG4KXfJ_4sha28core_apiNtB5_13Sha256VarCoreNtNtCslYFrylcTFUJ_6dige
    57|    950|    }
 
 _RNvNtCsTIDoG4KXfJ_4sha26sha25611compress256:
-   37|  1.10k|pub fn compress256(state: &mut [u32; 8], blocks: &[GenericArray<u8, U64>]) {
+   37|  1.09k|pub fn compress256(state: &mut [u32; 8], blocks: &[GenericArray<u8, U64>]) {
    38|       |    // SAFETY: GenericArray<u8, U64> and [u8; 64] have
    39|       |    // exactly the same memory layout
-   40|  1.10k|    let p = blocks.as_ptr() as *const [u8; 64];
-   41|  1.10k|    let blocks = unsafe { core::slice::from_raw_parts(p, blocks.len()) };
-   42|  1.10k|    compress(state, blocks)
-   43|  1.10k|}
+   40|  1.09k|    let p = blocks.as_ptr() as *const [u8; 64];
+   41|  1.09k|    let blocks = unsafe { core::slice::from_raw_parts(p, blocks.len()) };
+   42|  1.09k|    compress(state, blocks)
+   43|  1.09k|}
 
 _RNvNtNtCsTIDoG4KXfJ_4sha26sha2563x8613digest_blocks:
-   42|  1.10k|unsafe fn digest_blocks(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
+   42|  1.09k|unsafe fn digest_blocks(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
    43|       |    #[allow(non_snake_case)]
-   44|  1.10k|    let MASK: __m128i = _mm_set_epi64x(
-   45|  1.10k|        0x0C0D_0E0F_0809_0A0Bu64 as i64,
-   46|  1.10k|        0x0405_0607_0001_0203u64 as i64,
+   44|  1.09k|    let MASK: __m128i = _mm_set_epi64x(
+   45|  1.09k|        0x0C0D_0E0F_0809_0A0Bu64 as i64,
+   46|  1.09k|        0x0405_0607_0001_0203u64 as i64,
    47|       |    );
    48|       |
-   49|  1.10k|    let state_ptr = state.as_ptr() as *const __m128i;
-   50|  1.10k|    let dcba = _mm_loadu_si128(state_ptr.add(0));
-   51|  1.10k|    let efgh = _mm_loadu_si128(state_ptr.add(1));
+   49|  1.09k|    let state_ptr = state.as_ptr() as *const __m128i;
+   50|  1.09k|    let dcba = _mm_loadu_si128(state_ptr.add(0));
+   51|  1.09k|    let efgh = _mm_loadu_si128(state_ptr.add(1));
    52|       |
-   53|  1.10k|    let cdab = _mm_shuffle_epi32(dcba, 0xB1);
-   54|  1.10k|    let efgh = _mm_shuffle_epi32(efgh, 0x1B);
-   55|  1.10k|    let mut abef = _mm_alignr_epi8(cdab, efgh, 8);
-   56|  1.10k|    let mut cdgh = _mm_blend_epi16(efgh, cdab, 0xF0);
+   53|  1.09k|    let cdab = _mm_shuffle_epi32(dcba, 0xB1);
+   54|  1.09k|    let efgh = _mm_shuffle_epi32(efgh, 0x1B);
+   55|  1.09k|    let mut abef = _mm_alignr_epi8(cdab, efgh, 8);
+   56|  1.09k|    let mut cdgh = _mm_blend_epi16(efgh, cdab, 0xF0);
    57|       |
-   58|  2.83k|    for block in blocks {
-   59|  1.73k|        let abef_save = abef;
-   60|  1.73k|        let cdgh_save = cdgh;
-   61|  1.73k|
-   62|  1.73k|        let data_ptr = block.as_ptr() as *const __m128i;
-   63|  1.73k|        let mut w0 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(0)), MASK);
-   64|  1.73k|        let mut w1 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(1)), MASK);
-   65|  1.73k|        let mut w2 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(2)), MASK);
-   66|  1.73k|        let mut w3 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(3)), MASK);
-   67|  1.73k|        let mut w4;
-   68|  1.73k|
-   69|  1.73k|        rounds4!(abef, cdgh, w0, 0);
-   70|  1.73k|        rounds4!(abef, cdgh, w1, 1);
-   71|  1.73k|        rounds4!(abef, cdgh, w2, 2);
-   72|  1.73k|        rounds4!(abef, cdgh, w3, 3);
-   73|  1.73k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 4);
-   74|  1.73k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 5);
-   75|  1.73k|        schedule_rounds4!(abef, cdgh, w2, w3, w4, w0, w1, 6);
-   76|  1.73k|        schedule_rounds4!(abef, cdgh, w3, w4, w0, w1, w2, 7);
-   77|  1.73k|        schedule_rounds4!(abef, cdgh, w4, w0, w1, w2, w3, 8);
-   78|  1.73k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 9);
-   79|  1.73k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 10);
-   80|  1.73k|        schedule_rounds4!(abef, cdgh, w2, w3, w4, w0, w1, 11);
-   81|  1.73k|        schedule_rounds4!(abef, cdgh, w3, w4, w0, w1, w2, 12);
-   82|  1.73k|        schedule_rounds4!(abef, cdgh, w4, w0, w1, w2, w3, 13);
-   83|  1.73k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 14);
-   84|  1.73k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 15);
-   85|  1.73k|
-   86|  1.73k|        abef = _mm_add_epi32(abef, abef_save);
-   87|  1.73k|        cdgh = _mm_add_epi32(cdgh, cdgh_save);
-   88|  1.73k|    }
+   58|  2.82k|    for block in blocks {
+   59|  1.72k|        let abef_save = abef;
+   60|  1.72k|        let cdgh_save = cdgh;
+   61|  1.72k|
+   62|  1.72k|        let data_ptr = block.as_ptr() as *const __m128i;
+   63|  1.72k|        let mut w0 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(0)), MASK);
+   64|  1.72k|        let mut w1 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(1)), MASK);
+   65|  1.72k|        let mut w2 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(2)), MASK);
+   66|  1.72k|        let mut w3 = _mm_shuffle_epi8(_mm_loadu_si128(data_ptr.add(3)), MASK);
+   67|  1.72k|        let mut w4;
+   68|  1.72k|
+   69|  1.72k|        rounds4!(abef, cdgh, w0, 0);
+   70|  1.72k|        rounds4!(abef, cdgh, w1, 1);
+   71|  1.72k|        rounds4!(abef, cdgh, w2, 2);
+   72|  1.72k|        rounds4!(abef, cdgh, w3, 3);
+   73|  1.72k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 4);
+   74|  1.72k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 5);
+   75|  1.72k|        schedule_rounds4!(abef, cdgh, w2, w3, w4, w0, w1, 6);
+   76|  1.72k|        schedule_rounds4!(abef, cdgh, w3, w4, w0, w1, w2, 7);
+   77|  1.72k|        schedule_rounds4!(abef, cdgh, w4, w0, w1, w2, w3, 8);
+   78|  1.72k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 9);
+   79|  1.72k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 10);
+   80|  1.72k|        schedule_rounds4!(abef, cdgh, w2, w3, w4, w0, w1, 11);
+   81|  1.72k|        schedule_rounds4!(abef, cdgh, w3, w4, w0, w1, w2, 12);
+   82|  1.72k|        schedule_rounds4!(abef, cdgh, w4, w0, w1, w2, w3, 13);
+   83|  1.72k|        schedule_rounds4!(abef, cdgh, w0, w1, w2, w3, w4, 14);
+   84|  1.72k|        schedule_rounds4!(abef, cdgh, w1, w2, w3, w4, w0, 15);
+   85|  1.72k|
+   86|  1.72k|        abef = _mm_add_epi32(abef, abef_save);
+   87|  1.72k|        cdgh = _mm_add_epi32(cdgh, cdgh_save);
+   88|  1.72k|    }
    89|       |
-   90|  1.10k|    let feba = _mm_shuffle_epi32(abef, 0x1B);
-   91|  1.10k|    let dchg = _mm_shuffle_epi32(cdgh, 0xB1);
-   92|  1.10k|    let dcba = _mm_blend_epi16(feba, dchg, 0xF0);
-   93|  1.10k|    let hgef = _mm_alignr_epi8(dchg, feba, 8);
+   90|  1.09k|    let feba = _mm_shuffle_epi32(abef, 0x1B);
+   91|  1.09k|    let dchg = _mm_shuffle_epi32(cdgh, 0xB1);
+   92|  1.09k|    let dcba = _mm_blend_epi16(feba, dchg, 0xF0);
+   93|  1.09k|    let hgef = _mm_alignr_epi8(dchg, feba, 8);
    94|       |
-   95|  1.10k|    let state_ptr_mut = state.as_mut_ptr() as *mut __m128i;
-   96|  1.10k|    _mm_storeu_si128(state_ptr_mut.add(0), dcba);
-   97|  1.10k|    _mm_storeu_si128(state_ptr_mut.add(1), hgef);
-   98|  1.10k|}
+   95|  1.09k|    let state_ptr_mut = state.as_mut_ptr() as *mut __m128i;
+   96|  1.09k|    _mm_storeu_si128(state_ptr_mut.add(0), dcba);
+   97|  1.09k|    _mm_storeu_si128(state_ptr_mut.add(1), hgef);
+   98|  1.09k|}
 _RNvNtNtCsTIDoG4KXfJ_4sha26sha2563x868compress:
-  102|  1.10k|pub fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
+  102|  1.09k|pub fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
   103|       |    // TODO: Replace with https://github.com/rust-lang/rfcs/pull/2725
   104|       |    // after stabilization
-  105|  1.10k|    if shani_cpuid::get() {
-  106|  1.10k|        unsafe {
-  107|  1.10k|            digest_blocks(state, blocks);
-  108|  1.10k|        }
+  105|  1.09k|    if shani_cpuid::get() {
+  106|  1.09k|        unsafe {
+  107|  1.09k|            digest_blocks(state, blocks);
+  108|  1.09k|        }
   109|      0|    } else {
   110|      0|        super::soft::compress(state, blocks);
   111|      0|    }
-  112|  1.10k|}
+  112|  1.09k|}
 _RNvNtNtCsTIDoG4KXfJ_4sha26sha2563x868schedule:
    10|  20.7k|unsafe fn schedule(v0: __m128i, v1: __m128i, v2: __m128i, v3: __m128i) -> __m128i {
    11|  20.7k|    let t1 = _mm_sha256msg1_epu32(v0, v1);
