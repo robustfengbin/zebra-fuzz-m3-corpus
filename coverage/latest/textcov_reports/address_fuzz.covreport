@@ -885,13 +885,13 @@ _RNvMNtNtCsaQLrihHycad_6bech3210primitives3hrpNtB2_3Hrp5parse:
    91|  1.09k|        let mut has_upper: bool = false;
    92|  14.8k|        for (i, c) in hrp.chars().enumerate() {
    93|  14.8k|            if !c.is_ascii() {
-   94|    164|                return Err(NonAsciiChar(c));
+   94|    175|                return Err(NonAsciiChar(c));
    95|  14.6k|            }
    96|  14.6k|            let b = c as u8; // cast OK as we just checked that c is an ASCII value
    97|       |
    98|       |            // Valid subset of ASCII
    99|  14.6k|            if !(33..=126).contains(&b) {
-  100|    117|                return Err(InvalidAsciiByte(b));
+  100|    106|                return Err(InvalidAsciiByte(b));
   101|  14.5k|            }
   102|       |
   103|  14.5k|            if b.is_ascii_lowercase() {
