@@ -2,29 +2,28 @@ WARNING: Failed to find function "__sanitizer_acquire_crash_state".
 WARNING: Failed to find function "__sanitizer_print_stack_trace".
 WARNING: Failed to find function "__sanitizer_set_death_callback".
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 2307816731
-MERGE-OUTER: 806 files, 0 in the initial corpus, 0 processed earlier
+INFO: Seed: 2953915796
+MERGE-OUTER: 429 files, 0 in the initial corpus, 0 processed earlier
 MERGE-OUTER: attempt 1
 WARNING: Failed to find function "__sanitizer_acquire_crash_state".
 WARNING: Failed to find function "__sanitizer_print_stack_trace".
 WARNING: Failed to find function "__sanitizer_set_death_callback".
 INFO: Running with entropic power schedule (0xFF, 100).
-INFO: Seed: 2307830979
+INFO: Seed: 2953928193
 INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
-MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge1052.txt'
-MERGE-INNER: 806 total files; 0 processed earlier; will process 806 files now
-#1	pulse  exec/s: 0 rss: 32Mb
-#2	pulse  exec/s: 0 rss: 32Mb
+MERGE-INNER: using the control file '/tmp/libFuzzerTemp.Merge1022.txt'
+MERGE-INNER: 429 total files; 0 processed earlier; will process 429 files now
+#1	pulse  exec/s: 0 rss: 31Mb
+#2	pulse  exec/s: 0 rss: 31Mb
 #4	pulse  exec/s: 0 rss: 32Mb
 #8	pulse  exec/s: 0 rss: 32Mb
-#16	pulse  exec/s: 0 rss: 32Mb
-#32	pulse  exec/s: 0 rss: 32Mb
-#64	pulse  exec/s: 0 rss: 33Mb
+#16	pulse  exec/s: 0 rss: 34Mb
+#32	pulse  exec/s: 0 rss: 34Mb
+#64	pulse  exec/s: 0 rss: 35Mb
 #128	pulse  exec/s: 0 rss: 35Mb
 #256	pulse  exec/s: 0 rss: 35Mb
-#512	pulse  exec/s: 0 rss: 35Mb
-#806	DONE   exec/s: 806 rss: 35Mb
+#429	DONE   exec/s: 429 rss: 35Mb
 MERGE-OUTER: successful in 1 attempt(s)
-MERGE-OUTER: the control file has 94462 bytes
-MERGE-OUTER: consumed 0Mb (31Mb rss) to parse the control file
+MERGE-OUTER: the control file has 50070 bytes
+MERGE-OUTER: consumed 0Mb (30Mb rss) to parse the control file
 MERGE-OUTER: 0 new files with 0 new features added; 0 new coverage edges
