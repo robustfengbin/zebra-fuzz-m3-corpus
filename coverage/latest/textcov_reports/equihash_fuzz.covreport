@@ -1,39 +1,39 @@
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_block9as_arraysyEB6_:
-  241|  65.8k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
-  242|  65.8k|                let mut p = a.as_mut_ptr();
-  243|  65.8k|                ( $( {
-  244|  65.8k|                    let aref = &mut *(p as *mut [T; $len]);
-  245|  65.8k|                    p = p.add($len);
-  246|  65.8k|                    aref
-  247|  65.8k|                }, )* )
-  248|  65.8k|            }
+  241|  64.3k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
+  242|  64.3k|                let mut p = a.as_mut_ptr();
+  243|  64.3k|                ( $( {
+  244|  64.3k|                    let aref = &mut *(p as *mut [T; $len]);
+  245|  64.3k|                    p = p.add($len);
+  246|  64.3k|                    aref
+  247|  64.3k|                }, )* )
+  248|  64.3k|            }
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_blocks0_9as_arrayshEB6_:
-  144|  65.8k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
-  145|  65.8k|                let mut p = a.as_ptr();
-  146|  65.8k|                ( $( {
-  147|  65.8k|                    let aref = &*(p as *const [T; $len]);
-  148|  65.8k|                    p = p.offset($len as isize);
-  149|  65.8k|                    aref
-  150|  65.8k|                }, )* )
-  151|  65.8k|            }
+  144|  64.3k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
+  145|  64.3k|                let mut p = a.as_ptr();
+  146|  64.3k|                ( $( {
+  147|  64.3k|                    let aref = &*(p as *const [T; $len]);
+  148|  64.3k|                    p = p.offset($len as isize);
+  149|  64.3k|                    aref
+  150|  64.3k|                }, )* )
+  151|  64.3k|            }
 _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_blocks_9as_arraysyEB6_:
-  144|  65.8k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
-  145|  65.8k|                let mut p = a.as_ptr();
-  146|  65.8k|                ( $( {
-  147|  65.8k|                    let aref = &*(p as *const [T; $len]);
-  148|  65.8k|                    p = p.offset($len as isize);
-  149|  65.8k|                    aref
-  150|  65.8k|                }, )* )
-  151|  65.8k|            }
+  144|  64.3k|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
+  145|  64.3k|                let mut p = a.as_ptr();
+  146|  64.3k|                ( $( {
+  147|  64.3k|                    let aref = &*(p as *const [T; $len]);
+  148|  64.3k|                    p = p.offset($len as isize);
+  149|  64.3k|                    aref
+  150|  64.3k|                }, )* )
+  151|  64.3k|            }
 _RINvNvCsgZX4mSu3YR4_12blake2b_simd20state_words_to_bytes9as_arrayshEB4_:
-  241|  65.5k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
-  242|  65.5k|                let mut p = a.as_mut_ptr();
-  243|  65.5k|                ( $( {
-  244|  65.5k|                    let aref = &mut *(p as *mut [T; $len]);
-  245|  65.5k|                    p = p.add($len);
-  246|  65.5k|                    aref
-  247|  65.5k|                }, )* )
-  248|  65.5k|            }
+  241|  64.1k|            unsafe fn as_arrays<T>(a: &mut [T; $( $len + )* 0 ]) -> ( $( &mut [T; $len], )* ) {
+  242|  64.1k|                let mut p = a.as_mut_ptr();
+  243|  64.1k|                ( $( {
+  244|  64.1k|                    let aref = &mut *(p as *mut [T; $len]);
+  245|  64.1k|                    p = p.add($len);
+  246|  64.1k|                    aref
+  247|  64.1k|                }, )* )
+  248|  64.1k|            }
 _RINvNvMCsgZX4mSu3YR4_12blake2b_simdNtB5_6Params8to_words9as_arrayshEB5_:
   144|    258|            const unsafe fn as_arrays<T>(a: &[T; $( $len + )* 0 ]) -> ( $( &[T; $len], )* ) {
   145|    258|                let mut p = a.as_ptr();
@@ -58,54 +58,54 @@ _RINvNvNtCsgZX4mSu3YR4_12blake2b_simd4guts11final_block8as_arrayhEB6_:
    63|    256|            }
 
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx211diagonalize:
-  136|   789k|unsafe fn diagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
-  137|   789k|    unsafe {
-  138|   789k|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(2, 1, 0, 3));
-  139|   789k|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
-  140|   789k|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(0, 3, 2, 1));
-  141|   789k|    }
-  142|   789k|}
+  136|   772k|unsafe fn diagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
+  137|   772k|    unsafe {
+  138|   772k|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(2, 1, 0, 3));
+  139|   772k|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
+  140|   772k|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(0, 3, 2, 1));
+  141|   772k|    }
+  142|   772k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx213undiagonalize:
-  145|   789k|unsafe fn undiagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
-  146|   789k|    unsafe {
-  147|   789k|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(0, 3, 2, 1));
-  148|   789k|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
-  149|   789k|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(2, 1, 0, 3));
-  150|   789k|    }
-  151|   789k|}
+  145|   772k|unsafe fn undiagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
+  146|   772k|    unsafe {
+  147|   772k|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(0, 3, 2, 1));
+  148|   772k|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
+  149|   772k|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(2, 1, 0, 3));
+  150|   772k|    }
+  151|   772k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress1_loop:
-  437|  65.8k|pub unsafe fn compress1_loop(
-  438|  65.8k|    input: &[u8],
-  439|  65.8k|    words: &mut [Word; 8],
-  440|  65.8k|    mut count: Count,
-  441|  65.8k|    last_node: LastNode,
-  442|  65.8k|    finalize: Finalize,
-  443|  65.8k|    stride: Stride,
-  444|  65.8k|) {
+  437|  64.3k|pub unsafe fn compress1_loop(
+  438|  64.3k|    input: &[u8],
+  439|  64.3k|    words: &mut [Word; 8],
+  440|  64.3k|    mut count: Count,
+  441|  64.3k|    last_node: LastNode,
+  442|  64.3k|    finalize: Finalize,
+  443|  64.3k|    stride: Stride,
+  444|  64.3k|) {
   445|       |    unsafe {
-  446|  65.8k|        input_debug_asserts(input, finalize);
+  446|  64.3k|        input_debug_asserts(input, finalize);
   447|       |
-  448|  65.8k|        let mut local_words = *words;
+  448|  64.3k|        let mut local_words = *words;
   449|       |
-  450|  65.8k|        let mut fin_offset = input.len().saturating_sub(1);
-  451|  65.8k|        fin_offset -= fin_offset % stride.padded_blockbytes();
-  452|  65.8k|        let mut buf = [0; BLOCKBYTES];
-  453|  65.8k|        let (fin_block, fin_len, _) = final_block(input, fin_offset, &mut buf, stride);
-  454|  65.8k|        let fin_last_block = flag_word(finalize.yes());
-  455|  65.8k|        let fin_last_node = flag_word(finalize.yes() && last_node.yes());
+  450|  64.3k|        let mut fin_offset = input.len().saturating_sub(1);
+  451|  64.3k|        fin_offset -= fin_offset % stride.padded_blockbytes();
+  452|  64.3k|        let mut buf = [0; BLOCKBYTES];
+  453|  64.3k|        let (fin_block, fin_len, _) = final_block(input, fin_offset, &mut buf, stride);
+  454|  64.3k|        let fin_last_block = flag_word(finalize.yes());
+  455|  64.3k|        let fin_last_node = flag_word(finalize.yes() && last_node.yes());
   456|       |
-  457|  65.8k|        let mut offset = 0;
+  457|  64.3k|        let mut offset = 0;
   458|       |        loop {
   459|       |            let block;
   460|       |            let count_delta;
   461|       |            let last_block;
   462|       |            let last_node;
-  463|  65.8k|            if offset == fin_offset {
-  464|  65.8k|                block = fin_block;
-  465|  65.8k|                count_delta = fin_len;
-  466|  65.8k|                last_block = fin_last_block;
-  467|  65.8k|                last_node = fin_last_node;
-  468|  65.8k|            } else {
+  463|  64.3k|            if offset == fin_offset {
+  464|  64.3k|                block = fin_block;
+  465|  64.3k|                count_delta = fin_len;
+  466|  64.3k|                last_block = fin_last_block;
+  467|  64.3k|                last_node = fin_last_node;
+  468|  64.3k|            } else {
   469|      0|                // This unsafe cast avoids bounds checks. There's guaranteed to be
   470|      0|                // enough input because `offset < fin_offset`.
   471|      0|                block = &*(input.as_ptr().add(offset) as *const [u8; BLOCKBYTES]);
@@ -114,391 +114,391 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress1_loop:
   474|      0|                last_node = flag_word(false);
   475|      0|            };
   476|       |
-  477|  65.8k|            count = count.wrapping_add(count_delta as Count);
-  478|  65.8k|            compress_block(block, &mut local_words, count, last_block, last_node);
+  477|  64.3k|            count = count.wrapping_add(count_delta as Count);
+  478|  64.3k|            compress_block(block, &mut local_words, count, last_block, last_node);
   479|       |
   480|       |            // Check for termination before bumping the offset, to avoid overflow.
-  481|  65.8k|            if offset == fin_offset {
-  482|  65.8k|                break;
+  481|  64.3k|            if offset == fin_offset {
+  482|  64.3k|                break;
   483|      0|            }
   484|       |
   485|      0|            offset += stride.padded_blockbytes();
   486|       |        }
   487|       |
-  488|  65.8k|        *words = local_words;
+  488|  64.3k|        *words = local_words;
   489|       |    }
-  490|  65.8k|}
+  490|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress_block:
-  154|  65.8k|unsafe fn compress_block(
-  155|  65.8k|    block: &[u8; BLOCKBYTES],
-  156|  65.8k|    words: &mut [Word; 8],
-  157|  65.8k|    count: Count,
-  158|  65.8k|    last_block: Word,
-  159|  65.8k|    last_node: Word,
-  160|  65.8k|) {
-  161|  65.8k|    unsafe {
-  162|  65.8k|        let (words_low, words_high) = mut_array_refs!(words, DEGREE, DEGREE);
-  163|  65.8k|        let (iv_low, iv_high) = array_refs!(&IV, DEGREE, DEGREE);
-  164|  65.8k|        let mut a = loadu(words_low);
-  165|  65.8k|        let mut b = loadu(words_high);
-  166|  65.8k|        let mut c = loadu(iv_low);
-  167|  65.8k|        let flags = set4(count_low(count), count_high(count), last_block, last_node);
-  168|  65.8k|        let mut d = xor(loadu(iv_high), flags);
-  169|  65.8k|
-  170|  65.8k|        let msg_chunks = array_refs!(block, 16, 16, 16, 16, 16, 16, 16, 16);
-  171|  65.8k|        let m0 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.0));
-  172|  65.8k|        let m1 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.1));
-  173|  65.8k|        let m2 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.2));
-  174|  65.8k|        let m3 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.3));
-  175|  65.8k|        let m4 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.4));
-  176|  65.8k|        let m5 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.5));
-  177|  65.8k|        let m6 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.6));
-  178|  65.8k|        let m7 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.7));
-  179|  65.8k|
-  180|  65.8k|        let iv0 = a;
-  181|  65.8k|        let iv1 = b;
-  182|  65.8k|        let mut t0;
-  183|  65.8k|        let mut t1;
-  184|  65.8k|        let mut b0;
-  185|  65.8k|
-  186|  65.8k|        // round 1
-  187|  65.8k|        t0 = _mm256_unpacklo_epi64(m0, m1);
-  188|  65.8k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  189|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  190|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  191|  65.8k|        t0 = _mm256_unpackhi_epi64(m0, m1);
-  192|  65.8k|        t1 = _mm256_unpackhi_epi64(m2, m3);
-  193|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  194|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  195|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  196|  65.8k|        t0 = _mm256_unpacklo_epi64(m7, m4);
-  197|  65.8k|        t1 = _mm256_unpacklo_epi64(m5, m6);
-  198|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  199|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  200|  65.8k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  201|  65.8k|        t1 = _mm256_unpackhi_epi64(m5, m6);
-  202|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  203|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  204|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  205|  65.8k|
-  206|  65.8k|        // round 2
-  207|  65.8k|        t0 = _mm256_unpacklo_epi64(m7, m2);
-  208|  65.8k|        t1 = _mm256_unpackhi_epi64(m4, m6);
-  209|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  210|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  211|  65.8k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  212|  65.8k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
-  213|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  214|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  215|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  216|  65.8k|        t0 = _mm256_unpackhi_epi64(m2, m0);
-  217|  65.8k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
-  218|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  219|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  220|  65.8k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
-  221|  65.8k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
-  222|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  223|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  224|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  225|  65.8k|
-  226|  65.8k|        // round 3
-  227|  65.8k|        t0 = _mm256_alignr_epi8(m6, m5, 8);
-  228|  65.8k|        t1 = _mm256_unpackhi_epi64(m2, m7);
-  229|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  230|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  231|  65.8k|        t0 = _mm256_unpacklo_epi64(m4, m0);
-  232|  65.8k|        t1 = _mm256_blend_epi32(m6, m1, 0x33);
-  233|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  234|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  235|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  236|  65.8k|        t0 = _mm256_alignr_epi8(m5, m4, 8);
-  237|  65.8k|        t1 = _mm256_unpackhi_epi64(m1, m3);
-  238|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  239|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  240|  65.8k|        t0 = _mm256_unpacklo_epi64(m2, m7);
-  241|  65.8k|        t1 = _mm256_blend_epi32(m0, m3, 0x33);
-  242|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  243|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  244|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  245|  65.8k|
-  246|  65.8k|        // round 4
-  247|  65.8k|        t0 = _mm256_unpackhi_epi64(m3, m1);
-  248|  65.8k|        t1 = _mm256_unpackhi_epi64(m6, m5);
-  249|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  250|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  251|  65.8k|        t0 = _mm256_unpackhi_epi64(m4, m0);
-  252|  65.8k|        t1 = _mm256_unpacklo_epi64(m6, m7);
-  253|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  254|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  255|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  256|  65.8k|        t0 = _mm256_alignr_epi8(m1, m7, 8);
-  257|  65.8k|        t1 = _mm256_shuffle_epi32(m2, _MM_SHUFFLE!(1, 0, 3, 2));
-  258|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  259|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  260|  65.8k|        t0 = _mm256_unpacklo_epi64(m4, m3);
-  261|  65.8k|        t1 = _mm256_unpacklo_epi64(m5, m0);
-  262|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  263|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  264|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  265|  65.8k|
-  266|  65.8k|        // round 5
-  267|  65.8k|        t0 = _mm256_unpackhi_epi64(m4, m2);
-  268|  65.8k|        t1 = _mm256_unpacklo_epi64(m1, m5);
-  269|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  270|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  271|  65.8k|        t0 = _mm256_blend_epi32(m3, m0, 0x33);
-  272|  65.8k|        t1 = _mm256_blend_epi32(m7, m2, 0x33);
-  273|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  274|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  275|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  276|  65.8k|        t0 = _mm256_alignr_epi8(m7, m1, 8);
-  277|  65.8k|        t1 = _mm256_alignr_epi8(m3, m5, 8);
-  278|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  279|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  280|  65.8k|        t0 = _mm256_unpackhi_epi64(m6, m0);
-  281|  65.8k|        t1 = _mm256_unpacklo_epi64(m6, m4);
-  282|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  283|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  284|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  285|  65.8k|
-  286|  65.8k|        // round 6
-  287|  65.8k|        t0 = _mm256_unpacklo_epi64(m1, m3);
-  288|  65.8k|        t1 = _mm256_unpacklo_epi64(m0, m4);
-  289|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  290|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  291|  65.8k|        t0 = _mm256_unpacklo_epi64(m6, m5);
-  292|  65.8k|        t1 = _mm256_unpackhi_epi64(m5, m1);
-  293|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  294|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  295|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  296|  65.8k|        t0 = _mm256_alignr_epi8(m2, m0, 8);
-  297|  65.8k|        t1 = _mm256_unpackhi_epi64(m3, m7);
-  298|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  299|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  300|  65.8k|        t0 = _mm256_unpackhi_epi64(m4, m6);
-  301|  65.8k|        t1 = _mm256_alignr_epi8(m7, m2, 8);
-  302|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  303|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  304|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  305|  65.8k|
-  306|  65.8k|        // round 7
-  307|  65.8k|        t0 = _mm256_blend_epi32(m0, m6, 0x33);
-  308|  65.8k|        t1 = _mm256_unpacklo_epi64(m7, m2);
-  309|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  310|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  311|  65.8k|        t0 = _mm256_unpackhi_epi64(m2, m7);
-  312|  65.8k|        t1 = _mm256_alignr_epi8(m5, m6, 8);
-  313|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  314|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  315|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  316|  65.8k|        t0 = _mm256_unpacklo_epi64(m4, m0);
-  317|  65.8k|        t1 = _mm256_blend_epi32(m4, m3, 0x33);
-  318|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  319|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  320|  65.8k|        t0 = _mm256_unpackhi_epi64(m5, m3);
-  321|  65.8k|        t1 = _mm256_shuffle_epi32(m1, _MM_SHUFFLE!(1, 0, 3, 2));
-  322|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  323|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  324|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  325|  65.8k|
-  326|  65.8k|        // round 8
-  327|  65.8k|        t0 = _mm256_unpackhi_epi64(m6, m3);
-  328|  65.8k|        t1 = _mm256_blend_epi32(m1, m6, 0x33);
-  329|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  330|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  331|  65.8k|        t0 = _mm256_alignr_epi8(m7, m5, 8);
-  332|  65.8k|        t1 = _mm256_unpackhi_epi64(m0, m4);
-  333|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  334|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  335|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  336|  65.8k|        t0 = _mm256_blend_epi32(m2, m1, 0x33);
-  337|  65.8k|        t1 = _mm256_alignr_epi8(m4, m7, 8);
-  338|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  339|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  340|  65.8k|        t0 = _mm256_unpacklo_epi64(m5, m0);
-  341|  65.8k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  342|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  343|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  344|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  345|  65.8k|
-  346|  65.8k|        // round 9
-  347|  65.8k|        t0 = _mm256_unpacklo_epi64(m3, m7);
-  348|  65.8k|        t1 = _mm256_alignr_epi8(m0, m5, 8);
-  349|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  350|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  351|  65.8k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  352|  65.8k|        t1 = _mm256_alignr_epi8(m4, m1, 8);
-  353|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  354|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  355|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  356|  65.8k|        t0 = _mm256_unpacklo_epi64(m5, m6);
-  357|  65.8k|        t1 = _mm256_unpackhi_epi64(m6, m0);
-  358|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  359|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  360|  65.8k|        t0 = _mm256_alignr_epi8(m1, m2, 8);
-  361|  65.8k|        t1 = _mm256_alignr_epi8(m2, m3, 8);
-  362|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  363|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  364|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  365|  65.8k|
-  366|  65.8k|        // round 10
-  367|  65.8k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  368|  65.8k|        t1 = _mm256_unpackhi_epi64(m3, m0);
-  369|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  370|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  371|  65.8k|        t0 = _mm256_unpacklo_epi64(m1, m2);
-  372|  65.8k|        t1 = _mm256_blend_epi32(m2, m3, 0x33);
-  373|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  374|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  375|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  376|  65.8k|        t0 = _mm256_unpackhi_epi64(m6, m7);
-  377|  65.8k|        t1 = _mm256_unpackhi_epi64(m4, m1);
-  378|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  379|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  380|  65.8k|        t0 = _mm256_blend_epi32(m5, m0, 0x33);
-  381|  65.8k|        t1 = _mm256_unpacklo_epi64(m7, m6);
-  382|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  383|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  384|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  385|  65.8k|
-  386|  65.8k|        // round 11
-  387|  65.8k|        t0 = _mm256_unpacklo_epi64(m0, m1);
-  388|  65.8k|        t1 = _mm256_unpacklo_epi64(m2, m3);
-  389|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  390|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  391|  65.8k|        t0 = _mm256_unpackhi_epi64(m0, m1);
-  392|  65.8k|        t1 = _mm256_unpackhi_epi64(m2, m3);
-  393|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  394|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  395|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  396|  65.8k|        t0 = _mm256_unpacklo_epi64(m7, m4);
-  397|  65.8k|        t1 = _mm256_unpacklo_epi64(m5, m6);
-  398|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  399|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  400|  65.8k|        t0 = _mm256_unpackhi_epi64(m7, m4);
-  401|  65.8k|        t1 = _mm256_unpackhi_epi64(m5, m6);
-  402|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  403|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  404|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  405|  65.8k|
-  406|  65.8k|        // round 12
-  407|  65.8k|        t0 = _mm256_unpacklo_epi64(m7, m2);
-  408|  65.8k|        t1 = _mm256_unpackhi_epi64(m4, m6);
-  409|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  410|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  411|  65.8k|        t0 = _mm256_unpacklo_epi64(m5, m4);
-  412|  65.8k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
-  413|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  414|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  415|  65.8k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
-  416|  65.8k|        t0 = _mm256_unpackhi_epi64(m2, m0);
-  417|  65.8k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
-  418|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  419|  65.8k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  420|  65.8k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
-  421|  65.8k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
-  422|  65.8k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
-  423|  65.8k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
-  424|  65.8k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
-  425|  65.8k|
-  426|  65.8k|        a = xor(a, c);
-  427|  65.8k|        b = xor(b, d);
-  428|  65.8k|        a = xor(a, iv0);
-  429|  65.8k|        b = xor(b, iv1);
-  430|  65.8k|
-  431|  65.8k|        storeu(a, words_low);
-  432|  65.8k|        storeu(b, words_high);
-  433|  65.8k|    }
-  434|  65.8k|}
+  154|  64.3k|unsafe fn compress_block(
+  155|  64.3k|    block: &[u8; BLOCKBYTES],
+  156|  64.3k|    words: &mut [Word; 8],
+  157|  64.3k|    count: Count,
+  158|  64.3k|    last_block: Word,
+  159|  64.3k|    last_node: Word,
+  160|  64.3k|) {
+  161|  64.3k|    unsafe {
+  162|  64.3k|        let (words_low, words_high) = mut_array_refs!(words, DEGREE, DEGREE);
+  163|  64.3k|        let (iv_low, iv_high) = array_refs!(&IV, DEGREE, DEGREE);
+  164|  64.3k|        let mut a = loadu(words_low);
+  165|  64.3k|        let mut b = loadu(words_high);
+  166|  64.3k|        let mut c = loadu(iv_low);
+  167|  64.3k|        let flags = set4(count_low(count), count_high(count), last_block, last_node);
+  168|  64.3k|        let mut d = xor(loadu(iv_high), flags);
+  169|  64.3k|
+  170|  64.3k|        let msg_chunks = array_refs!(block, 16, 16, 16, 16, 16, 16, 16, 16);
+  171|  64.3k|        let m0 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.0));
+  172|  64.3k|        let m1 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.1));
+  173|  64.3k|        let m2 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.2));
+  174|  64.3k|        let m3 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.3));
+  175|  64.3k|        let m4 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.4));
+  176|  64.3k|        let m5 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.5));
+  177|  64.3k|        let m6 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.6));
+  178|  64.3k|        let m7 = _mm256_broadcastsi128_si256(loadu_128(msg_chunks.7));
+  179|  64.3k|
+  180|  64.3k|        let iv0 = a;
+  181|  64.3k|        let iv1 = b;
+  182|  64.3k|        let mut t0;
+  183|  64.3k|        let mut t1;
+  184|  64.3k|        let mut b0;
+  185|  64.3k|
+  186|  64.3k|        // round 1
+  187|  64.3k|        t0 = _mm256_unpacklo_epi64(m0, m1);
+  188|  64.3k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  189|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  190|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  191|  64.3k|        t0 = _mm256_unpackhi_epi64(m0, m1);
+  192|  64.3k|        t1 = _mm256_unpackhi_epi64(m2, m3);
+  193|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  194|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  195|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  196|  64.3k|        t0 = _mm256_unpacklo_epi64(m7, m4);
+  197|  64.3k|        t1 = _mm256_unpacklo_epi64(m5, m6);
+  198|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  199|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  200|  64.3k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  201|  64.3k|        t1 = _mm256_unpackhi_epi64(m5, m6);
+  202|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  203|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  204|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  205|  64.3k|
+  206|  64.3k|        // round 2
+  207|  64.3k|        t0 = _mm256_unpacklo_epi64(m7, m2);
+  208|  64.3k|        t1 = _mm256_unpackhi_epi64(m4, m6);
+  209|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  210|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  211|  64.3k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  212|  64.3k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
+  213|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  214|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  215|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  216|  64.3k|        t0 = _mm256_unpackhi_epi64(m2, m0);
+  217|  64.3k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
+  218|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  219|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  220|  64.3k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
+  221|  64.3k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
+  222|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  223|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  224|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  225|  64.3k|
+  226|  64.3k|        // round 3
+  227|  64.3k|        t0 = _mm256_alignr_epi8(m6, m5, 8);
+  228|  64.3k|        t1 = _mm256_unpackhi_epi64(m2, m7);
+  229|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  230|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  231|  64.3k|        t0 = _mm256_unpacklo_epi64(m4, m0);
+  232|  64.3k|        t1 = _mm256_blend_epi32(m6, m1, 0x33);
+  233|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  234|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  235|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  236|  64.3k|        t0 = _mm256_alignr_epi8(m5, m4, 8);
+  237|  64.3k|        t1 = _mm256_unpackhi_epi64(m1, m3);
+  238|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  239|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  240|  64.3k|        t0 = _mm256_unpacklo_epi64(m2, m7);
+  241|  64.3k|        t1 = _mm256_blend_epi32(m0, m3, 0x33);
+  242|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  243|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  244|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  245|  64.3k|
+  246|  64.3k|        // round 4
+  247|  64.3k|        t0 = _mm256_unpackhi_epi64(m3, m1);
+  248|  64.3k|        t1 = _mm256_unpackhi_epi64(m6, m5);
+  249|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  250|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  251|  64.3k|        t0 = _mm256_unpackhi_epi64(m4, m0);
+  252|  64.3k|        t1 = _mm256_unpacklo_epi64(m6, m7);
+  253|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  254|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  255|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  256|  64.3k|        t0 = _mm256_alignr_epi8(m1, m7, 8);
+  257|  64.3k|        t1 = _mm256_shuffle_epi32(m2, _MM_SHUFFLE!(1, 0, 3, 2));
+  258|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  259|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  260|  64.3k|        t0 = _mm256_unpacklo_epi64(m4, m3);
+  261|  64.3k|        t1 = _mm256_unpacklo_epi64(m5, m0);
+  262|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  263|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  264|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  265|  64.3k|
+  266|  64.3k|        // round 5
+  267|  64.3k|        t0 = _mm256_unpackhi_epi64(m4, m2);
+  268|  64.3k|        t1 = _mm256_unpacklo_epi64(m1, m5);
+  269|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  270|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  271|  64.3k|        t0 = _mm256_blend_epi32(m3, m0, 0x33);
+  272|  64.3k|        t1 = _mm256_blend_epi32(m7, m2, 0x33);
+  273|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  274|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  275|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  276|  64.3k|        t0 = _mm256_alignr_epi8(m7, m1, 8);
+  277|  64.3k|        t1 = _mm256_alignr_epi8(m3, m5, 8);
+  278|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  279|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  280|  64.3k|        t0 = _mm256_unpackhi_epi64(m6, m0);
+  281|  64.3k|        t1 = _mm256_unpacklo_epi64(m6, m4);
+  282|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  283|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  284|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  285|  64.3k|
+  286|  64.3k|        // round 6
+  287|  64.3k|        t0 = _mm256_unpacklo_epi64(m1, m3);
+  288|  64.3k|        t1 = _mm256_unpacklo_epi64(m0, m4);
+  289|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  290|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  291|  64.3k|        t0 = _mm256_unpacklo_epi64(m6, m5);
+  292|  64.3k|        t1 = _mm256_unpackhi_epi64(m5, m1);
+  293|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  294|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  295|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  296|  64.3k|        t0 = _mm256_alignr_epi8(m2, m0, 8);
+  297|  64.3k|        t1 = _mm256_unpackhi_epi64(m3, m7);
+  298|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  299|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  300|  64.3k|        t0 = _mm256_unpackhi_epi64(m4, m6);
+  301|  64.3k|        t1 = _mm256_alignr_epi8(m7, m2, 8);
+  302|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  303|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  304|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  305|  64.3k|
+  306|  64.3k|        // round 7
+  307|  64.3k|        t0 = _mm256_blend_epi32(m0, m6, 0x33);
+  308|  64.3k|        t1 = _mm256_unpacklo_epi64(m7, m2);
+  309|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  310|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  311|  64.3k|        t0 = _mm256_unpackhi_epi64(m2, m7);
+  312|  64.3k|        t1 = _mm256_alignr_epi8(m5, m6, 8);
+  313|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  314|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  315|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  316|  64.3k|        t0 = _mm256_unpacklo_epi64(m4, m0);
+  317|  64.3k|        t1 = _mm256_blend_epi32(m4, m3, 0x33);
+  318|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  319|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  320|  64.3k|        t0 = _mm256_unpackhi_epi64(m5, m3);
+  321|  64.3k|        t1 = _mm256_shuffle_epi32(m1, _MM_SHUFFLE!(1, 0, 3, 2));
+  322|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  323|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  324|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  325|  64.3k|
+  326|  64.3k|        // round 8
+  327|  64.3k|        t0 = _mm256_unpackhi_epi64(m6, m3);
+  328|  64.3k|        t1 = _mm256_blend_epi32(m1, m6, 0x33);
+  329|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  330|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  331|  64.3k|        t0 = _mm256_alignr_epi8(m7, m5, 8);
+  332|  64.3k|        t1 = _mm256_unpackhi_epi64(m0, m4);
+  333|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  334|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  335|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  336|  64.3k|        t0 = _mm256_blend_epi32(m2, m1, 0x33);
+  337|  64.3k|        t1 = _mm256_alignr_epi8(m4, m7, 8);
+  338|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  339|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  340|  64.3k|        t0 = _mm256_unpacklo_epi64(m5, m0);
+  341|  64.3k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  342|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  343|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  344|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  345|  64.3k|
+  346|  64.3k|        // round 9
+  347|  64.3k|        t0 = _mm256_unpacklo_epi64(m3, m7);
+  348|  64.3k|        t1 = _mm256_alignr_epi8(m0, m5, 8);
+  349|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  350|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  351|  64.3k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  352|  64.3k|        t1 = _mm256_alignr_epi8(m4, m1, 8);
+  353|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  354|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  355|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  356|  64.3k|        t0 = _mm256_unpacklo_epi64(m5, m6);
+  357|  64.3k|        t1 = _mm256_unpackhi_epi64(m6, m0);
+  358|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  359|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  360|  64.3k|        t0 = _mm256_alignr_epi8(m1, m2, 8);
+  361|  64.3k|        t1 = _mm256_alignr_epi8(m2, m3, 8);
+  362|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  363|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  364|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  365|  64.3k|
+  366|  64.3k|        // round 10
+  367|  64.3k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  368|  64.3k|        t1 = _mm256_unpackhi_epi64(m3, m0);
+  369|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  370|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  371|  64.3k|        t0 = _mm256_unpacklo_epi64(m1, m2);
+  372|  64.3k|        t1 = _mm256_blend_epi32(m2, m3, 0x33);
+  373|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  374|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  375|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  376|  64.3k|        t0 = _mm256_unpackhi_epi64(m6, m7);
+  377|  64.3k|        t1 = _mm256_unpackhi_epi64(m4, m1);
+  378|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  379|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  380|  64.3k|        t0 = _mm256_blend_epi32(m5, m0, 0x33);
+  381|  64.3k|        t1 = _mm256_unpacklo_epi64(m7, m6);
+  382|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  383|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  384|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  385|  64.3k|
+  386|  64.3k|        // round 11
+  387|  64.3k|        t0 = _mm256_unpacklo_epi64(m0, m1);
+  388|  64.3k|        t1 = _mm256_unpacklo_epi64(m2, m3);
+  389|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  390|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  391|  64.3k|        t0 = _mm256_unpackhi_epi64(m0, m1);
+  392|  64.3k|        t1 = _mm256_unpackhi_epi64(m2, m3);
+  393|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  394|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  395|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  396|  64.3k|        t0 = _mm256_unpacklo_epi64(m7, m4);
+  397|  64.3k|        t1 = _mm256_unpacklo_epi64(m5, m6);
+  398|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  399|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  400|  64.3k|        t0 = _mm256_unpackhi_epi64(m7, m4);
+  401|  64.3k|        t1 = _mm256_unpackhi_epi64(m5, m6);
+  402|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  403|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  404|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  405|  64.3k|
+  406|  64.3k|        // round 12
+  407|  64.3k|        t0 = _mm256_unpacklo_epi64(m7, m2);
+  408|  64.3k|        t1 = _mm256_unpackhi_epi64(m4, m6);
+  409|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  410|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  411|  64.3k|        t0 = _mm256_unpacklo_epi64(m5, m4);
+  412|  64.3k|        t1 = _mm256_alignr_epi8(m3, m7, 8);
+  413|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  414|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  415|  64.3k|        diagonalize(&mut a, &mut b, &mut c, &mut d);
+  416|  64.3k|        t0 = _mm256_unpackhi_epi64(m2, m0);
+  417|  64.3k|        t1 = _mm256_blend_epi32(m5, m0, 0x33);
+  418|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  419|  64.3k|        g1(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  420|  64.3k|        t0 = _mm256_alignr_epi8(m6, m1, 8);
+  421|  64.3k|        t1 = _mm256_blend_epi32(m3, m1, 0x33);
+  422|  64.3k|        b0 = _mm256_blend_epi32(t0, t1, 0xF0);
+  423|  64.3k|        g2(&mut a, &mut b, &mut c, &mut d, &mut b0);
+  424|  64.3k|        undiagonalize(&mut a, &mut b, &mut c, &mut d);
+  425|  64.3k|
+  426|  64.3k|        a = xor(a, c);
+  427|  64.3k|        b = xor(b, d);
+  428|  64.3k|        a = xor(a, iv0);
+  429|  64.3k|        b = xor(b, iv1);
+  430|  64.3k|
+  431|  64.3k|        storeu(a, words_low);
+  432|  64.3k|        storeu(b, words_high);
+  433|  64.3k|    }
+  434|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx22g1:
-  107|  1.57M|unsafe fn g1(a: &mut __m256i, b: &mut __m256i, c: &mut __m256i, d: &mut __m256i, m: &mut __m256i) {
-  108|  1.57M|    unsafe {
-  109|  1.57M|        *a = add(*a, *m);
-  110|  1.57M|        *a = add(*a, *b);
-  111|  1.57M|        *d = xor(*d, *a);
-  112|  1.57M|        *d = rot32(*d);
-  113|  1.57M|        *c = add(*c, *d);
-  114|  1.57M|        *b = xor(*b, *c);
-  115|  1.57M|        *b = rot24(*b);
-  116|  1.57M|    }
-  117|  1.57M|}
+  107|  1.54M|unsafe fn g1(a: &mut __m256i, b: &mut __m256i, c: &mut __m256i, d: &mut __m256i, m: &mut __m256i) {
+  108|  1.54M|    unsafe {
+  109|  1.54M|        *a = add(*a, *m);
+  110|  1.54M|        *a = add(*a, *b);
+  111|  1.54M|        *d = xor(*d, *a);
+  112|  1.54M|        *d = rot32(*d);
+  113|  1.54M|        *c = add(*c, *d);
+  114|  1.54M|        *b = xor(*b, *c);
+  115|  1.54M|        *b = rot24(*b);
+  116|  1.54M|    }
+  117|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx22g2:
-  120|  1.57M|unsafe fn g2(a: &mut __m256i, b: &mut __m256i, c: &mut __m256i, d: &mut __m256i, m: &mut __m256i) {
-  121|  1.57M|    unsafe {
-  122|  1.57M|        *a = add(*a, *m);
-  123|  1.57M|        *a = add(*a, *b);
-  124|  1.57M|        *d = xor(*d, *a);
-  125|  1.57M|        *d = rot16(*d);
-  126|  1.57M|        *c = add(*c, *d);
-  127|  1.57M|        *b = xor(*b, *c);
-  128|  1.57M|        *b = rot63(*b);
-  129|  1.57M|    }
-  130|  1.57M|}
+  120|  1.54M|unsafe fn g2(a: &mut __m256i, b: &mut __m256i, c: &mut __m256i, d: &mut __m256i, m: &mut __m256i) {
+  121|  1.54M|    unsafe {
+  122|  1.54M|        *a = add(*a, *m);
+  123|  1.54M|        *a = add(*a, *b);
+  124|  1.54M|        *d = xor(*d, *a);
+  125|  1.54M|        *d = rot16(*d);
+  126|  1.54M|        *c = add(*c, *d);
+  127|  1.54M|        *b = xor(*b, *c);
+  128|  1.54M|        *b = rot63(*b);
+  129|  1.54M|    }
+  130|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx23add:
-   35|  9.47M|unsafe fn add(a: __m256i, b: __m256i) -> __m256i {
-   36|  9.47M|    unsafe { _mm256_add_epi64(a, b) }
-   37|  9.47M|}
+   35|  9.26M|unsafe fn add(a: __m256i, b: __m256i) -> __m256i {
+   36|  9.26M|    unsafe { _mm256_add_epi64(a, b) }
+   37|  9.26M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx23xor:
-   56|  6.64M|unsafe fn xor(a: __m256i, b: __m256i) -> __m256i {
-   57|  6.64M|    unsafe { _mm256_xor_si256(a, b) }
-   58|  6.64M|}
+   56|  6.50M|unsafe fn xor(a: __m256i, b: __m256i) -> __m256i {
+   57|  6.50M|    unsafe { _mm256_xor_si256(a, b) }
+   58|  6.50M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx24set4:
-   66|  65.8k|unsafe fn set4(a: u64, b: u64, c: u64, d: u64) -> __m256i {
-   67|  65.8k|    unsafe { _mm256_setr_epi64x(a as i64, b as i64, c as i64, d as i64) }
-   68|  65.8k|}
+   66|  64.3k|unsafe fn set4(a: u64, b: u64, c: u64, d: u64) -> __m256i {
+   67|  64.3k|    unsafe { _mm256_setr_epi64x(a as i64, b as i64, c as i64, d as i64) }
+   68|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25loadu:
-   18|   263k|unsafe fn loadu(src: *const [Word; DEGREE]) -> __m256i {
+   18|   257k|unsafe fn loadu(src: *const [Word; DEGREE]) -> __m256i {
    19|       |    // This is an unaligned load, so the pointer cast is allowed.
-   20|   263k|    unsafe { _mm256_loadu_si256(src as *const __m256i) }
-   21|   263k|}
+   20|   257k|    unsafe { _mm256_loadu_si256(src as *const __m256i) }
+   21|   257k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25rot16:
-   97|  1.57M|unsafe fn rot16(x: __m256i) -> __m256i {
-   98|  1.57M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 16), _mm256_slli_epi64(x, 64 - 16)) }
-   99|  1.57M|}
+   97|  1.54M|unsafe fn rot16(x: __m256i) -> __m256i {
+   98|  1.54M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 16), _mm256_slli_epi64(x, 64 - 16)) }
+   99|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25rot24:
-   92|  1.57M|unsafe fn rot24(x: __m256i) -> __m256i {
-   93|  1.57M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 24), _mm256_slli_epi64(x, 64 - 24)) }
-   94|  1.57M|}
+   92|  1.54M|unsafe fn rot24(x: __m256i) -> __m256i {
+   93|  1.54M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 24), _mm256_slli_epi64(x, 64 - 24)) }
+   94|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25rot32:
-   87|  1.57M|unsafe fn rot32(x: __m256i) -> __m256i {
-   88|  1.57M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 32), _mm256_slli_epi64(x, 64 - 32)) }
-   89|  1.57M|}
+   87|  1.54M|unsafe fn rot32(x: __m256i) -> __m256i {
+   88|  1.54M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 32), _mm256_slli_epi64(x, 64 - 32)) }
+   89|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25rot63:
-  102|  1.57M|unsafe fn rot63(x: __m256i) -> __m256i {
-  103|  1.57M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 63), _mm256_slli_epi64(x, 64 - 63)) }
-  104|  1.57M|}
+  102|  1.54M|unsafe fn rot63(x: __m256i) -> __m256i {
+  103|  1.54M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 63), _mm256_slli_epi64(x, 64 - 63)) }
+  104|  1.54M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx26storeu:
-   24|   131k|unsafe fn storeu(src: __m256i, dest: *mut [Word; DEGREE]) {
+   24|   128k|unsafe fn storeu(src: __m256i, dest: *mut [Word; DEGREE]) {
    25|       |    // This is an unaligned store, so the pointer cast is allowed.
-   26|   131k|    unsafe { _mm256_storeu_si256(dest as *mut __m256i, src) }
-   27|   131k|}
+   26|   128k|    unsafe { _mm256_storeu_si256(dest as *mut __m256i, src) }
+   27|   128k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx29loadu_128:
-   30|   526k|unsafe fn loadu_128(mem_addr: &[u8; 16]) -> __m128i {
-   31|   526k|    unsafe { _mm_loadu_si128(mem_addr.as_ptr() as *const __m128i) }
-   32|   526k|}
+   30|   514k|unsafe fn loadu_128(mem_addr: &[u8; 16]) -> __m128i {
+   31|   514k|    unsafe { _mm_loadu_si128(mem_addr.as_ptr() as *const __m128i) }
+   32|   514k|}
 
 _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation14compress1_loop:
-   96|  65.8k|    pub fn compress1_loop(
-   97|  65.8k|        &self,
-   98|  65.8k|        input: &[u8],
-   99|  65.8k|        words: &mut [Word; 8],
-  100|  65.8k|        count: Count,
-  101|  65.8k|        last_node: LastNode,
-  102|  65.8k|        finalize: Finalize,
-  103|  65.8k|        stride: Stride,
-  104|  65.8k|    ) {
-  105|  65.8k|        match self.0 {
+   96|  64.3k|    pub fn compress1_loop(
+   97|  64.3k|        &self,
+   98|  64.3k|        input: &[u8],
+   99|  64.3k|        words: &mut [Word; 8],
+  100|  64.3k|        count: Count,
+  101|  64.3k|        last_node: LastNode,
+  102|  64.3k|        finalize: Finalize,
+  103|  64.3k|        stride: Stride,
+  104|  64.3k|    ) {
+  105|  64.3k|        match self.0 {
   106|       |            #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-  107|  65.8k|            Platform::AVX2 => unsafe {
-  108|  65.8k|                avx2::compress1_loop(input, words, count, last_node, finalize, stride);
-  109|  65.8k|            },
+  107|  64.3k|            Platform::AVX2 => unsafe {
+  108|  64.3k|                avx2::compress1_loop(input, words, count, last_node, finalize, stride);
+  109|  64.3k|            },
   110|       |            // Note that there's an SSE version of compress1 in the official C
   111|       |            // implementation, but I haven't ported it yet.
   112|      0|            _ => {
   113|      0|                portable::compress1_loop(input, words, count, last_node, finalize, stride);
   114|      0|            }
   115|       |        }
-  116|  65.8k|    }
+  116|  64.3k|    }
 _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation17avx2_if_supported:
    70|    258|    pub fn avx2_if_supported() -> Option<Self> {
    71|       |        // Check whether AVX2 support is assumed by the build.
@@ -534,89 +534,89 @@ _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation6detect:
    43|      0|        Self::portable()
    44|    258|    }
 _RNvMs0_NtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB5_8Finalize3yes:
-  165|   197k|    pub fn yes(&self) -> bool {
-  166|   197k|        match self {
-  167|   196k|            Finalize::Yes => true,
+  165|   193k|    pub fn yes(&self) -> bool {
+  166|   193k|        match self {
+  167|   192k|            Finalize::Yes => true,
   168|    768|            Finalize::No => false,
   169|       |        }
-  170|   197k|    }
+  170|   193k|    }
 _RNvMs1_NtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB5_8LastNode3yes:
-  181|  65.5k|    pub fn yes(&self) -> bool {
-  182|  65.5k|        match self {
+  181|  64.1k|    pub fn yes(&self) -> bool {
+  182|  64.1k|        match self {
   183|      0|            LastNode::Yes => true,
-  184|  65.5k|            LastNode::No => false,
+  184|  64.1k|            LastNode::No => false,
   185|       |        }
-  186|  65.5k|    }
+  186|  64.1k|    }
 _RNvMs2_NtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB5_6Stride17padded_blockbytes:
-  196|  66.0k|    pub fn padded_blockbytes(&self) -> usize {
-  197|  66.0k|        match self {
-  198|  66.0k|            Stride::Serial => BLOCKBYTES,
+  196|  64.6k|    pub fn padded_blockbytes(&self) -> usize {
+  197|  64.6k|        match self {
+  198|  64.6k|            Stride::Serial => BLOCKBYTES,
   199|      0|            Stride::Parallel => blake2bp::DEGREE * BLOCKBYTES,
   200|       |        }
-  201|  66.0k|    }
+  201|  64.6k|    }
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts10count_high:
-  208|  65.8k|pub(crate) fn count_high(count: Count) -> Word {
-  209|  65.8k|    (count >> 8 * size_of::<Word>()) as Word
-  210|  65.8k|}
+  208|  64.3k|pub(crate) fn count_high(count: Count) -> Word {
+  209|  64.3k|    (count >> 8 * size_of::<Word>()) as Word
+  210|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts11final_block:
-  232|  65.8k|pub fn final_block<'a>(
-  233|  65.8k|    input: &'a [u8],
-  234|  65.8k|    offset: usize,
-  235|  65.8k|    buffer: &'a mut [u8; BLOCKBYTES],
-  236|  65.8k|    stride: Stride,
-  237|  65.8k|) -> (&'a [u8; BLOCKBYTES], usize, bool) {
-  238|  65.8k|    let capped_offset = cmp::min(offset, input.len());
-  239|  65.8k|    let offset_slice = &input[capped_offset..];
-  240|  65.8k|    if offset_slice.len() >= BLOCKBYTES {
+  232|  64.3k|pub fn final_block<'a>(
+  233|  64.3k|    input: &'a [u8],
+  234|  64.3k|    offset: usize,
+  235|  64.3k|    buffer: &'a mut [u8; BLOCKBYTES],
+  236|  64.3k|    stride: Stride,
+  237|  64.3k|) -> (&'a [u8; BLOCKBYTES], usize, bool) {
+  238|  64.3k|    let capped_offset = cmp::min(offset, input.len());
+  239|  64.3k|    let offset_slice = &input[capped_offset..];
+  240|  64.3k|    if offset_slice.len() >= BLOCKBYTES {
   241|    256|        let block = array_ref!(offset_slice, 0, BLOCKBYTES);
   242|    256|        let should_finalize = offset_slice.len() <= stride.padded_blockbytes();
   243|    256|        (block, BLOCKBYTES, should_finalize)
   244|       |    } else {
   245|       |        // Copy the final block to the front of the block buffer. The rest of
   246|       |        // the buffer is assumed to be initialized to zero.
-  247|  65.5k|        buffer[..offset_slice.len()].copy_from_slice(offset_slice);
-  248|  65.5k|        (buffer, offset_slice.len(), true)
+  247|  64.1k|        buffer[..offset_slice.len()].copy_from_slice(offset_slice);
+  248|  64.1k|        (buffer, offset_slice.len(), true)
   249|       |    }
-  250|  65.8k|}
+  250|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts19input_debug_asserts:
-  252|  65.8k|pub fn input_debug_asserts(input: &[u8], finalize: Finalize) {
+  252|  64.3k|pub fn input_debug_asserts(input: &[u8], finalize: Finalize) {
   253|       |    // If we're not finalizing, the input must not be empty, and it must be an
   254|       |    // even multiple of the block size.
-  255|  65.8k|    if !finalize.yes() {
+  255|  64.3k|    if !finalize.yes() {
   256|    256|        debug_assert!(!input.is_empty());
   257|    256|        debug_assert_eq!(0, input.len() % BLOCKBYTES);
-  258|  65.5k|    }
-  259|  65.8k|}
+  258|  64.1k|    }
+  259|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts9count_low:
-  204|  65.8k|pub(crate) fn count_low(count: Count) -> Word {
-  205|  65.8k|    count as Word
-  206|  65.8k|}
+  204|  64.3k|pub(crate) fn count_low(count: Count) -> Word {
+  205|  64.3k|    count as Word
+  206|  64.3k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4guts9flag_word:
-  217|   131k|pub(crate) fn flag_word(flag: bool) -> Word {
-  218|   131k|    if flag {
-  219|  65.5k|        !0
+  217|   128k|pub(crate) fn flag_word(flag: bool) -> Word {
+  218|   128k|    if flag {
+  219|  64.1k|        !0
   220|       |    } else {
-  221|  66.0k|        0
+  221|  64.6k|        0
   222|       |    }
-  223|   131k|}
+  223|   128k|}
 
 _RNvCsgZX4mSu3YR4_12blake2b_simd20state_words_to_bytes:
-  529|  65.5k|fn state_words_to_bytes(state_words: &[Word; 8]) -> [u8; OUTBYTES] {
-  530|  65.5k|    let mut bytes = [0; OUTBYTES];
+  529|  64.1k|fn state_words_to_bytes(state_words: &[Word; 8]) -> [u8; OUTBYTES] {
+  530|  64.1k|    let mut bytes = [0; OUTBYTES];
   531|       |    {
   532|       |        const W: usize = size_of::<Word>();
-  533|  65.5k|        let refs = mut_array_refs!(&mut bytes, W, W, W, W, W, W, W, W);
-  534|  65.5k|        *refs.0 = state_words[0].to_le_bytes();
-  535|  65.5k|        *refs.1 = state_words[1].to_le_bytes();
-  536|  65.5k|        *refs.2 = state_words[2].to_le_bytes();
-  537|  65.5k|        *refs.3 = state_words[3].to_le_bytes();
-  538|  65.5k|        *refs.4 = state_words[4].to_le_bytes();
-  539|  65.5k|        *refs.5 = state_words[5].to_le_bytes();
-  540|  65.5k|        *refs.6 = state_words[6].to_le_bytes();
-  541|  65.5k|        *refs.7 = state_words[7].to_le_bytes();
+  533|  64.1k|        let refs = mut_array_refs!(&mut bytes, W, W, W, W, W, W, W, W);
+  534|  64.1k|        *refs.0 = state_words[0].to_le_bytes();
+  535|  64.1k|        *refs.1 = state_words[1].to_le_bytes();
+  536|  64.1k|        *refs.2 = state_words[2].to_le_bytes();
+  537|  64.1k|        *refs.3 = state_words[3].to_le_bytes();
+  538|  64.1k|        *refs.4 = state_words[4].to_le_bytes();
+  539|  64.1k|        *refs.5 = state_words[5].to_le_bytes();
+  540|  64.1k|        *refs.6 = state_words[6].to_le_bytes();
+  541|  64.1k|        *refs.7 = state_words[7].to_le_bytes();
   542|       |    }
-  543|  65.5k|    bytes
-  544|  65.5k|}
+  543|  64.1k|    bytes
+  544|  64.1k|}
 _RNvMCsgZX4mSu3YR4_12blake2b_simdNtB2_6Params8to_words:
   185|    258|    fn to_words(&self) -> [Word; 8] {
   186|    258|        let (salt_left, salt_right) = array_refs!(&self.salt, SALTBYTES / 2, SALTBYTES / 2);
@@ -701,10 +701,10 @@ _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State11with_params:
   421|    258|        state
   422|    258|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State27compress_buffer_if_possible:
-  434|  66.0k|    fn compress_buffer_if_possible(&mut self, input: &mut &[u8]) {
-  435|  66.0k|        if self.buflen > 0 {
-  436|  65.8k|            self.fill_buf(input);
-  437|  65.8k|            if !input.is_empty() {
+  434|  64.6k|    fn compress_buffer_if_possible(&mut self, input: &mut &[u8]) {
+  435|  64.6k|        if self.buflen > 0 {
+  436|  64.3k|            self.fill_buf(input);
+  437|  64.3k|            if !input.is_empty() {
   438|    256|                self.implementation.compress1_loop(
   439|    256|                    &self.buf,
   440|    256|                    &mut self.words,
@@ -715,18 +715,18 @@ _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State27compress_buffer_if_possible:
   445|    256|                );
   446|    256|                self.count = self.count.wrapping_add(BLOCKBYTES as Count);
   447|    256|                self.buflen = 0;
-  448|  65.5k|            }
+  448|  64.1k|            }
   449|    258|        }
-  450|  66.0k|    }
+  450|  64.6k|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State6update:
-  453|  66.0k|    pub fn update(&mut self, mut input: &[u8]) -> &mut Self {
+  453|  64.6k|    pub fn update(&mut self, mut input: &[u8]) -> &mut Self {
   454|       |        // If we have a partial buffer, try to complete it.
-  455|  66.0k|        self.compress_buffer_if_possible(&mut input);
+  455|  64.6k|        self.compress_buffer_if_possible(&mut input);
   456|       |        // While there's more than a block of input left (which also means we cleared the buffer
   457|       |        // above), compress blocks directly without copying.
-  458|  66.0k|        let mut end = input.len().saturating_sub(1);
-  459|  66.0k|        end -= end % BLOCKBYTES;
-  460|  66.0k|        if end > 0 {
+  458|  64.6k|        let mut end = input.len().saturating_sub(1);
+  459|  64.6k|        end -= end % BLOCKBYTES;
+  460|  64.6k|        if end > 0 {
   461|      0|            self.implementation.compress1_loop(
   462|      0|                &input[..end],
   463|      0|                &mut self.words,
@@ -737,41 +737,41 @@ _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State6update:
   468|      0|            );
   469|      0|            self.count = self.count.wrapping_add(end as Count);
   470|      0|            input = &input[end..];
-  471|  66.0k|        }
+  471|  64.6k|        }
   472|       |        // Buffer any remaining input, to be either compressed or finalized in a subsequent call.
   473|       |        // Note that this represents some copying overhead, which in theory we could avoid in
   474|       |        // all-at-once setting. A function hardcoded for exactly BLOCKSIZE input bytes is about 10%
   475|       |        // faster than using this implementation for the same input.
-  476|  66.0k|        self.fill_buf(&mut input);
-  477|  66.0k|        self
-  478|  66.0k|    }
+  476|  64.6k|        self.fill_buf(&mut input);
+  477|  64.6k|        self
+  478|  64.6k|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State8fill_buf:
-  424|   131k|    fn fill_buf(&mut self, input: &mut &[u8]) {
-  425|   131k|        let take = cmp::min(BLOCKBYTES - self.buflen as usize, input.len());
-  426|   131k|        self.buf[self.buflen as usize..self.buflen as usize + take].copy_from_slice(&input[..take]);
-  427|   131k|        self.buflen += take as u8;
-  428|   131k|        *input = &input[take..];
-  429|   131k|    }
+  424|   128k|    fn fill_buf(&mut self, input: &mut &[u8]) {
+  425|   128k|        let take = cmp::min(BLOCKBYTES - self.buflen as usize, input.len());
+  426|   128k|        self.buf[self.buflen as usize..self.buflen as usize + take].copy_from_slice(&input[..take]);
+  427|   128k|        self.buflen += take as u8;
+  428|   128k|        *input = &input[take..];
+  429|   128k|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State8finalize:
-  482|  65.5k|    pub fn finalize(&self) -> Hash {
-  483|  65.5k|        let mut words_copy = self.words;
-  484|  65.5k|        self.implementation.compress1_loop(
-  485|  65.5k|            &self.buf[..self.buflen as usize],
-  486|  65.5k|            &mut words_copy,
-  487|  65.5k|            self.count,
-  488|  65.5k|            self.last_node,
-  489|  65.5k|            guts::Finalize::Yes,
-  490|  65.5k|            guts::Stride::Serial,
+  482|  64.1k|    pub fn finalize(&self) -> Hash {
+  483|  64.1k|        let mut words_copy = self.words;
+  484|  64.1k|        self.implementation.compress1_loop(
+  485|  64.1k|            &self.buf[..self.buflen as usize],
+  486|  64.1k|            &mut words_copy,
+  487|  64.1k|            self.count,
+  488|  64.1k|            self.last_node,
+  489|  64.1k|            guts::Finalize::Yes,
+  490|  64.1k|            guts::Stride::Serial,
   491|       |        );
-  492|  65.5k|        Hash {
-  493|  65.5k|            bytes: state_words_to_bytes(&words_copy),
-  494|  65.5k|            len: self.hash_length,
-  495|  65.5k|        }
-  496|  65.5k|    }
+  492|  64.1k|        Hash {
+  493|  64.1k|            bytes: state_words_to_bytes(&words_copy),
+  494|  64.1k|            len: self.hash_length,
+  495|  64.1k|        }
+  496|  64.1k|    }
 _RNvMs5_CsgZX4mSu3YR4_12blake2b_simdNtB5_4Hash8as_bytes:
-  589|  65.5k|    pub fn as_bytes(&self) -> &[u8] {
-  590|  65.5k|        &self.bytes[..self.len as usize]
-  591|  65.5k|    }
+  589|  64.1k|    pub fn as_bytes(&self) -> &[u8] {
+  590|  64.1k|        &self.bytes[..self.len as usize]
+  591|  64.1k|    }
 
 _RINvMs3_CsG2CKexGv9Q_12block_bufferINtB6_11BlockBufferINtNtCs6K91jTNoEt_7typenum4uint4UIntIBR_IBR_IBR_IBR_IBR_IBR_NtBT_5UTermNtNtBV_3bit2B1ENtB21_2B0EB2e_EB2e_EB2e_EB2e_EB2e_ENtB6_5EagerE13digest_blocksNCNvXs5_NtNtCslYFrylcTFUJ_6digest8core_api7wrapperINtB3m_11CoreWrapperINtNtB3o_11ct_variable21CtVariableCoreWrapperNtNtCsTIDoG4KXfJ_4sha28core_api13Sha256VarCoreB1q_NtB59_9OidSha256EENtB3q_6Update6update0ECsjyycqNoLf64_4bs58:
   138|  1.44k|    pub fn digest_blocks(
@@ -1282,50 +1282,50 @@ _RNvNtCs85lrriozkZm_8equihash7minimal11read_u32_be:
   123|   131k|    Ok(u32::from_be_bytes(n))
   124|   131k|}
 _RNvNtCs85lrriozkZm_8equihash7minimal12expand_array:
-   50|  65.8k|pub(crate) fn expand_array(vin: &[u8], bit_len: usize, byte_pad: usize) -> Vec<u8> {
-   51|  65.8k|    assert!(bit_len >= 8);
-   52|  65.8k|    assert!(u32::BITS as usize >= 7 + bit_len);
+   50|  64.3k|pub(crate) fn expand_array(vin: &[u8], bit_len: usize, byte_pad: usize) -> Vec<u8> {
+   51|  64.3k|    assert!(bit_len >= 8);
+   52|  64.3k|    assert!(u32::BITS as usize >= 7 + bit_len);
    53|       |
-   54|  65.8k|    let out_width = bit_len.div_ceil(8) + byte_pad;
-   55|  65.8k|    let out_len = 8 * out_width * vin.len() / bit_len;
+   54|  64.3k|    let out_width = bit_len.div_ceil(8) + byte_pad;
+   55|  64.3k|    let out_len = 8 * out_width * vin.len() / bit_len;
    56|       |
    57|       |    // Shortcut for parameters where expansion is a no-op
-   58|  65.8k|    if out_len == vin.len() {
+   58|  64.3k|    if out_len == vin.len() {
    59|      4|        return vin.to_vec();
-   60|  65.8k|    }
+   60|  64.3k|    }
    61|       |
-   62|  65.8k|    let mut vout: Vec<u8> = vec![0; out_len];
-   63|  65.8k|    let bit_len_mask: u32 = (1 << bit_len) - 1;
+   62|  64.3k|    let mut vout: Vec<u8> = vec![0; out_len];
+   63|  64.3k|    let bit_len_mask: u32 = (1 << bit_len) - 1;
    64|       |
    65|       |    // The acc_bits least-significant bits of acc_value represent a bit sequence
    66|       |    // in big-endian order.
-   67|  65.8k|    let mut acc_bits = 0;
-   68|  65.8k|    let mut acc_value: u32 = 0;
+   67|  64.3k|    let mut acc_bits = 0;
+   68|  64.3k|    let mut acc_value: u32 = 0;
    69|       |
-   70|  65.8k|    let mut j = 0;
-   71|  2.04M|    for b in vin {
-   72|  1.98M|        acc_value = (acc_value << 8) | u32::from(*b);
-   73|  1.98M|        acc_bits += 8;
+   70|  64.3k|    let mut j = 0;
+   71|  2.01M|    for b in vin {
+   72|  1.94M|        acc_value = (acc_value << 8) | u32::from(*b);
+   73|  1.94M|        acc_bits += 8;
    74|       |
    75|       |        // When we have bit_len or more bits in the accumulator, write the next
    76|       |        // output element.
-   77|  1.98M|        if acc_bits >= bit_len {
-   78|   786k|            acc_bits -= bit_len;
-   79|  2.35M|            for x in byte_pad..out_width {
-   80|  2.35M|                vout[j + x] = ((
-   81|  2.35M|                    // Big-endian
-   82|  2.35M|                    acc_value >> (acc_bits + (8 * (out_width - x - 1)))
-   83|  2.35M|                ) & (
-   84|  2.35M|                    // Apply bit_len_mask across byte boundaries
-   85|  2.35M|                    (bit_len_mask >> (8 * (out_width - x - 1))) & 0xFF
-   86|  2.35M|                )) as u8;
-   87|  2.35M|            }
-   88|   786k|            j += out_width;
-   89|  1.19M|        }
+   77|  1.94M|        if acc_bits >= bit_len {
+   78|   772k|            acc_bits -= bit_len;
+   79|  2.31M|            for x in byte_pad..out_width {
+   80|  2.31M|                vout[j + x] = ((
+   81|  2.31M|                    // Big-endian
+   82|  2.31M|                    acc_value >> (acc_bits + (8 * (out_width - x - 1)))
+   83|  2.31M|                ) & (
+   84|  2.31M|                    // Apply bit_len_mask across byte boundaries
+   85|  2.31M|                    (bit_len_mask >> (8 * (out_width - x - 1))) & 0xFF
+   86|  2.31M|                )) as u8;
+   87|  2.31M|            }
+   88|   772k|            j += out_width;
+   89|  1.17M|        }
    90|       |    }
    91|       |
-   92|  65.8k|    vout
-   93|  65.8k|}
+   92|  64.3k|    vout
+   93|  64.3k|}
 _RNvNtCs85lrriozkZm_8equihash7minimal20indices_from_minimal:
   127|    392|pub(crate) fn indices_from_minimal(p: Params, minimal: &[u8]) -> Option<Vec<u32>> {
   128|    392|    let c_bit_len = p.collision_bit_length();
@@ -1355,17 +1355,17 @@ _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params11hash_output:
    25|    258|        (self.indices_per_hash_output() * self.n / 8) as u8
    26|    258|    }
 _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params20collision_bit_length:
-   27|   194k|    pub(crate) fn collision_bit_length(&self) -> usize {
-   28|   194k|        (self.n / (self.k + 1)) as usize
-   29|   194k|    }
+   27|   190k|    pub(crate) fn collision_bit_length(&self) -> usize {
+   28|   190k|        (self.n / (self.k + 1)) as usize
+   29|   190k|    }
 _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params21collision_byte_length:
-   30|   128k|    pub(crate) fn collision_byte_length(&self) -> usize {
-   31|   128k|        self.collision_bit_length().div_ceil(8)
-   32|   128k|    }
+   30|   125k|    pub(crate) fn collision_byte_length(&self) -> usize {
+   31|   125k|        self.collision_bit_length().div_ceil(8)
+   32|   125k|    }
 _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params23indices_per_hash_output:
-   21|   131k|    pub(crate) fn indices_per_hash_output(&self) -> u32 {
-   22|   131k|        512 / self.n
-   23|   131k|    }
+   21|   128k|    pub(crate) fn indices_per_hash_output(&self) -> u32 {
+   22|   128k|        512 / self.n
+   23|   128k|    }
 _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params3new:
     9|    489|    pub(crate) fn new(n: u32, k: u32) -> Option<Self> {
    10|       |        // We place the following requirements on the parameters:
@@ -1381,92 +1381,92 @@ _RNvMNtCs85lrriozkZm_8equihash6paramsNtB2_6Params3new:
    20|    489|    }
 
 _RNCNvMNtCs85lrriozkZm_8equihash6verifyNtB4_4Node13from_children0B6_:
-   40|  1.55M|            .map(|(a, b)| a ^ b)
+   40|  1.51M|            .map(|(a, b)| a ^ b)
 _RNCNvMNtCs85lrriozkZm_8equihash6verifyNtB4_4Node7is_zero0B6_:
    81|     12|        self.hash.iter().take(len).all(|v| *v == 0)
 _RNCNvNtCs85lrriozkZm_8equihash6verify13has_collision0B5_:
-  144|   192k|        .all(|(a, b)| a == b)
+  144|   188k|        .all(|(a, b)| a == b)
 _RNvMNtCs85lrriozkZm_8equihash6verifyNtB2_4Node13from_children:
-   34|  64.0k|    fn from_children(a: Node, b: Node, trim: usize) -> Self {
-   35|  64.0k|        let hash: Vec<_> = a
-   36|  64.0k|            .hash
-   37|  64.0k|            .iter()
-   38|  64.0k|            .zip(b.hash.iter())
-   39|  64.0k|            .skip(trim)
-   40|  64.0k|            .map(|(a, b)| a ^ b)
-   41|  64.0k|            .collect();
-   42|  64.0k|        let indices = if a.indices_before(&b) {
-   43|  64.0k|            let mut indices = a.indices;
-   44|  64.0k|            indices.extend(b.indices.iter());
-   45|  64.0k|            indices
+   34|  62.6k|    fn from_children(a: Node, b: Node, trim: usize) -> Self {
+   35|  62.6k|        let hash: Vec<_> = a
+   36|  62.6k|            .hash
+   37|  62.6k|            .iter()
+   38|  62.6k|            .zip(b.hash.iter())
+   39|  62.6k|            .skip(trim)
+   40|  62.6k|            .map(|(a, b)| a ^ b)
+   41|  62.6k|            .collect();
+   42|  62.6k|        let indices = if a.indices_before(&b) {
+   43|  62.6k|            let mut indices = a.indices;
+   44|  62.6k|            indices.extend(b.indices.iter());
+   45|  62.6k|            indices
    46|       |        } else {
    47|      0|            let mut indices = b.indices;
    48|      0|            indices.extend(a.indices.iter());
    49|      0|            indices
    50|       |        };
-   51|  64.0k|        Node { hash, indices }
-   52|  64.0k|    }
+   51|  62.6k|        Node { hash, indices }
+   52|  62.6k|    }
 _RNvMNtCs85lrriozkZm_8equihash6verifyNtB2_4Node14indices_before:
-   74|   128k|    fn indices_before(&self, other: &Node) -> bool {
+   74|   125k|    fn indices_before(&self, other: &Node) -> bool {
    75|       |        // Indices are serialized in big-endian so that integer
    76|       |        // comparison is equivalent to array comparison
-   77|   128k|        self.indices[0] < other.indices[0]
-   78|   128k|    }
+   77|   125k|        self.indices[0] < other.indices[0]
+   78|   125k|    }
 _RNvMNtCs85lrriozkZm_8equihash6verifyNtB2_4Node3new:
-   22|  65.5k|    fn new(p: &Params, state: &Blake2bState, i: u32) -> Self {
-   23|  65.5k|        let hash = generate_hash(state, i / p.indices_per_hash_output());
-   24|  65.5k|        let start = ((i % p.indices_per_hash_output()) * p.n / 8) as usize;
-   25|  65.5k|        let end = start + (p.n as usize) / 8;
-   26|  65.5k|        Node {
-   27|  65.5k|            hash: expand_array(&hash.as_bytes()[start..end], p.collision_bit_length(), 0),
-   28|  65.5k|            indices: vec![i],
-   29|  65.5k|        }
-   30|  65.5k|    }
+   22|  64.1k|    fn new(p: &Params, state: &Blake2bState, i: u32) -> Self {
+   23|  64.1k|        let hash = generate_hash(state, i / p.indices_per_hash_output());
+   24|  64.1k|        let start = ((i % p.indices_per_hash_output()) * p.n / 8) as usize;
+   25|  64.1k|        let end = start + (p.n as usize) / 8;
+   26|  64.1k|        Node {
+   27|  64.1k|            hash: expand_array(&hash.as_bytes()[start..end], p.collision_bit_length(), 0),
+   28|  64.1k|            indices: vec![i],
+   29|  64.1k|        }
+   30|  64.1k|    }
 _RNvMNtCs85lrriozkZm_8equihash6verifyNtB2_4Node7is_zero:
    80|      4|    fn is_zero(&self, len: usize) -> bool {
    81|      4|        self.hash.iter().take(len).all(|v| *v == 0)
    82|      4|    }
 _RNvNtCs85lrriozkZm_8equihash6verify13generate_hash:
-  130|  65.5k|fn generate_hash(base_state: &Blake2bState, i: u32) -> Blake2bHash {
-  131|  65.5k|    let mut lei = [0u8; 4];
-  132|  65.5k|    (&mut lei[..]).write_all(&i.to_le_bytes()).unwrap();
+  130|  64.1k|fn generate_hash(base_state: &Blake2bState, i: u32) -> Blake2bHash {
+  131|  64.1k|    let mut lei = [0u8; 4];
+  132|  64.1k|    (&mut lei[..]).write_all(&i.to_le_bytes()).unwrap();
   133|       |
-  134|  65.5k|    let mut state = base_state.clone();
-  135|  65.5k|    state.update(&lei);
-  136|  65.5k|    state.finalize()
-  137|  65.5k|}
+  134|  64.1k|    let mut state = base_state.clone();
+  135|  64.1k|    state.update(&lei);
+  136|  64.1k|    state.finalize()
+  137|  64.1k|}
 _RNvNtCs85lrriozkZm_8equihash6verify13has_collision:
-  139|  64.3k|fn has_collision(a: &Node, b: &Node, len: usize) -> bool {
-  140|  64.3k|    a.hash
-  141|  64.3k|        .iter()
-  142|  64.3k|        .zip(b.hash.iter())
-  143|  64.3k|        .take(len)
-  144|  64.3k|        .all(|(a, b)| a == b)
-  145|  64.3k|}
+  139|  62.8k|fn has_collision(a: &Node, b: &Node, len: usize) -> bool {
+  140|  62.8k|    a.hash
+  141|  62.8k|        .iter()
+  142|  62.8k|        .zip(b.hash.iter())
+  143|  62.8k|        .take(len)
+  144|  62.8k|        .all(|(a, b)| a == b)
+  145|  62.8k|}
 _RNvNtCs85lrriozkZm_8equihash6verify14tree_validator:
-  208|   131k|fn tree_validator(p: &Params, state: &Blake2bState, indices: &[u32]) -> Result<Node, Error> {
-  209|   131k|    if indices.len() > 1 {
-  210|  66.3k|        let end = indices.len();
-  211|  66.3k|        let mid = end / 2;
-  212|  66.3k|        let a = tree_validator(p, state, &indices[0..mid])?;
-  213|  65.2k|        let b = tree_validator(p, state, &indices[mid..end])?;
-  214|  64.3k|        validate_subtrees(p, &a, &b).map_err(Error)?;
-  215|  64.0k|        Ok(Node::from_children(a, b, p.collision_byte_length()))
+  208|   128k|fn tree_validator(p: &Params, state: &Blake2bState, indices: &[u32]) -> Result<Node, Error> {
+  209|   128k|    if indices.len() > 1 {
+  210|  64.8k|        let end = indices.len();
+  211|  64.8k|        let mid = end / 2;
+  212|  64.8k|        let a = tree_validator(p, state, &indices[0..mid])?;
+  213|  63.8k|        let b = tree_validator(p, state, &indices[mid..end])?;
+  214|  62.8k|        validate_subtrees(p, &a, &b).map_err(Error)?;
+  215|  62.6k|        Ok(Node::from_children(a, b, p.collision_byte_length()))
   216|       |    } else {
-  217|  65.5k|        Ok(Node::new(p, state, indices[0]))
+  217|  64.1k|        Ok(Node::new(p, state, indices[0]))
   218|       |    }
-  219|   131k|}
+  219|   128k|}
 _RNvNtCs85lrriozkZm_8equihash6verify16distinct_indices:
-  147|  64.0k|fn distinct_indices(a: &Node, b: &Node) -> bool {
-  148|   291k|    for i in &(a.indices) {
-  149|  5.75M|        for j in &(b.indices) {
-  150|  5.52M|            if i == j {
+  147|  62.6k|fn distinct_indices(a: &Node, b: &Node) -> bool {
+  148|   284k|    for i in &(a.indices) {
+  149|  5.63M|        for j in &(b.indices) {
+  150|  5.41M|            if i == j {
   151|      5|                return false;
-  152|  5.52M|            }
+  152|  5.41M|            }
   153|       |        }
   154|       |    }
-  155|  64.0k|    true
-  156|  64.0k|}
+  155|  62.6k|    true
+  156|  62.6k|}
 _RNvNtCs85lrriozkZm_8equihash6verify16initialise_state:
   119|    258|pub(crate) fn initialise_state(n: u32, k: u32, digest_len: u8) -> Blake2bState {
   120|    258|    let mut personalization: Vec<u8> = Vec::from("ZcashPoW");
@@ -1493,17 +1493,17 @@ _RNvNtCs85lrriozkZm_8equihash6verify17is_valid_solution:
   254|    258|    is_valid_solution_recursive(p, input, nonce, &indices)
   255|    489|}
 _RNvNtCs85lrriozkZm_8equihash6verify17validate_subtrees:
-  158|  64.3k|fn validate_subtrees(p: &Params, a: &Node, b: &Node) -> Result<(), Kind> {
-  159|  64.3k|    if !has_collision(a, b, p.collision_byte_length()) {
+  158|  62.8k|fn validate_subtrees(p: &Params, a: &Node, b: &Node) -> Result<(), Kind> {
+  159|  62.8k|    if !has_collision(a, b, p.collision_byte_length()) {
   160|    245|        Err(Kind::Collision)
-  161|  64.0k|    } else if b.indices_before(a) {
+  161|  62.6k|    } else if b.indices_before(a) {
   162|      4|        Err(Kind::OutOfOrder)
-  163|  64.0k|    } else if !distinct_indices(a, b) {
+  163|  62.6k|    } else if !distinct_indices(a, b) {
   164|      5|        Err(Kind::DuplicateIdxs)
   165|       |    } else {
-  166|  64.0k|        Ok(())
+  166|  62.6k|        Ok(())
   167|       |    }
-  168|  64.3k|}
+  168|  62.8k|}
 _RNvNtCs85lrriozkZm_8equihash6verify27is_valid_solution_recursive:
   221|    258|fn is_valid_solution_recursive(
   222|    258|    p: Params,
