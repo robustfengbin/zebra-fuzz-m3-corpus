@@ -695,7 +695,7 @@ _RNvNtNtCsaQLrihHycad_6bech3210primitives6decode16check_characters:
   687|   263k|        if req_bech32 {
   688|  73.3k|            Fe32::from_char(ch).map_err(|_| InvalidChar(ch))?;
   689|   189k|        }
-  690|   262k|        if ch.is_ascii_uppercase() {
+  690|   261k|        if ch.is_ascii_uppercase() {
   691|  15.4k|            has_upper = true;
   692|   246k|        } else if ch.is_ascii_lowercase() {
   693|   199k|            has_lower = true;
@@ -3105,13 +3105,13 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   412|  1.54k|    let mut index = 0;
   413|  1.54k|    let zero = alpha.encode[0];
   414|       |
-  415|  83.5k|    for (i, c) in input.iter().enumerate() {
-  416|  83.5k|        if *c > 127 {
+  415|  83.6k|    for (i, c) in input.iter().enumerate() {
+  416|  83.6k|        if *c > 127 {
   417|    210|            return Err(Error::NonAsciiCharacter { index: i });
-  418|  83.3k|        }
+  418|  83.4k|        }
   419|       |
-  420|  83.3k|        let mut val = alpha.decode[*c as usize] as usize;
-  421|  83.3k|        if val == 0xFF {
+  420|  83.4k|        let mut val = alpha.decode[*c as usize] as usize;
+  421|  83.4k|        if val == 0xFF {
   422|    639|            return Err(Error::InvalidCharacter {
   423|    639|                character: *c as char,
   424|    639|                index: i,
@@ -3125,10 +3125,10 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   432|  48.3M|        }
   433|       |
   434|   138k|        while val > 0 {
-  435|  55.8k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
-  436|  55.8k|            *byte = (val & 0xFF) as u8;
-  437|  55.8k|            index += 1;
-  438|  55.8k|            val >>= 8
+  435|  55.9k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
+  436|  55.9k|            *byte = (val & 0xFF) as u8;
+  437|  55.9k|            index += 1;
+  438|  55.9k|            val >>= 8
   439|       |        }
   440|       |    }
   441|       |

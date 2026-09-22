@@ -3799,13 +3799,13 @@ _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNt
   485|  2.34k|        &self.left
   486|  2.34k|    }
 _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeKh20_E5emptyCs2qdhHbQ3r3c_11zebra_chain:
-  455|    460|    pub fn empty() -> Self {
-  456|    460|        CommitmentTree {
-  457|    460|            left: None,
-  458|    460|            right: None,
-  459|    460|            parents: vec![],
-  460|    460|        }
-  461|    460|    }
+  455|    459|    pub fn empty() -> Self {
+  456|    459|        CommitmentTree {
+  457|    459|            left: None,
+  458|    459|            right: None,
+  459|    459|            parents: vec![],
+  460|    459|        }
+  461|    459|    }
 _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeKh20_E5rightCs2qdhHbQ3r3c_11zebra_chain:
   488|  2.34k|    pub fn right(&self) -> &Option<H> {
   489|  2.34k|        &self.right
@@ -3819,13 +3819,13 @@ _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNt
   485|  2.34k|        &self.left
   486|  2.34k|    }
 _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNtNtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4tree4NodeKh20_E5emptyB1j_:
-  455|    481|    pub fn empty() -> Self {
-  456|    481|        CommitmentTree {
-  457|    481|            left: None,
-  458|    481|            right: None,
-  459|    481|            parents: vec![],
-  460|    481|        }
-  461|    481|    }
+  455|    480|    pub fn empty() -> Self {
+  456|    480|        CommitmentTree {
+  457|    480|            left: None,
+  458|    480|            right: None,
+  459|    480|            parents: vec![],
+  460|    480|        }
+  461|    480|    }
 _RNvMs4_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_14CommitmentTreeNtNtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4tree4NodeKh20_E5rightB1j_:
   488|  2.34k|    pub fn right(&self) -> &Option<H> {
   489|  2.34k|        &self.right
@@ -4176,9 +4176,9 @@ _RNvMsh_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_7Address18position_range_end:
   475|  4.68k|        ((self.index + 1) << self.level.0).into()
   476|  4.68k|    }
 _RNvMsh_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_7Address20position_range_start:
-  468|    941|    pub fn position_range_start(&self) -> Position {
-  469|    941|        (self.index << self.level.0).into()
-  470|    941|    }
+  468|    939|    pub fn position_range_start(&self) -> Position {
+  469|    939|        (self.index << self.level.0).into()
+  470|    939|    }
 _RNvMsh_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_7Address5index:
   393|  3.74k|    pub fn index(&self) -> u64 {
   394|  3.74k|        self.index
@@ -4202,13 +4202,13 @@ _RNvMsh_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_7Address7sibling:
   411|   577k|        }
   412|   577k|    }
 _RNvXs1_CskDnbzSbNF0e_21incrementalmerkletreeyINtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_8PositionE4from:
-  234|   151k|    fn from(p: Position) -> Self {
-  235|   151k|        p.0
-  236|   151k|    }
+  234|   150k|    fn from(p: Position) -> Self {
+  235|   150k|        p.0
+  236|   150k|    }
 _RNvXs2_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_8PositionINtNtCs6SNw0SRvItZ_4core7convert4FromyE4from:
-  240|  8.29k|    fn from(sz: u64) -> Self {
-  241|  8.29k|        Self(sz)
-  242|  8.29k|    }
+  240|  8.28k|    fn from(sz: u64) -> Self {
+  241|  8.28k|        Self(sz)
+  242|  8.28k|    }
 _RNvXs4_CskDnbzSbNF0e_21incrementalmerkletreeNtB5_8PositionINtNtNtCs6SNw0SRvItZ_4core3ops5arith9AddAssignyE10add_assign:
   253|  10.5k|    fn add_assign(&mut self, other: u64) {
   254|  10.5k|        self.0 += other
@@ -8063,7 +8063,7 @@ _RINvMs1_Cs8z7Bf712FQl_14zcash_encodingNtB6_8Optional5writeQQINtNtCshDtJu3Ru83O_
   291|  2.34k|        F: Fn(W, T) -> io::Result<()>,
   292|       |    {
   293|  2.34k|        match val {
-  294|    460|            None => writer.write_all(&[0]),
+  294|    459|            None => writer.write_all(&[0]),
   295|  1.88k|            Some(e) => {
   296|  1.88k|                writer.write_all(&[1])?;
   297|  1.88k|                func(writer, e)
@@ -8089,7 +8089,7 @@ _RINvMs1_Cs8z7Bf712FQl_14zcash_encodingNtB6_8Optional5writeQQINtNtCshDtJu3Ru83O_
   291|  2.34k|        F: Fn(W, T) -> io::Result<()>,
   292|       |    {
   293|  2.34k|        match val {
-  294|    481|            None => writer.write_all(&[0]),
+  294|    480|            None => writer.write_all(&[0]),
   295|  1.86k|            Some(e) => {
   296|  1.86k|                writer.write_all(&[1])?;
   297|  1.86k|                func(writer, e)
@@ -8102,7 +8102,7 @@ _RINvMs1_Cs8z7Bf712FQl_14zcash_encodingNtB6_8Optional5writeQQINtNtCshDtJu3Ru83O_
   291|  2.34k|        F: Fn(W, T) -> io::Result<()>,
   292|       |    {
   293|  2.34k|        match val {
-  294|  1.71k|            None => writer.write_all(&[0]),
+  294|  1.70k|            None => writer.write_all(&[0]),
   295|    632|            Some(e) => {
   296|    632|                writer.write_all(&[1])?;
   297|    632|                func(writer, e)
@@ -8197,9 +8197,9 @@ _RINvMCs8z7Bf712FQl_14zcash_encodingNtB3_11CompactSize5writeQQQINtNtCshDtJu3Ru83
   110|  4.68k|    }
 
 _RINvXNtCsblBBgngKd3Y_16zcash_primitives11merkle_treeNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeNtB3_7HashSer5writeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEECs2qdhHbQ3r3c_11zebra_chain:
-   38|  2.62k|    fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
-   39|  2.62k|        writer.write_all(&self.to_bytes())
-   40|  2.62k|    }
+   38|  2.61k|    fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
+   39|  2.61k|        writer.write_all(&self.to_bytes())
+   40|  2.61k|    }
 _RINvXNtCsblBBgngKd3Y_16zcash_primitives11merkle_treeNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeNtB3_7HashSer5writeQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEECs2qdhHbQ3r3c_11zebra_chain:
    38|  1.68k|    fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
    39|  1.68k|        writer.write_all(&self.to_bytes())
@@ -8659,7 +8659,7 @@ _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree19i
   481|  4.68k|    pub fn is_complete_subtree(&self) -> bool {
   482|  4.68k|        let Some(tree) = self.frontier() else {
   483|       |            // An empty tree can't be a complete subtree.
-  484|    962|            return false;
+  484|    960|            return false;
   485|       |        };
   486|       |
   487|  3.72k|        tree.position()
@@ -8682,19 +8682,19 @@ _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree28r
   527|       |            // If the subtree has no nodes, the remaining number of nodes is the number of nodes in
   528|       |            // a subtree.
   529|       |            None => {
-  530|    481|                let subtree_address = incrementalmerkletree::Address::above_position(
-  531|    481|                    TRACKED_SUBTREE_HEIGHT.into(),
+  530|    480|                let subtree_address = incrementalmerkletree::Address::above_position(
+  531|    480|                    TRACKED_SUBTREE_HEIGHT.into(),
   532|       |                    // This position is guaranteed to be in the first subtree.
-  533|    481|                    0.into(),
+  533|    480|                    0.into(),
   534|       |                );
   535|       |
-  536|    481|                assert_eq!(
-  537|    481|                    subtree_address.position_range_start(),
-  538|    481|                    0.into(),
+  536|    480|                assert_eq!(
+  537|    480|                    subtree_address.position_range_start(),
+  538|    480|                    0.into(),
   539|      0|                    "address is not in the first subtree"
   540|       |                );
   541|       |
-  542|    481|                subtree_address.position_range_end()
+  542|    480|                subtree_address.position_range_end()
   543|       |            }
   544|       |        };
   545|       |
@@ -8762,9 +8762,9 @@ _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree6ap
   401|       |        }
   402|  3.57k|    }
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree8frontier:
-  405|  9.98k|    fn frontier(&self) -> Option<&NonEmptyFrontier<Node>> {
-  406|  9.98k|        self.inner.value()
-  407|  9.98k|    }
+  405|  9.97k|    fn frontier(&self) -> Option<&NonEmptyFrontier<Node>> {
+  406|  9.97k|        self.inner.value()
+  407|  9.97k|    }
 _RNvMsj_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB5_18NoteCommitmentTree8position:
   412|    614|    pub fn position(&self) -> Option<u64> {
   413|    614|        let Some(tree) = self.frontier() else {
@@ -8890,7 +8890,7 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree19i
   297|  4.68k|    pub fn is_complete_subtree(&self) -> bool {
   298|  4.68k|        let Some(tree) = self.frontier() else {
   299|       |            // An empty tree can't be a complete subtree.
-  300|    920|            return false;
+  300|    918|            return false;
   301|       |        };
   302|       |
   303|  3.76k|        tree.position()
@@ -8913,19 +8913,19 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree28r
   343|       |            // If the subtree has no nodes, the remaining number of nodes is the number of nodes in
   344|       |            // a subtree.
   345|       |            None => {
-  346|    460|                let subtree_address = incrementalmerkletree::Address::above_position(
-  347|    460|                    TRACKED_SUBTREE_HEIGHT.into(),
+  346|    459|                let subtree_address = incrementalmerkletree::Address::above_position(
+  347|    459|                    TRACKED_SUBTREE_HEIGHT.into(),
   348|       |                    // This position is guaranteed to be in the first subtree.
-  349|    460|                    0.into(),
+  349|    459|                    0.into(),
   350|       |                );
   351|       |
-  352|    460|                assert_eq!(
-  353|    460|                    subtree_address.position_range_start(),
-  354|    460|                    0.into(),
+  352|    459|                assert_eq!(
+  353|    459|                    subtree_address.position_range_start(),
+  354|    459|                    0.into(),
   355|      0|                    "address is not in the first subtree"
   356|       |                );
   357|       |
-  358|    460|                subtree_address.position_range_end()
+  358|    459|                subtree_address.position_range_end()
   359|       |            }
   360|       |        };
   361|       |
@@ -8995,9 +8995,9 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree6ap
   217|       |        }
   218|  3.67k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree8frontier:
-  221|  9.98k|    fn frontier(&self) -> Option<&NonEmptyFrontier<sapling_crypto::Node>> {
-  222|  9.98k|        self.inner.value()
-  223|  9.98k|    }
+  221|  9.97k|    fn frontier(&self) -> Option<&NonEmptyFrontier<sapling_crypto::Node>> {
+  222|  9.97k|        self.inner.value()
+  223|  9.97k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree8position:
   228|    614|    pub fn position(&self) -> Option<u64> {
   229|    614|        let Some(tree) = self.frontier() else {
