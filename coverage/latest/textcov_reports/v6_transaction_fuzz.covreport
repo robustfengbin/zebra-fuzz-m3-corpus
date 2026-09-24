@@ -823,12 +823,12 @@ _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State6update:
   477|  43.5k|        self
   478|  43.5k|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State8fill_buf:
-  424|  85.4k|    fn fill_buf(&mut self, input: &mut &[u8]) {
-  425|  85.4k|        let take = cmp::min(BLOCKBYTES - self.buflen as usize, input.len());
-  426|  85.4k|        self.buf[self.buflen as usize..self.buflen as usize + take].copy_from_slice(&input[..take]);
-  427|  85.4k|        self.buflen += take as u8;
-  428|  85.4k|        *input = &input[take..];
-  429|  85.4k|    }
+  424|  85.3k|    fn fill_buf(&mut self, input: &mut &[u8]) {
+  425|  85.3k|        let take = cmp::min(BLOCKBYTES - self.buflen as usize, input.len());
+  426|  85.3k|        self.buf[self.buflen as usize..self.buflen as usize + take].copy_from_slice(&input[..take]);
+  427|  85.3k|        self.buflen += take as u8;
+  428|  85.3k|        *input = &input[take..];
+  429|  85.3k|    }
 _RNvMs1_CsgZX4mSu3YR4_12blake2b_simdNtB5_5State8finalize:
   482|  2.99k|    pub fn finalize(&self) -> Hash {
   483|  2.99k|        let mut words_copy = self.words;
@@ -998,31 +998,31 @@ _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar3addCs3VjbIwwZMBL_6jubjub:
   608|  39.2k|        (&Scalar([d0, d1, d2, d3])).sub(&MODULUS)
   609|  39.2k|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar3mulCs3VjbIwwZMBL_6jubjub:
-  554|  48.2k|    pub const fn mul(&self, rhs: &Self) -> Self {
+  554|  48.1k|    pub const fn mul(&self, rhs: &Self) -> Self {
   555|       |        // Schoolbook multiplication
   556|       |
-  557|  48.2k|        let (r0, carry) = mac(0, self.0[0], rhs.0[0], 0);
-  558|  48.2k|        let (r1, carry) = mac(0, self.0[0], rhs.0[1], carry);
-  559|  48.2k|        let (r2, carry) = mac(0, self.0[0], rhs.0[2], carry);
-  560|  48.2k|        let (r3, r4) = mac(0, self.0[0], rhs.0[3], carry);
+  557|  48.1k|        let (r0, carry) = mac(0, self.0[0], rhs.0[0], 0);
+  558|  48.1k|        let (r1, carry) = mac(0, self.0[0], rhs.0[1], carry);
+  559|  48.1k|        let (r2, carry) = mac(0, self.0[0], rhs.0[2], carry);
+  560|  48.1k|        let (r3, r4) = mac(0, self.0[0], rhs.0[3], carry);
   561|       |
-  562|  48.2k|        let (r1, carry) = mac(r1, self.0[1], rhs.0[0], 0);
-  563|  48.2k|        let (r2, carry) = mac(r2, self.0[1], rhs.0[1], carry);
-  564|  48.2k|        let (r3, carry) = mac(r3, self.0[1], rhs.0[2], carry);
-  565|  48.2k|        let (r4, r5) = mac(r4, self.0[1], rhs.0[3], carry);
+  562|  48.1k|        let (r1, carry) = mac(r1, self.0[1], rhs.0[0], 0);
+  563|  48.1k|        let (r2, carry) = mac(r2, self.0[1], rhs.0[1], carry);
+  564|  48.1k|        let (r3, carry) = mac(r3, self.0[1], rhs.0[2], carry);
+  565|  48.1k|        let (r4, r5) = mac(r4, self.0[1], rhs.0[3], carry);
   566|       |
-  567|  48.2k|        let (r2, carry) = mac(r2, self.0[2], rhs.0[0], 0);
-  568|  48.2k|        let (r3, carry) = mac(r3, self.0[2], rhs.0[1], carry);
-  569|  48.2k|        let (r4, carry) = mac(r4, self.0[2], rhs.0[2], carry);
-  570|  48.2k|        let (r5, r6) = mac(r5, self.0[2], rhs.0[3], carry);
+  567|  48.1k|        let (r2, carry) = mac(r2, self.0[2], rhs.0[0], 0);
+  568|  48.1k|        let (r3, carry) = mac(r3, self.0[2], rhs.0[1], carry);
+  569|  48.1k|        let (r4, carry) = mac(r4, self.0[2], rhs.0[2], carry);
+  570|  48.1k|        let (r5, r6) = mac(r5, self.0[2], rhs.0[3], carry);
   571|       |
-  572|  48.2k|        let (r3, carry) = mac(r3, self.0[3], rhs.0[0], 0);
-  573|  48.2k|        let (r4, carry) = mac(r4, self.0[3], rhs.0[1], carry);
-  574|  48.2k|        let (r5, carry) = mac(r5, self.0[3], rhs.0[2], carry);
-  575|  48.2k|        let (r6, r7) = mac(r6, self.0[3], rhs.0[3], carry);
+  572|  48.1k|        let (r3, carry) = mac(r3, self.0[3], rhs.0[0], 0);
+  573|  48.1k|        let (r4, carry) = mac(r4, self.0[3], rhs.0[1], carry);
+  574|  48.1k|        let (r5, carry) = mac(r5, self.0[3], rhs.0[2], carry);
+  575|  48.1k|        let (r6, r7) = mac(r6, self.0[3], rhs.0[3], carry);
   576|       |
-  577|  48.2k|        Scalar::montgomery_reduce(r0, r1, r2, r3, r4, r5, r6, r7)
-  578|  48.2k|    }
+  577|  48.1k|        Scalar::montgomery_reduce(r0, r1, r2, r3, r4, r5, r6, r7)
+  578|  48.1k|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar3negCs3VjbIwwZMBL_6jubjub:
   613|  7.66k|    pub const fn neg(&self) -> Self {
   614|       |        // Subtract `self` from `MODULUS` to negate. Ignore the final
@@ -1060,9 +1060,9 @@ _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar3subCs3VjbIwwZMBL_6jubjub:
   595|   176k|        Scalar([d0, d1, d2, d3])
   596|   176k|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar4zeroCs3VjbIwwZMBL_6jubjub:
-  237|  49.3k|    pub const fn zero() -> Scalar {
-  238|  49.3k|        Scalar([0, 0, 0, 0])
-  239|  49.3k|    }
+  237|  49.2k|    pub const fn zero() -> Scalar {
+  238|  49.2k|        Scalar([0, 0, 0, 0])
+  239|  49.2k|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar6doubleCs3VjbIwwZMBL_6jubjub:
   249|  10.5k|    pub const fn double(&self) -> Scalar {
   250|       |        // TODO: This can be achieved more efficiently with a bitshift.
@@ -1115,9 +1115,9 @@ _RNvXs7_NtCsjpkeS12E7YP_9bls12_3816scalarRNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3
   139|  28.7k|        self.add(rhs)
   140|  28.7k|    }
 _RNvXs8_NtCsjpkeS12E7YP_9bls12_3816scalarRNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3ops5arith3Mul3mulCs3VjbIwwZMBL_6jubjub:
-  147|  48.2k|    fn mul(self, rhs: &'b Scalar) -> Scalar {
-  148|  48.2k|        self.mul(rhs)
-  149|  48.2k|    }
+  147|  48.1k|    fn mul(self, rhs: &'b Scalar) -> Scalar {
+  148|  48.1k|        self.mul(rhs)
+  149|  48.1k|    }
 _RNvXs9_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarNtNtCs6SNw0SRvItZ_4core7default7Default7defaultCs3VjbIwwZMBL_6jubjub:
   226|  15.3k|    fn default() -> Self {
   227|  15.3k|        Self::zero()
@@ -1393,10 +1393,10 @@ _RNvNtCsjpkeS12E7YP_9bls12_3814util3adc:
     5|   113M|    (ret as u64, (ret >> 64) as u64)
     6|   113M|}
 _RNvNtCsjpkeS12E7YP_9bls12_3814util3sbb:
-   10|  40.8M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
-   11|  40.8M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
-   12|  40.8M|    (ret as u64, (ret >> 64) as u64)
-   13|  40.8M|}
+   10|  40.7M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
+   11|  40.7M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
+   12|  40.7M|    (ret as u64, (ret >> 64) as u64)
+   13|  40.7M|}
 _RNvNtCsjpkeS12E7YP_9bls12_3814util3mac:
    17|   274M|pub const fn mac(a: u64, b: u64, c: u64, carry: u64) -> (u64, u64) {
    18|   274M|    let ret = (a as u128) + ((b as u128) * (c as u128)) + (carry as u128);
@@ -1411,9 +1411,9 @@ _RNvXsu_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3o
    78|  39.2k|                &self - &rhs
    79|  39.2k|            }
 _RNvXsz_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3ops5arith3Mul3mulCs3VjbIwwZMBL_6jubjub:
-  115|  48.2k|            fn mul(self, rhs: $rhs) -> $output {
-  116|  48.2k|                &self * &rhs
-  117|  48.2k|            }
+  115|  48.1k|            fn mul(self, rhs: $rhs) -> $output {
+  116|  48.1k|                &self * &rhs
+  117|  48.1k|            }
 _RNvXsv_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6ScalarNtNtNtCs6SNw0SRvItZ_4core3ops5arith9MulAssign10mul_assignB7_:
   162|   253k|            fn mul_assign(&mut self, rhs: $rhs) {
   163|   253k|                *self = &*self * &rhs;
@@ -1604,17 +1604,17 @@ _RNvXs1_NtCsdiWQK9fvsEW_11bounded_vec11bounded_vecINtB5_10BoundedVechKj1_Kj4b_EI
   485|    244|    }
 
 _RINvYINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB6_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB1A_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  217|    933|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
-  218|    933|        let mut buf = [0; 4];
-  219|    933|        self.read_exact(&mut buf)?;
-  220|    933|        Ok(T::read_u32(&buf))
-  221|    933|    }
+  217|    934|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
+  218|    934|        let mut buf = [0; 4];
+  219|    934|        self.read_exact(&mut buf)?;
+  220|    934|        Ok(T::read_u32(&buf))
+  221|    934|    }
 _RINvYINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB6_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB13_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  217|  3.20k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
-  218|  3.20k|        let mut buf = [0; 4];
-  219|  3.20k|        self.read_exact(&mut buf)?;
+  217|  3.19k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
+  218|  3.19k|        let mut buf = [0; 4];
+  219|  3.19k|        self.read_exact(&mut buf)?;
   220|  3.18k|        Ok(T::read_u32(&buf))
-  221|  3.20k|    }
+  221|  3.19k|    }
 _RINvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_i64NtB1B_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   347|     62|    fn read_i64<T: ByteOrder>(&mut self) -> Result<i64> {
   348|     62|        let mut buf = [0; 8];
@@ -1622,11 +1622,11 @@ _RINvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_
   350|     62|        Ok(T::read_i64(&buf))
   351|     62|    }
 _RINvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB1B_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  217|    335|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
-  218|    335|        let mut buf = [0; 4];
-  219|    335|        self.read_exact(&mut buf)?;
-  220|    335|        Ok(T::read_u32(&buf))
-  221|    335|    }
+  217|    336|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
+  218|    336|        let mut buf = [0; 4];
+  219|    336|        self.read_exact(&mut buf)?;
+  220|    336|        Ok(T::read_u32(&buf))
+  221|    336|    }
 _RINvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_i64NtB14_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   347|    212|    fn read_i64<T: ByteOrder>(&mut self) -> Result<i64> {
   348|    212|        let mut buf = [0; 8];
@@ -1664,11 +1664,11 @@ _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRINtNtCshDtJu3Ru83O
   115|      2|        Ok(T::read_u16(&buf))
   116|      2|    }
 _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB1C_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  217|  4.11k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
-  218|  4.11k|        let mut buf = [0; 4];
-  219|  4.11k|        self.read_exact(&mut buf)?;
-  220|  4.11k|        Ok(T::read_u32(&buf))
-  221|  4.11k|    }
+  217|  4.17k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
+  218|  4.17k|        let mut buf = [0; 4];
+  219|  4.17k|        self.read_exact(&mut buf)?;
+  220|  4.17k|        Ok(T::read_u32(&buf))
+  221|  4.17k|    }
 _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_i64NtB15_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   347|    180|    fn read_i64<T: ByteOrder>(&mut self) -> Result<i64> {
   348|    180|        let mut buf = [0; 8];
@@ -1682,11 +1682,11 @@ _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq
   115|      7|        Ok(T::read_u16(&buf))
   116|     10|    }
 _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB15_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  217|  6.64k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
-  218|  6.64k|        let mut buf = [0; 4];
-  219|  6.64k|        self.read_exact(&mut buf)?;
-  220|  6.59k|        Ok(T::read_u32(&buf))
-  221|  6.64k|    }
+  217|  6.67k|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
+  218|  6.67k|        let mut buf = [0; 4];
+  219|  6.67k|        self.read_exact(&mut buf)?;
+  220|  6.62k|        Ok(T::read_u32(&buf))
+  221|  6.67k|    }
 _RINvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u64NtB15_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   321|      7|    fn read_u64<T: ByteOrder>(&mut self) -> Result<u64> {
   322|      7|        let mut buf = [0; 8];
@@ -1718,11 +1718,11 @@ _RINvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB9_6cursor6CursorRShEENtNtCsdWzrbYM
   324|  4.07k|        Ok(T::read_u64(&buf))
   325|  4.09k|    }
 _RINvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtBa_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u16NtB1E_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  112|     19|    fn read_u16<T: ByteOrder>(&mut self) -> Result<u16> {
-  113|     19|        let mut buf = [0; 2];
-  114|     19|        self.read_exact(&mut buf)?;
-  115|     19|        Ok(T::read_u16(&buf))
-  116|     19|    }
+  112|     20|    fn read_u16<T: ByteOrder>(&mut self) -> Result<u16> {
+  113|     20|        let mut buf = [0; 2];
+  114|     20|        self.read_exact(&mut buf)?;
+  115|     20|        Ok(T::read_u16(&buf))
+  116|     20|    }
 _RINvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtBa_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u64NtB1E_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   321|    148|    fn read_u64<T: ByteOrder>(&mut self) -> Result<u64> {
   322|    148|        let mut buf = [0; 8];
@@ -1730,11 +1730,11 @@ _RINvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtBa_6cursor6CursorRINtNtCshDtJu3Ru8
   324|    148|        Ok(T::read_u64(&buf))
   325|    148|    }
 _RINvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtBa_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u16NtB17_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
-  112|     29|    fn read_u16<T: ByteOrder>(&mut self) -> Result<u16> {
-  113|     29|        let mut buf = [0; 2];
-  114|     29|        self.read_exact(&mut buf)?;
-  115|     27|        Ok(T::read_u16(&buf))
-  116|     29|    }
+  112|     30|    fn read_u16<T: ByteOrder>(&mut self) -> Result<u16> {
+  113|     30|        let mut buf = [0; 2];
+  114|     30|        self.read_exact(&mut buf)?;
+  115|     28|        Ok(T::read_u16(&buf))
+  116|     30|    }
 _RINvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtBa_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt8read_u32NtB17_12LittleEndianECsgiMfClIXePk_19v6_transaction_fuzz:
   217|      6|    fn read_u32<T: ByteOrder>(&mut self) -> Result<u32> {
   218|      6|        let mut buf = [0; 4];
@@ -1760,23 +1760,23 @@ _RNvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB6_6cursor6CursorRShEENtNtCsdWzrbYMq6A
    58|    206|        Ok(buf[0])
    59|    207|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
-   55|    902|    fn read_u8(&mut self) -> Result<u8> {
-   56|    902|        let mut buf = [0; 1];
-   57|    902|        self.read_exact(&mut buf)?;
-   58|    902|        Ok(buf[0])
-   59|    902|    }
+   55|    904|    fn read_u8(&mut self) -> Result<u8> {
+   56|    904|        let mut buf = [0; 1];
+   57|    904|        self.read_exact(&mut buf)?;
+   58|    904|        Ok(buf[0])
+   59|    904|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
    55|  2.66k|    fn read_u8(&mut self) -> Result<u8> {
    56|  2.66k|        let mut buf = [0; 1];
    57|  2.66k|        self.read_exact(&mut buf)?;
-   58|  2.63k|        Ok(buf[0])
+   58|  2.64k|        Ok(buf[0])
    59|  2.66k|    }
 _RNvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
-   55|    805|    fn read_u8(&mut self) -> Result<u8> {
-   56|    805|        let mut buf = [0; 1];
-   57|    805|        self.read_exact(&mut buf)?;
-   58|    805|        Ok(buf[0])
-   59|    805|    }
+   55|    809|    fn read_u8(&mut self) -> Result<u8> {
+   56|    809|        let mut buf = [0; 1];
+   57|    809|        self.read_exact(&mut buf)?;
+   58|    809|        Ok(buf[0])
+   59|    809|    }
 _RNvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
    55|  1.59k|    fn read_u8(&mut self) -> Result<u8> {
    56|  1.59k|        let mut buf = [0; 1];
@@ -1784,17 +1784,17 @@ _RNvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtCsdWzrbYMq
    58|  1.58k|        Ok(buf[0])
    59|  1.59k|    }
 _RNvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB9_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
-   55|  4.60k|    fn read_u8(&mut self) -> Result<u8> {
-   56|  4.60k|        let mut buf = [0; 1];
-   57|  4.60k|        self.read_exact(&mut buf)?;
-   58|  4.60k|        Ok(buf[0])
-   59|  4.60k|    }
+   55|  4.63k|    fn read_u8(&mut self) -> Result<u8> {
+   56|  4.63k|        let mut buf = [0; 1];
+   57|  4.63k|        self.read_exact(&mut buf)?;
+   58|  4.63k|        Ok(buf[0])
+   59|  4.63k|    }
 _RNvYQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB9_6cursor6CursorRShEENtNtCsdWzrbYMq6AL_9byteorder2io12ReadBytesExt7read_u8CsgiMfClIXePk_19v6_transaction_fuzz:
-   55|  7.12k|    fn read_u8(&mut self) -> Result<u8> {
-   56|  7.12k|        let mut buf = [0; 1];
-   57|  7.12k|        self.read_exact(&mut buf)?;
-   58|  7.12k|        Ok(buf[0])
-   59|  7.12k|    }
+   55|  7.13k|    fn read_u8(&mut self) -> Result<u8> {
+   56|  7.13k|        let mut buf = [0; 1];
+   57|  7.13k|        self.read_exact(&mut buf)?;
+   58|  7.13k|        Ok(buf[0])
+   59|  7.13k|    }
 _RINvYQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_i64NtBH_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
  1394|     86|    fn write_i64<T: ByteOrder>(&mut self, n: i64) -> Result<()> {
  1395|     86|        let mut buf = [0; 8];
@@ -1826,11 +1826,11 @@ _RINvYQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13Wri
  1154|      6|        self.write_all(&buf)
  1155|      6|    }
 _RINvYQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_u32NtBJ_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
- 1259|  7.84k|    fn write_u32<T: ByteOrder>(&mut self, n: u32) -> Result<()> {
- 1260|  7.84k|        let mut buf = [0; 4];
- 1261|  7.84k|        T::write_u32(&mut buf, n);
- 1262|  7.84k|        self.write_all(&buf)
- 1263|  7.84k|    }
+ 1259|  7.91k|    fn write_u32<T: ByteOrder>(&mut self, n: u32) -> Result<()> {
+ 1260|  7.91k|        let mut buf = [0; 4];
+ 1261|  7.91k|        T::write_u32(&mut buf, n);
+ 1262|  7.91k|        self.write_all(&buf)
+ 1263|  7.91k|    }
 _RINvYQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_i64NtBK_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
  1394|    186|    fn write_i64<T: ByteOrder>(&mut self, n: i64) -> Result<()> {
  1395|    186|        let mut buf = [0; 8];
@@ -1838,11 +1838,11 @@ _RINvYQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13Wr
  1397|    186|        self.write_all(&buf)
  1398|    186|    }
 _RINvYQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_u32NtBK_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
- 1259|  6.47k|    fn write_u32<T: ByteOrder>(&mut self, n: u32) -> Result<()> {
- 1260|  6.47k|        let mut buf = [0; 4];
- 1261|  6.47k|        T::write_u32(&mut buf, n);
- 1262|  6.47k|        self.write_all(&buf)
- 1263|  6.47k|    }
+ 1259|  6.52k|    fn write_u32<T: ByteOrder>(&mut self, n: u32) -> Result<()> {
+ 1260|  6.52k|        let mut buf = [0; 4];
+ 1261|  6.52k|        T::write_u32(&mut buf, n);
+ 1262|  6.52k|        self.write_all(&buf)
+ 1263|  6.52k|    }
 _RINvYQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_u64NtBK_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
  1367|  7.37k|    fn write_u64<T: ByteOrder>(&mut self, n: u64) -> Result<()> {
  1368|  7.37k|        let mut buf = [0; 8];
@@ -1850,11 +1850,11 @@ _RINvYQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13Wr
  1370|  7.37k|        self.write_all(&buf)
  1371|  7.37k|    }
 _RINvYQQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_u16NtBL_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
- 1151|     79|    fn write_u16<T: ByteOrder>(&mut self, n: u16) -> Result<()> {
- 1152|     79|        let mut buf = [0; 2];
- 1153|     79|        T::write_u16(&mut buf, n);
- 1154|     79|        self.write_all(&buf)
- 1155|     79|    }
+ 1151|     81|    fn write_u16<T: ByteOrder>(&mut self, n: u16) -> Result<()> {
+ 1152|     81|        let mut buf = [0; 2];
+ 1153|     81|        T::write_u16(&mut buf, n);
+ 1154|     81|        self.write_all(&buf)
+ 1155|     81|    }
 _RINvYQQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt9write_u64NtBL_12LittleEndianECs2qdhHbQ3r3c_11zebra_chain:
  1367|    296|    fn write_u64<T: ByteOrder>(&mut self, n: u64) -> Result<()> {
  1368|    296|        let mut buf = [0; 8];
@@ -1862,9 +1862,9 @@ _RINvYQQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13W
  1370|    296|        self.write_all(&buf)
  1371|    296|    }
 _RNvYQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt8write_u8Cs2qdhHbQ3r3c_11zebra_chain:
- 1098|    110|    fn write_u8(&mut self, n: u8) -> Result<()> {
- 1099|    110|        self.write_all(&[n])
- 1100|    110|    }
+ 1098|    112|    fn write_u8(&mut self, n: u8) -> Result<()> {
+ 1099|    112|        self.write_all(&[n])
+ 1100|    112|    }
 _RNvYQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13WriteBytesExt8write_u8Cs2qdhHbQ3r3c_11zebra_chain:
  1098|    280|    fn write_u8(&mut self, n: u8) -> Result<()> {
  1099|    280|        self.write_all(&[n])
@@ -1883,13 +1883,13 @@ _RNvYQQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechENtNtCsdWzrbYMq6AL_9byteorder2io13Wr
  1100|  46.0k|    }
 
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder8read_u16CsgiMfClIXePk_19v6_transaction_fuzz:
- 2128|     73|    fn read_u16(buf: &[u8]) -> u16 {
- 2129|     73|        u16::from_le_bytes(buf[..2].try_into().unwrap())
- 2130|     73|    }
+ 2128|     75|    fn read_u16(buf: &[u8]) -> u16 {
+ 2129|     75|        u16::from_le_bytes(buf[..2].try_into().unwrap())
+ 2130|     75|    }
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder8read_u32CsgiMfClIXePk_19v6_transaction_fuzz:
- 2133|  16.1k|    fn read_u32(buf: &[u8]) -> u32 {
- 2134|  16.1k|        u32::from_le_bytes(buf[..4].try_into().unwrap())
- 2135|  16.1k|    }
+ 2133|  16.2k|    fn read_u32(buf: &[u8]) -> u32 {
+ 2134|  16.2k|        u32::from_le_bytes(buf[..4].try_into().unwrap())
+ 2135|  16.2k|    }
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder8read_u64CsgiMfClIXePk_19v6_transaction_fuzz:
  2138|  7.44k|    fn read_u64(buf: &[u8]) -> u64 {
  2139|  7.44k|        u64::from_le_bytes(buf[..8].try_into().unwrap())
@@ -1899,13 +1899,13 @@ _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder8read_u64Cs2qd
  2139|    467|        u64::from_le_bytes(buf[..8].try_into().unwrap())
  2140|    467|    }
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder9write_u16Cs2qdhHbQ3r3c_11zebra_chain:
- 2164|     85|    fn write_u16(buf: &mut [u8], n: u16) {
- 2165|     85|        buf[..2].copy_from_slice(&n.to_le_bytes());
- 2166|     85|    }
+ 2164|     87|    fn write_u16(buf: &mut [u8], n: u16) {
+ 2165|     87|        buf[..2].copy_from_slice(&n.to_le_bytes());
+ 2166|     87|    }
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder9write_u32Cs2qdhHbQ3r3c_11zebra_chain:
- 2169|  18.7k|    fn write_u32(buf: &mut [u8], n: u32) {
- 2170|  18.7k|        buf[..4].copy_from_slice(&n.to_le_bytes());
- 2171|  18.7k|    }
+ 2169|  18.8k|    fn write_u32(buf: &mut [u8], n: u32) {
+ 2170|  18.8k|        buf[..4].copy_from_slice(&n.to_le_bytes());
+ 2171|  18.8k|    }
 _RNvXs1_CsdWzrbYMq6AL_9byteorderNtB5_12LittleEndianNtB5_9ByteOrder9write_u64Cs2qdhHbQ3r3c_11zebra_chain:
  2174|  7.97k|    fn write_u64(buf: &mut [u8], n: u64) {
  2175|  7.97k|        buf[..8].copy_from_slice(&n.to_le_bytes());
@@ -1920,176 +1920,176 @@ _RNvYNtCsdWzrbYMq6AL_9byteorder12LittleEndianNtB4_9ByteOrder9write_i64Cs2qdhHbQ3
   860|    310|    }
 
 _RNvXse_NtCs8jXVBPYSQuE_6chrono8datetimeINtB5_8DateTimeNtNtNtB7_6offset3utc3UtcENtNtCs6SNw0SRvItZ_4core3cmp9PartialEq2eqCs2qdhHbQ3r3c_11zebra_chain:
- 1473|     40|    fn eq(&self, other: &DateTime<Tz2>) -> bool {
- 1474|     40|        self.datetime == other.datetime
- 1475|     40|    }
+ 1473|     41|    fn eq(&self, other: &DateTime<Tz2>) -> bool {
+ 1474|     41|        self.datetime == other.datetime
+ 1475|     41|    }
 _RNvMNtCs8jXVBPYSQuE_6chrono8datetimeINtB2_8DateTimeNtNtNtB4_6offset3utc3UtcE25from_naive_utc_and_offsetB4_:
-   94|    360|    pub const fn from_naive_utc_and_offset(
-   95|    360|        datetime: NaiveDateTime,
-   96|    360|        offset: Tz::Offset,
-   97|    360|    ) -> DateTime<Tz> {
-   98|    360|        DateTime { datetime, offset }
-   99|    360|    }
+   94|    366|    pub const fn from_naive_utc_and_offset(
+   95|    366|        datetime: NaiveDateTime,
+   96|    366|        offset: Tz::Offset,
+   97|    366|    ) -> DateTime<Tz> {
+   98|    366|        DateTime { datetime, offset }
+   99|    366|    }
 _RNvMNtCs8jXVBPYSQuE_6chrono8datetimeINtB2_8DateTimeNtNtNtB4_6offset3utc3UtcE9naive_utcB4_:
-  563|    180|    pub const fn naive_utc(&self) -> NaiveDateTime {
-  564|    180|        self.datetime
-  565|    180|    }
+  563|    183|    pub const fn naive_utc(&self) -> NaiveDateTime {
+  564|    183|        self.datetime
+  565|    183|    }
 _RNvMNtCs8jXVBPYSQuE_6chrono8datetimeINtB2_8DateTimeNtNtNtB4_6offset3utc3UtcE9timestampB4_:
-  200|    102|    pub const fn timestamp(&self) -> i64 {
-  201|    102|        let gregorian_day = self.datetime.date().num_days_from_ce() as i64;
-  202|    102|        let seconds_from_midnight = self.datetime.time().num_seconds_from_midnight() as i64;
-  203|    102|        (gregorian_day - UNIX_EPOCH_DAY) * 86_400 + seconds_from_midnight
-  204|    102|    }
+  200|    104|    pub const fn timestamp(&self) -> i64 {
+  201|    104|        let gregorian_day = self.datetime.date().num_days_from_ce() as i64;
+  202|    104|        let seconds_from_midnight = self.datetime.time().num_seconds_from_midnight() as i64;
+  203|    104|        (gregorian_day - UNIX_EPOCH_DAY) * 86_400 + seconds_from_midnight
+  204|    104|    }
 _RNvMs_NtCs8jXVBPYSQuE_6chrono8datetimeINtB4_8DateTimeNtNtNtB6_6offset3utc3UtcE14from_timestampB6_:
-  803|    180|    pub const fn from_timestamp(secs: i64, nsecs: u32) -> Option<Self> {
-  804|    180|        let days = secs.div_euclid(86_400) + UNIX_EPOCH_DAY;
-  805|    180|        let secs = secs.rem_euclid(86_400);
-  806|    180|        if days < i32::MIN as i64 || days > i32::MAX as i64 {
+  803|    183|    pub const fn from_timestamp(secs: i64, nsecs: u32) -> Option<Self> {
+  804|    183|        let days = secs.div_euclid(86_400) + UNIX_EPOCH_DAY;
+  805|    183|        let secs = secs.rem_euclid(86_400);
+  806|    183|        if days < i32::MIN as i64 || days > i32::MAX as i64 {
   807|      0|            return None;
-  808|    180|        }
-  809|    180|        let date = try_opt!(NaiveDate::from_num_days_from_ce_opt(days as i32));
-  810|    180|        let time = try_opt!(NaiveTime::from_num_seconds_from_midnight_opt(secs as u32, nsecs));
-  811|    180|        Some(date.and_time(time).and_utc())
-  812|    180|    }
+  808|    183|        }
+  809|    183|        let date = try_opt!(NaiveDate::from_num_days_from_ce_opt(days as i32));
+  810|    183|        let time = try_opt!(NaiveTime::from_num_seconds_from_midnight_opt(secs as u32, nsecs));
+  811|    183|        Some(date.and_time(time).and_utc())
+  812|    183|    }
 
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate16num_days_from_ce:
- 1454|    102|    pub(crate) const fn num_days_from_ce(&self) -> i32 {
+ 1454|    104|    pub(crate) const fn num_days_from_ce(&self) -> i32 {
  1455|       |        // we know this wouldn't overflow since year is limited to 1/2^13 of i32's full range.
- 1456|    102|        let mut year = self.year() - 1;
- 1457|    102|        let mut ndays = 0;
- 1458|    102|        if year < 0 {
+ 1456|    104|        let mut year = self.year() - 1;
+ 1457|    104|        let mut ndays = 0;
+ 1458|    104|        if year < 0 {
  1459|      0|            let excess = 1 + (-year) / 400;
  1460|      0|            year += excess * 400;
  1461|      0|            ndays -= excess * 146_097;
- 1462|    102|        }
- 1463|    102|        let div_100 = year / 100;
- 1464|    102|        ndays += ((year * 1461) >> 2) - div_100 + (div_100 >> 2);
- 1465|    102|        ndays + self.ordinal() as i32
- 1466|    102|    }
+ 1462|    104|        }
+ 1463|    104|        let div_100 = year / 100;
+ 1464|    104|        ndays += ((year * 1461) >> 2) - div_100 + (div_100 >> 2);
+ 1465|    104|        ndays + self.ordinal() as i32
+ 1466|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate22from_ordinal_and_flags:
-  130|    180|    const fn from_ordinal_and_flags(
-  131|    180|        year: i32,
-  132|    180|        ordinal: u32,
-  133|    180|        flags: YearFlags,
-  134|    180|    ) -> Option<NaiveDate> {
-  135|    180|        if year < MIN_YEAR || year > MAX_YEAR {
+  130|    183|    const fn from_ordinal_and_flags(
+  131|    183|        year: i32,
+  132|    183|        ordinal: u32,
+  133|    183|        flags: YearFlags,
+  134|    183|    ) -> Option<NaiveDate> {
+  135|    183|        if year < MIN_YEAR || year > MAX_YEAR {
   136|      0|            return None; // Out-of-range
-  137|    180|        }
-  138|    180|        if ordinal == 0 || ordinal > 366 {
+  137|    183|        }
+  138|    183|        if ordinal == 0 || ordinal > 366 {
   139|      0|            return None; // Invalid
-  140|    180|        }
-  141|    180|        debug_assert!(YearFlags::from_year(year).0 == flags.0);
-  142|    180|        let yof = (year << 13) | (ordinal << 4) as i32 | flags.0 as i32;
-  143|    180|        match yof & OL_MASK <= MAX_OL {
-  144|    180|            true => Some(NaiveDate::from_yof(yof)),
+  140|    183|        }
+  141|    183|        debug_assert!(YearFlags::from_year(year).0 == flags.0);
+  142|    183|        let yof = (year << 13) | (ordinal << 4) as i32 | flags.0 as i32;
+  143|    183|        match yof & OL_MASK <= MAX_OL {
+  144|    183|            true => Some(NaiveDate::from_yof(yof)),
   145|      0|            false => None, // Does not exist: Ordinal 366 in a common year.
   146|       |        }
-  147|    180|    }
+  147|    183|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate25from_num_days_from_ce_opt:
-  378|    180|    pub const fn from_num_days_from_ce_opt(days: i32) -> Option<NaiveDate> {
-  379|    180|        let days = try_opt!(days.checked_add(365)); // make December 31, 1 BCE equal to day 0
-  380|    180|        let year_div_400 = days.div_euclid(146_097);
-  381|    180|        let cycle = days.rem_euclid(146_097);
-  382|    180|        let (year_mod_400, ordinal) = cycle_to_yo(cycle as u32);
-  383|    180|        let flags = YearFlags::from_year_mod_400(year_mod_400 as i32);
-  384|    180|        NaiveDate::from_ordinal_and_flags(year_div_400 * 400 + year_mod_400 as i32, ordinal, flags)
-  385|    180|    }
+  378|    183|    pub const fn from_num_days_from_ce_opt(days: i32) -> Option<NaiveDate> {
+  379|    183|        let days = try_opt!(days.checked_add(365)); // make December 31, 1 BCE equal to day 0
+  380|    183|        let year_div_400 = days.div_euclid(146_097);
+  381|    183|        let cycle = days.rem_euclid(146_097);
+  382|    183|        let (year_mod_400, ordinal) = cycle_to_yo(cycle as u32);
+  383|    183|        let flags = YearFlags::from_year_mod_400(year_mod_400 as i32);
+  384|    183|        NaiveDate::from_ordinal_and_flags(year_div_400 * 400 + year_mod_400 as i32, ordinal, flags)
+  385|    183|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate3yofB6_:
- 1501|    204|    const fn yof(&self) -> i32 {
- 1502|    204|        self.yof.get()
- 1503|    204|    }
+ 1501|    208|    const fn yof(&self) -> i32 {
+ 1502|    208|        self.yof.get()
+ 1503|    208|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate4yearB6_:
- 1409|    102|    const fn year(&self) -> i32 {
- 1410|    102|        self.yof() >> 13
- 1411|    102|    }
+ 1409|    104|    const fn year(&self) -> i32 {
+ 1410|    104|        self.yof() >> 13
+ 1411|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate7ordinalB6_:
- 1416|    102|    const fn ordinal(&self) -> u32 {
- 1417|    102|        ((self.yof() & ORDINAL_MASK) >> 4) as u32
- 1418|    102|    }
+ 1416|    104|    const fn ordinal(&self) -> u32 {
+ 1417|    104|        ((self.yof() & ORDINAL_MASK) >> 4) as u32
+ 1418|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate8and_timeB6_:
-  739|    180|    pub const fn and_time(&self, time: NaiveTime) -> NaiveDateTime {
-  740|    180|        NaiveDateTime::new(*self, time)
-  741|    180|    }
+  739|    183|    pub const fn and_time(&self, time: NaiveTime) -> NaiveDateTime {
+  740|    183|        NaiveDateTime::new(*self, time)
+  741|    183|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4dateNtB2_9NaiveDate8from_yofB6_:
- 1490|    180|    const fn from_yof(yof: i32) -> NaiveDate {
+ 1490|    183|    const fn from_yof(yof: i32) -> NaiveDate {
  1491|       |        // The following are the invariants our ordinal and flags should uphold for a valid
  1492|       |        // `NaiveDate`.
- 1493|    180|        debug_assert!(((yof & OL_MASK) >> 3) > 1);
- 1494|    180|        debug_assert!(((yof & OL_MASK) >> 3) <= MAX_OL);
- 1495|    180|        debug_assert!((yof & 0b111) != 000);
- 1496|    180|        NaiveDate { yof: unsafe { NonZeroI32::new_unchecked(yof) } }
- 1497|    180|    }
+ 1493|    183|        debug_assert!(((yof & OL_MASK) >> 3) > 1);
+ 1494|    183|        debug_assert!(((yof & OL_MASK) >> 3) <= MAX_OL);
+ 1495|    183|        debug_assert!((yof & 0b111) != 000);
+ 1496|    183|        NaiveDate { yof: unsafe { NonZeroI32::new_unchecked(yof) } }
+ 1497|    183|    }
 _RNvNtNtCs8jXVBPYSQuE_6chrono5naive4date11cycle_to_yo:
- 2422|    180|const fn cycle_to_yo(cycle: u32) -> (u32, u32) {
- 2423|    180|    let mut year_mod_400 = cycle / 365;
- 2424|    180|    let mut ordinal0 = cycle % 365;
- 2425|    180|    let delta = YEAR_DELTAS[year_mod_400 as usize] as u32;
- 2426|    180|    if ordinal0 < delta {
+ 2422|    183|const fn cycle_to_yo(cycle: u32) -> (u32, u32) {
+ 2423|    183|    let mut year_mod_400 = cycle / 365;
+ 2424|    183|    let mut ordinal0 = cycle % 365;
+ 2425|    183|    let delta = YEAR_DELTAS[year_mod_400 as usize] as u32;
+ 2426|    183|    if ordinal0 < delta {
  2427|     16|        year_mod_400 -= 1;
  2428|     16|        ordinal0 += 365 - YEAR_DELTAS[year_mod_400 as usize] as u32;
- 2429|    164|    } else {
- 2430|    164|        ordinal0 -= delta;
- 2431|    164|    }
- 2432|    180|    (year_mod_400, ordinal0 + 1)
- 2433|    180|}
+ 2429|    167|    } else {
+ 2430|    167|        ordinal0 -= delta;
+ 2431|    167|    }
+ 2432|    183|    (year_mod_400, ordinal0 + 1)
+ 2433|    183|}
 
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive8datetimeNtB2_13NaiveDateTime3newB6_:
-   99|    180|    pub const fn new(date: NaiveDate, time: NaiveTime) -> NaiveDateTime {
-  100|    180|        NaiveDateTime { date, time }
-  101|    180|    }
+   99|    183|    pub const fn new(date: NaiveDate, time: NaiveTime) -> NaiveDateTime {
+  100|    183|        NaiveDateTime { date, time }
+  101|    183|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive8datetimeNtB2_13NaiveDateTime4dateB6_:
-  330|    102|    pub const fn date(&self) -> NaiveDate {
-  331|    102|        self.date
-  332|    102|    }
+  330|    104|    pub const fn date(&self) -> NaiveDate {
+  331|    104|        self.date
+  332|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive8datetimeNtB2_13NaiveDateTime4timeB6_:
-  345|    102|    pub const fn time(&self) -> NaiveTime {
-  346|    102|        self.time
-  347|    102|    }
+  345|    104|    pub const fn time(&self) -> NaiveTime {
+  346|    104|        self.time
+  347|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive8datetimeNtB2_13NaiveDateTime7and_utc:
-  937|    180|    pub const fn and_utc(&self) -> DateTime<Utc> {
-  938|    180|        DateTime::from_naive_utc_and_offset(*self, Utc)
-  939|    180|    }
+  937|    183|    pub const fn and_utc(&self) -> DateTime<Utc> {
+  938|    183|        DateTime::from_naive_utc_and_offset(*self, Utc)
+  939|    183|    }
 
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive9internalsNtB2_9YearFlags17from_year_mod_400B6_:
-   79|    180|    pub(super) const fn from_year_mod_400(year: i32) -> YearFlags {
-   80|    180|        YEAR_TO_FLAGS[year as usize]
-   81|    180|    }
+   79|    183|    pub(super) const fn from_year_mod_400(year: i32) -> YearFlags {
+   80|    183|        YEAR_TO_FLAGS[year as usize]
+   81|    183|    }
 
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4timeNtB2_9NaiveTime25num_seconds_from_midnightB6_:
-  886|    102|    pub(crate) const fn num_seconds_from_midnight(&self) -> u32 {
-  887|    102|        self.secs
-  888|    102|    }
+  886|    104|    pub(crate) const fn num_seconds_from_midnight(&self) -> u32 {
+  887|    104|        self.secs
+  888|    104|    }
 _RNvMNtNtCs8jXVBPYSQuE_6chrono5naive4timeNtB2_9NaiveTime34from_num_seconds_from_midnight_optB6_:
-  478|    180|    pub const fn from_num_seconds_from_midnight_opt(secs: u32, nano: u32) -> Option<NaiveTime> {
-  479|    180|        if secs >= 86_400 || nano >= 2_000_000_000 || (nano >= 1_000_000_000 && secs % 60 != 59) {
+  478|    183|    pub const fn from_num_seconds_from_midnight_opt(secs: u32, nano: u32) -> Option<NaiveTime> {
+  479|    183|        if secs >= 86_400 || nano >= 2_000_000_000 || (nano >= 1_000_000_000 && secs % 60 != 59) {
   480|      0|            return None;
-  481|    180|        }
-  482|    180|        Some(NaiveTime { secs, frac: nano })
-  483|    180|    }
+  481|    183|        }
+  482|    183|        Some(NaiveTime { secs, frac: nano })
+  483|    183|    }
 
 _RNvMNtCs8jXVBPYSQuE_6chrono6offsetINtB2_11LocalResultINtNtB4_8datetime8DateTimeNtNtB2_3utc3UtcEE6singleCs2qdhHbQ3r3c_11zebra_chain:
-  105|    180|    pub fn single(self) -> Option<T> {
-  106|    180|        match self {
-  107|    180|            MappedLocalTime::Single(t) => Some(t),
+  105|    183|    pub fn single(self) -> Option<T> {
+  106|    183|        match self {
+  107|    183|            MappedLocalTime::Single(t) => Some(t),
   108|      0|            _ => None,
   109|       |        }
-  110|    180|    }
+  110|    183|    }
 _RNvYNtNtNtCs8jXVBPYSQuE_6chrono6offset3utc3UtcNtB6_8TimeZone13timestamp_optB8_:
-  466|    180|    fn timestamp_opt(&self, secs: i64, nsecs: u32) -> MappedLocalTime<DateTime<Self>> {
-  467|    180|        match DateTime::from_timestamp(secs, nsecs) {
-  468|    180|            Some(dt) => MappedLocalTime::Single(self.from_utc_datetime(&dt.naive_utc())),
+  466|    183|    fn timestamp_opt(&self, secs: i64, nsecs: u32) -> MappedLocalTime<DateTime<Self>> {
+  467|    183|        match DateTime::from_timestamp(secs, nsecs) {
+  468|    183|            Some(dt) => MappedLocalTime::Single(self.from_utc_datetime(&dt.naive_utc())),
   469|      0|            None => MappedLocalTime::None,
   470|       |        }
-  471|    180|    }
+  471|    183|    }
 _RNvYNtNtNtCs8jXVBPYSQuE_6chrono6offset3utc3UtcNtB6_8TimeZone17from_utc_datetimeB8_:
-  613|    180|    fn from_utc_datetime(&self, utc: &NaiveDateTime) -> DateTime<Self> {
-  614|    180|        DateTime::from_naive_utc_and_offset(*utc, self.offset_from_utc_datetime(utc))
-  615|    180|    }
+  613|    183|    fn from_utc_datetime(&self, utc: &NaiveDateTime) -> DateTime<Self> {
+  614|    183|        DateTime::from_naive_utc_and_offset(*utc, self.offset_from_utc_datetime(utc))
+  615|    183|    }
 
 _RNvXs_NtNtCs8jXVBPYSQuE_6chrono6offset3utcNtB4_3UtcNtB6_8TimeZone24offset_from_utc_datetime:
-  131|    180|    fn offset_from_utc_datetime(&self, _utc: &NaiveDateTime) -> Utc {
-  132|    180|        Utc
-  133|    180|    }
+  131|    183|    fn offset_from_utc_datetime(&self, _utc: &NaiveDateTime) -> Utc {
+  132|    183|        Utc
+  133|    183|    }
 
 _RNCNvMs8_NtNtNtNtCs8OPpGxKe0lG_16curve25519_dalek7backend6serial3u645fieldNtB7_14FieldElement5110from_bytes0Bf_:
   339|    740|        let load8 = |input: &[u8]| -> u64 {
@@ -2581,13 +2581,13 @@ _RNvMsi_Cs3VjbIwwZMBL_6jubjubNtB5_11AffinePoint8to_bytes:
   463|    501|        tmp
   464|    501|    }
 _RNvMsj_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPoint14is_small_order:
-  699|  5.27k|    pub fn is_small_order(&self) -> Choice {
+  699|  5.26k|    pub fn is_small_order(&self) -> Choice {
   700|       |        // We only need to perform two doublings, since the 2-torsion
   701|       |        // points are (0, 1) and (0, -1), and so we only need to check
   702|       |        // that the u-coordinate of the result is zero to see if the
   703|       |        // point is small order.
-  704|  5.27k|        self.double().double().u.ct_eq(&Fq::zero())
-  705|  5.27k|    }
+  704|  5.26k|        self.double().double().u.ct_eq(&Fq::zero())
+  705|  5.26k|    }
 _RNvMsj_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPoint6double:
   739|  10.5k|    pub fn double(&self) -> ExtendedPoint {
   740|       |        // Doubling is more efficient (three multiplications, four squarings)
@@ -2739,15 +2739,15 @@ _RNvXs6_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPointNtNtCs6SNw0SRvItZ_4core3cmp9Par
   179|    120|        bool::from(self.ct_eq(other))
   180|    120|    }
 _RNvXs9_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPointINtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_11AffinePointE4from:
-  216|  7.66k|    fn from(affine: AffinePoint) -> ExtendedPoint {
-  217|  7.66k|        ExtendedPoint {
-  218|  7.66k|            u: affine.u,
-  219|  7.66k|            v: affine.v,
-  220|  7.66k|            z: Fq::one(),
-  221|  7.66k|            t1: affine.u,
-  222|  7.66k|            t2: affine.v,
-  223|  7.66k|        }
-  224|  7.66k|    }
+  216|  7.65k|    fn from(affine: AffinePoint) -> ExtendedPoint {
+  217|  7.65k|        ExtendedPoint {
+  218|  7.65k|            u: affine.u,
+  219|  7.65k|            v: affine.v,
+  220|  7.65k|            z: Fq::one(),
+  221|  7.65k|            t1: affine.u,
+  222|  7.65k|            t2: affine.v,
+  223|  7.65k|        }
+  224|  7.65k|    }
 _RNvXsS_Cs3VjbIwwZMBL_6jubjubNtB5_13ExtendedPointNtCslMvCsKGnfC0_5group13GroupEncoding10from_bytes:
  1410|  5.13k|    fn from_bytes(bytes: &Self::Repr) -> CtOption<Self> {
  1411|  5.13k|        AffinePoint::from_bytes(*bytes).map(Self::from)
@@ -4120,9 +4120,9 @@ _RNvXs0_NtCsblpbPvZ5Y3a_6reddsa16verification_keyAhj20_INtNtCs6SNw0SRvItZ_4core7
    54|    217|        refined.bytes
    55|    217|    }
 _RNvXs2_NtCsblpbPvZ5Y3a_6reddsa16verification_keyAhj20_INtNtCs6SNw0SRvItZ_4core7convert4FromINtB5_15VerificationKeyNtNtB7_7sapling9SpendAuthEE4fromCsckoVJ3NjISC_14sapling_crypto:
-   88|  2.52k|    fn from(pk: VerificationKey<T>) -> [u8; 32] {
-   89|  2.52k|        pk.bytes.bytes
-   90|  2.52k|    }
+   88|  2.51k|    fn from(pk: VerificationKey<T>) -> [u8; 32] {
+   89|  2.51k|        pk.bytes.bytes
+   90|  2.51k|    }
 _RNvXs_NtCsblpbPvZ5Y3a_6reddsa16verification_keyINtB4_20VerificationKeyBytesNtNtB6_7sapling9SpendAuthEINtNtCs6SNw0SRvItZ_4core7convert4FromAhj20_E4fromCsckoVJ3NjISC_14sapling_crypto:
    44|  2.39k|    fn from(bytes: [u8; 32]) -> VerificationKeyBytes<T> {
    45|  2.39k|        VerificationKeyBytes {
@@ -4139,14 +4139,14 @@ _RNvXs3_NtCsblpbPvZ5Y3a_6reddsa16verification_keyINtB5_15VerificationKeyNtNtB7_7
   101|  2.39k|        repr.as_mut().copy_from_slice(&bytes.bytes);
   102|  2.39k|        let maybe_point = T::Point::from_bytes(&repr);
   103|  2.39k|        if maybe_point.is_some().into() {
-  104|  2.37k|            let point = maybe_point.unwrap();
+  104|  2.36k|            let point = maybe_point.unwrap();
   105|       |            // Note that small-order verification keys (including the identity) are not
   106|       |            // rejected here. Previously they were rejected, but this was a bug as the
   107|       |            // RedDSA specification allows them. Zcash Sapling rejects small-order points
   108|       |            // for the RedJubjub spend authorization key rk; this now occurs separately.
   109|       |            // Meanwhile, Zcash Orchard uses a prime-order group, so the only small-order
   110|       |            // point would be the identity, which is allowed in Orchard.
-  111|  2.37k|            Ok(VerificationKey { point, bytes })
+  111|  2.36k|            Ok(VerificationKey { point, bytes })
   112|       |        } else {
   113|     22|            Err(Error::MalformedVerificationKey)
   114|       |        }
@@ -4219,13 +4219,13 @@ _RNvXNtCshmGmgr1OsaH_9redjubjub16verification_keyINtB2_20VerificationKeyBytesNtB
    29|  2.39k|        VerificationKeyBytes(reddsa::VerificationKeyBytes::from(bytes))
    30|  2.39k|    }
 _RNvXs1_NtCshmGmgr1OsaH_9redjubjub16verification_keyAhj20_INtNtCs6SNw0SRvItZ_4core7convert4FromINtB5_15VerificationKeyNtB7_9SpendAuthEE4fromCsckoVJ3NjISC_14sapling_crypto:
-   66|  2.52k|    fn from(pk: VerificationKey<T>) -> [u8; 32] {
-   67|  2.52k|        pk.0.into()
-   68|  2.52k|    }
+   66|  2.51k|    fn from(pk: VerificationKey<T>) -> [u8; 32] {
+   67|  2.51k|        pk.0.into()
+   68|  2.51k|    }
 _RNvXs2_NtCshmGmgr1OsaH_9redjubjub16verification_keyINtB5_15VerificationKeyNtB7_9SpendAuthEINtNtCs6SNw0SRvItZ_4core7convert7TryFromINtB5_20VerificationKeyBytesB1a_EE8try_fromCsckoVJ3NjISC_14sapling_crypto:
    74|  2.39k|    fn try_from(bytes: VerificationKeyBytes<T>) -> Result<Self, Self::Error> {
    75|  2.39k|        let reddsa_vk = reddsa::VerificationKey::try_from(bytes.0)?;
-   76|  2.37k|        Ok(VerificationKey(reddsa_vk))
+   76|  2.36k|        Ok(VerificationKey(reddsa_vk))
    77|  2.39k|    }
 _RNvXs3_NtCshmGmgr1OsaH_9redjubjub16verification_keyINtB5_15VerificationKeyNtB7_9SpendAuthEINtNtCs6SNw0SRvItZ_4core7convert7TryFromAhj20_E8try_fromCsckoVJ3NjISC_14sapling_crypto:
    83|  2.39k|    fn try_from(bytes: [u8; 32]) -> Result<Self, Self::Error> {
@@ -4810,15 +4810,15 @@ _RNvXs6_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit3Not3n
   208|  2.74k|        (1u8 & (!self.0)).into()
   209|  2.74k|    }
 _RNvMCsfWYj8LFlglm_6subtleNtB2_6Choice9unwrap_u8CshmGmgr1OsaH_9redjubjub:
-  133|  2.37k|    pub fn unwrap_u8(&self) -> u8 {
-  134|  2.37k|        self.0
-  135|  2.37k|    }
+  133|  2.36k|    pub fn unwrap_u8(&self) -> u8 {
+  134|  2.36k|        self.0
+  135|  2.36k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtCs3VjbIwwZMBL_6jubjub13ExtendedPointE6unwrapCshmGmgr1OsaH_9redjubjub:
-  700|  2.37k|    pub fn unwrap(self) -> T {
-  701|  2.37k|        assert_eq!(self.is_some.unwrap_u8(), 1);
+  700|  2.36k|    pub fn unwrap(self) -> T {
+  701|  2.36k|        assert_eq!(self.is_some.unwrap_u8(), 1);
   702|       |
-  703|  2.37k|        self.value
-  704|  2.37k|    }
+  703|  2.36k|        self.value
+  704|  2.36k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtCs3VjbIwwZMBL_6jubjub13ExtendedPointE7is_someCshmGmgr1OsaH_9redjubjub:
   732|  2.39k|    pub fn is_some(&self) -> Choice {
   733|  2.39k|        self.is_some
@@ -4958,15 +4958,15 @@ _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCs41Au54XfBWR_12pasta_curves6cur
   703|    745|        self.value
   704|    745|    }
 _RNvMCsfWYj8LFlglm_6subtleNtB2_6Choice9unwrap_u8CsblpbPvZ5Y3a_6reddsa:
-  133|  2.77k|    pub fn unwrap_u8(&self) -> u8 {
-  134|  2.77k|        self.0
-  135|  2.77k|    }
+  133|  2.76k|    pub fn unwrap_u8(&self) -> u8 {
+  134|  2.76k|        self.0
+  135|  2.76k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtCs3VjbIwwZMBL_6jubjub11AffinePointE6unwrapCsblpbPvZ5Y3a_6reddsa:
-  700|  2.77k|    pub fn unwrap(self) -> T {
-  701|  2.77k|        assert_eq!(self.is_some.unwrap_u8(), 1);
+  700|  2.76k|    pub fn unwrap(self) -> T {
+  701|  2.76k|        assert_eq!(self.is_some.unwrap_u8(), 1);
   702|       |
-  703|  2.77k|        self.value
-  704|  2.77k|    }
+  703|  2.76k|        self.value
+  704|  2.76k|    }
 _RINvMsf_CsfWYj8LFlglm_6subtleINtB6_8CtOptionNtCs3VjbIwwZMBL_6jubjub11AffinePointE3mapNtBI_13ExtendedPointNvYB1l_INtNtCs6SNw0SRvItZ_4core7convert4FromBG_E4fromEBI_:
   751|  5.13k|    pub fn map<U, F>(self, f: F) -> CtOption<U>
   752|  5.13k|    where
@@ -5352,7 +5352,7 @@ _RINvMCs8z7Bf712FQl_14zcash_encodingNtB3_11CompactSize4readQQQQQQQRShECs2qdhHbQ3
    36|  4.96k|        let flag = flag_bytes[0];
    37|       |
    38|  4.96k|        let result = if flag < 253 {
-   39|  4.95k|            Ok(flag as u64)
+   39|  4.94k|            Ok(flag as u64)
    40|     14|        } else if flag == 253 {
    41|     14|            let mut bytes = [0; 2];
    42|     14|            reader.read_exact(&mut bytes)?;
@@ -5801,7 +5801,7 @@ _RINvMs_Cs8z7Bf712FQl_14zcash_encodingNtB5_6Vector4readQQRShhNCINvNtNtNtCsblBBgn
   136|     63|        Self::read_collected(reader, func)
   137|     63|    }
 _RNCINvMs0_Cs8z7Bf712FQl_14zcash_encodingNtB8_5Array18read_collected_mutQQQQQRShhNCINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtB1p_6Script4readB18_E0INtNtCshDtJu3Ru83O_5alloc3vec3VechEE0Cs2qdhHbQ3r3c_11zebra_chain:
-  247|   143k|        (0..count).map(|_| func(&mut reader)).collect()
+  247|   141k|        (0..count).map(|_| func(&mut reader)).collect()
 _RNCINvMs0_Cs8z7Bf712FQl_14zcash_encodingNtB8_5Array18read_collected_mutQQRShAhjc0_NCINvNtNtNtCsblBBgngKd3Y_16zcash_primitives11transaction10components7sapling14read_v5_bundleB18_E0INtNtCshDtJu3Ru83O_5alloc3vec3VecB1c_EE0Cs2qdhHbQ3r3c_11zebra_chain:
   247|     91|        (0..count).map(|_| func(&mut reader)).collect()
 _RNCINvMs0_Cs8z7Bf712FQl_14zcash_encodingNtB8_5Array18read_collected_mutQQRShAhjc0_NCINvNtNtNtCsblBBgngKd3Y_16zcash_primitives11transaction10components7sapling14read_v5_bundleB18_Es0_0INtNtCshDtJu3Ru83O_5alloc3vec3VecB1c_EE0Cs2qdhHbQ3r3c_11zebra_chain:
@@ -5893,9 +5893,9 @@ _RNvXs1_NtCsblBBgngKd3Y_16zcash_primitives8encodingNtB5_10StateWriteNtNtCsjS9ICi
    77|  42.9k|        Ok(buf.len())
    78|  42.9k|    }
 _RNvXs_NtCsblBBgngKd3Y_16zcash_primitives8encodingQNtB4_10StateWriteNtB4_13WriteBytesExt12write_u32_leB6_:
-   57|  4.22k|    fn write_u32_le(self, value: u32) -> io::Result<()> {
-   58|  4.22k|        self.write_all(&value.to_le_bytes())
-   59|  4.22k|    }
+   57|  4.21k|    fn write_u32_le(self, value: u32) -> io::Result<()> {
+   58|  4.21k|        self.write_all(&value.to_le_bytes())
+   59|  4.21k|    }
 _RNvXs_NtCsblBBgngKd3Y_16zcash_primitives8encodingQQShNtB4_13WriteBytesExt12write_u32_leB6_:
    57|    316|    fn write_u32_le(self, value: u32) -> io::Result<()> {
    58|    316|        self.write_all(&value.to_le_bytes())
@@ -6558,9 +6558,9 @@ _RINvNtNtCsblBBgngKd3Y_16zcash_primitives11transaction4txid24transparent_prevout
   108|    290|    vin: &[TxIn<TransparentAuth>],
   109|    290|) -> Blake2bHash {
   110|    290|    let mut h = hasher(ZCASH_PREVOUTS_HASH_PERSONALIZATION);
-  111|  2.93k|    for t_in in vin {
-  112|  2.64k|        t_in.prevout().write(&mut h).unwrap();
-  113|  2.64k|    }
+  111|  2.92k|    for t_in in vin {
+  112|  2.63k|        t_in.prevout().write(&mut h).unwrap();
+  113|  2.63k|    }
   114|    290|    h.finalize()
   115|    290|}
 _RINvNtNtCsblBBgngKd3Y_16zcash_primitives11transaction4txid25transparent_sequence_hashNtNtCs723TF5ez15Z_17zcash_transparent6bundle10AuthorizedEB6_:
@@ -6568,9 +6568,9 @@ _RINvNtNtCsblBBgngKd3Y_16zcash_primitives11transaction4txid25transparent_sequenc
   120|    290|    vin: &[TxIn<TransparentAuth>],
   121|    290|) -> Blake2bHash {
   122|    290|    let mut h = hasher(ZCASH_SEQUENCE_HASH_PERSONALIZATION);
-  123|  2.93k|    for t_in in vin {
-  124|  2.64k|        h.write_u32_le(t_in.sequence()).unwrap();
-  125|  2.64k|    }
+  123|  2.92k|    for t_in in vin {
+  124|  2.63k|        h.write_u32_le(t_in.sequence()).unwrap();
+  125|  2.63k|    }
   126|    290|    h.finalize()
   127|    290|}
 _RNCNvNtNtCsblBBgngKd3Y_16zcash_primitives11transaction4txid10to_hash_v60B7_:
@@ -6878,13 +6878,13 @@ _RNvXsu_NtCsdIE3NF99HFJ_14zcash_protocol9consensusmINtNtCs6SNw0SRvItZ_4core7conv
   777|    632|    }
 
 _RNvMs2_NtCsdIE3NF99HFJ_14zcash_protocol4txidNtB5_4TxId10from_bytes:
-   56|  3.36k|    pub const fn from_bytes(bytes: [u8; 32]) -> Self {
-   57|  3.36k|        TxId(bytes)
-   58|  3.36k|    }
+   56|  3.35k|    pub const fn from_bytes(bytes: [u8; 32]) -> Self {
+   57|  3.35k|        TxId(bytes)
+   58|  3.35k|    }
 _RNvXs0_NtCsdIE3NF99HFJ_14zcash_protocol4txidNtB5_4TxIdINtNtCs6SNw0SRvItZ_4core7convert5AsRefAhj20_E6as_ref:
-   39|  2.64k|    fn as_ref(&self) -> &[u8; 32] {
-   40|  2.64k|        &self.0
-   41|  2.64k|    }
+   39|  2.63k|    fn as_ref(&self) -> &[u8; 32] {
+   40|  2.63k|        &self.0
+   41|  2.63k|    }
 
 _RNvMNtCsdIE3NF99HFJ_14zcash_protocol5valueNtB2_10ZatBalance15to_i64_le_bytes:
   115|     30|    pub fn to_i64_le_bytes(self) -> [u8; 8] {
@@ -6938,31 +6938,31 @@ _RNvXs0_NtCsdIE3NF99HFJ_14zcash_protocol5valuexINtNtCs6SNw0SRvItZ_4core7convert4
   151|     24|    }
 
 _RNCNvNtCs1IYcoey662B_12zcash_script3num9serializes_0B5_:
-  117|  1.48k|    if result.last().map_or(true, |last| last & 0x80 != 0) {
+  117|  1.49k|    if result.last().map_or(true, |last| last & 0x80 != 0) {
 _RNvNtCs1IYcoey662B_12zcash_script3num9serialize:
-   85|  1.48k|pub fn serialize(value: i64) -> Vec<u8> {
-   86|  1.48k|    if value == 0 {
+   85|  1.50k|pub fn serialize(value: i64) -> Vec<u8> {
+   86|  1.50k|    if value == 0 {
    87|      1|        return Vec::new();
-   88|  1.48k|    }
+   88|  1.49k|    }
    89|       |
-   90|  1.48k|    if value == i64::MIN {
+   90|  1.49k|    if value == i64::MIN {
    91|       |        // The code below was based on buggy C++ code, that produced the "wrong" result for
    92|       |        // INT64_MIN. In that case we intentionally return the result that the C++ code as compiled
    93|       |        // for zcashd (with `-fwrapv`) originally produced on an x86_64 system.
    94|      0|        return vec![0, 0, 0, 0, 0, 0, 0, 128, 128];
-   95|  1.48k|    }
+   95|  1.49k|    }
    96|       |
-   97|  1.48k|    let mut result = Vec::new();
-   98|  1.48k|    let neg = value < 0;
-   99|  1.48k|    let mut absvalue = value.abs();
+   97|  1.49k|    let mut result = Vec::new();
+   98|  1.49k|    let neg = value < 0;
+   99|  1.49k|    let mut absvalue = value.abs();
   100|       |
-  101|  3.16k|    while absvalue != 0 {
-  102|  1.67k|        result.push(
-  103|  1.67k|            (absvalue & 0xff)
-  104|  1.67k|                .try_into()
-  105|  1.67k|                .unwrap_or_else(|_| unreachable!()),
+  101|  3.18k|    while absvalue != 0 {
+  102|  1.68k|        result.push(
+  103|  1.68k|            (absvalue & 0xff)
+  104|  1.68k|                .try_into()
+  105|  1.68k|                .unwrap_or_else(|_| unreachable!()),
   106|       |        );
-  107|  1.67k|        absvalue >>= 8;
+  107|  1.68k|        absvalue >>= 8;
   108|       |    }
   109|       |
   110|       |    // - If the most significant byte is >= 0x80 and the value is positive, push a new zero-byte to
@@ -6972,30 +6972,30 @@ _RNvNtCs1IYcoey662B_12zcash_script3num9serialize:
   114|       |    // - If the most significant byte is < 0x80 and the value is negative, add 0x80 to it, since it
   115|       |    //   will be subtracted and interpreted as a negative when converting to an integral.
   116|       |
-  117|  1.48k|    if result.last().map_or(true, |last| last & 0x80 != 0) {
+  117|  1.49k|    if result.last().map_or(true, |last| last & 0x80 != 0) {
   118|      7|        result.push(if neg { 0x80 } else { 0 });
-  119|  1.48k|    } else if neg {
+  119|  1.49k|    } else if neg {
   120|      0|        if let Some(last) = result.last_mut() {
   121|      0|            *last |= 0x80;
   122|      0|        }
-  123|  1.48k|    }
+  123|  1.49k|    }
   124|       |
-  125|  1.48k|    result
-  126|  1.48k|}
+  125|  1.49k|    result
+  126|  1.50k|}
 
 _RNvXs8_NtCs1IYcoey662B_12zcash_script6opcodeINtNtCshDtJu3Ru83O_5alloc3vec3VechEINtNtCs6SNw0SRvItZ_4core7convert4FromRNtB5_9PushValueE4from:
- 1065|  1.24k|    fn from(value: &PushValue) -> Self {
- 1066|  1.24k|        match value {
- 1067|  1.00k|            PushValue::SmallValue(v) => vec![(*v).encode()],
+ 1065|  1.25k|    fn from(value: &PushValue) -> Self {
+ 1066|  1.25k|        match value {
+ 1067|  1.01k|            PushValue::SmallValue(v) => vec![(*v).encode()],
  1068|    244|            PushValue::LargeValue(v) => v.into(),
  1069|       |        }
- 1070|  1.24k|    }
+ 1070|  1.25k|    }
 _RNvMNtCs1IYcoey662B_12zcash_script6opcodeNtB2_9PushValue10from_slice:
-   97|  1.24k|    pub(crate) fn from_slice(v: &[u8]) -> Option<PushValue> {
-   98|  1.24k|        match v {
-   99|  1.24k|            [] => Some(PushValue::SmallValue(OP_0)),
-  100|  1.24k|            [0x81] => Some(PushValue::SmallValue(OP_1NEGATE)),
-  101|     57|            [1] => Some(PushValue::SmallValue(OP_1)),
+   97|  1.25k|    pub(crate) fn from_slice(v: &[u8]) -> Option<PushValue> {
+   98|  1.25k|        match v {
+   99|  1.25k|            [] => Some(PushValue::SmallValue(OP_0)),
+  100|  1.25k|            [0x81] => Some(PushValue::SmallValue(OP_1NEGATE)),
+  101|     65|            [1] => Some(PushValue::SmallValue(OP_1)),
   102|      6|            [2] => Some(PushValue::SmallValue(OP_2)),
   103|     52|            [3] => Some(PushValue::SmallValue(OP_3)),
   104|     40|            [4] => Some(PushValue::SmallValue(OP_4)),
@@ -7003,21 +7003,21 @@ _RNvMNtCs1IYcoey662B_12zcash_script6opcodeNtB2_9PushValue10from_slice:
   106|     40|            [6] => Some(PushValue::SmallValue(OP_6)),
   107|     42|            [7] => Some(PushValue::SmallValue(OP_7)),
   108|     82|            [8] => Some(PushValue::SmallValue(OP_8)),
-  109|    267|            [9] => Some(PushValue::SmallValue(OP_9)),
-  110|     63|            [10] => Some(PushValue::SmallValue(OP_10)),
-  111|     41|            [11] => Some(PushValue::SmallValue(OP_11)),
-  112|     64|            [12] => Some(PushValue::SmallValue(OP_12)),
+  109|    270|            [9] => Some(PushValue::SmallValue(OP_9)),
+  110|     79|            [10] => Some(PushValue::SmallValue(OP_10)),
+  111|     55|            [11] => Some(PushValue::SmallValue(OP_11)),
+  112|     40|            [12] => Some(PushValue::SmallValue(OP_12)),
   113|     48|            [13] => Some(PushValue::SmallValue(OP_13)),
   114|     42|            [14] => Some(PushValue::SmallValue(OP_14)),
-  115|     72|            [15] => Some(PushValue::SmallValue(OP_15)),
+  115|     66|            [15] => Some(PushValue::SmallValue(OP_15)),
   116|     42|            [16] => Some(PushValue::SmallValue(OP_16)),
   117|    244|            _ => LargeValue::from_slice(v).map(PushValue::LargeValue),
   118|       |        }
-  119|  1.24k|    }
+  119|  1.25k|    }
 _RNvXs_NtCs1IYcoey662B_12zcash_script6opcodeNtB4_9PushValueNtB4_9Evaluable8to_bytes:
-  183|  1.24k|    fn to_bytes(&self) -> Vec<u8> {
-  184|  1.24k|        Vec::<u8>::from(self)
-  185|  1.24k|    }
+  183|  1.25k|    fn to_bytes(&self) -> Vec<u8> {
+  184|  1.25k|        Vec::<u8>::from(self)
+  185|  1.25k|    }
 
 _RNvXs_NtNtCs1IYcoey662B_12zcash_script6opcode10push_valueINtNtCshDtJu3Ru83O_5alloc3vec3VechEINtNtCs6SNw0SRvItZ_4core7convert4FromRNtB4_10LargeValueE4from:
   197|    244|    fn from(value: &LargeValue) -> Self {
@@ -7063,20 +7063,20 @@ _RNvMNtNtCs1IYcoey662B_12zcash_script6opcode10push_valueNtB2_10LargeValue10from_
    64|       |        }
    65|    244|    }
 _RNvMs1_NtNtCs1IYcoey662B_12zcash_script6opcode10push_valueNtB5_10SmallValue6encode:
-  304|  1.00k|    pub(crate) fn encode(self) -> u8 {
+  304|  1.01k|    pub(crate) fn encode(self) -> u8 {
   305|       |        // This is how you get the discriminant, but using `as` everywhere is too much code smell
-  306|  1.00k|        self as u8
-  307|  1.00k|    }
+  306|  1.01k|        self as u8
+  307|  1.01k|    }
 
 _RNvNtCs1IYcoey662B_12zcash_script7pattern8push_num:
-  197|  1.24k|pub fn push_num(n: i64) -> opcode::PushValue {
-  198|  1.24k|    pv::push_value(&num::serialize(n)).expect("all i64 can be encoded as `PushValue`")
-  199|  1.24k|}
+  197|  1.25k|pub fn push_num(n: i64) -> opcode::PushValue {
+  198|  1.25k|    pv::push_value(&num::serialize(n)).expect("all i64 can be encoded as `PushValue`")
+  199|  1.25k|}
 
 _RNvNtCs1IYcoey662B_12zcash_script2pv10push_value:
-   31|  1.24k|pub fn push_value(value: &[u8]) -> Option<PushValue> {
-   32|  1.24k|    PushValue::from_slice(value)
-   33|  1.24k|}
+   31|  1.25k|pub fn push_value(value: &[u8]) -> Option<PushValue> {
+   32|  1.25k|    PushValue::from_slice(value)
+   33|  1.25k|}
 
 _RINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtB6_6Script4readQQQQRShECs2qdhHbQ3r3c_11zebra_chain:
    63|  4.96k|    pub fn read<R: Read>(mut reader: R) -> io::Result<Self> {
@@ -7087,12 +7087,12 @@ _RINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtB6_6Script4readQQQQRShECs2
    68|  4.96k|        Ok(Script(script::Code(script)))
    69|  4.96k|    }
 _RNCINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtB8_6Script4readQQQQRShE0Cs2qdhHbQ3r3c_11zebra_chain:
-   64|   143k|        let script = Vector::read(&mut reader, |r| {
-   65|   143k|            let mut bytes = [0; 1];
-   66|   143k|            r.read_exact(&mut bytes).map(|_| bytes[0])
-   67|   143k|        })?;
+   64|   141k|        let script = Vector::read(&mut reader, |r| {
+   65|   141k|            let mut bytes = [0; 1];
+   66|   141k|            r.read_exact(&mut bytes).map(|_| bytes[0])
+   67|   141k|        })?;
 _RNCNCINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtBa_6Script4readQQQQRShE00Cs2qdhHbQ3r3c_11zebra_chain:
-   66|   143k|            r.read_exact(&mut bytes).map(|_| bytes[0])
+   66|   141k|            r.read_exact(&mut bytes).map(|_| bytes[0])
 _RINvMs2_NtCs723TF5ez15Z_17zcash_transparent7addressNtB6_6Script5writeQQNtNtCsblBBgngKd3Y_16zcash_primitives8encoding10StateWriteEB1b_:
    71|  1.88k|    pub fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
    72|  1.88k|        Vector::write(&mut writer, &self.0.0, |w, e| w.write_all(&[*e]))
@@ -7136,23 +7136,23 @@ _RINvMs7_NtCs723TF5ez15Z_17zcash_transparent6bundleNtB6_5TxOut4readQQRShECs2qdhH
   397|  1.91k|        })
   398|  1.91k|    }
 _RINvMs3_NtCs723TF5ez15Z_17zcash_transparent6bundleNtB6_8OutPoint5writeQNtNtCsblBBgngKd3Y_16zcash_primitives8encoding10StateWriteEB1b_:
-  198|  2.64k|    pub fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
-  199|  2.64k|        writer.write_all(self.hash.as_ref())?;
-  200|  2.64k|        writer.write_all(&self.n.to_le_bytes())
-  201|  2.64k|    }
+  198|  2.63k|    pub fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
+  199|  2.63k|        writer.write_all(self.hash.as_ref())?;
+  200|  2.63k|        writer.write_all(&self.n.to_le_bytes())
+  201|  2.63k|    }
 _RINvMs7_NtCs723TF5ez15Z_17zcash_transparent6bundleNtB6_5TxOut5writeQNtNtCsblBBgngKd3Y_16zcash_primitives8encoding10StateWriteEB18_:
   400|  1.88k|    pub fn write<W: Write>(&self, mut writer: W) -> io::Result<()> {
   401|  1.88k|        writer.write_all(&self.value.to_i64_le_bytes())?;
   402|  1.88k|        self.script_pubkey.write(&mut writer)
   403|  1.88k|    }
 _RNvMs4_NtCs723TF5ez15Z_17zcash_transparent6bundleINtB5_4TxInNtB5_10AuthorizedE7prevoutCsblBBgngKd3Y_16zcash_primitives:
-  247|  2.64k|    pub fn prevout(&self) -> &OutPoint {
-  248|  2.64k|        &self.prevout
-  249|  2.64k|    }
+  247|  2.63k|    pub fn prevout(&self) -> &OutPoint {
+  248|  2.63k|        &self.prevout
+  249|  2.63k|    }
 _RNvMs4_NtCs723TF5ez15Z_17zcash_transparent6bundleINtB5_4TxInNtB5_10AuthorizedE8sequenceCsblBBgngKd3Y_16zcash_primitives:
-  257|  2.64k|    pub fn sequence(&self) -> u32 {
-  258|  2.64k|        self.sequence
-  259|  2.64k|    }
+  257|  2.63k|    pub fn sequence(&self) -> u32 {
+  258|  2.63k|        self.sequence
+  259|  2.63k|    }
 _RNvMs3_NtCs723TF5ez15Z_17zcash_transparent6bundleNtB5_8OutPoint3new:
   170|  3.04k|    pub const fn new(hash: [u8; 32], n: u32) -> Self {
   171|  3.04k|        OutPoint {
@@ -7276,7 +7276,7 @@ _RNCNvXsg_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEIN
   313|      6|            source,
   314|      6|        })?;
 _RNCNvXsg_NtCs2qdhHbQ3r3c_11zebra_chain6amountINtB7_6AmountNtB7_11NonNegativeEINtNtCs6SNw0SRvItZ_4core7convert7TryFromyE8try_froms_0B9_:
-  316|  7.42k|        C::validate(value).map(|v| Self(v, PhantomData))
+  316|  7.41k|        C::validate(value).map(|v| Self(v, PhantomData))
 _RNvXsf_NtCs2qdhHbQ3r3c_11zebra_chain6amountNtB5_6AmountINtNtCs6SNw0SRvItZ_4core7convert7TryFromxE8try_fromB7_:
   299|    467|    fn try_from(value: i64) -> Result<Self, Self::Error> {
   300|    467|        C::validate(value).map(|v| Self(v, PhantomData))
@@ -7303,9 +7303,9 @@ _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain6amount11NonNegativeNtB4_10Constraint8valida
   619|  7.42k|        let range = Self::valid_range();
   620|       |
   621|  7.42k|        if !range.contains(&value) {
-  622|      7|            Err(Error::Constraint { value, range })
+  622|      8|            Err(Error::Constraint { value, range })
   623|       |        } else {
-  624|  7.42k|            Ok(value)
+  624|  7.41k|            Ok(value)
   625|       |        }
   626|  7.42k|    }
 _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain6amount15NegativeAllowedNtB4_10Constraint8validateB6_:
@@ -7328,26 +7328,26 @@ _RNvXsy_NtCs2qdhHbQ3r3c_11zebra_chain6amountNtB5_11NonNegativeNtB5_10Constraint1
   583|  7.42k|    }
 
 _RNvMs_NtNtCs2qdhHbQ3r3c_11zebra_chain5block6heightNtB4_6Height6is_min:
-   99|    687|    pub fn is_min(self) -> bool {
-  100|    687|        self == Self::MIN
-  101|    687|    }
+   99|    699|    pub fn is_min(self) -> bool {
+  100|    699|        self == Self::MIN
+  101|    699|    }
 _RNvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain5block6heightNtB5_6HeightINtNtCs6SNw0SRvItZ_4core7convert7TryFrommE8try_from:
-  137|    549|    fn try_from(height: u32) -> Result<Self, Self::Error> {
+  137|    548|    fn try_from(height: u32) -> Result<Self, Self::Error> {
   138|       |        // Check the bounds.
   139|       |        //
   140|       |        // Clippy warns that `height >= Height::MIN.0` is always true.
-  141|    549|        assert_eq!(Height::MIN.0, 0);
+  141|    548|        assert_eq!(Height::MIN.0, 0);
   142|       |
-  143|    549|        if height <= Height::MAX.0 {
-  144|    548|            Ok(Height(height))
+  143|    548|        if height <= Height::MAX.0 {
+  144|    547|            Ok(Height(height))
   145|       |        } else {
   146|      1|            Err("heights must be less than or equal to Height::MAX")
   147|       |        }
-  148|    549|    }
+  148|    548|    }
 _RNvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain5block6heightxINtNtCs6SNw0SRvItZ_4core7convert4FromRNtB5_6HeightE4from:
-  178|    687|    fn from(height: &Height) -> Self {
-  179|    687|        height.0.into()
-  180|    687|    }
+  178|    699|    fn from(height: &Height) -> Self {
+  179|    699|        height.0.into()
+  180|    699|    }
 
 _RNvXNtCs2qdhHbQ3r3c_11zebra_chain5errorNtB2_5ErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtNtNtCsjS9ICikYiHq_3std2io5error5ErrorE4from:
    87|     68|    fn from(value: io::Error) -> Self {
@@ -7770,19 +7770,19 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain10parameters15network_upgradeNtB5_14Netwo
   404|  1.09k|        NetworkUpgrade::branch_id_list().get(self).cloned()
   405|  1.09k|    }
 _RNvXNtNtCs2qdhHbQ3r3c_11zebra_chain10parameters15network_upgradeNtB2_14NetworkUpgradeINtNtCs6SNw0SRvItZ_4core7convert7TryFrommE8try_from:
-   78|    729|    fn try_from(branch_id: u32) -> Result<Self, Self::Error> {
-   79|    729|        CONSENSUS_BRANCH_IDS
-   80|    729|            .iter()
-   81|    729|            .find(|id| id.1 == ConsensusBranchId(branch_id))
-   82|    729|            .map(|nu| nu.0)
-   83|    729|            .ok_or(Self::Error::InvalidConsensusBranchId)
-   84|    729|    }
+   78|    728|    fn try_from(branch_id: u32) -> Result<Self, Self::Error> {
+   79|    728|        CONSENSUS_BRANCH_IDS
+   80|    728|            .iter()
+   81|    728|            .find(|id| id.1 == ConsensusBranchId(branch_id))
+   82|    728|            .map(|nu| nu.0)
+   83|    728|            .ok_or(Self::Error::InvalidConsensusBranchId)
+   84|    728|    }
 _RNvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain10parameters15network_upgrademINtNtCs6SNw0SRvItZ_4core7convert4FromNtB5_17ConsensusBranchIdE4from:
   165|  1.09k|    fn from(branch: ConsensusBranchId) -> u32 {
   166|  1.09k|        branch.0
   167|  1.09k|    }
 _RNCNvXNtNtCs2qdhHbQ3r3c_11zebra_chain10parameters15network_upgradeNtB4_14NetworkUpgradeINtNtCs6SNw0SRvItZ_4core7convert7TryFrommE8try_from0B8_:
-   81|  7.26k|            .find(|id| id.1 == ConsensusBranchId(branch_id))
+   81|  7.25k|            .find(|id| id.1 == ConsensusBranchId(branch_id))
 
 _RINvXs4_NtNtNtCs2qdhHbQ3r3c_11zebra_chain10primitives6proofs6bctv14NtB6_11Bctv14ProofNtNtNtBc_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2K_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
    48|     61|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
@@ -7924,10 +7924,10 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling10commitmentNtB6_15ValueCommitme
   104|     32|        Ok(Self(value_commitment))
   105|     32|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling10commitmentNtB6_15ValueCommitmentNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2G_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  102|  2.21k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
-  103|  2.21k|        let value_commitment = sapling_crypto::value::ValueCommitment::zcash_deserialize(reader)?;
+  102|  2.20k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
+  103|  2.20k|        let value_commitment = sapling_crypto::value::ValueCommitment::zcash_deserialize(reader)?;
   104|  2.18k|        Ok(Self(value_commitment))
-  105|  2.21k|    }
+  105|  2.20k|    }
 _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling10commitmentNtNtCsckoVJ3NjISC_14sapling_crypto5value15ValueCommitmentNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB3e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
    90|     26|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    91|     26|        let mut buf = [0u8; 32];
@@ -8586,7 +8586,7 @@ _RINvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling5spendNtB6_26SpendPrefixInTransa
   273|       |        })
   274|     32|    }
 _RINvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling5spendNtB6_26SpendPrefixInTransactionV5NtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2K_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  251|  2.21k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  251|  2.20k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   252|       |        // # Consensus
   253|       |        //
   254|       |        // > Elements of a Spend description MUST be valid encodings of the types given above.
@@ -8598,7 +8598,7 @@ _RINvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling5spendNtB6_26SpendPrefixInTransa
   260|       |            // Type is `ValueCommit^{Sapling}.Output`, i.e. J
   261|       |            // https://zips.z.cash/protocol/protocol.pdf#abstractcommit
   262|       |            // See [`sapling_crypto::value::ValueCommitment::zcash_deserialize`].
-  263|  2.21k|            cv: commitment::ValueCommitment::zcash_deserialize(&mut reader)?,
+  263|  2.20k|            cv: commitment::ValueCommitment::zcash_deserialize(&mut reader)?,
   264|       |            // Type is `B^Y^{[ℓ_{PRFnfSapling}/8]}`, i.e. 32 bytes
   265|  2.18k|            nullifier: note::Nullifier::from(reader.read_32_bytes()?),
   266|       |            // Type is `SpendAuthSig^{Sapling}.Public`, i.e. J
@@ -8606,10 +8606,10 @@ _RINvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling5spendNtB6_26SpendPrefixInTransa
   268|       |            // See [`ValidatingKey::try_from`].
   269|  2.17k|            rk: reader
   270|  2.17k|                .read_32_bytes()?
-  271|  2.17k|                .try_into()
-  272|  2.17k|                .map_err(SerializationError::Parse)?,
+  271|  2.16k|                .try_into()
+  272|  2.16k|                .map_err(SerializationError::Parse)?,
   273|       |        })
-  274|  2.21k|    }
+  274|  2.20k|    }
 _RINvXs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling5spendINtNtCshmGmgr1OsaH_9redjubjub9signature9SignatureNtBU_9SpendAuthENtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB3g_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
   287|     32|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   288|     32|        Ok(reader.read_64_bytes()?.into())
@@ -8768,53 +8768,53 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18Comp
   313|    195|        size.try_into()
   314|    207|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2z_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  308|    890|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
+  308|    892|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
-  310|    890|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
+  310|    892|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
-  312|    890|        let size: usize = size.0.try_into()?;
-  313|    890|        size.try_into()
-  314|    890|    }
+  312|    892|        let size: usize = size.0.try_into()?;
+  313|    892|        size.try_into()
+  314|    892|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2z_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  308|  2.53k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
+  308|  2.54k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
-  310|  2.53k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
+  310|  2.54k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
   312|  2.50k|        let size: usize = size.0.try_into()?;
   313|  2.50k|        size.try_into()
-  314|  2.53k|    }
+  314|  2.54k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2A_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  308|    805|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
+  308|    809|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
-  310|    805|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
+  310|    809|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
-  312|    805|        let size: usize = size.0.try_into()?;
-  313|    805|        size.try_into()
-  314|    805|    }
+  312|    809|        let size: usize = size.0.try_into()?;
+  313|    809|        size.try_into()
+  314|    809|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2A_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
   308|  1.59k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
   310|  1.59k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
-  312|  1.57k|        let size: usize = size.0.try_into()?;
-  313|  1.57k|        size.try_into()
+  312|  1.56k|        let size: usize = size.0.try_into()?;
+  313|  1.56k|        size.try_into()
   314|  1.59k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2B_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  308|  4.60k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
+  308|  4.63k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
-  310|  4.60k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
+  310|  4.63k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
-  312|  4.60k|        let size: usize = size.0.try_into()?;
-  313|  4.60k|        size.try_into()
-  314|  4.60k|    }
+  312|  4.63k|        let size: usize = size.0.try_into()?;
+  313|  4.63k|        size.try_into()
+  314|  4.63k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2B_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  308|  7.12k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
+  308|  7.13k|    fn zcash_deserialize<R: std::io::Read>(reader: R) -> Result<Self, SerializationError> {
   309|       |        // Use the same deserialization format as CompactSize64.
-  310|  7.12k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
+  310|  7.13k|        let size: CompactSize64 = reader.zcash_deserialize_into()?;
   311|       |
-  312|  7.11k|        let size: usize = size.0.try_into()?;
-  313|  7.11k|        size.try_into()
-  314|  7.12k|    }
+  312|  7.12k|        let size: usize = size.0.try_into()?;
+  313|  7.12k|        size.try_into()
+  314|  7.13k|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2t_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
   341|     62|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
@@ -8862,12 +8862,12 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   361|    195|        Ok(CompactSize64(size))
   362|    207|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2u_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  341|    890|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  341|    892|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
   343|       |
-  344|    890|        let flag_byte = reader.read_u8()?;
-  345|    890|        let size = match flag_byte {
-  346|    890|            n @ 0x00..=0xfc => Ok(n as u64),
+  344|    892|        let flag_byte = reader.read_u8()?;
+  345|    892|        let size = match flag_byte {
+  346|    892|            n @ 0x00..=0xfc => Ok(n as u64),
   347|      2|            0xfd => match reader.read_u16::<LittleEndian>()? {
   348|      2|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
   349|      0|                _ => Err(Parse("non-canonical CompactSize")),
@@ -8882,15 +8882,15 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   358|       |            },
   359|      0|        }?;
   360|       |
-  361|    890|        Ok(CompactSize64(size))
-  362|    890|    }
+  361|    892|        Ok(CompactSize64(size))
+  362|    892|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2u_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  341|  2.53k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  341|  2.54k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
   343|       |
-  344|  2.53k|        let flag_byte = reader.read_u8()?;
-  345|  2.51k|        let size = match flag_byte {
-  346|  2.51k|            n @ 0x00..=0xfc => Ok(n as u64),
+  344|  2.54k|        let flag_byte = reader.read_u8()?;
+  345|  2.52k|        let size = match flag_byte {
+  346|  2.52k|            n @ 0x00..=0xfc => Ok(n as u64),
   347|     10|            0xfd => match reader.read_u16::<LittleEndian>()? {
   348|      6|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
   349|      1|                _ => Err(Parse("non-canonical CompactSize")),
@@ -8906,14 +8906,14 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   359|      3|        }?;
   360|       |
   361|  2.50k|        Ok(CompactSize64(size))
-  362|  2.53k|    }
+  362|  2.54k|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2v_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  341|    805|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  341|    809|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
   343|       |
-  344|    805|        let flag_byte = reader.read_u8()?;
-  345|    805|        let size = match flag_byte {
-  346|    805|            n @ 0x00..=0xfc => Ok(n as u64),
+  344|    809|        let flag_byte = reader.read_u8()?;
+  345|    809|        let size = match flag_byte {
+  346|    809|            n @ 0x00..=0xfc => Ok(n as u64),
   347|      0|            0xfd => match reader.read_u16::<LittleEndian>()? {
   348|      0|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
   349|      0|                _ => Err(Parse("non-canonical CompactSize")),
@@ -8928,8 +8928,8 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   358|       |            },
   359|      0|        }?;
   360|       |
-  361|    805|        Ok(CompactSize64(size))
-  362|    805|    }
+  361|    809|        Ok(CompactSize64(size))
+  362|    809|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2v_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
   341|  1.59k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
@@ -8951,17 +8951,17 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   358|       |            },
   359|      4|        }?;
   360|       |
-  361|  1.57k|        Ok(CompactSize64(size))
+  361|  1.56k|        Ok(CompactSize64(size))
   362|  1.59k|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2w_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  341|  4.60k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  341|  4.63k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
   343|       |
-  344|  4.60k|        let flag_byte = reader.read_u8()?;
-  345|  4.60k|        let size = match flag_byte {
-  346|  4.60k|            n @ 0x00..=0xfc => Ok(n as u64),
-  347|     19|            0xfd => match reader.read_u16::<LittleEndian>()? {
-  348|     19|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
+  344|  4.63k|        let flag_byte = reader.read_u8()?;
+  345|  4.63k|        let size = match flag_byte {
+  346|  4.63k|            n @ 0x00..=0xfc => Ok(n as u64),
+  347|     20|            0xfd => match reader.read_u16::<LittleEndian>()? {
+  348|     20|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
   349|      0|                _ => Err(Parse("non-canonical CompactSize")),
   350|       |            },
   351|      0|            0xfe => match reader.read_u32::<LittleEndian>()? {
@@ -8974,17 +8974,17 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   358|       |            },
   359|      0|        }?;
   360|       |
-  361|  4.60k|        Ok(CompactSize64(size))
-  362|  4.60k|    }
+  361|  4.63k|        Ok(CompactSize64(size))
+  362|  4.63k|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2w_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  341|  7.12k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  341|  7.13k|    fn zcash_deserialize<R: std::io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   342|       |        use SerializationError::Parse;
   343|       |
-  344|  7.12k|        let flag_byte = reader.read_u8()?;
-  345|  7.12k|        let size = match flag_byte {
-  346|  7.12k|            n @ 0x00..=0xfc => Ok(n as u64),
-  347|     29|            0xfd => match reader.read_u16::<LittleEndian>()? {
-  348|     26|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
+  344|  7.13k|        let flag_byte = reader.read_u8()?;
+  345|  7.13k|        let size = match flag_byte {
+  346|  7.13k|            n @ 0x00..=0xfc => Ok(n as u64),
+  347|     30|            0xfd => match reader.read_u16::<LittleEndian>()? {
+  348|     27|                n @ 0x00fd..=u16::MAX => Ok(n as u64),
   349|      1|                _ => Err(Parse("non-canonical CompactSize")),
   350|       |            },
   351|      6|            0xfe => match reader.read_u32::<LittleEndian>()? {
@@ -8997,49 +8997,49 @@ _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   358|       |            },
   359|      3|        }?;
   360|       |
-  361|  7.11k|        Ok(CompactSize64(size))
-  362|  7.12k|    }
+  361|  7.12k|        Ok(CompactSize64(size))
+  362|  7.13k|    }
 _RNvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB2_18CompactSizeMessageINtNtCs6SNw0SRvItZ_4core7convert7TryFromjE8try_fromB6_:
-  238|  34.8k|    fn try_from(size: usize) -> Result<Self, Self::Error> {
+  238|  34.9k|    fn try_from(size: usize) -> Result<Self, Self::Error> {
   239|       |        use SerializationError::Parse;
   240|       |
-  241|  34.8k|        let size: u32 = size.try_into()?;
+  241|  34.9k|        let size: u32 = size.try_into()?;
   242|       |
   243|       |        // # Security
   244|       |        // Defense-in-depth for memory DoS via preallocation.
-  245|  34.8k|        if size
-  246|  34.8k|            > MAX_PROTOCOL_MESSAGE_LEN
-  247|  34.8k|                .try_into()
-  248|  34.8k|                .expect("MAX_PROTOCOL_MESSAGE_LEN fits in u32")
+  245|  34.9k|        if size
+  246|  34.9k|            > MAX_PROTOCOL_MESSAGE_LEN
+  247|  34.9k|                .try_into()
+  248|  34.9k|                .expect("MAX_PROTOCOL_MESSAGE_LEN fits in u32")
   249|       |        {
   250|       |            // This could be invalid data from peers, so we return a parse error.
   251|      4|            Err(Parse("CompactSize larger than protocol message limit"))?;
-  252|  34.8k|        }
+  252|  34.9k|        }
   253|       |
-  254|  34.8k|        Ok(CompactSizeMessage(size))
-  255|  34.8k|    }
+  254|  34.9k|        Ok(CompactSizeMessage(size))
+  255|  34.9k|    }
 _RNvXs_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizejINtNtCs6SNw0SRvItZ_4core7convert4FromNtB4_18CompactSizeMessageE4fromB8_:
   260|  17.7k|    fn from(size: CompactSizeMessage) -> Self {
   261|  17.7k|        size.0.try_into().expect("u32 fits in usize")
   262|  17.7k|    }
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_15zcash_serialize14ZcashSerialize15zcash_serializeQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
-  287|    110|    fn zcash_serialize<W: std::io::Write>(&self, writer: W) -> Result<(), std::io::Error> {
+  287|    112|    fn zcash_serialize<W: std::io::Write>(&self, writer: W) -> Result<(), std::io::Error> {
   288|       |        // # Security
   289|       |        // Defence-in-depth for memory DoS via preallocation.
   290|       |        //
   291|       |        // This is validated data inside Zebra, so we panic.
-  292|    110|        assert!(
-  293|    110|            self.0
-  294|    110|                <= MAX_PROTOCOL_MESSAGE_LEN
-  295|    110|                    .try_into()
-  296|    110|                    .expect("usize fits in u64"),
+  292|    112|        assert!(
+  293|    112|            self.0
+  294|    112|                <= MAX_PROTOCOL_MESSAGE_LEN
+  295|    112|                    .try_into()
+  296|    112|                    .expect("usize fits in u64"),
   297|      0|            "CompactSize larger than protocol message limit"
   298|       |        );
   299|       |
   300|       |        // Use the same serialization format as CompactSize64.
-  301|    110|        let size: u64 = self.0.into();
-  302|    110|        CompactSize64(size).zcash_serialize(writer)
-  303|    110|    }
+  301|    112|        let size: u64 = self.0.into();
+  302|    112|        CompactSize64(size).zcash_serialize(writer)
+  303|    112|    }
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18CompactSizeMessageNtNtB8_15zcash_serialize14ZcashSerialize15zcash_serializeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
   287|    280|    fn zcash_serialize<W: std::io::Write>(&self, writer: W) -> Result<(), std::io::Error> {
   288|       |        // # Security
@@ -9113,10 +9113,10 @@ _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_18Comp
   302|  14.9k|        CompactSize64(size).zcash_serialize(writer)
   303|  14.9k|    }
 _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_15zcash_serialize14ZcashSerialize15zcash_serializeQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
-  319|    110|    fn zcash_serialize<W: std::io::Write>(&self, mut writer: W) -> Result<(), std::io::Error> {
-  320|    110|        let n = self.0;
-  321|    110|        match n {
-  322|    110|            0x00..=0xfc => writer.write_u8(n as u8),
+  319|    112|    fn zcash_serialize<W: std::io::Write>(&self, mut writer: W) -> Result<(), std::io::Error> {
+  320|    112|        let n = self.0;
+  321|    112|        match n {
+  322|    112|            0x00..=0xfc => writer.write_u8(n as u8),
   323|      0|            0x00fd..=0xffff => {
   324|      0|                writer.write_u8(0xfd)?;
   325|      0|                writer.write_u16::<LittleEndian>(n as u16)
@@ -9130,7 +9130,7 @@ _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   333|      0|                writer.write_u64::<LittleEndian>(n)
   334|       |            }
   335|       |        }
-  336|    110|    }
+  336|    112|    }
 _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13CompactSize64NtNtB8_15zcash_serialize14ZcashSerialize15zcash_serializeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
   319|    280|    fn zcash_serialize<W: std::io::Write>(&self, mut writer: W) -> Result<(), std::io::Error> {
   320|    280|        let n = self.0;
@@ -9193,9 +9193,9 @@ _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   320|  14.9k|        let n = self.0;
   321|  14.9k|        match n {
   322|  14.9k|            0x00..=0xfc => writer.write_u8(n as u8),
-  323|     79|            0x00fd..=0xffff => {
-  324|     79|                writer.write_u8(0xfd)?;
-  325|     79|                writer.write_u16::<LittleEndian>(n as u16)
+  323|     81|            0x00fd..=0xffff => {
+  324|     81|                writer.write_u8(0xfd)?;
+  325|     81|                writer.write_u16::<LittleEndian>(n as u16)
   326|       |            }
   327|      0|            0x0001_0000..=0xffff_ffff => {
   328|      0|                writer.write_u8(0xfe)?;
@@ -9209,9 +9209,9 @@ _RINvXs4_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization12compact_sizeNtB6_13Comp
   336|  14.9k|    }
 
 _RNvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization5errorNtB5_18SerializationErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtNtNtCsjS9ICikYiHq_3std2io5error5ErrorE4from:
-  112|    487|    fn from(value: io::Error) -> Self {
-  113|    487|        Arc::new(value).into()
-  114|    487|    }
+  112|    485|    fn from(value: io::Error) -> Self {
+  113|    485|        Arc::new(value).into()
+  114|    485|    }
 _RNvXs_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization5errorNtB4_18SerializationErrorINtNtCs6SNw0SRvItZ_4core7convert4FromNtNtB8_5error5ErrorE4from:
    96|     79|    fn from(e: crate::Error) -> Self {
    97|     79|        match e {
@@ -9262,11 +9262,11 @@ _RNvYQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB6_6cursor6CursorRShEENtNtNtCs2qdhHbQ3
    36|     65|        Ok(bytes)
    37|     75|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_32_bytesCsgiMfClIXePk_19v6_transaction_fuzz:
-   25|  2.10k|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
-   26|  2.10k|        let mut bytes = [0; 32];
-   27|  2.10k|        self.read_exact(&mut bytes)?;
-   28|  2.10k|        Ok(bytes)
-   29|  2.10k|    }
+   25|  2.13k|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
+   26|  2.13k|        let mut bytes = [0; 32];
+   27|  2.13k|        self.read_exact(&mut bytes)?;
+   28|  2.13k|        Ok(bytes)
+   29|  2.13k|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_64_bytesCsgiMfClIXePk_19v6_transaction_fuzz:
    33|     23|    fn read_64_bytes(&mut self) -> io::Result<[u8; 64]> {
    34|     23|        let mut bytes = [0; 64];
@@ -9274,11 +9274,11 @@ _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRINtNtCshDtJu3Ru83O_
    36|     23|        Ok(bytes)
    37|     23|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRShEENtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_32_bytesCsgiMfClIXePk_19v6_transaction_fuzz:
-   25|  3.69k|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
-   26|  3.69k|        let mut bytes = [0; 32];
-   27|  3.69k|        self.read_exact(&mut bytes)?;
-   28|  3.65k|        Ok(bytes)
-   29|  3.69k|    }
+   25|  3.70k|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
+   26|  3.70k|        let mut bytes = [0; 32];
+   27|  3.70k|        self.read_exact(&mut bytes)?;
+   28|  3.66k|        Ok(bytes)
+   29|  3.70k|    }
 _RNvYQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB7_6cursor6CursorRShEENtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_64_bytesCsgiMfClIXePk_19v6_transaction_fuzz:
    33|    172|    fn read_64_bytes(&mut self) -> io::Result<[u8; 64]> {
    34|    172|        let mut bytes = [0; 64];
@@ -9301,7 +9301,7 @@ _RNvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtNtCs2qdhHb
    25|  6.52k|    fn read_32_bytes(&mut self) -> io::Result<[u8; 32]> {
    26|  6.52k|        let mut bytes = [0; 32];
    27|  6.52k|        self.read_exact(&mut bytes)?;
-   28|  6.45k|        Ok(bytes)
+   28|  6.44k|        Ok(bytes)
    29|  6.52k|    }
 _RNvYQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB8_6cursor6CursorRShEENtNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization10read_zcash12ReadZcashExt13read_64_bytesCsgiMfClIXePk_19v6_transaction_fuzz:
    33|    287|    fn read_64_bytes(&mut self) -> io::Result<[u8; 64]> {
@@ -9406,12 +9406,12 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQINtNt
   185|    212|        T::zcash_deserialize(self)
   186|    212|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoIB25_INtNtNtBa_6sprout9joinsplit9JoinSplitNtNtNtNtBa_10primitives6proofs6bctv1411Bctv14ProofEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|     76|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|     76|    where
-  183|     76|        T: ZcashDeserialize,
+  181|     77|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|     77|    where
+  183|     77|        T: ZcashDeserialize,
   184|       |    {
-  185|     76|        T::zcash_deserialize(self)
-  186|     76|    }
+  185|     77|        T::zcash_deserialize(self)
+  186|     77|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoIB25_INtNtNtBa_6sprout9joinsplit9JoinSplitNtNtNtNtBa_10primitives6proofs7groth1612Groth16ProofEEECsgiMfClIXePk_19v6_transaction_fuzz:
   181|     62|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|     62|    where
@@ -9441,19 +9441,19 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtN
   185|     12|        T::zcash_deserialize(self)
   186|     12|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size13CompactSize64ECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|    890|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|    890|    where
-  183|    890|        T: ZcashDeserialize,
+  181|    892|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|    892|    where
+  183|    892|        T: ZcashDeserialize,
   184|       |    {
-  185|    890|        T::zcash_deserialize(self)
-  186|    890|    }
+  185|    892|        T::zcash_deserialize(self)
+  186|    892|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size18CompactSizeMessageECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|    890|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|    890|    where
-  183|    890|        T: ZcashDeserialize,
+  181|    892|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|    892|    where
+  183|    892|        T: ZcashDeserialize,
   184|       |    {
-  185|    890|        T::zcash_deserialize(self)
-  186|    890|    }
+  185|    892|        T::zcash_deserialize(self)
+  186|    892|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtBa_6amount6AmountECsgiMfClIXePk_19v6_transaction_fuzz:
   181|     27|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|     27|    where
@@ -9490,12 +9490,12 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtN
   185|     91|        T::zcash_deserialize(self)
   186|     91|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtBa_6sprout9joinsplit9JoinSplitNtNtNtNtBa_10primitives6proofs6bctv1411Bctv14ProofEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|    149|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|    149|    where
-  183|    149|        T: ZcashDeserialize,
+  181|    150|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|    150|    where
+  183|    150|        T: ZcashDeserialize,
   184|       |    {
-  185|    149|        T::zcash_deserialize(self)
-  186|    149|    }
+  185|    150|        T::zcash_deserialize(self)
+  186|    150|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtBa_6sprout9joinsplit9JoinSplitNtNtNtNtBa_10primitives6proofs7groth1612Groth16ProofEEECsgiMfClIXePk_19v6_transaction_fuzz:
   181|    124|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|    124|    where
@@ -9518,19 +9518,19 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtN
   185|    373|        T::zcash_deserialize(self)
   186|    373|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size13CompactSize64ECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  2.53k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  2.53k|    where
-  183|  2.53k|        T: ZcashDeserialize,
+  181|  2.54k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  2.54k|    where
+  183|  2.54k|        T: ZcashDeserialize,
   184|       |    {
-  185|  2.53k|        T::zcash_deserialize(self)
-  186|  2.53k|    }
+  185|  2.54k|        T::zcash_deserialize(self)
+  186|  2.54k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size18CompactSizeMessageECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  2.53k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  2.53k|    where
-  183|  2.53k|        T: ZcashDeserialize,
+  181|  2.54k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  2.54k|    where
+  183|  2.54k|        T: ZcashDeserialize,
   184|       |    {
-  185|  2.53k|        T::zcash_deserialize(self)
-  186|  2.53k|    }
+  185|  2.54k|        T::zcash_deserialize(self)
+  186|  2.54k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1e_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtBa_6amount6AmountECsgiMfClIXePk_19v6_transaction_fuzz:
   181|    180|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|    180|    where
@@ -9567,19 +9567,19 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQINt
   185|  2.72k|        T::zcash_deserialize(self)
   186|  2.72k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1f_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size13CompactSize64ECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|    805|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|    805|    where
-  183|    805|        T: ZcashDeserialize,
+  181|    809|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|    809|    where
+  183|    809|        T: ZcashDeserialize,
   184|       |    {
-  185|    805|        T::zcash_deserialize(self)
-  186|    805|    }
+  185|    809|        T::zcash_deserialize(self)
+  186|    809|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1f_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size18CompactSizeMessageECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|    805|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|    805|    where
-  183|    805|        T: ZcashDeserialize,
+  181|    809|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|    809|    where
+  183|    809|        T: ZcashDeserialize,
   184|       |    {
-  185|    805|        T::zcash_deserialize(self)
-  186|    805|    }
+  185|    809|        T::zcash_deserialize(self)
+  186|    809|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1f_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtNtBa_7sapling4tree4RootECsgiMfClIXePk_19v6_transaction_fuzz:
   181|     11|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|     11|    where
@@ -9623,19 +9623,19 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQIN
   185|    148|        T::zcash_deserialize(self)
   186|    148|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1g_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size13CompactSize64ECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  4.60k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  4.60k|    where
-  183|  4.60k|        T: ZcashDeserialize,
+  181|  4.63k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  4.63k|    where
+  183|  4.63k|        T: ZcashDeserialize,
   184|       |    {
-  185|  4.60k|        T::zcash_deserialize(self)
-  186|  4.60k|    }
+  185|  4.63k|        T::zcash_deserialize(self)
+  186|  4.63k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1g_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size18CompactSizeMessageECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  4.60k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  4.60k|    where
-  183|  4.60k|        T: ZcashDeserialize,
+  181|  4.63k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  4.63k|    where
+  183|  4.63k|        T: ZcashDeserialize,
   184|       |    {
-  185|  4.60k|        T::zcash_deserialize(self)
-  186|  4.60k|    }
+  185|  4.63k|        T::zcash_deserialize(self)
+  186|  4.63k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1g_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoINtNtBa_6amount6AmountNtB32_11NonNegativeEECsgiMfClIXePk_19v6_transaction_fuzz:
   181|    510|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
   182|    510|    where
@@ -9644,29 +9644,29 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQIN
   185|    510|        T::zcash_deserialize(self)
   186|    510|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1g_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size13CompactSize64ECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  7.12k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  7.12k|    where
-  183|  7.12k|        T: ZcashDeserialize,
+  181|  7.13k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  7.13k|    where
+  183|  7.13k|        T: ZcashDeserialize,
   184|       |    {
-  185|  7.12k|        T::zcash_deserialize(self)
-  186|  7.12k|    }
+  185|  7.13k|        T::zcash_deserialize(self)
+  186|  7.13k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeQQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1g_6cursor6CursorRShEENtB6_20ZcashDeserializeInto22zcash_deserialize_intoNtNtB8_12compact_size18CompactSizeMessageECsgiMfClIXePk_19v6_transaction_fuzz:
-  181|  7.12k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
-  182|  7.12k|    where
-  183|  7.12k|        T: ZcashDeserialize,
+  181|  7.13k|    fn zcash_deserialize_into<T>(self) -> Result<T, SerializationError>
+  182|  7.13k|    where
+  183|  7.13k|        T: ZcashDeserialize,
   184|       |    {
-  185|  7.12k|        T::zcash_deserialize(self)
-  186|  7.12k|    }
+  185|  7.13k|        T::zcash_deserialize(self)
+  186|  7.13k|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtB7_6sprout9joinsplit9JoinSplitNtNtNtNtB7_10primitives6proofs6bctv1411Bctv14ProofEENtB3_16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB3P_6cursor6CursorRIB17_hEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   35|     76|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   36|     76|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   37|     76|        zcash_deserialize_external_count(len.into(), reader)
-   38|     76|    }
+   35|     77|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   36|     77|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   37|     77|        zcash_deserialize_external_count(len.into(), reader)
+   38|     77|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtB7_6sprout9joinsplit9JoinSplitNtNtNtNtB7_10primitives6proofs6bctv1411Bctv14ProofEENtB3_16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB3P_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   35|    149|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   36|    149|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   37|    138|        zcash_deserialize_external_count(len.into(), reader)
-   38|    149|    }
+   35|    150|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   36|    150|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   37|    139|        zcash_deserialize_external_count(len.into(), reader)
+   38|    150|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtB7_6sprout9joinsplit9JoinSplitNtNtNtNtB7_10primitives6proofs7groth1612Groth16ProofEENtB3_16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB3R_6cursor6CursorRIB17_hEEEECsgiMfClIXePk_19v6_transaction_fuzz:
    35|     62|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    36|     62|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
@@ -9678,25 +9678,25 @@ _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshD
    37|    122|        zcash_deserialize_external_count(len.into(), reader)
    38|    124|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtB7_11transparent5InputENtB3_16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2O_6cursor6CursorRIB17_hEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   35|    335|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   36|    335|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   37|    335|        zcash_deserialize_external_count(len.into(), reader)
-   38|    335|    }
+   35|    336|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   36|    336|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   37|    336|        zcash_deserialize_external_count(len.into(), reader)
+   38|    336|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtB7_11transparent5InputENtB3_16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2O_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
    35|  1.01k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    36|  1.01k|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
    37|  1.00k|        zcash_deserialize_external_count(len.into(), reader)
    38|  1.01k|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtB7_11transparent6OutputENtB3_16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2P_6cursor6CursorRIB17_hEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   35|    335|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   36|    335|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   37|    335|        zcash_deserialize_external_count(len.into(), reader)
-   38|    335|    }
+   35|    336|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   36|    336|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   37|    336|        zcash_deserialize_external_count(len.into(), reader)
+   38|    336|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtB7_11transparent6OutputENtB3_16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2P_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   35|    910|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   36|    910|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   37|    898|        zcash_deserialize_external_count(len.into(), reader)
-   38|    910|    }
+   35|    912|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   36|    912|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   37|    900|        zcash_deserialize_external_count(len.into(), reader)
+   38|    912|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtNtB7_7orchard6action6ActionENtB3_16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2U_6cursor6CursorRIB17_hEEEECsgiMfClIXePk_19v6_transaction_fuzz:
    35|    316|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    36|    316|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
@@ -9728,15 +9728,15 @@ _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshD
    37|    367|        zcash_deserialize_external_count(len.into(), reader)
    38|    373|    }
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VechENtB6_16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2u_6cursor6CursorRB19_EEECsgiMfClIXePk_19v6_transaction_fuzz:
-   57|  4.60k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   58|  4.60k|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   59|  4.60k|        zcash_deserialize_bytes_external_count(len.into(), reader)
-   60|  4.60k|    }
+   57|  4.63k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   58|  4.63k|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   59|  4.63k|        zcash_deserialize_bytes_external_count(len.into(), reader)
+   60|  4.63k|    }
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserializeINtNtCshDtJu3Ru83O_5alloc3vec3VechENtB6_16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2u_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   57|  7.12k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-   58|  7.12k|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-   59|  7.11k|        zcash_deserialize_bytes_external_count(len.into(), reader)
-   60|  7.12k|    }
+   57|  7.13k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   58|  7.13k|        let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+   59|  7.12k|        zcash_deserialize_bytes_external_count(len.into(), reader)
+   60|  7.13k|    }
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEINtNtNtB6_7sapling5spend5SpendNtNtB3d_13shielded_data14PerSpendAnchorEECsgiMfClIXePk_19v6_transaction_fuzz:
    86|     62|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
    87|     62|    external_count: usize,
@@ -9765,17 +9765,17 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   110|     62|    Ok(vec)
   111|     62|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtB6_11transparent5InputECsgiMfClIXePk_19v6_transaction_fuzz:
-   86|    335|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
-   87|    335|    external_count: usize,
-   88|    335|    mut reader: R,
-   89|    335|) -> Result<Vec<T>, SerializationError> {
-   90|    335|    match u64::try_from(external_count) {
-   91|    335|        Ok(external_count) if external_count > T::max_allocation() => {
+   86|    336|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
+   87|    336|    external_count: usize,
+   88|    336|    mut reader: R,
+   89|    336|) -> Result<Vec<T>, SerializationError> {
+   90|    336|    match u64::try_from(external_count) {
+   91|    336|        Ok(external_count) if external_count > T::max_allocation() => {
    92|      0|            return Err(SerializationError::Parse(
    93|      0|                "Vector longer than max_allocation",
    94|      0|            ))
    95|       |        }
-   96|    335|        Ok(_) => {}
+   96|    336|        Ok(_) => {}
    97|       |        // As of 2021, usize is less than or equal to 64 bits on all (or almost all?) supported Rust platforms.
    98|       |        // So in practice this error is impossible. (But the check is required, because Rust is future-proof
    99|       |        // for 128 bit memory spaces.)
@@ -9785,24 +9785,24 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   103|       |    // arrive, so a peer-supplied `external_count` can't force a large
   104|       |    // allocation before any data is read. Fixes the deserializer-level
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
-  106|    335|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
-  107|    335|    for _ in 0..external_count {
-  108|  2.05k|        vec.push(T::zcash_deserialize(&mut reader)?);
+  106|    336|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
+  107|    336|    for _ in 0..external_count {
+  108|  2.08k|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|    335|    Ok(vec)
-  111|    335|}
+  110|    336|    Ok(vec)
+  111|    336|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtB6_11transparent6OutputECsgiMfClIXePk_19v6_transaction_fuzz:
-   86|    335|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
-   87|    335|    external_count: usize,
-   88|    335|    mut reader: R,
-   89|    335|) -> Result<Vec<T>, SerializationError> {
-   90|    335|    match u64::try_from(external_count) {
-   91|    335|        Ok(external_count) if external_count > T::max_allocation() => {
+   86|    336|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
+   87|    336|    external_count: usize,
+   88|    336|    mut reader: R,
+   89|    336|) -> Result<Vec<T>, SerializationError> {
+   90|    336|    match u64::try_from(external_count) {
+   91|    336|        Ok(external_count) if external_count > T::max_allocation() => {
    92|      0|            return Err(SerializationError::Parse(
    93|      0|                "Vector longer than max_allocation",
    94|      0|            ))
    95|       |        }
-   96|    335|        Ok(_) => {}
+   96|    336|        Ok(_) => {}
    97|       |        // As of 2021, usize is less than or equal to 64 bits on all (or almost all?) supported Rust platforms.
    98|       |        // So in practice this error is impossible. (But the check is required, because Rust is future-proof
    99|       |        // for 128 bit memory spaces.)
@@ -9812,12 +9812,12 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   103|       |    // arrive, so a peer-supplied `external_count` can't force a large
   104|       |    // allocation before any data is read. Fixes the deserializer-level
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
-  106|    335|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
-  107|    335|    for _ in 0..external_count {
+  106|    336|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
+  107|    336|    for _ in 0..external_count {
   108|  2.72k|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|    335|    Ok(vec)
-  111|    335|}
+  110|    336|    Ok(vec)
+  111|    336|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEENtNtNtB6_7sapling6output21OutputInTransactionV4ECsgiMfClIXePk_19v6_transaction_fuzz:
    86|     62|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
    87|     62|    external_count: usize,
@@ -9895,22 +9895,22 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
   106|  1.00k|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
   107|  1.00k|    for _ in 0..external_count {
-  108|  3.35k|        vec.push(T::zcash_deserialize(&mut reader)?);
+  108|  3.37k|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|    910|    Ok(vec)
+  110|    912|    Ok(vec)
   111|  1.00k|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRShEENtNtB6_11transparent6OutputECsgiMfClIXePk_19v6_transaction_fuzz:
-   86|    898|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
-   87|    898|    external_count: usize,
-   88|    898|    mut reader: R,
-   89|    898|) -> Result<Vec<T>, SerializationError> {
-   90|    898|    match u64::try_from(external_count) {
-   91|    898|        Ok(external_count) if external_count > T::max_allocation() => {
+   86|    900|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
+   87|    900|    external_count: usize,
+   88|    900|    mut reader: R,
+   89|    900|) -> Result<Vec<T>, SerializationError> {
+   90|    900|    match u64::try_from(external_count) {
+   91|    900|        Ok(external_count) if external_count > T::max_allocation() => {
    92|      1|            return Err(SerializationError::Parse(
    93|      1|                "Vector longer than max_allocation",
    94|      1|            ))
    95|       |        }
-   96|    897|        Ok(_) => {}
+   96|    899|        Ok(_) => {}
    97|       |        // As of 2021, usize is less than or equal to 64 bits on all (or almost all?) supported Rust platforms.
    98|       |        // So in practice this error is impossible. (But the check is required, because Rust is future-proof
    99|       |        // for 128 bit memory spaces.)
@@ -9920,12 +9920,12 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   103|       |    // arrive, so a peer-supplied `external_count` can't force a large
   104|       |    // allocation before any data is read. Fixes the deserializer-level
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
-  106|    897|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
-  107|    897|    for _ in 0..external_count {
+  106|    899|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
+  107|    899|    for _ in 0..external_count {
   108|  4.08k|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|    865|    Ok(vec)
-  111|    898|}
+  110|    866|    Ok(vec)
+  111|    900|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1H_6cursor6CursorRShEENtNtNtB6_7sapling6output21OutputInTransactionV4ECsgiMfClIXePk_19v6_transaction_fuzz:
    86|    157|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
    87|    157|    external_count: usize,
@@ -10008,17 +10008,17 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   110|     15|    Ok(vec)
   111|     15|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1I_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEINtNtNtB6_6sprout9joinsplit9JoinSplitNtNtNtNtB6_10primitives6proofs6bctv1411Bctv14ProofEECsgiMfClIXePk_19v6_transaction_fuzz:
-   86|     76|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
-   87|     76|    external_count: usize,
-   88|     76|    mut reader: R,
-   89|     76|) -> Result<Vec<T>, SerializationError> {
-   90|     76|    match u64::try_from(external_count) {
-   91|     76|        Ok(external_count) if external_count > T::max_allocation() => {
+   86|     77|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
+   87|     77|    external_count: usize,
+   88|     77|    mut reader: R,
+   89|     77|) -> Result<Vec<T>, SerializationError> {
+   90|     77|    match u64::try_from(external_count) {
+   91|     77|        Ok(external_count) if external_count > T::max_allocation() => {
    92|      0|            return Err(SerializationError::Parse(
    93|      0|                "Vector longer than max_allocation",
    94|      0|            ))
    95|       |        }
-   96|     76|        Ok(_) => {}
+   96|     77|        Ok(_) => {}
    97|       |        // As of 2021, usize is less than or equal to 64 bits on all (or almost all?) supported Rust platforms.
    98|       |        // So in practice this error is impossible. (But the check is required, because Rust is future-proof
    99|       |        // for 128 bit memory spaces.)
@@ -10028,12 +10028,12 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   103|       |    // arrive, so a peer-supplied `external_count` can't force a large
   104|       |    // allocation before any data is read. Fixes the deserializer-level
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
-  106|     76|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
-  107|     76|    for _ in 0..external_count {
+  106|     77|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
+  107|     77|    for _ in 0..external_count {
   108|     61|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|     76|    Ok(vec)
-  111|     76|}
+  110|     77|    Ok(vec)
+  111|     77|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1I_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEINtNtNtB6_6sprout9joinsplit9JoinSplitNtNtNtNtB6_10primitives6proofs7groth1612Groth16ProofEECsgiMfClIXePk_19v6_transaction_fuzz:
    86|     62|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
    87|     62|    external_count: usize,
@@ -10224,17 +10224,17 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   110|     40|    Ok(vec)
   111|     47|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1I_6cursor6CursorRShEEINtNtNtB6_6sprout9joinsplit9JoinSplitNtNtNtNtB6_10primitives6proofs6bctv1411Bctv14ProofEECsgiMfClIXePk_19v6_transaction_fuzz:
-   86|    138|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
-   87|    138|    external_count: usize,
-   88|    138|    mut reader: R,
-   89|    138|) -> Result<Vec<T>, SerializationError> {
-   90|    138|    match u64::try_from(external_count) {
-   91|    138|        Ok(external_count) if external_count > T::max_allocation() => {
+   86|    139|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
+   87|    139|    external_count: usize,
+   88|    139|    mut reader: R,
+   89|    139|) -> Result<Vec<T>, SerializationError> {
+   90|    139|    match u64::try_from(external_count) {
+   91|    139|        Ok(external_count) if external_count > T::max_allocation() => {
    92|      1|            return Err(SerializationError::Parse(
    93|      1|                "Vector longer than max_allocation",
    94|      1|            ))
    95|       |        }
-   96|    137|        Ok(_) => {}
+   96|    138|        Ok(_) => {}
    97|       |        // As of 2021, usize is less than or equal to 64 bits on all (or almost all?) supported Rust platforms.
    98|       |        // So in practice this error is impossible. (But the check is required, because Rust is future-proof
    99|       |        // for 128 bit memory spaces.)
@@ -10244,12 +10244,12 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   103|       |    // arrive, so a peer-supplied `external_count` can't force a large
   104|       |    // allocation before any data is read. Fixes the deserializer-level
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
-  106|    137|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
-  107|    137|    for _ in 0..external_count {
+  106|    138|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
+  107|    138|    for _ in 0..external_count {
   108|    161|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
-  110|     82|    Ok(vec)
-  111|    138|}
+  110|     83|    Ok(vec)
+  111|    139|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_deserialize_external_countQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1I_6cursor6CursorRShEEINtNtNtB6_6sprout9joinsplit9JoinSplitNtNtNtNtB6_10primitives6proofs7groth1612Groth16ProofEECsgiMfClIXePk_19v6_transaction_fuzz:
    86|    122|pub fn zcash_deserialize_external_count<R: io::Read, T: ZcashDeserialize + TrustedPreallocate>(
    87|    122|    external_count: usize,
@@ -10327,7 +10327,7 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   105|       |    // case of GHSA-xr93-pcq3-pxf8.
   106|    441|    let mut vec = Vec::with_capacity(external_count.min(MAX_INITIAL_ALLOCATION));
   107|    441|    for _ in 0..external_count {
-  108|  2.21k|        vec.push(T::zcash_deserialize(&mut reader)?);
+  108|  2.20k|        vec.push(T::zcash_deserialize(&mut reader)?);
   109|       |    }
   110|    373|    Ok(vec)
   111|    442|}
@@ -10386,19 +10386,19 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize32zcash_de
   110|     84|    Ok(vec)
   111|     93|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize38zcash_deserialize_bytes_external_countQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1P_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  120|  4.79k|pub fn zcash_deserialize_bytes_external_count<R: io::Read>(
-  121|  4.79k|    external_count: usize,
-  122|  4.79k|    mut reader: R,
-  123|  4.79k|) -> Result<Vec<u8>, SerializationError> {
-  124|  4.79k|    if external_count > MAX_U8_ALLOCATION {
+  120|  4.82k|pub fn zcash_deserialize_bytes_external_count<R: io::Read>(
+  121|  4.82k|    external_count: usize,
+  122|  4.82k|    mut reader: R,
+  123|  4.82k|) -> Result<Vec<u8>, SerializationError> {
+  124|  4.82k|    if external_count > MAX_U8_ALLOCATION {
   125|      0|        return Err(SerializationError::Parse(
   126|      0|            "Byte vector longer than MAX_U8_ALLOCATION",
   127|      0|        ));
-  128|  4.79k|    }
-  129|  4.79k|    let mut vec = vec![0u8; external_count];
-  130|  4.79k|    reader.read_exact(&mut vec)?;
-  131|  4.79k|    Ok(vec)
-  132|  4.79k|}
+  128|  4.82k|    }
+  129|  4.82k|    let mut vec = vec![0u8; external_count];
+  130|  4.82k|    reader.read_exact(&mut vec)?;
+  131|  4.82k|    Ok(vec)
+  132|  4.82k|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize38zcash_deserialize_bytes_external_countQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1P_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
   120|  7.48k|pub fn zcash_deserialize_bytes_external_count<R: io::Read>(
   121|  7.48k|    external_count: usize,
@@ -10408,10 +10408,10 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization17zcash_deserialize38zcash_de
   125|      1|        return Err(SerializationError::Parse(
   126|      1|            "Byte vector longer than MAX_U8_ALLOCATION",
   127|      1|        ));
-  128|  7.47k|    }
-  129|  7.47k|    let mut vec = vec![0u8; external_count];
-  130|  7.47k|    reader.read_exact(&mut vec)?;
-  131|  7.47k|    Ok(vec)
+  128|  7.48k|    }
+  129|  7.48k|    let mut vec = vec![0u8; external_count];
+  130|  7.48k|    reader.read_exact(&mut vec)?;
+  131|  7.48k|    Ok(vec)
   132|  7.48k|}
 
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serializeINtNtCshDtJu3Ru83O_5alloc3vec3VecINtNtNtBa_6sprout9joinsplit9JoinSplitNtNtNtNtBa_10primitives6proofs6bctv1411Bctv14ProofEENtB6_14ZcashSerialize15zcash_serializeQQQIB18_hEEBa_:
@@ -10505,15 +10505,15 @@ _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serializeINtNtCsh
    88|     67|        zcash_serialize_external_count(self, writer)
    89|     67|    }
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serializeINtNtCshDtJu3Ru83O_5alloc3vec3VechENtB6_14ZcashSerialize15zcash_serializeQQQQB17_EBa_:
-   81|    687|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
-   82|    687|        let len: CompactSizeMessage = self
-   83|    687|            .len()
-   84|    687|            .try_into()
-   85|    687|            .expect("len fits in MAX_PROTOCOL_MESSAGE_LEN");
-   86|    687|        len.zcash_serialize(&mut writer)?;
+   81|    699|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
+   82|    699|        let len: CompactSizeMessage = self
+   83|    699|            .len()
+   84|    699|            .try_into()
+   85|    699|            .expect("len fits in MAX_PROTOCOL_MESSAGE_LEN");
+   86|    699|        len.zcash_serialize(&mut writer)?;
    87|       |
-   88|    687|        zcash_serialize_external_count(self, writer)
-   89|    687|    }
+   88|    699|        zcash_serialize_external_count(self, writer)
+   89|    699|    }
 _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain11transaction11TransactionNtNtNtB6_13serialization15zcash_serialize14ZcashSerialize22zcash_serialize_to_vecB6_:
    39|  1.05k|    fn zcash_serialize_to_vec(&self) -> Result<Vec<u8>, io::Error> {
    40|  1.05k|        let mut data = Vec::new();
@@ -10521,15 +10521,15 @@ _RNvYNtNtCs2qdhHbQ3r3c_11zebra_chain11transaction11TransactionNtNtNtB6_13seriali
    42|  1.05k|        Ok(data)
    43|  1.05k|    }
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize21zcash_serialize_bytesQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB6_:
-  111|  13.9k|pub fn zcash_serialize_bytes<W: io::Write>(vec: &Vec<u8>, mut writer: W) -> Result<(), io::Error> {
-  112|  13.9k|    CompactSizeMessage::try_from(vec.len())?.zcash_serialize(&mut writer)?;
+  111|  14.0k|pub fn zcash_serialize_bytes<W: io::Write>(vec: &Vec<u8>, mut writer: W) -> Result<(), io::Error> {
+  112|  14.0k|    CompactSizeMessage::try_from(vec.len())?.zcash_serialize(&mut writer)?;
   113|       |
-  114|  13.9k|    zcash_serialize_bytes_external_count(vec, writer)
-  115|  13.9k|}
+  114|  14.0k|    zcash_serialize_bytes_external_count(vec, writer)
+  115|  14.0k|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize26zcash_serialize_empty_listQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB6_:
-  119|    110|pub fn zcash_serialize_empty_list<W: io::Write>(writer: W) -> Result<(), io::Error> {
-  120|    110|    CompactSizeMessage::default().zcash_serialize(writer)
-  121|    110|}
+  119|    112|pub fn zcash_serialize_empty_list<W: io::Write>(writer: W) -> Result<(), io::Error> {
+  120|    112|    CompactSizeMessage::default().zcash_serialize(writer)
+  121|    112|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize26zcash_serialize_empty_listQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB6_:
   119|    280|pub fn zcash_serialize_empty_list<W: io::Write>(writer: W) -> Result<(), io::Error> {
   120|    280|    CompactSizeMessage::default().zcash_serialize(writer)
@@ -10553,8 +10553,8 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize30zcash_seri
   151|  1.05k|    vec: &Vec<T>,
   152|  1.05k|    mut writer: W,
   153|  1.05k|) -> Result<(), io::Error> {
-  154|  8.21k|    for x in vec {
-  155|  7.16k|        x.zcash_serialize(&mut writer)?;
+  154|  8.27k|    for x in vec {
+  155|  7.21k|        x.zcash_serialize(&mut writer)?;
   156|       |    }
   157|  1.05k|    Ok(())
   158|  1.05k|}
@@ -10659,26 +10659,26 @@ _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize30zcash_seri
   157|    134|    Ok(())
   158|    134|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize30zcash_serialize_external_countQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEhEB6_:
-  150|    687|pub fn zcash_serialize_external_count<W: io::Write, T: ZcashSerialize>(
-  151|    687|    vec: &Vec<T>,
-  152|    687|    mut writer: W,
-  153|    687|) -> Result<(), io::Error> {
-  154|  31.8k|    for x in vec {
-  155|  31.1k|        x.zcash_serialize(&mut writer)?;
+  150|    699|pub fn zcash_serialize_external_count<W: io::Write, T: ZcashSerialize>(
+  151|    699|    vec: &Vec<T>,
+  152|    699|    mut writer: W,
+  153|    699|) -> Result<(), io::Error> {
+  154|  31.7k|    for x in vec {
+  155|  31.0k|        x.zcash_serialize(&mut writer)?;
   156|       |    }
-  157|    687|    Ok(())
-  158|    687|}
+  157|    699|    Ok(())
+  158|    699|}
 _RINvNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serialize36zcash_serialize_bytes_external_countQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB6_:
-  167|  13.9k|pub fn zcash_serialize_bytes_external_count<W: io::Write>(
-  168|  13.9k|    vec: &Vec<u8>,
-  169|  13.9k|    mut writer: W,
-  170|  13.9k|) -> Result<(), io::Error> {
-  171|  13.9k|    writer.write_all(vec)
-  172|  13.9k|}
+  167|  14.0k|pub fn zcash_serialize_bytes_external_count<W: io::Write>(
+  168|  14.0k|    vec: &Vec<u8>,
+  169|  14.0k|    mut writer: W,
+  170|  14.0k|) -> Result<(), io::Error> {
+  171|  14.0k|    writer.write_all(vec)
+  172|  14.0k|}
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain13serialization15zcash_serializehNtB3_14ZcashSerialize15zcash_serializeQQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB7_:
-   55|  31.1k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
-   56|  31.1k|        writer.write_u8(*self)
-   57|  31.1k|    }
+   55|  31.0k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
+   56|  31.0k|        writer.write_u8(*self)
+   57|  31.0k|    }
 
 _RNvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout10commitmentNtB5_14NoteCommitmentINtNtCs6SNw0SRvItZ_4core7convert4FromAhj20_E4from:
    42|    551|    fn from(bytes: [u8; 32]) -> Self {
@@ -10956,12 +10956,12 @@ _RNvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout9joinsplitAhj20_INtNtCs6SNw0SRvItZ
    55|    148|        random_seed.clone().into()
    56|    148|    }
 _RNvXs6_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout9joinsplitINtB5_9JoinSplitNtNtNtNtB9_10primitives6proofs6bctv1411Bctv14ProofENtNtNtB9_13serialization17zcash_deserialize18TrustedPreallocate14max_allocation:
-  267|    214|    fn max_allocation() -> u64 {
+  267|    216|    fn max_allocation() -> u64 {
   268|       |        // The longest Vec<JoinSplit> we receive from an honest peer must fit inside a valid block.
   269|       |        // Since encoding the length of the vec takes at least one byte
   270|       |        // (MAX_BLOCK_BYTES - 1) / BCTV14_JOINSPLIT_SIZE is a loose upper bound on the max allocation
-  271|    214|        (MAX_BLOCK_BYTES - 1) / BCTV14_JOINSPLIT_SIZE
-  272|    214|    }
+  271|    216|        (MAX_BLOCK_BYTES - 1) / BCTV14_JOINSPLIT_SIZE
+  272|    216|    }
 _RNvXs7_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout9joinsplitINtB5_9JoinSplitNtNtNtNtB9_10primitives6proofs7groth1612Groth16ProofENtNtNtB9_13serialization17zcash_deserialize18TrustedPreallocate14max_allocation:
   279|    184|    fn max_allocation() -> u64 {
   280|    184|        (MAX_BLOCK_BYTES - 1) / GROTH16_JOINSPLIT_SIZE
@@ -11031,7 +11031,7 @@ _RNvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeAhj20_INtNtCs6SNw0SRvItZ_4cor
 _RNvMs_NtCs2qdhHbQ3r3c_11zebra_chain11transactionNtB4_11Transaction15is_overwintered:
   399|  1.05k|    pub fn is_overwintered(&self) -> bool {
   400|  1.05k|        match self {
-  401|    230|            Transaction::V1 { .. } | Transaction::V2 { .. } => false,
+  401|    232|            Transaction::V1 { .. } | Transaction::V2 { .. } => false,
   402|    124|            Transaction::V3 { .. } | Transaction::V4 { .. } | Transaction::V5 { .. } => true,
   403|    700|            Transaction::V6 { .. } => true,
   404|       |        }
@@ -11077,7 +11077,7 @@ _RNvMs_NtCs2qdhHbQ3r3c_11zebra_chain11transactionNtB4_11Transaction7version:
   418|  1.05k|    pub fn version(&self) -> u32 {
   419|  1.05k|        match self {
   420|     78|            Transaction::V1 { .. } => 1,
-  421|    152|            Transaction::V2 { .. } => 2,
+  421|    154|            Transaction::V2 { .. } => 2,
   422|      0|            Transaction::V3 { .. } => 3,
   423|    124|            Transaction::V4 { .. } => 4,
   424|      0|            Transaction::V5 { .. } => 5,
@@ -11097,31 +11097,31 @@ _RNvMs0_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9joinsplitINtB5_13JoinSplitD
    80|     16|    }
 
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9lock_timeNtB6_8LockTimeNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2y_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  120|    335|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
-  121|    335|        let n = reader.read_u32::<LittleEndian>()?;
-  122|    335|        if n < Self::MIN_TIMESTAMP.try_into().expect("fits in u32") {
+  120|    336|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  121|    336|        let n = reader.read_u32::<LittleEndian>()?;
+  122|    336|        if n < Self::MIN_TIMESTAMP.try_into().expect("fits in u32") {
   123|    295|            Ok(LockTime::Height(block::Height(n)))
   124|       |        } else {
   125|       |            // This can't panic, because all u32 values are valid `Utc.timestamp`s.
-  126|     40|            Ok(LockTime::Time(
-  127|     40|                Utc.timestamp_opt(n.into(), 0)
-  128|     40|                    .single()
-  129|     40|                    .expect("in-range number of seconds and valid nanosecond"),
-  130|     40|            ))
+  126|     41|            Ok(LockTime::Time(
+  127|     41|                Utc.timestamp_opt(n.into(), 0)
+  128|     41|                    .single()
+  129|     41|                    .expect("in-range number of seconds and valid nanosecond"),
+  130|     41|            ))
   131|       |        }
-  132|    335|    }
+  132|    336|    }
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9lock_timeNtB6_8LockTimeNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2y_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
   120|    974|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   121|    974|        let n = reader.read_u32::<LittleEndian>()?;
   122|    961|        if n < Self::MIN_TIMESTAMP.try_into().expect("fits in u32") {
-  123|    821|            Ok(LockTime::Height(block::Height(n)))
+  123|    819|            Ok(LockTime::Height(block::Height(n)))
   124|       |        } else {
   125|       |            // This can't panic, because all u32 values are valid `Utc.timestamp`s.
-  126|    140|            Ok(LockTime::Time(
-  127|    140|                Utc.timestamp_opt(n.into(), 0)
-  128|    140|                    .single()
-  129|    140|                    .expect("in-range number of seconds and valid nanosecond"),
-  130|    140|            ))
+  126|    142|            Ok(LockTime::Time(
+  127|    142|                Utc.timestamp_opt(n.into(), 0)
+  128|    142|                    .single()
+  129|    142|                    .expect("in-range number of seconds and valid nanosecond"),
+  130|    142|            ))
   131|       |        }
   132|    974|    }
 _RINvXs_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9lock_timeNtB5_8LockTimeNtNtNtB9_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB9_:
@@ -11131,18 +11131,18 @@ _RINvXs_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9lock_timeNtB5_8LockTimeNtNt
   108|       |        // we can always compute a hash of a transaction object.
   109|  1.05k|        match self {
   110|    952|            LockTime::Height(block::Height(n)) => writer.write_u32::<LittleEndian>(*n)?,
-  111|    102|            LockTime::Time(t) => writer
-  112|    102|                .write_u32::<LittleEndian>(t.timestamp().try_into().expect("time is in range"))?,
+  111|    104|            LockTime::Time(t) => writer
+  112|    104|                .write_u32::<LittleEndian>(t.timestamp().try_into().expect("time is in range"))?,
   113|       |        }
   114|  1.05k|        Ok(())
   115|  1.05k|    }
 
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtB8_9joinsplit13JoinSplitDataNtNtNtNtBa_10primitives6proofs6bctv1411Bctv14ProofEENtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB4j_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   91|     76|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   91|     77|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    92|       |        // Denoted as `nJoinSplit` and `vJoinSplit` in the spec.
-   93|     76|        let joinsplits: Vec<sprout::JoinSplit<P>> = (&mut reader).zcash_deserialize_into()?;
-   94|     76|        match joinsplits.split_first() {
-   95|     55|            None => Ok(None),
+   93|     77|        let joinsplits: Vec<sprout::JoinSplit<P>> = (&mut reader).zcash_deserialize_into()?;
+   94|     77|        match joinsplits.split_first() {
+   95|     56|            None => Ok(None),
    96|     21|            Some((first, rest)) => {
    97|       |                // Denoted as `joinSplitPubKey` in the spec.
    98|     21|                let pub_key = reader.read_32_bytes()?.into();
@@ -11156,13 +11156,13 @@ _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvIt
   106|     21|                }))
   107|       |            }
   108|       |        }
-  109|     76|    }
+  109|     77|    }
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtB8_9joinsplit13JoinSplitDataNtNtNtNtBa_10primitives6proofs6bctv1411Bctv14ProofEENtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB4j_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-   91|    149|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+   91|    150|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    92|       |        // Denoted as `nJoinSplit` and `vJoinSplit` in the spec.
-   93|    149|        let joinsplits: Vec<sprout::JoinSplit<P>> = (&mut reader).zcash_deserialize_into()?;
-   94|     82|        match joinsplits.split_first() {
-   95|     55|            None => Ok(None),
+   93|    150|        let joinsplits: Vec<sprout::JoinSplit<P>> = (&mut reader).zcash_deserialize_into()?;
+   94|     83|        match joinsplits.split_first() {
+   95|     56|            None => Ok(None),
    96|     27|            Some((first, rest)) => {
    97|       |                // Denoted as `joinSplitPubKey` in the spec.
    98|     27|                let pub_key = reader.read_32_bytes()?.into();
@@ -11176,7 +11176,7 @@ _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvIt
   106|     21|                }))
   107|       |            }
   108|       |        }
-  109|    149|    }
+  109|    150|    }
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtB8_9joinsplit13JoinSplitDataNtNtNtNtBa_10primitives6proofs7groth1612Groth16ProofEENtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB4l_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
    91|     62|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
    92|       |        // Denoted as `nJoinSplit` and `vJoinSplit` in the spec.
@@ -11936,7 +11936,7 @@ _RNCINvNtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serialize36deserialize_v5_sa
 _RNCINvNtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serialize36deserialize_v5_sapling_shielded_dataQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB1C_6cursor6CursorRShEEEs_0CsgiMfClIXePk_19v6_transaction_fuzz:
   321|     38|        .map(|(prefix, proof)| sapling::Output::from_v5_parts(prefix, proof))
 _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11TransactionNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeINtNtNtCsjS9ICikYiHq_3std2io6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  858|    335|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
+  858|    336|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
   859|       |        // # Consensus
   860|       |        //
   861|       |        // > [Pre-Sapling] The encoded size of the transaction MUST be less than or
@@ -11949,13 +11949,13 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   868|       |        // we reject transactions that are larger than blocks.
   869|       |        //
   870|       |        // If the limit is reached, we'll get an UnexpectedEof error.
-  871|    335|        let mut limited_reader = reader.take(MAX_BLOCK_BYTES);
+  871|    336|        let mut limited_reader = reader.take(MAX_BLOCK_BYTES);
   872|       |
-  873|    335|        let (version, overwintered) = {
+  873|    336|        let (version, overwintered) = {
   874|       |            const LOW_31_BITS: u32 = (1 << 31) - 1;
   875|       |            // Denoted as `header` in the spec, contains the `fOverwintered` flag and the `version` field.
-  876|    335|            let header = limited_reader.read_u32::<LittleEndian>()?;
-  877|    335|            (header & LOW_31_BITS, header >> 31 != 0)
+  876|    336|            let header = limited_reader.read_u32::<LittleEndian>()?;
+  877|    336|            (header & LOW_31_BITS, header >> 31 != 0)
   878|       |        };
   879|       |
   880|       |        // # Consensus
@@ -11992,7 +11992,7 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   911|       |        // This is done in the zebra-consensus crate, in the transactions checks.
   912|       |        //
   913|       |        // https://zips.z.cash/protocol/protocol.pdf#txnconsensus
-  914|    335|        match (version, overwintered) {
+  914|    336|        match (version, overwintered) {
   915|       |            (1, false) => Ok(Transaction::V1 {
   916|       |                // Denoted as `tx_in_count` and `tx_in` in the spec.
   917|     39|                inputs: Vec::zcash_deserialize(&mut limited_reader)?,
@@ -12006,14 +12006,14 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   925|       |                type OptV2Jsd = Option<JoinSplitData<Bctv14Proof>>;
   926|       |                Ok(Transaction::V2 {
   927|       |                    // Denoted as `tx_in_count` and `tx_in` in the spec.
-  928|     76|                    inputs: Vec::zcash_deserialize(&mut limited_reader)?,
+  928|     77|                    inputs: Vec::zcash_deserialize(&mut limited_reader)?,
   929|       |                    // Denoted as `tx_out_count` and `tx_out` in the spec.
-  930|     76|                    outputs: Vec::zcash_deserialize(&mut limited_reader)?,
+  930|     77|                    outputs: Vec::zcash_deserialize(&mut limited_reader)?,
   931|       |                    // Denoted as `lock_time` in the spec.
-  932|     76|                    lock_time: LockTime::zcash_deserialize(&mut limited_reader)?,
+  932|     77|                    lock_time: LockTime::zcash_deserialize(&mut limited_reader)?,
   933|       |                    // A bundle of fields denoted in the spec as `nJoinSplit`, `vJoinSplit`,
   934|       |                    // `joinSplitPubKey` and `joinSplitSig`.
-  935|     76|                    joinsplit_data: OptV2Jsd::zcash_deserialize(&mut limited_reader)?,
+  935|     77|                    joinsplit_data: OptV2Jsd::zcash_deserialize(&mut limited_reader)?,
   936|       |                })
   937|       |            }
   938|       |            (3, true) => {
@@ -12300,7 +12300,7 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
  1219|       |            }
  1220|      0|            (_, _) => Err(SerializationError::Parse("bad tx header")),
  1221|       |        }
- 1222|    335|    }
+ 1222|    336|    }
 _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11TransactionNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeINtNtNtCsjS9ICikYiHq_3std2io6cursor6CursorRShEECsgiMfClIXePk_19v6_transaction_fuzz:
   858|  1.05k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
   859|       |        // # Consensus
@@ -12372,14 +12372,14 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   925|       |                type OptV2Jsd = Option<JoinSplitData<Bctv14Proof>>;
   926|       |                Ok(Transaction::V2 {
   927|       |                    // Denoted as `tx_in_count` and `tx_in` in the spec.
-  928|    189|                    inputs: Vec::zcash_deserialize(&mut limited_reader)?,
+  928|    190|                    inputs: Vec::zcash_deserialize(&mut limited_reader)?,
   929|       |                    // Denoted as `tx_out_count` and `tx_out` in the spec.
-  930|    170|                    outputs: Vec::zcash_deserialize(&mut limited_reader)?,
+  930|    171|                    outputs: Vec::zcash_deserialize(&mut limited_reader)?,
   931|       |                    // Denoted as `lock_time` in the spec.
-  932|    156|                    lock_time: LockTime::zcash_deserialize(&mut limited_reader)?,
+  932|    157|                    lock_time: LockTime::zcash_deserialize(&mut limited_reader)?,
   933|       |                    // A bundle of fields denoted in the spec as `nJoinSplit`, `vJoinSplit`,
   934|       |                    // `joinSplitPubKey` and `joinSplitSig`.
-  935|    149|                    joinsplit_data: OptV2Jsd::zcash_deserialize(&mut limited_reader)?,
+  935|    150|                    joinsplit_data: OptV2Jsd::zcash_deserialize(&mut limited_reader)?,
   936|       |                })
   937|       |            }
   938|       |            (3, true) => {
@@ -12435,7 +12435,7 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   988|    217|                let outputs = Vec::zcash_deserialize(&mut limited_reader)?;
   989|       |
   990|    216|                let is_coinbase = inputs.len() == 1
-  991|     33|                    && matches!(inputs.first(), Some(transparent::Input::Coinbase { .. }));
+  991|     32|                    && matches!(inputs.first(), Some(transparent::Input::Coinbase { .. }));
   992|       |
   993|       |                // Denoted as `lock_time` in the spec.
   994|    216|                let lock_time = LockTime::zcash_deserialize(&mut limited_reader)?;
@@ -12588,33 +12588,33 @@ _RINvXsi_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
  1141|       |            }
  1142|       |            (6, true) => {
  1143|       |                // Denoted as `nVersionGroupId` in the spec.
- 1144|    575|                let id = limited_reader.read_u32::<LittleEndian>()?;
- 1145|    573|                if id != TX_V6_VERSION_GROUP_ID {
+ 1144|    574|                let id = limited_reader.read_u32::<LittleEndian>()?;
+ 1145|    572|                if id != TX_V6_VERSION_GROUP_ID {
  1146|      1|                    return Err(SerializationError::Parse("expected TX_V6_VERSION_GROUP_ID"));
- 1147|    572|                }
+ 1147|    571|                }
  1148|       |                // Denoted as `nConsensusBranchId` in the spec.
  1149|       |                // Convert it to a NetworkUpgrade
- 1150|    570|                let network_upgrade =
- 1151|    572|                    NetworkUpgrade::try_from(limited_reader.read_u32::<LittleEndian>()?)?;
+ 1150|    569|                let network_upgrade =
+ 1151|    571|                    NetworkUpgrade::try_from(limited_reader.read_u32::<LittleEndian>()?)?;
  1152|       |                // v6 transactions are only valid from NU6.3 onward, so reject transactions with
  1153|       |                // pre-NU6.3 consensus branch IDs at the wire layer. (The exact tx-vs-block network
  1154|       |                // upgrade match is also re-checked during verification by `consensus_branch_id`.)
- 1155|    570|                if network_upgrade < NetworkUpgrade::Nu6_3 {
+ 1155|    569|                if network_upgrade < NetworkUpgrade::Nu6_3 {
  1156|      9|                    return Err(SerializationError::Parse(
  1157|      9|                        "v6 transaction must have a NU6.3 or later consensus branch ID",
  1158|      9|                    ));
- 1159|    561|                }
+ 1159|    560|                }
  1160|       |                // Denoted as `lock_time` in the spec.
- 1161|    561|                let lock_time = LockTime::zcash_deserialize(&mut limited_reader)?;
+ 1161|    560|                let lock_time = LockTime::zcash_deserialize(&mut limited_reader)?;
  1162|       |
  1163|       |                // Denoted as `nExpiryHeight` in the spec.
- 1164|    559|                let expiry_height = block::Height(limited_reader.read_u32::<LittleEndian>()?);
+ 1164|    558|                let expiry_height = block::Height(limited_reader.read_u32::<LittleEndian>()?);
  1165|       |
  1166|       |                // Denoted as `tx_in_count` and `tx_in` in the spec.
- 1167|    557|                let inputs: Vec<transparent::Input> = Vec::zcash_deserialize(&mut limited_reader)?;
+ 1167|    556|                let inputs: Vec<transparent::Input> = Vec::zcash_deserialize(&mut limited_reader)?;
  1168|       |
  1169|       |                // Denoted as `tx_out_count` and `tx_out` in the spec.
- 1170|    476|                let outputs = Vec::zcash_deserialize(&mut limited_reader)?;
+ 1170|    477|                let outputs = Vec::zcash_deserialize(&mut limited_reader)?;
  1171|       |
  1172|    452|                let is_coinbase = inputs.len() == 1
  1173|     29|                    && matches!(inputs.first(), Some(transparent::Input::Coinbase { .. }));
@@ -12770,25 +12770,25 @@ _RINvXsh_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtB8_11Transactio
   624|     78|                lock_time.zcash_serialize(&mut writer)?;
   625|       |            }
   626|       |            Transaction::V2 {
-  627|    152|                inputs,
-  628|    152|                outputs,
-  629|    152|                lock_time,
-  630|    152|                joinsplit_data,
+  627|    154|                inputs,
+  628|    154|                outputs,
+  629|    154|                lock_time,
+  630|    154|                joinsplit_data,
   631|       |            } => {
   632|       |                // Denoted as `tx_in_count` and `tx_in` in the spec.
-  633|    152|                inputs.zcash_serialize(&mut writer)?;
+  633|    154|                inputs.zcash_serialize(&mut writer)?;
   634|       |
   635|       |                // Denoted as `tx_out_count` and `tx_out` in the spec.
-  636|    152|                outputs.zcash_serialize(&mut writer)?;
+  636|    154|                outputs.zcash_serialize(&mut writer)?;
   637|       |
   638|       |                // Denoted as `lock_time` in the spec.
-  639|    152|                lock_time.zcash_serialize(&mut writer)?;
+  639|    154|                lock_time.zcash_serialize(&mut writer)?;
   640|       |
   641|       |                // A bundle of fields denoted in the spec as `nJoinSplit`, `vJoinSplit`,
   642|       |                // `joinSplitPubKey` and `joinSplitSig`.
-  643|    152|                match joinsplit_data {
+  643|    154|                match joinsplit_data {
   644|       |                    // Write 0 for nJoinSplits to signal no JoinSplitData.
-  645|    110|                    None => zcash_serialize_empty_list(writer)?,
+  645|    112|                    None => zcash_serialize_empty_list(writer)?,
   646|     42|                    Some(jsd) => jsd.zcash_serialize(&mut writer)?,
   647|       |                }
   648|       |            }
@@ -13048,9 +13048,9 @@ _RNCINvXsb_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRv
 _RNCINvXsd_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCs6SNw0SRvItZ_4core6option6OptionNtNtBc_8ironwood12ShieldedDataENtNtNtBc_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEE0Bc_:
   484|     71|        zcash_serialize_optional_orchard_bundle(self.as_ref().map(|data| data.data()), writer)
 _RNvXsm_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtNtB9_11transparent5InputNtNtNtB9_13serialization17zcash_deserialize18TrustedPreallocate14max_allocation:
- 1284|  1.33k|    fn max_allocation() -> u64 {
- 1285|  1.33k|        MAX_BLOCK_BYTES / MIN_TRANSPARENT_INPUT_SIZE
- 1286|  1.33k|    }
+ 1284|  1.34k|    fn max_allocation() -> u64 {
+ 1285|  1.34k|        MAX_BLOCK_BYTES / MIN_TRANSPARENT_INPUT_SIZE
+ 1286|  1.34k|    }
 _RNvXsn_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeNtNtB9_11transparent6OutputNtNtNtB9_13serialization17zcash_deserialize18TrustedPreallocate14max_allocation:
  1295|  1.23k|    fn max_allocation() -> u64 {
  1296|  1.23k|        MAX_BLOCK_BYTES / MIN_TRANSPARENT_OUTPUT_SIZE
@@ -13137,48 +13137,48 @@ _RINvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain11transaction9serializeINtNtCsblpbPvZ5Y3
   580|    217|    }
 
 _RNvMs0_NtCs2qdhHbQ3r3c_11zebra_chain11transparentNtB5_5Input15coinbase_script:
-  169|    687|    pub fn coinbase_script(&self) -> Option<Vec<u8>> {
-  170|    687|        match self {
+  169|    699|    pub fn coinbase_script(&self) -> Option<Vec<u8>> {
+  170|    699|        match self {
   171|      0|            Input::PrevOut { .. } => None,
-  172|    687|            Input::Coinbase { height, data, .. } => {
-  173|    687|                if height.is_min() {
+  172|    699|            Input::Coinbase { height, data, .. } => {
+  173|    699|                if height.is_min() {
   174|      0|                    (data.as_slice() == GENESIS_COINBASE_SCRIPT_SIG)
   175|      0|                        .then_some(GENESIS_COINBASE_SCRIPT_SIG.to_vec())
   176|       |                } else {
-  177|    687|                    let mut script = push_num(height.into()).to_bytes();
-  178|    687|                    script.extend_from_slice(data);
+  177|    699|                    let mut script = push_num(height.into()).to_bytes();
+  178|    699|                    script.extend_from_slice(data);
   179|       |
-  180|    687|                    Some(script)
+  180|    699|                    Some(script)
   181|       |                }
   182|       |            }
   183|       |        }
-  184|    687|    }
+  184|    699|    }
 
 _RINvXs6_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent6scriptNtB6_6ScriptNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2v_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  101|  4.59k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
-  102|  4.59k|        Vec::zcash_deserialize(reader).map(Script)
-  103|  4.59k|    }
+  101|  4.61k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
+  102|  4.61k|        Vec::zcash_deserialize(reader).map(Script)
+  103|  4.61k|    }
 _RINvXs6_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent6scriptNtB6_6ScriptNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2v_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  101|  7.02k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
-  102|  7.02k|        Vec::zcash_deserialize(reader).map(Script)
-  103|  7.02k|    }
+  101|  7.03k|    fn zcash_deserialize<R: io::Read>(reader: R) -> Result<Self, SerializationError> {
+  102|  7.03k|        Vec::zcash_deserialize(reader).map(Script)
+  103|  7.03k|    }
 _RINvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent6scriptNtB6_6ScriptNtNtNtBa_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
    95|  13.8k|    fn zcash_serialize<W: io::Write>(&self, writer: W) -> Result<(), io::Error> {
    96|  13.8k|        zcash_serialize_bytes(&self.0, writer)
    97|  13.8k|    }
 
 _RINvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_5InputNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2w_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  168|  2.05k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  168|  2.08k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   169|       |        // This inlines the OutPoint deserialization to peek at the hash value and detect whether we
   170|       |        // have a coinbase input.
-  171|  2.05k|        let hash = reader.read_32_bytes()?;
+  171|  2.08k|        let hash = reader.read_32_bytes()?;
   172|       |
   173|       |        // Coinbase inputs have a null prevout hash.
-  174|  2.05k|        if hash == [0; 32] {
+  174|  2.08k|        if hash == [0; 32] {
   175|       |            // Coinbase txs have the prevout index set to `u32::MAX`.
-  176|    193|            if reader.read_u32::<LittleEndian>()? != 0xffff_ffff {
+  176|    196|            if reader.read_u32::<LittleEndian>()? != 0xffff_ffff {
   177|      0|                return Err(SerializationError::Parse("Wrong index in coinbase"));
-  178|    193|            }
+  178|    196|            }
   179|       |
   180|       |            // Read the coinbase script length and validate it against the consensus
   181|       |            // bound *before* allocating any script bytes. The generic `Vec<u8>`
@@ -13192,49 +13192,49 @@ _RINvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_5InputNtNtNt
   189|       |            // > A coinbase transaction script MUST have length in {2 .. 100} bytes.
   190|       |            //
   191|       |            // <https://zips.z.cash/protocol/protocol.pdf#txnconsensus>
-  192|    193|            let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-  193|    193|            let len: usize = len.into();
-  194|    193|            if len < MIN_COINBASE_SCRIPT_LEN {
+  192|    196|            let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+  193|    196|            let len: usize = len.into();
+  194|    196|            if len < MIN_COINBASE_SCRIPT_LEN {
   195|      0|                return Err(SerializationError::Parse("Coinbase script is too short"));
-  196|    193|            } else if len > MAX_COINBASE_SCRIPT_LEN {
+  196|    196|            } else if len > MAX_COINBASE_SCRIPT_LEN {
   197|      0|                return Err(SerializationError::Parse("Coinbase script is too long"));
-  198|    193|            }
-  199|    193|            let script_sig = zcash_deserialize_bytes_external_count(len, &mut reader)?;
+  198|    196|            }
+  199|    196|            let script_sig = zcash_deserialize_bytes_external_count(len, &mut reader)?;
   200|       |
-  201|    193|            let (height, data) = if script_sig.as_slice() == GENESIS_COINBASE_SCRIPT_SIG {
+  201|    196|            let (height, data) = if script_sig.as_slice() == GENESIS_COINBASE_SCRIPT_SIG {
   202|      0|                (Height::MIN, GENESIS_COINBASE_SCRIPT_SIG.to_vec())
   203|       |            } else {
-  204|    193|                parse_coinbase_height(&script_sig)?
+  204|    196|                parse_coinbase_height(&script_sig)?
   205|       |            };
   206|       |
   207|       |            Ok(Input::Coinbase {
-  208|    193|                height,
-  209|    193|                data,
-  210|    193|                sequence: reader.read_u32::<LittleEndian>()?,
+  208|    196|                height,
+  209|    196|                data,
+  210|    196|                sequence: reader.read_u32::<LittleEndian>()?,
   211|       |            })
   212|       |        } else {
   213|       |            Ok(Input::PrevOut {
   214|       |                outpoint: OutPoint {
-  215|  1.86k|                    hash: transaction::Hash(hash),
-  216|  1.86k|                    index: reader.read_u32::<LittleEndian>()?,
+  215|  1.89k|                    hash: transaction::Hash(hash),
+  216|  1.89k|                    index: reader.read_u32::<LittleEndian>()?,
   217|       |                },
-  218|  1.86k|                unlock_script: Script::zcash_deserialize(&mut reader)?,
-  219|  1.86k|                sequence: reader.read_u32::<LittleEndian>()?,
+  218|  1.89k|                unlock_script: Script::zcash_deserialize(&mut reader)?,
+  219|  1.89k|                sequence: reader.read_u32::<LittleEndian>()?,
   220|       |            })
   221|       |        }
-  222|  2.05k|    }
+  222|  2.08k|    }
 _RINvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_5InputNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2w_6cursor6CursorRShEEECsgiMfClIXePk_19v6_transaction_fuzz:
-  168|  3.35k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
+  168|  3.37k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   169|       |        // This inlines the OutPoint deserialization to peek at the hash value and detect whether we
   170|       |        // have a coinbase input.
-  171|  3.35k|        let hash = reader.read_32_bytes()?;
+  171|  3.37k|        let hash = reader.read_32_bytes()?;
   172|       |
   173|       |        // Coinbase inputs have a null prevout hash.
-  174|  3.33k|        if hash == [0; 32] {
+  174|  3.34k|        if hash == [0; 32] {
   175|       |            // Coinbase txs have the prevout index set to `u32::MAX`.
-  176|    377|            if reader.read_u32::<LittleEndian>()? != 0xffff_ffff {
+  176|    373|            if reader.read_u32::<LittleEndian>()? != 0xffff_ffff {
   177|      1|                return Err(SerializationError::Parse("Wrong index in coinbase"));
-  178|    373|            }
+  178|    369|            }
   179|       |
   180|       |            // Read the coinbase script length and validate it against the consensus
   181|       |            // bound *before* allocating any script bytes. The generic `Vec<u8>`
@@ -13248,37 +13248,37 @@ _RINvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_5InputNtNtNt
   189|       |            // > A coinbase transaction script MUST have length in {2 .. 100} bytes.
   190|       |            //
   191|       |            // <https://zips.z.cash/protocol/protocol.pdf#txnconsensus>
-  192|    373|            let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
-  193|    372|            let len: usize = len.into();
-  194|    372|            if len < MIN_COINBASE_SCRIPT_LEN {
+  192|    369|            let len: CompactSizeMessage = (&mut reader).zcash_deserialize_into()?;
+  193|    368|            let len: usize = len.into();
+  194|    368|            if len < MIN_COINBASE_SCRIPT_LEN {
   195|      1|                return Err(SerializationError::Parse("Coinbase script is too short"));
-  196|    371|            } else if len > MAX_COINBASE_SCRIPT_LEN {
+  196|    367|            } else if len > MAX_COINBASE_SCRIPT_LEN {
   197|      1|                return Err(SerializationError::Parse("Coinbase script is too long"));
-  198|    370|            }
-  199|    370|            let script_sig = zcash_deserialize_bytes_external_count(len, &mut reader)?;
+  198|    366|            }
+  199|    366|            let script_sig = zcash_deserialize_bytes_external_count(len, &mut reader)?;
   200|       |
-  201|    369|            let (height, data) = if script_sig.as_slice() == GENESIS_COINBASE_SCRIPT_SIG {
+  201|    365|            let (height, data) = if script_sig.as_slice() == GENESIS_COINBASE_SCRIPT_SIG {
   202|      0|                (Height::MIN, GENESIS_COINBASE_SCRIPT_SIG.to_vec())
   203|       |            } else {
-  204|    369|                parse_coinbase_height(&script_sig)?
+  204|    365|                parse_coinbase_height(&script_sig)?
   205|       |            };
   206|       |
   207|       |            Ok(Input::Coinbase {
-  208|    355|                height,
-  209|    355|                data,
-  210|    355|                sequence: reader.read_u32::<LittleEndian>()?,
+  208|    351|                height,
+  209|    351|                data,
+  210|    351|                sequence: reader.read_u32::<LittleEndian>()?,
   211|       |            })
   212|       |        } else {
   213|       |            Ok(Input::PrevOut {
   214|       |                outpoint: OutPoint {
-  215|  2.95k|                    hash: transaction::Hash(hash),
-  216|  2.95k|                    index: reader.read_u32::<LittleEndian>()?,
+  215|  2.97k|                    hash: transaction::Hash(hash),
+  216|  2.97k|                    index: reader.read_u32::<LittleEndian>()?,
   217|       |                },
-  218|  2.95k|                unlock_script: Script::zcash_deserialize(&mut reader)?,
-  219|  2.94k|                sequence: reader.read_u32::<LittleEndian>()?,
+  218|  2.97k|                unlock_script: Script::zcash_deserialize(&mut reader)?,
+  219|  2.96k|                sequence: reader.read_u32::<LittleEndian>()?,
   220|       |            })
   221|       |        }
-  222|  3.35k|    }
+  222|  3.37k|    }
 _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_6OutputNtNtNtBa_13serialization17zcash_deserialize16ZcashDeserialize17zcash_deserializeQQINtNtCsjS9ICikYiHq_3std2io4TakeINtNtB2x_6cursor6CursorRINtNtCshDtJu3Ru83O_5alloc3vec3VechEEEECsgiMfClIXePk_19v6_transaction_fuzz:
   234|  2.72k|    fn zcash_deserialize<R: io::Read>(mut reader: R) -> Result<Self, SerializationError> {
   235|  2.72k|        let reader = &mut reader;
@@ -13298,39 +13298,39 @@ _RINvXs3_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_6OutputNtNtN
   240|       |        })
   241|  4.08k|    }
 _RINvXNtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB5_8OutPointNtNtNtB7_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEB7_:
-   99|  6.47k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
-  100|  6.47k|        writer.write_all(&self.hash.0[..])?;
-  101|  6.47k|        writer.write_u32::<LittleEndian>(self.index)?;
-  102|  6.47k|        Ok(())
-  103|  6.47k|    }
+   99|  6.52k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
+  100|  6.52k|        writer.write_all(&self.hash.0[..])?;
+  101|  6.52k|        writer.write_u32::<LittleEndian>(self.index)?;
+  102|  6.52k|        Ok(())
+  103|  6.52k|    }
 _RINvXs0_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_5InputNtNtNtBa_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
-  138|  7.16k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
-  139|  7.16k|        match self {
+  138|  7.21k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
+  139|  7.21k|        match self {
   140|       |            Input::PrevOut {
-  141|  6.47k|                outpoint,
-  142|  6.47k|                unlock_script,
-  143|  6.47k|                sequence,
+  141|  6.52k|                outpoint,
+  142|  6.52k|                unlock_script,
+  143|  6.52k|                sequence,
   144|       |            } => {
-  145|  6.47k|                outpoint.zcash_serialize(&mut writer)?;
-  146|  6.47k|                unlock_script.zcash_serialize(&mut writer)?;
-  147|  6.47k|                writer.write_u32::<LittleEndian>(*sequence)?;
+  145|  6.52k|                outpoint.zcash_serialize(&mut writer)?;
+  146|  6.52k|                unlock_script.zcash_serialize(&mut writer)?;
+  147|  6.52k|                writer.write_u32::<LittleEndian>(*sequence)?;
   148|       |            }
-  149|    687|            Input::Coinbase { sequence, .. } => {
+  149|    699|            Input::Coinbase { sequence, .. } => {
   150|       |                // Write the null prevout.
-  151|    687|                writer.write_all(&[0; 32][..])?;
-  152|    687|                writer.write_u32::<LittleEndian>(0xffff_ffff)?;
+  151|    699|                writer.write_all(&[0; 32][..])?;
+  152|    699|                writer.write_u32::<LittleEndian>(0xffff_ffff)?;
   153|       |
   154|       |                // Write the script sig containing the height and data.
-  155|    687|                self.coinbase_script()
-  156|    687|                    .ok_or_else(|| io::Error::other("invalid coinbase script sig"))?
-  157|    687|                    .zcash_serialize(&mut writer)?;
+  155|    699|                self.coinbase_script()
+  156|    699|                    .ok_or_else(|| io::Error::other("invalid coinbase script sig"))?
+  157|    699|                    .zcash_serialize(&mut writer)?;
   158|       |
   159|       |                // Write the sequence.
-  160|    687|                writer.write_u32::<LittleEndian>(*sequence)?;
+  160|    699|                writer.write_u32::<LittleEndian>(*sequence)?;
   161|       |            }
   162|       |        }
-  163|  7.16k|        Ok(())
-  164|  7.16k|    }
+  163|  7.21k|        Ok(())
+  164|  7.21k|    }
 _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_6OutputNtNtNtBa_13serialization15zcash_serialize14ZcashSerialize15zcash_serializeQQQINtNtCshDtJu3Ru83O_5alloc3vec3VechEEBa_:
   226|  7.37k|    fn zcash_serialize<W: io::Write>(&self, mut writer: W) -> Result<(), io::Error> {
   227|  7.37k|        self.value.zcash_serialize(&mut writer)?;
@@ -13338,16 +13338,16 @@ _RINvXs2_NtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serializeNtB8_6OutputNtNtN
   229|  7.37k|        Ok(())
   230|  7.37k|    }
 _RNvNtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serialize21parse_coinbase_height:
-   58|    562|fn parse_coinbase_height(script_sig: &[u8]) -> Result<(Height, Vec<u8>), SerializationError> {
-   59|    562|    let parse_err = SerializationError::Parse;
+   58|    561|fn parse_coinbase_height(script_sig: &[u8]) -> Result<(Height, Vec<u8>), SerializationError> {
+   59|    561|    let parse_err = SerializationError::Parse;
    60|       |
    61|       |    // Read a candidate height directly off the wire. The first byte tells us where the height
    62|       |    // bytes are; we don't validate them yet — the oracle below catches any non-canonical input.
-   63|    562|    let (h, len): (i64, usize) = match *script_sig
-   64|    562|        .first()
-   65|    562|        .ok_or(parse_err("Empty coinbase script"))?
+   63|    561|    let (h, len): (i64, usize) = match *script_sig
+   64|    561|        .first()
+   65|    561|        .ok_or(parse_err("Empty coinbase script"))?
    66|       |    {
-   67|    436|        op_n @ 0x51..=0x60 => (i64::from(op_n - 0x50), 1),
+   67|    435|        op_n @ 0x51..=0x60 => (i64::from(op_n - 0x50), 1),
    68|    126|        n @ 1..=5 => {
    69|    124|            let bytes = script_sig
    70|    124|                .get(1..=usize::from(n))
@@ -13363,20 +13363,20 @@ _RNvNtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serialize21parse_coinbase_heigh
    80|       |
    81|       |    // Oracle: re-encode the candidate the way zcash_transparent's coinbase builder does, and
    82|       |    // require byte-exact equality.
-   83|    558|    if script_sig
-   84|    558|        .get(..len)
-   85|    558|        .ok_or(parse_err("Coinbase script too short"))?
-   86|    558|        != pattern::push_num(h).to_bytes().as_slice()
+   83|    557|    if script_sig
+   84|    557|        .get(..len)
+   85|    557|        .ok_or(parse_err("Coinbase script too short"))?
+   86|    557|        != pattern::push_num(h).to_bytes().as_slice()
    87|       |    {
    88|      8|        return Err(parse_err("Non-canonical coinbase height encoding"));
-   89|    550|    }
+   89|    549|    }
    90|       |
-   91|    550|    let h = u32::try_from(h).map_err(|_| parse_err("Negative coinbase height"))?;
-   92|    548|    let height =
-   93|    549|        Height::try_from(h).map_err(|_| parse_err("Coinbase height exceeds Height::MAX"))?;
+   91|    549|    let h = u32::try_from(h).map_err(|_| parse_err("Negative coinbase height"))?;
+   92|    547|    let height =
+   93|    548|        Height::try_from(h).map_err(|_| parse_err("Coinbase height exceeds Height::MAX"))?;
    94|       |
-   95|    548|    Ok((height, script_sig[len..].to_vec()))
-   96|    562|}
+   95|    547|    Ok((height, script_sig[len..].to_vec()))
+   96|    561|}
 _RNCNvNtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serialize21parse_coinbase_height0B7_:
    91|      1|    let h = u32::try_from(h).map_err(|_| parse_err("Negative coinbase height"))?;
 _RNCNvNtNtCs2qdhHbQ3r3c_11zebra_chain11transparent9serialize21parse_coinbase_heights_0B7_:
