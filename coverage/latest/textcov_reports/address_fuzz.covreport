@@ -3125,10 +3125,10 @@ _RNvNtCsjyycqNoLf64_4bs586decode11decode_into:
   432|  48.3M|        }
   433|       |
   434|   138k|        while val > 0 {
-  435|  55.9k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
-  436|  55.9k|            *byte = (val & 0xFF) as u8;
-  437|  55.9k|            index += 1;
-  438|  55.9k|            val >>= 8
+  435|  55.8k|            let byte = output.get_mut(index).ok_or(Error::BufferTooSmall)?;
+  436|  55.8k|            *byte = (val & 0xFF) as u8;
+  437|  55.8k|            index += 1;
+  438|  55.8k|            val >>= 8
   439|       |        }
   440|       |    }
   441|       |
