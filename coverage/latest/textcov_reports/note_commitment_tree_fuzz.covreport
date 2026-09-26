@@ -88,7 +88,7 @@ _RINvNtCs3WJmn2GDYCj_9arbitrary7details20with_recursive_countQNtNtB4_12unstructu
   586|  10.5k|    ) -> Result<R> {
   587|  10.5k|        let guard_against_recursion = u.is_empty();
   588|  10.5k|        if guard_against_recursion {
-  589|     28|            recursive_count.with(|count| {
+  589|     27|            recursive_count.with(|count| {
   590|       |                if count.get() > 0 {
   591|       |                    return Err(Error::NotEnoughData);
   592|       |                }
@@ -100,7 +100,7 @@ _RINvNtCs3WJmn2GDYCj_9arbitrary7details20with_recursive_countQNtNtB4_12unstructu
   598|  10.5k|        let result = f(u);
   599|       |
   600|  10.5k|        if guard_against_recursion {
-  601|     28|            recursive_count.with(|count| {
+  601|     27|            recursive_count.with(|count| {
   602|       |                count.set(count.get() - 1);
   603|       |            });
   604|  10.5k|        }
@@ -108,17 +108,17 @@ _RINvNtCs3WJmn2GDYCj_9arbitrary7details20with_recursive_countQNtNtB4_12unstructu
   606|  10.5k|        result
   607|  10.5k|    }
 _RNCINvNtCs3WJmn2GDYCj_9arbitrary7details20with_recursive_countQNtNtB6_12unstructured12UnstructuredNtCslWCDSc5XlWU_25note_commitment_tree_fuzz6TreeOpNCNvXNvB1A_1__B1y_NtB6_9Arbitrary9arbitrary0E0B1A_:
-  589|     28|            recursive_count.with(|count| {
-  590|     28|                if count.get() > 0 {
+  589|     27|            recursive_count.with(|count| {
+  590|     27|                if count.get() > 0 {
   591|      0|                    return Err(Error::NotEnoughData);
-  592|     28|                }
-  593|     28|                count.set(count.get() + 1);
-  594|     28|                Ok(())
-  595|     28|            })?;
+  592|     27|                }
+  593|     27|                count.set(count.get() + 1);
+  594|     27|                Ok(())
+  595|     27|            })?;
 _RNCINvNtCs3WJmn2GDYCj_9arbitrary7details20with_recursive_countQNtNtB6_12unstructured12UnstructuredNtCslWCDSc5XlWU_25note_commitment_tree_fuzz6TreeOpNCNvXNvB1A_1__B1y_NtB6_9Arbitrary9arbitrary0Es_0B1A_:
-  601|     28|            recursive_count.with(|count| {
-  602|     28|                count.set(count.get() - 1);
-  603|     28|            });
+  601|     27|            recursive_count.with(|count| {
+  602|     27|                count.set(count.get() - 1);
+  603|     27|            });
 _RNvYINtNtCshDtJu3Ru83O_5alloc3vec3VecNtCslWCDSc5XlWU_25note_commitment_tree_fuzz6TreeOpENtCs3WJmn2GDYCj_9arbitrary9Arbitrary13try_size_hintBB_:
   423|    312|    fn try_size_hint(depth: usize) -> Result<(usize, Option<usize>), MaxRecursionReached> {
   424|    312|        Ok(Self::size_hint(depth))
@@ -727,14 +727,14 @@ _RINvNtCsdqiqltlfdiW_6bitvec5field3gethNtNtB4_5order4Lsb0jECs2qdhHbQ3r3c_11zebra
   556|   560k|	resize::<T::Mem, I>(elem.load_value() >> shamt)
   557|   560k|}
 _RINvNtCsdqiqltlfdiW_6bitvec5field3sethNtNtB4_5order4Lsb0jECs2qdhHbQ3r3c_11zebra_chain:
-  560|  2.99M|fn set<T, O, I>(mut elem: PartialElement<Mut, T, O>, value: I, shamt: u8)
-  561|  2.99M|where
-  562|  2.99M|	T: BitStore,
-  563|  2.99M|	O: BitOrder,
-  564|  2.99M|	I: Integral,
+  560|  2.98M|fn set<T, O, I>(mut elem: PartialElement<Mut, T, O>, value: I, shamt: u8)
+  561|  2.98M|where
+  562|  2.98M|	T: BitStore,
+  563|  2.98M|	O: BitOrder,
+  564|  2.98M|	I: Integral,
   565|       |{
-  566|  2.99M|	elem.store_value(resize::<I, T::Mem>(value) << shamt);
-  567|  2.99M|}
+  566|  2.98M|	elem.store_value(resize::<I, T::Mem>(value) << shamt);
+  567|  2.98M|}
 _RINvNtCsdqiqltlfdiW_6bitvec5field4signjECs2qdhHbQ3r3c_11zebra_chain:
   570|  1.68M|fn sign<I>(elem: I, width: usize) -> I
   571|  1.68M|where I: Integral {
@@ -968,13 +968,13 @@ _RNvMse_NtCsdqiqltlfdiW_6bitvec5indexINtB5_6BitSelhE13new_uncheckedCs3VjbIwwZMBL
   793|   194M|	}
 
 _RINvNtCsdqiqltlfdiW_6bitvec3mem4eltshECs2qdhHbQ3r3c_11zebra_chain:
-   51|  6.54M|pub const fn elts<T>(bits: usize) -> usize {
-   52|  6.54M|	let width = bits_of::<T>();
-   53|  6.54M|	if width == 0 {
+   51|  6.53M|pub const fn elts<T>(bits: usize) -> usize {
+   52|  6.53M|	let width = bits_of::<T>();
+   53|  6.53M|	if width == 0 {
    54|      0|		return 0;
-   55|  6.54M|	}
-   56|  6.54M|	bits / width + (bits % width != 0) as usize
-   57|  6.54M|}
+   55|  6.53M|	}
+   56|  6.53M|	bits / width + (bits % width != 0) as usize
+   57|  6.53M|}
 _RINvNtCsdqiqltlfdiW_6bitvec3mem7bits_ofjECshb1a4m6CJXg_7bellman:
    46|  27.2M|pub const fn bits_of<T>() -> usize {
    47|  27.2M|	core::mem::size_of::<T>().saturating_mul(<u8>::BITS as usize)
@@ -1193,18 +1193,18 @@ _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr6singleINtB5_6BitPtrNtNtCs4rm1P7A9CH1_3wyz4
   607|   194M|		unsafe { Self::new_unchecked(self.ptr.wrapping_offset(elts), head) }
   608|   194M|	}
 _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr6singleINtB5_6BitPtrNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE3addCs3VjbIwwZMBL_6jubjub:
-  706|  2.81M|	pub unsafe fn add(self, count: usize) -> Self {
-  707|  2.81M|		self.offset(count as isize)
-  708|  2.81M|	}
+  706|  2.80M|	pub unsafe fn add(self, count: usize) -> Self {
+  707|  2.80M|		self.offset(count as isize)
+  708|  2.80M|	}
 _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr6singleINtB5_6BitPtrNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE4readCs3VjbIwwZMBL_6jubjub:
   775|   194M|	pub unsafe fn read(self) -> bool {
   776|   194M|		(*self.ptr.to_const()).load_value().get_bit::<O>(self.bit)
   777|   194M|	}
 _RNvMs1_NtNtCsdqiqltlfdiW_6bitvec3ptr6singleINtB5_6BitPtrNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE6offsetCs3VjbIwwZMBL_6jubjub:
-  545|  2.81M|	pub unsafe fn offset(self, count: isize) -> Self {
-  546|  2.81M|		let (elts, head) = self.bit.offset(count);
-  547|  2.81M|		Self::new_unchecked(self.ptr.offset(elts), head)
-  548|  2.81M|	}
+  545|  2.80M|	pub unsafe fn offset(self, count: isize) -> Self {
+  546|  2.80M|		let (elts, head) = self.bit.offset(count);
+  547|  2.80M|		Self::new_unchecked(self.ptr.offset(elts), head)
+  548|  2.80M|	}
 _RNvMs_NtNtCsdqiqltlfdiW_6bitvec3ptr6singleINtB4_6BitPtrNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE10from_sliceCs3VjbIwwZMBL_6jubjub:
   336|  1.12M|	pub fn from_slice(slice: &[T]) -> Self {
   337|       |		unsafe {
@@ -1502,9 +1502,9 @@ _RNvXs9_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4c
   733|  2.42M|		Self::from_bitslice_ptr_mut(bits)
   734|  2.42M|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE3lenCs3VjbIwwZMBL_6jubjub:
-  335|  17.2M|	pub(crate) fn len(&self) -> usize {
-  336|  17.2M|		self.len >> Self::LEN_HEAD_BITS
-  337|  17.2M|	}
+  335|  17.1M|	pub(crate) fn len(&self) -> usize {
+  336|  17.1M|		self.len >> Self::LEN_HEAD_BITS
+  337|  17.1M|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE4headCs3VjbIwwZMBL_6jubjub:
   295|  10.4M|	pub(crate) fn head(&self) -> BitIdx<T::Mem> {
   296|  10.4M|		let ptr = self.ptr.as_ptr() as usize;
@@ -1538,9 +1538,9 @@ _RNvMs2_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4c
   527|  5.23M|		&*self.into_bitslice_ptr()
   528|  5.23M|	}
 _RNvMs2_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE9to_bitptrCs3VjbIwwZMBL_6jubjub:
-  534|  2.81M|	pub(crate) fn to_bitptr(self) -> BitPtr<M, T, O> {
-  535|  2.81M|		unsafe { BitPtr::new_unchecked(self.address(), self.head()) }
-  536|  2.81M|	}
+  534|  2.80M|	pub(crate) fn to_bitptr(self) -> BitPtr<M, T, O> {
+  535|  2.80M|		unsafe { BitPtr::new_unchecked(self.address(), self.head()) }
+  536|  2.80M|	}
 _RNvMs3_NtNtCsdqiqltlfdiW_6bitvec3ptr4spanINtB5_7BitSpanNtNtCs4rm1P7A9CH1_3wyz4comu5ConsthE17from_bitslice_ptrCs3VjbIwwZMBL_6jubjub:
   573|  22.6M|	pub(crate) fn from_bitslice_ptr(raw: *const BitSlice<T, O>) -> Self {
   574|  22.6M|		let slice_nn = match NonNull::new(raw as *const [()] as *mut [()]) {
@@ -1976,9 +1976,9 @@ _RNvXsp_NtNtCsdqiqltlfdiW_6bitvec5slice4iterINtB5_4IterhNtNtB9_5order4Lsb0ENtNtN
   421|   194M|				self.range.next().map(|bp| unsafe { BitRef::from_bitptr(bp) })
   422|   194M|			}
 _RNvXNtNtCsdqiqltlfdiW_6bitvec5slice4iterRINtB4_8BitSlicehENtNtNtNtCs6SNw0SRvItZ_4core4iter6traits7collect12IntoIterator9into_iterCsckoVJ3NjISC_14sapling_crypto:
-   51|   381k|	fn into_iter(self) -> Self::IntoIter {
-   52|   381k|		Iter::new(self)
-   53|   381k|	}
+   51|   380k|	fn into_iter(self) -> Self::IntoIter {
+   52|   380k|		Iter::new(self)
+   53|   380k|	}
 _RNvMs0_NtNtCsdqiqltlfdiW_6bitvec5slice4iterINtB5_4IterhNtNtB9_5order4Lsb0E3newCs3VjbIwwZMBL_6jubjub:
    95|   567k|	pub(super) fn new(slice: &'a BitSlice<T, O>) -> Self {
    96|   567k|		Self {
@@ -2257,32 +2257,32 @@ _RINvXs0_NtCsdqiqltlfdiW_6bitvec4viewAhj20_NtB6_7BitView9view_bitsNtNtB8_5order4
   116|   373k|		BitSlice::from_slice(self)
   117|   373k|	}
 _RINvXs3_NtCsdqiqltlfdiW_6bitvec4viewAhj20_INtB6_6AsBitshE7as_bitsNtNtB8_5order4Lsb0ECs3VjbIwwZMBL_6jubjub:
-  232|   381k|	fn as_bits<O>(&self) -> &BitSlice<T, O>
-  233|   381k|	where O: BitOrder {
-  234|   381k|		self.as_ref().view_bits::<O>()
-  235|   381k|	}
+  232|   380k|	fn as_bits<O>(&self) -> &BitSlice<T, O>
+  233|   380k|	where O: BitOrder {
+  234|   380k|		self.as_ref().view_bits::<O>()
+  235|   380k|	}
 _RINvXs_NtCsdqiqltlfdiW_6bitvec4viewShNtB5_7BitView9view_bitsNtNtB7_5order4Lsb0ECs3VjbIwwZMBL_6jubjub:
-   80|   381k|	fn view_bits<O>(&self) -> &BitSlice<T, O>
-   81|   381k|	where O: BitOrder {
-   82|   381k|		BitSlice::from_slice(self)
-   83|   381k|	}
+   80|   380k|	fn view_bits<O>(&self) -> &BitSlice<T, O>
+   81|   380k|	where O: BitOrder {
+   82|   380k|		BitSlice::from_slice(self)
+   83|   380k|	}
 
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx211diagonalize:
-  136|  8.97M|unsafe fn diagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
-  137|  8.97M|    unsafe {
-  138|  8.97M|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(2, 1, 0, 3));
-  139|  8.97M|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
-  140|  8.97M|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(0, 3, 2, 1));
-  141|  8.97M|    }
-  142|  8.97M|}
+  136|  8.96M|unsafe fn diagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
+  137|  8.96M|    unsafe {
+  138|  8.96M|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(2, 1, 0, 3));
+  139|  8.96M|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
+  140|  8.96M|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(0, 3, 2, 1));
+  141|  8.96M|    }
+  142|  8.96M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx213undiagonalize:
-  145|  8.97M|unsafe fn undiagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
-  146|  8.97M|    unsafe {
-  147|  8.97M|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(0, 3, 2, 1));
-  148|  8.97M|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
-  149|  8.97M|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(2, 1, 0, 3));
-  150|  8.97M|    }
-  151|  8.97M|}
+  145|  8.96M|unsafe fn undiagonalize(a: &mut __m256i, _b: &mut __m256i, c: &mut __m256i, d: &mut __m256i) {
+  146|  8.96M|    unsafe {
+  147|  8.96M|        *a = _mm256_permute4x64_epi64(*a, _MM_SHUFFLE!(0, 3, 2, 1));
+  148|  8.96M|        *d = _mm256_permute4x64_epi64(*d, _MM_SHUFFLE!(1, 0, 3, 2));
+  149|  8.96M|        *c = _mm256_permute4x64_epi64(*c, _MM_SHUFFLE!(2, 1, 0, 3));
+  150|  8.96M|    }
+  151|  8.96M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx214compress1_loop:
   437|   747k|pub unsafe fn compress1_loop(
   438|   747k|    input: &[u8],
@@ -2657,10 +2657,10 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx24set4:
    67|   747k|    unsafe { _mm256_setr_epi64x(a as i64, b as i64, c as i64, d as i64) }
    68|   747k|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25loadu:
-   18|  2.99M|unsafe fn loadu(src: *const [Word; DEGREE]) -> __m256i {
+   18|  2.98M|unsafe fn loadu(src: *const [Word; DEGREE]) -> __m256i {
    19|       |    // This is an unaligned load, so the pointer cast is allowed.
-   20|  2.99M|    unsafe { _mm256_loadu_si256(src as *const __m256i) }
-   21|  2.99M|}
+   20|  2.98M|    unsafe { _mm256_loadu_si256(src as *const __m256i) }
+   21|  2.98M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx25rot16:
    97|  17.9M|unsafe fn rot16(x: __m256i) -> __m256i {
    98|  17.9M|    unsafe { _mm256_or_si256(_mm256_srli_epi64(x, 16), _mm256_slli_epi64(x, 64 - 16)) }
@@ -2683,9 +2683,9 @@ _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx26storeu:
    26|  1.49M|    unsafe { _mm256_storeu_si256(dest as *mut __m256i, src) }
    27|  1.49M|}
 _RNvNtCsgZX4mSu3YR4_12blake2b_simd4avx29loadu_128:
-   30|  5.98M|unsafe fn loadu_128(mem_addr: &[u8; 16]) -> __m128i {
-   31|  5.98M|    unsafe { _mm_loadu_si128(mem_addr.as_ptr() as *const __m128i) }
-   32|  5.98M|}
+   30|  5.97M|unsafe fn loadu_128(mem_addr: &[u8; 16]) -> __m128i {
+   31|  5.97M|    unsafe { _mm_loadu_si128(mem_addr.as_ptr() as *const __m128i) }
+   32|  5.97M|}
 
 _RNvMNtCsgZX4mSu3YR4_12blake2b_simd4gutsNtB2_14Implementation14compress1_loop:
    96|   747k|    pub fn compress1_loop(
@@ -3324,35 +3324,35 @@ _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar6invert:
   502|   190k|        CtOption::new(t0, !self.ct_eq(&Self::zero()))
   503|   190k|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar6squareB7_:
-  341|  48.0M|    pub const fn square(&self) -> Scalar {
-  342|  48.0M|        let (r1, carry) = mac(0, self.0[0], self.0[1], 0);
-  343|  48.0M|        let (r2, carry) = mac(0, self.0[0], self.0[2], carry);
-  344|  48.0M|        let (r3, r4) = mac(0, self.0[0], self.0[3], carry);
+  341|  47.9M|    pub const fn square(&self) -> Scalar {
+  342|  47.9M|        let (r1, carry) = mac(0, self.0[0], self.0[1], 0);
+  343|  47.9M|        let (r2, carry) = mac(0, self.0[0], self.0[2], carry);
+  344|  47.9M|        let (r3, r4) = mac(0, self.0[0], self.0[3], carry);
   345|       |
-  346|  48.0M|        let (r3, carry) = mac(r3, self.0[1], self.0[2], 0);
-  347|  48.0M|        let (r4, r5) = mac(r4, self.0[1], self.0[3], carry);
+  346|  47.9M|        let (r3, carry) = mac(r3, self.0[1], self.0[2], 0);
+  347|  47.9M|        let (r4, r5) = mac(r4, self.0[1], self.0[3], carry);
   348|       |
-  349|  48.0M|        let (r5, r6) = mac(r5, self.0[2], self.0[3], 0);
+  349|  47.9M|        let (r5, r6) = mac(r5, self.0[2], self.0[3], 0);
   350|       |
-  351|  48.0M|        let r7 = r6 >> 63;
-  352|  48.0M|        let r6 = (r6 << 1) | (r5 >> 63);
-  353|  48.0M|        let r5 = (r5 << 1) | (r4 >> 63);
-  354|  48.0M|        let r4 = (r4 << 1) | (r3 >> 63);
-  355|  48.0M|        let r3 = (r3 << 1) | (r2 >> 63);
-  356|  48.0M|        let r2 = (r2 << 1) | (r1 >> 63);
-  357|  48.0M|        let r1 = r1 << 1;
+  351|  47.9M|        let r7 = r6 >> 63;
+  352|  47.9M|        let r6 = (r6 << 1) | (r5 >> 63);
+  353|  47.9M|        let r5 = (r5 << 1) | (r4 >> 63);
+  354|  47.9M|        let r4 = (r4 << 1) | (r3 >> 63);
+  355|  47.9M|        let r3 = (r3 << 1) | (r2 >> 63);
+  356|  47.9M|        let r2 = (r2 << 1) | (r1 >> 63);
+  357|  47.9M|        let r1 = r1 << 1;
   358|       |
-  359|  48.0M|        let (r0, carry) = mac(0, self.0[0], self.0[0], 0);
-  360|  48.0M|        let (r1, carry) = adc(0, r1, carry);
-  361|  48.0M|        let (r2, carry) = mac(r2, self.0[1], self.0[1], carry);
-  362|  48.0M|        let (r3, carry) = adc(0, r3, carry);
-  363|  48.0M|        let (r4, carry) = mac(r4, self.0[2], self.0[2], carry);
-  364|  48.0M|        let (r5, carry) = adc(0, r5, carry);
-  365|  48.0M|        let (r6, carry) = mac(r6, self.0[3], self.0[3], carry);
-  366|  48.0M|        let (r7, _) = adc(0, r7, carry);
+  359|  47.9M|        let (r0, carry) = mac(0, self.0[0], self.0[0], 0);
+  360|  47.9M|        let (r1, carry) = adc(0, r1, carry);
+  361|  47.9M|        let (r2, carry) = mac(r2, self.0[1], self.0[1], carry);
+  362|  47.9M|        let (r3, carry) = adc(0, r3, carry);
+  363|  47.9M|        let (r4, carry) = mac(r4, self.0[2], self.0[2], carry);
+  364|  47.9M|        let (r5, carry) = adc(0, r5, carry);
+  365|  47.9M|        let (r6, carry) = mac(r6, self.0[3], self.0[3], carry);
+  366|  47.9M|        let (r7, _) = adc(0, r7, carry);
   367|       |
-  368|  48.0M|        Scalar::montgomery_reduce(r0, r1, r2, r3, r4, r5, r6, r7)
-  369|  48.0M|    }
+  368|  47.9M|        Scalar::montgomery_reduce(r0, r1, r2, r3, r4, r5, r6, r7)
+  369|  47.9M|    }
 _RNvMsa_NtCsjpkeS12E7YP_9bls12_3816scalarNtB5_6Scalar8to_bytes:
   284|   391k|    pub fn to_bytes(&self) -> [u8; 32] {
   285|       |        // Turn into canonical form by computing
@@ -3646,7 +3646,7 @@ _RNCNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB6_16NonEmptyFrontie
   154|  12.8k|                            H::combine(addr.level(), &self.ommers[usize::from(i)], &digest)
   155|       |                        }
   156|       |                        Source::Future => {
-  157|   171k|                            H::combine(addr.level(), &digest, &H::empty_root(addr.level()))
+  157|   170k|                            H::combine(addr.level(), &digest, &H::empty_root(addr.level()))
   158|       |                        }
   159|       |                    };
   160|       |
@@ -3669,9 +3669,9 @@ _RNvMNtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB2_16NonEmptyFrontierNtN
    84|  1.88k|        &self.ommers
    85|  1.88k|    }
 _RNvMNtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB2_16NonEmptyFrontierNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeE8positionCs2qdhHbQ3r3c_11zebra_chain:
-   72|  73.6k|    pub fn position(&self) -> Position {
-   73|  73.6k|        self.position
-   74|  73.6k|    }
+   72|  73.5k|    pub fn position(&self) -> Position {
+   73|  73.5k|        self.position
+   74|  73.5k|    }
 _RNvMNtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB2_16NonEmptyFrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeE3newB1i_:
    44|    269|    pub fn new(leaf: H) -> Self {
    45|    269|        Self {
@@ -3751,13 +3751,13 @@ _RNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_8FrontierNtNtCscko
   346|       |        }
   347|  3.67k|    }
 _RNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_8FrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeKh1d_E4rootB1c_:
-  352|  6.45k|    pub fn root(&self) -> H {
-  353|  6.45k|        self.frontier
-  354|  6.45k|            .as_ref()
-  355|  6.45k|            .map_or(H::empty_root(DEPTH.into()), |frontier| {
+  352|  6.44k|    pub fn root(&self) -> H {
+  353|  6.44k|        self.frontier
+  354|  6.44k|            .as_ref()
+  355|  6.44k|            .map_or(H::empty_root(DEPTH.into()), |frontier| {
   356|       |                frontier.root(Some(DEPTH.into()))
   357|       |            })
-  358|  6.45k|    }
+  358|  6.44k|    }
 _RNvMs2_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB5_8FrontierNtNtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4tree4NodeKh1d_E6appendB1c_:
   335|  4.08k|    pub fn append(&mut self, value: H) -> bool {
   336|  4.08k|        if let Some(frontier) = self.frontier.as_mut() {
@@ -4004,10 +4004,10 @@ _RNvMs_NtCskDnbzSbNF0e_21incrementalmerkletree8frontierINtB4_16NonEmptyFrontierN
    94|  3.81k|        self.position += 1;
    95|  3.81k|        self.leaf = leaf;
    96|  3.81k|        if self.position.is_right_child() {
-   97|  1.96k|            // if the new position is a right-hand leaf, the current leaf will directly become an
-   98|  1.96k|            // ommer at level 0, and there is no other mutation made to the tree.
-   99|  1.96k|            self.ommers.insert(0, prior_leaf);
-  100|  1.96k|        } else {
+   97|  1.95k|            // if the new position is a right-hand leaf, the current leaf will directly become an
+   98|  1.95k|            // ommer at level 0, and there is no other mutation made to the tree.
+   99|  1.95k|            self.ommers.insert(0, prior_leaf);
+  100|  1.95k|        } else {
   101|       |            // if the new position is even, then the current leaf will be hashed
   102|       |            // with the first ommer, and so forth up the tree.
   103|  1.85k|            let new_root_level = self.position.root_level();
@@ -4293,9 +4293,9 @@ _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr3negCsckoVJ3NjISC_14sapling_crypto:
   664|  16.4M|        Fr([d0 & mask, d1 & mask, d2 & mask, d3 & mask])
   665|  16.4M|    }
 _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr3oneCsckoVJ3NjISC_14sapling_crypto:
-  255|   762k|    pub const fn one() -> Fr {
-  256|   762k|        R
-  257|   762k|    }
+  255|   761k|    pub const fn one() -> Fr {
+  256|   761k|        R
+  257|   761k|    }
 _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr3subCsckoVJ3NjISC_14sapling_crypto:
   620|   194M|    pub const fn sub(&self, rhs: &Self) -> Self {
   621|   194M|        let (d0, borrow) = sbb(self.0[0], rhs.0[0], 0);
@@ -4313,9 +4313,9 @@ _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr3subCsckoVJ3NjISC_14sapling_crypto:
   633|   194M|        Fr([d0, d1, d2, d3])
   634|   194M|    }
 _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr4zeroCsckoVJ3NjISC_14sapling_crypto:
-  249|   762k|    pub const fn zero() -> Fr {
-  250|   762k|        Fr([0, 0, 0, 0])
-  251|   762k|    }
+  249|   761k|    pub const fn zero() -> Fr {
+  250|   761k|        Fr([0, 0, 0, 0])
+  251|   761k|    }
 _RNvMsc_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2Fr6doubleCsckoVJ3NjISC_14sapling_crypto:
   261|   129M|    pub const fn double(&self) -> Fr {
   262|   129M|        self.add(self)
@@ -4625,10 +4625,10 @@ _RNvNtCs3VjbIwwZMBL_6jubjub4util3adc:
     5|  1.56G|    (ret as u64, (ret >> 64) as u64)
     6|  1.56G|}
 _RNvNtCs3VjbIwwZMBL_6jubjub4util3sbb:
-   10|   847M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
-   11|   847M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
-   12|   847M|    (ret as u64, (ret >> 64) as u64)
-   13|   847M|}
+   10|   846M|pub const fn sbb(a: u64, b: u64, borrow: u64) -> (u64, u64) {
+   11|   846M|    let ret = (a as u128).wrapping_sub((b as u128) + ((borrow >> 63) as u128));
+   12|   846M|    (ret as u64, (ret >> 64) as u64)
+   13|   846M|}
 _RNvXso_NtCs3VjbIwwZMBL_6jubjub2frNtB5_2FrINtNtNtCs6SNw0SRvItZ_4core3ops5arith9AddAssignRBv_E10add_assignCsckoVJ3NjISC_14sapling_crypto:
   149|  64.8M|            fn add_assign(&mut self, rhs: &'b $rhs) {
   150|  64.8M|                *self = &*self + rhs;
@@ -4640,12 +4640,12 @@ _RNvNtCs3VjbIwwZMBL_6jubjub4util3mac:
    20|  9.14M|}
 
 _RINvMNtCsgGvOW4efc1E_11lazy_static4lazyINtB3_4LazyINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE3getNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB1D_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeEB1H_:
-   18|   174k|    pub fn get<F>(&'static self, builder: F) -> &T
-   19|   174k|    where
-   20|   174k|        F: FnOnce() -> T,
+   18|   173k|    pub fn get<F>(&'static self, builder: F) -> &T
+   19|   173k|    where
+   20|   173k|        F: FnOnce() -> T,
    21|       |    {
-   22|   174k|        self.0.call_once(builder)
-   23|   174k|    }
+   22|   173k|        self.0.call_once(builder)
+   23|   173k|    }
 _RINvMNtCsgGvOW4efc1E_11lazy_static4lazyINtB3_4LazyINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtNtCs41Au54XfBWR_12pasta_curves6fields2fp2FpEE3getNvNvXsp_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB2i_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeEB2m_:
    18|   176k|    pub fn get<F>(&'static self, builder: F) -> &T
    19|   176k|    where
@@ -4683,12 +4683,12 @@ _RINvMNtCsgGvOW4efc1E_11lazy_static4lazyINtB3_4LazyINtNtNtCs41Au54XfBWR_12pasta_
    23|   373k|    }
 
 _RNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB7_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref11___stability:
-  133|   174k|                fn __stability() -> &'static $T {
+  133|   173k|                fn __stability() -> &'static $T {
   134|       |                    __lazy_static_create!(LAZY, $T);
-  135|   174k|                    LAZY.get(__static_ref_initialize)
-  136|   174k|                }
+  135|   173k|                    LAZY.get(__static_ref_initialize)
+  136|   173k|                }
 _RNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref:
-  128|   174k|            fn deref(&self) -> &$T {
+  128|   173k|            fn deref(&self) -> &$T {
   129|       |                #[inline(always)]
   130|       |                fn __static_ref_initialize() -> $T { $e }
   131|       |
@@ -4697,8 +4697,8 @@ _RNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_11EMPTY_ROOTSNtNtNtCs6SN
   134|       |                    __lazy_static_create!(LAZY, $T);
   135|       |                    LAZY.get(__static_ref_initialize)
   136|       |                }
-  137|   174k|                __stability()
-  138|   174k|            }
+  137|   173k|                __stability()
+  138|   173k|            }
 _RNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB7_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initialize:
   130|      1|                fn __static_ref_initialize() -> $T { $e }
 _RNvNvXsp_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB7_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initialize:
@@ -4938,7 +4938,7 @@ _RNvNtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fields3mac:
 _RNCNCNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB8_10SqrtTablesNtNtNtBc_6fields2fp2FpE10sqrt_ratio00Bc_:
   155|  11.5M|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
 _RNCNCNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB8_10SqrtTablesNtNtNtBc_6fields2fp2FpE11sqrt_common00Bc_:
-  201|  8.97M|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
+  201|  8.96M|        let sqr = |x: F, i: u32| (0..i).fold(x, |x, _| x.square());
 _RNCNCNvMs_NtNtCs41Au54XfBWR_12pasta_curves10arithmetic6fieldsINtB8_10SqrtTablesNtNtNtBc_6fields2fp2FpE3new00Bc_:
    81|  1.02k|                .scan(F::ONE, |acc, _| {
    82|  1.02k|                    let res = *acc;
@@ -6172,10 +6172,10 @@ _RINvNtCsckoVJ3NjISC_14sapling_crypto13pedersen_hash13pedersen_hashINtNtNtNtCs6S
    39|   190k|    let mut generators = crate::constants::PEDERSEN_HASH_EXP_TABLE.iter();
    40|       |
    41|       |    loop {
-   42|   762k|        let mut acc = jubjub::Fr::zero();
-   43|   762k|        let mut cur = jubjub::Fr::one();
-   44|   762k|        let mut chunks_remaining = PEDERSEN_HASH_CHUNKS_PER_GENERATOR;
-   45|   762k|        let mut encountered_bits = false;
+   42|   761k|        let mut acc = jubjub::Fr::zero();
+   43|   761k|        let mut cur = jubjub::Fr::one();
+   44|   761k|        let mut chunks_remaining = PEDERSEN_HASH_CHUNKS_PER_GENERATOR;
+   45|   761k|        let mut encountered_bits = false;
    46|       |
    47|       |        // Grab three bits from the input
    48|  33.1M|        while let Some(a) = bits.next() {
@@ -6204,13 +6204,13 @@ _RINvNtCsckoVJ3NjISC_14sapling_crypto13pedersen_hash13pedersen_hashINtNtNtNtCs6S
    71|  32.7M|            chunks_remaining -= 1;
    72|       |
    73|  32.7M|            if chunks_remaining == 0 {
-   74|   381k|                break;
+   74|   380k|                break;
    75|  32.3M|            } else {
    76|  32.3M|                cur = cur.double().double().double(); // 2^4 * cur
    77|  32.3M|            }
    78|       |        }
    79|       |
-   80|   762k|        if !encountered_bits {
+   80|   761k|        if !encountered_bits {
    81|   190k|            break;
    82|   571k|        }
    83|       |
@@ -6234,7 +6234,7 @@ _RINvNtCsckoVJ3NjISC_14sapling_crypto13pedersen_hash13pedersen_hashINtNtNtNtCs6S
   101|  18.2M|            let bit_idx = pos % 64;
   102|  18.2M|            let i = (if bit_idx + window < 64 {
   103|       |                // This window's bits are contained in a single u64.
-  104|  16.0M|                limbs[u64_idx] >> bit_idx
+  104|  15.9M|                limbs[u64_idx] >> bit_idx
   105|       |            } else {
   106|       |                // Combine the current u64's bits with the bits from the next u64.
   107|  2.28M|                (limbs[u64_idx] >> bit_idx) | (limbs[u64_idx + 1] << (64 - bit_idx))
@@ -6612,13 +6612,13 @@ _RNvMs0_Cs29eqbdMXVik_10sinsemillaNtB5_10HashDomain3new:
   141|   186k|    }
 
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE13try_call_onceNCINvB2_9call_onceNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB21_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0NtNtB37_7convert10InfallibleEB25_:
-  208|   174k|    pub fn try_call_once<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
-  209|   174k|        if let Some(value) = self.get() {
-  210|   174k|            Ok(value)
+  208|   173k|    pub fn try_call_once<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
+  209|   173k|        if let Some(value) = self.get() {
+  210|   173k|            Ok(value)
   211|       |        } else {
   212|      1|            self.try_call_once_slow(f)
   213|       |        }
-  214|   174k|    }
+  214|   173k|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE18try_call_once_slowNCINvB2_9call_onceNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB26_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0NtNtB3c_7convert10InfallibleEB2a_:
   217|      1|    fn try_call_once_slow<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
   218|       |        loop {
@@ -6700,12 +6700,12 @@ _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecA
   294|       |        }
   295|      1|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE9call_onceNvNvXsf_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB1E_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeEB1I_:
-  168|   174k|    pub fn call_once<F: FnOnce() -> T>(&self, f: F) -> &T {
-  169|   174k|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
-  170|   174k|            Ok(x) => x,
+  168|   173k|    pub fn call_once<F: FnOnce() -> T>(&self, f: F) -> &T {
+  169|   173k|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
+  170|   173k|            Ok(x) => x,
   171|       |            Err(void) => match void {},
   172|       |        }
-  173|   174k|    }
+  173|   173k|    }
 _RINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB6_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtNtCs41Au54XfBWR_12pasta_curves6fields2fp2FpEE13try_call_onceNCINvB2_9call_onceNvNvXsp_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB2G_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0NtNtB3N_7convert10InfallibleEB2K_:
   208|   176k|    pub fn try_call_once<F: FnOnce() -> Result<T, E>, E>(&self, f: F) -> Result<&T, E> {
   209|   176k|        if let Some(value) = self.get() {
@@ -6806,21 +6806,21 @@ _RNCINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB8_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3Ve
 _RNCINvMs2_NtCsjMa4SmpYabJ_4spin4onceINtB8_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtNtCs41Au54XfBWR_12pasta_curves6fields2fp2FpEE9call_onceNvNvXsp_NtNtCs2qdhHbQ3r3c_11zebra_chain7orchard4treeNtB2l_11EMPTY_ROOTSNtNtNtCs6SNw0SRvItZ_4core3ops5deref5Deref5deref23___static_ref_initializeE0B2p_:
   169|      1|        match self.try_call_once(|| Ok::<T, core::convert::Infallible>(f())) {
 _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE3getCs2qdhHbQ3r3c_11zebra_chain:
-  399|   174k|    pub fn get(&self) -> Option<&T> {
+  399|   173k|    pub fn get(&self) -> Option<&T> {
   400|       |        // SAFETY: Just as with `poll`, Acquire is safe here because we want to be able to see the
   401|       |        // nonatomic stores done when initializing, once we have loaded and checked the status.
-  402|   174k|        match self.status.load(Ordering::Acquire) {
-  403|   174k|            Status::Complete => Some(unsafe { self.force_get() }),
+  402|   173k|        match self.status.load(Ordering::Acquire) {
+  403|   173k|            Status::Complete => Some(unsafe { self.force_get() }),
   404|      1|            _ => None,
   405|       |        }
-  406|   174k|    }
+  406|   173k|    }
 _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecAhj20_EE9force_getCs2qdhHbQ3r3c_11zebra_chain:
-  375|   174k|    unsafe fn force_get(&self) -> &T {
+  375|   173k|    unsafe fn force_get(&self) -> &T {
   376|       |        // SAFETY:
   377|       |        // * `UnsafeCell`/inner deref: data never changes again
   378|       |        // * `MaybeUninit`/outer deref: data was initialized
-  379|   174k|        &*(*self.data.get()).as_ptr()
-  380|   174k|    }
+  379|   173k|        &*(*self.data.get()).as_ptr()
+  380|   173k|    }
 _RNvMs3_NtCsjMa4SmpYabJ_4spin4onceINtB5_4OnceINtNtCshDtJu3Ru83O_5alloc3vec3VecNtNtNtCs41Au54XfBWR_12pasta_curves6fields2fp2FpEE3getCs2qdhHbQ3r3c_11zebra_chain:
   399|   176k|    pub fn get(&self) -> Option<&T> {
   400|       |        // SAFETY: Just as with `poll`, Acquire is safe here because we want to be able to see the
@@ -7377,7 +7377,7 @@ _RNvXse_CsfWYj8LFlglm_6subtleINtNtCs6SNw0SRvItZ_4core6option6OptionNtNtNtCs41Au5
   663|   191k|        if source.is_some().unwrap_u8() == 1u8 {
   664|   190k|            Option::Some(source.value)
   665|       |        } else {
-  666|    722|            None
+  666|    721|            None
   667|       |        }
   668|   191k|    }
 _RNvMCsfWYj8LFlglm_6subtleNtB2_6Choice9unwrap_u8CseSYLJcjcYpg_7orchard:
@@ -7490,15 +7490,15 @@ _RNvXs1_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit12BitA
   170|  29.1M|        *self = *self & rhs;
   171|  29.1M|    }
 _RNvXs2_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit5BitOr5bitorCs29eqbdMXVik_10sinsemilla:
-  177|  58.3M|    fn bitor(self, rhs: Choice) -> Choice {
-  178|  58.3M|        (self.0 | rhs.0).into()
-  179|  58.3M|    }
+  177|  58.2M|    fn bitor(self, rhs: Choice) -> Choice {
+  178|  58.2M|        (self.0 | rhs.0).into()
+  179|  58.2M|    }
 _RNvXs6_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit3Not3notCs29eqbdMXVik_10sinsemilla:
   207|  19.4M|    fn not(self) -> Choice {
   208|  19.4M|        (1u8 & (!self.0)).into()
   209|  19.4M|    }
 _RINvCsfWYj8LFlglm_6subtle9black_boxhECsjpkeS12E7YP_9bls12_381:
-  224|  1.56M|fn black_box<T: Copy>(input: T) -> T {
+  224|  1.55M|fn black_box<T: Copy>(input: T) -> T {
   225|       |    unsafe {
   226|       |        // Optimization barrier
   227|       |        //
@@ -7506,20 +7506,20 @@ _RINvCsfWYj8LFlglm_6subtle9black_boxhECsjpkeS12E7YP_9bls12_381:
   229|       |        //   - &input is not NULL because we own input;
   230|       |        //   - input is Copy and always live;
   231|       |        //   - input is always properly aligned.
-  232|  1.56M|        core::ptr::read_volatile(&input)
+  232|  1.55M|        core::ptr::read_volatile(&input)
   233|       |    }
-  234|  1.56M|}
+  234|  1.55M|}
 _RNvMCsfWYj8LFlglm_6subtleNtB2_6Choice9unwrap_u8CsjpkeS12E7YP_9bls12_381:
   133|   213k|    pub fn unwrap_u8(&self) -> u8 {
   134|   213k|        self.0
   135|   213k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCsjpkeS12E7YP_9bls12_3816scalar6ScalarE3newBJ_:
-  678|   201k|    pub fn new(value: T, is_some: Choice) -> CtOption<T> {
-  679|   201k|        CtOption {
-  680|   201k|            value: value,
-  681|   201k|            is_some: is_some,
-  682|   201k|        }
-  683|   201k|    }
+  678|   200k|    pub fn new(value: T, is_some: Choice) -> CtOption<T> {
+  679|   200k|        CtOption {
+  680|   200k|            value: value,
+  681|   200k|            is_some: is_some,
+  682|   200k|        }
+  683|   200k|    }
 _RNvMsf_CsfWYj8LFlglm_6subtleINtB5_8CtOptionNtNtCsjpkeS12E7YP_9bls12_3816scalar6ScalarE6unwrapBJ_:
   700|   196k|    pub fn unwrap(self) -> T {
   701|   196k|        assert_eq!(self.is_some.unwrap_u8(), 1);
@@ -7539,13 +7539,13 @@ _RNvXs6_CsfWYj8LFlglm_6subtleNtB5_6ChoiceNtNtNtCs6SNw0SRvItZ_4core3ops3bit3Not3n
   208|   190k|        (1u8 & (!self.0)).into()
   209|   190k|    }
 _RNvXs7_CsfWYj8LFlglm_6subtleNtB5_6ChoiceINtNtCs6SNw0SRvItZ_4core7convert4FromhE4fromCsjpkeS12E7YP_9bls12_381:
-  238|  1.56M|    fn from(input: u8) -> Choice {
-  239|  1.56M|        debug_assert!((input == 0u8) | (input == 1u8));
+  238|  1.55M|    fn from(input: u8) -> Choice {
+  239|  1.55M|        debug_assert!((input == 0u8) | (input == 1u8));
   240|       |
   241|       |        // Our goal is to prevent the compiler from inferring that the value held inside the
   242|       |        // resulting `Choice` struct is really a `bool` instead of a `u8`.
-  243|  1.56M|        Choice(black_box(input))
-  244|  1.56M|    }
+  243|  1.55M|        Choice(black_box(input))
+  244|  1.55M|    }
 _RNvXsL_CsfWYj8LFlglm_6subtleyNtB5_23ConditionallySelectable18conditional_selectCsjpkeS12E7YP_9bls12_381:
   513|  16.3k|            fn conditional_select(a: &Self, b: &Self, choice: Choice) -> Self {
   514|       |                // if choice = 0, mask = (-0) = 0000...0000
@@ -7848,13 +7848,13 @@ _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeB3_NCNvMs8_NtCs4rm1P7A9CH1_3wyz4com
    78|   194M|		func(self)
    79|   194M|	}
 _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeB3_NCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtBR_7AddressNtBR_5ConsthE6offset0ECs3VjbIwwZMBL_6jubjub:
-   73|  2.81M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
-   74|  2.81M|	where
-   75|  2.81M|		Self: Sized,
-   76|  2.81M|		R: Sized,
+   73|  2.80M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
+   74|  2.80M|	where
+   75|  2.80M|		Self: Sized,
+   76|  2.80M|		R: Sized,
    77|       |	{
-   78|  2.81M|		func(self)
-   79|  2.81M|	}
+   78|  2.80M|		func(self)
+   79|  2.80M|	}
 _RINvYOhNtNtCshmJoXj7BjpP_3tap4pipe4Pipe4pipeINtNtCs6SNw0SRvItZ_4core6option6OptionINtNtNtBL_3ptr8non_null7NonNullhEENvMs1_B1l_B1i_3newECs3VjbIwwZMBL_6jubjub:
    73|   199M|	fn pipe<R>(self, func: impl FnOnce(Self) -> R) -> R
    74|   199M|	where
@@ -8019,20 +8019,20 @@ _RINvMs9_NtCs4rm1P7A9CH1_3wyz4comuINtB6_7AddressNtB6_5ConsthE8with_ptrhNCNvMs8_B
   334|   194M|			.pipe(Address::new)
   335|   194M|	}
 _RINvMs9_NtCs4rm1P7A9CH1_3wyz4comuINtB6_7AddressNtB6_5ConsthE8with_ptrhNCNvMs8_B6_Bv_6offset0ECs3VjbIwwZMBL_6jubjub:
-  328|  2.81M|	fn with_ptr<U>(self, func: impl FnOnce(*mut T) -> *mut U) -> Address<M, U> {
-  329|  2.81M|		self.inner
-  330|  2.81M|			.as_ptr()
-  331|  2.81M|			.pipe(func)
-  332|  2.81M|			.pipe(NonNull::new)
-  333|  2.81M|			.unwrap()
-  334|  2.81M|			.pipe(Address::new)
-  335|  2.81M|	}
+  328|  2.80M|	fn with_ptr<U>(self, func: impl FnOnce(*mut T) -> *mut U) -> Address<M, U> {
+  329|  2.80M|		self.inner
+  330|  2.80M|			.as_ptr()
+  331|  2.80M|			.pipe(func)
+  332|  2.80M|			.pipe(NonNull::new)
+  333|  2.80M|			.unwrap()
+  334|  2.80M|			.pipe(Address::new)
+  335|  2.80M|	}
 _RNCINvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB8_7AddressNtB8_5ConsthE4casthE0Cs3VjbIwwZMBL_6jubjub:
   259|  1.86M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_5ConsthE15wrapping_offset0Cs3VjbIwwZMBL_6jubjub:
   259|   194M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNCNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB7_7AddressNtB7_5ConsthE6offset0Cs3VjbIwwZMBL_6jubjub:
-  259|  2.81M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
+  259|  2.80M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
 _RNvMs5_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE3newCs3VjbIwwZMBL_6jubjub:
   155|   205M|	pub fn new(addr: NonNull<T>) -> Self {
   156|   205M|		Self {
@@ -8051,11 +8051,11 @@ _RNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE15wrapping_offsetCs3
   259|   194M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
   260|   194M|		}
 _RNvMs8_NtCs4rm1P7A9CH1_3wyz4comuINtB5_7AddressNtB5_5ConsthE6offsetCs3VjbIwwZMBL_6jubjub:
-  256|  2.81M|		pub $($unsafe)? fn $name$(<
-  257|  2.81M|			$($lt,)* $($typaram$(: $($bound),+)?,)*
-  258|  2.81M|		>)?(self$(, $arg: $ty)*) $(-> $ret)? {
-  259|  2.81M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
-  260|  2.81M|		}
+  256|  2.80M|		pub $($unsafe)? fn $name$(<
+  257|  2.80M|			$($lt,)* $($typaram$(: $($bound),+)?,)*
+  258|  2.80M|		>)?(self$(, $arg: $ty)*) $(-> $ret)? {
+  259|  2.80M|			self.with_ptr(|ptr| ptr.$name($($arg),*))
+  260|  2.80M|		}
 
 _RINvMs1_Cs8z7Bf712FQl_14zcash_encodingNtB6_8Optional5writeQQINtNtCshDtJu3Ru83O_5alloc3vec3VechERNtNtCsckoVJ3NjISC_14sapling_crypto4tree4NodeNCINvNtCsblBBgngKd3Y_16zcash_primitives11merkle_tree21write_commitment_treeB1w_BV_Kh20_E0ECs2qdhHbQ3r3c_11zebra_chain:
   289|  2.56k|    pub fn write<W: Write, T, F>(mut writer: W, val: Option<T>, func: F) -> io::Result<()>
@@ -8248,18 +8248,18 @@ _RNCNCINvNtCsblBBgngKd3Y_16zcash_primitives11merkle_tree21write_commitment_treeN
   207|  1.65k|        Optional::write(w, e.as_ref(), |w, n| n.write(w))
 
 _RNCNkNvNvCslWCDSc5XlWU_25note_commitment_tree_fuzz1__22RECURSIVE_COUNT_TreeOp0s_0B7_:
-   70|     56|                    |_| {
+   70|     54|                    |_| {
    71|       |                        #[thread_local]
    72|       |                        static VAL: $t = __INIT;
-   73|     56|                        &VAL
-   74|     56|                    }
+   73|     54|                        &VAL
+   74|     54|                    }
 
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprout0B3_:
   293|  4.08k|                let append_res = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.append(cm)));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts0_0B3_:
   302|  4.08k|                let r2 = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts1_0B3_:
-  312|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  312|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts2_0B3_:
   319|    184|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.hash()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprouts3_0B3_:
@@ -8281,7 +8281,7 @@ _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchard0B3_:
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards0_0B3_:
   216|  3.57k|                let r2 = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards1_0B3_:
-  226|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  226|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchards2_0B3_:
   233|    184|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| {
   234|    184|                    orchard_tree::Root::try_from(*bytes)
@@ -8329,7 +8329,7 @@ _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_sapling0B3_:
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings0_0B3_:
   141|  3.67k|                let r2 = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings1_0B3_:
-  151|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  151|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
 _RNCNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_saplings2_0B3_:
   157|    184|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| {
   158|    184|                    sapling_tree::Root::try_from(*bytes)
@@ -8396,7 +8396,7 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz10run_sprout:
   309|       |                }
   310|       |            }
   311|       |            TreeOp::Root => {
-  312|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  312|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
   313|       |            }
   314|       |            TreeOp::ParseRoot(_) => {
   315|       |                // Sprout `NoteCommitment`/root is a transparent `[u8; 32]` with
@@ -8458,7 +8458,7 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_orchard:
   223|       |                }
   224|       |            }
   225|       |            TreeOp::Root => {
-  226|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  226|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
   227|       |            }
   228|    184|            TreeOp::ParseRoot(bytes) => {
   229|       |                // Canonical-encoding validation of an Orchard root (and the
@@ -8541,7 +8541,7 @@ _RNvCslWCDSc5XlWU_25note_commitment_tree_fuzz11run_sapling:
   148|       |                }
   149|       |            }
   150|       |            TreeOp::Root => {
-  151|    268|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
+  151|    272|                let _ = panic::catch_unwind(panic::AssertUnwindSafe(|| tree.root()));
   152|       |            }
   153|    184|            TreeOp::ParseRoot(bytes) => {
   154|       |                // Canonical-encoding validation of a Sapling root from raw
@@ -8949,8 +8949,8 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4ha
   422|    397|        self.root().into()
   423|    397|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4root:
-  381|  8.01k|    pub fn root(&self) -> Root {
-  382|  8.01k|        if let Some(root) = self.cached_root() {
+  381|  8.02k|    pub fn root(&self) -> Root {
+  382|  8.02k|        if let Some(root) = self.cached_root() {
   383|       |            // Return cached root.
   384|  4.30k|            return root;
   385|  3.71k|        }
@@ -8971,7 +8971,7 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree4ro
   400|  3.71k|                root
   401|       |            }
   402|       |        }
-  403|  8.01k|    }
+  403|  8.02k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain7sapling4treeNtB5_18NoteCommitmentTree5count:
   437|    609|    pub fn count(&self) -> u64 {
   438|    609|        self.inner
@@ -9065,9 +9065,9 @@ _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_18NoteCommitmentTree11un
   329|      1|        [0; 32]
   330|      1|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_18NoteCommitmentTree16recalculate_root:
-  314|  6.45k|    pub fn recalculate_root(&self) -> Root {
-  315|  6.45k|        Root(self.inner.root().0)
-  316|  6.45k|    }
+  314|  6.44k|    pub fn recalculate_root(&self) -> Root {
+  315|  6.44k|        Root(self.inner.root().0)
+  316|  6.44k|    }
 _RNvMs9_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_18NoteCommitmentTree4hash:
   319|    581|    pub fn hash(&self) -> [u8; 32] {
   320|    581|        self.root().into()
@@ -9145,10 +9145,10 @@ _RNvXs1_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeAhj20_INtNtCs6SNw0SRvItZ_4cor
   119|    581|        rt.0
   120|    581|    }
 _RNvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_4NodeNtCskDnbzSbNF0e_21incrementalmerkletree8Hashable10empty_root:
-  161|   174k|    fn empty_root(level: incrementalmerkletree::Level) -> Self {
-  162|   174k|        let layer_below = usize::from(MERKLE_DEPTH) - usize::from(level);
-  163|   174k|        Self(EMPTY_ROOTS[layer_below])
-  164|   174k|    }
+  161|   173k|    fn empty_root(level: incrementalmerkletree::Level) -> Self {
+  162|   173k|        let layer_below = usize::from(MERKLE_DEPTH) - usize::from(level);
+  163|   173k|        Self(EMPTY_ROOTS[layer_below])
+  164|   173k|    }
 _RNvXs5_NtNtCs2qdhHbQ3r3c_11zebra_chain6sprout4treeNtB5_4NodeNtCskDnbzSbNF0e_21incrementalmerkletree8Hashable7combine:
   156|   185k|    fn combine(_level: incrementalmerkletree::Level, a: &Self, b: &Self) -> Self {
   157|   185k|        Self(merkle_crh_sprout(a.0, b.0))
